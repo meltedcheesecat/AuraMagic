@@ -1,0 +1,6 @@
+{
+  "Group": "meltedcheesecat",
+  "Name": "HelloPlugin",
+  "Version": "1.0.0",
+  "Main": "meltedcheesecat.plugin.HelloPlugin"
+}
