@@ -1,0 +1,9 @@
+{
+  "Type": "Simple",
+  "Effects": {
+    "ItemPlayerAnimationsId": "MagicSpell",
+    "ItemAnimationId": "CastLeft",
+    "WaitForAnimationToFinish": true
+  },
+  "RunTime": 0
+}

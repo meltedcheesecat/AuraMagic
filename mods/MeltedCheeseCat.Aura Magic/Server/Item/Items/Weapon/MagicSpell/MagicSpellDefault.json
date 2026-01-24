@@ -1,0 +1,57 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Weapon_MagicSpell_Default.name"
+  },
+  "Categories": [
+    "Items.Weapons"
+  ],
+  "Icon": "Icons/ItemsGenerated/MagicSpellDefault.png",
+  "Quality": "Common",
+  "ItemLevel": 40,
+  "Model": "Items/Weapon/MagicSpell/MagicSpell.blockymodel",
+  "Texture": "Items/Weapon/MagicSpell/MagicSpellDefault.png",
+  "PlayerAnimationsId": "Wand",
+  "Particles": [
+    {
+      "SystemId": "Azure_Spiral",
+      "TargetNodeName": "Crystal",
+      "Color": "#8ce1fc",
+      "TargetEntityPart": "PrimaryItem"
+    }
+  ],
+  "Utility": {
+    "Compatible": true
+  },
+  "Interactions": {
+    "Primary": "MagicSpellCastRoot"
+  },
+  "IconProperties": {
+    "Scale": 0.7,
+    "Rotation": [
+      16,
+      163,
+      0
+    ],
+    "Translation": [
+      12,
+      -1
+    ]
+  },
+  "DroppedItemAnimation": "Items/Animations/Dropped/Dropped_Diagonal_Right_Floating.blockyanim",
+  "Tags": {
+    "Type": [
+      "Weapon"
+    ],
+    "Family": [
+      "Wand"
+    ]
+  },
+  "Weapon": {},
+  "ItemSoundSetId": "ISS_Weapons_Wand",
+  "Trails": [
+    {
+      "TargetNodeName": "Crystal",
+      "FixedRotation": true
+    }
+  ]
+}

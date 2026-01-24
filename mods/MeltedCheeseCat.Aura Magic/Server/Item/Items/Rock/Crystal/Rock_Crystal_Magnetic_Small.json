@@ -1,0 +1,85 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Rock_Crystal_Magnetic_Small.name"
+  },
+  "Icon": "Icons/ItemsGenerated/Rock_Crystal_Magnetic_Small.png",
+  "Categories": [
+    "Blocks.Rocks"
+  ],
+  "PlayerAnimationsId": "Block",
+  "Interactions": {
+    "Secondary": "Lantern_Blue"
+  },
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "Model",
+    "Opacity": "Transparent",
+    "CustomModel": "Resources/Crystals/Crystal_Small.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Resources/Crystals/Crystal_Big_Textures/Magnetic.png",
+        "Weight": 1
+      }
+    ],
+    "HitboxType": "Plant_Medium",
+    "Flags": {},
+    "Gathering": {
+      "Breaking": {
+        "DropList": "Rock_Crystal_Magnetic_Small",
+        "GatherType": "Rocks"
+      }
+    },
+    "VariantRotation": "DoublePipe",
+    "RandomRotation": "YawStep1",
+    "BlockParticleSetId": "Crystal",
+    "ParticleColor": "#6e6e6e",
+    "BlockSoundSetId": "Crystal",
+    "Light": {
+      "Color": "#888"
+    },
+    "Support": {
+      "Down": [
+        {
+          "FaceType": "Full"
+        }
+      ]
+    }
+  },
+  "Tags": {
+    "Type": [
+      "Rock"
+    ],
+    "Family": [
+      "Crystal"
+    ]
+  },
+  "Recipe": {
+    "Input": [
+      {
+        "ItemId": "Ingredient_Crystal_Magnetic",
+        "Quantity": 2
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Builders",
+        "Type": "StructuralCrafting",
+        "Categories": [
+          "Decorative"
+        ]
+      }
+    ]
+  },
+  "IconProperties": {
+    "Scale": 0.58823,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      0,
+      -13.5
+    ]
+  }
+}
