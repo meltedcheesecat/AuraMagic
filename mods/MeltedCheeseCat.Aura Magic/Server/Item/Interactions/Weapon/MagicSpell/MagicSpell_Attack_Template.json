@@ -1,0 +1,15 @@
+{
+  "Type": "Projectile",
+  "Effects": {
+	"ItemAnimationId": "CastLeftCharged",
+	"ClearAnimationOnFinish": true
+  },
+  "Next": {
+    "Type": "ChangeStat",
+    "Behaviour": "Set",
+    "StatModifiers": {
+      "StaminaRegenDelay": 0
+    }
+  },
+  "Config": "Projectile_Config_Arrow_Shortbow"
+}

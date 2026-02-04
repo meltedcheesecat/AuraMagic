@@ -48,4 +48,5 @@ items.Rock_Crystal_Wind.name = Wind Crystal
 items.Rock_Crystal_Wind_Large.name = Wind Crystal - Large
 items.Rock_Crystal_Wind_Medium.name = Wind Crystal - Medium
 items.Rock_Crystal_Wind_Small.name = Wind Crystal - Small
-items.Weapon_MagicSpell_Default.name = Default Magic Spell
+items.MagicSpell_Template.name = Magic Spell Template
+items.MagicSpell_Wind_Lvl1.name = Magic Spell Wind Level 1

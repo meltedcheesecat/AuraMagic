@@ -1,0 +1,8 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "Test_Shield_Spawner"
+    }
+  ],
+  "IsImportant": false
+}

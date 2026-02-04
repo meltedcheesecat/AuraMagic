@@ -1,0 +1,17 @@
+{
+  "Type": "Charging",
+  "DisplayProgress": false,
+  "Next": {
+    "0": "MagicSpell_Template_Interaction_Primary_Attack",
+    "0.2": {
+      "Type": "Replace",
+      "Var": "Thrust_Stamina",
+      "DefaultOk": true,
+      "DefaultValue": {
+        "Interactions": [
+          "MagicSpell_Template_Interaction_Primary_Attack"
+        ]
+      }
+    }
+  }
+}

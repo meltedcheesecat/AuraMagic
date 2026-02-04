@@ -1,0 +1,37 @@
+{
+  "Parent": "MagicSpell_Wind_Template",
+  "TranslationProperties": {
+    "Name": "server.items.MagicSpell_Wind_Lvl1.name"
+  },
+  "Model": "Items/Weapon/MagicSpell/MagicSpell.blockymodel",
+  "Quality": "Common",
+  "InteractionVars": {
+    "MagicSpell_Primary_Charged": {
+      "Interactions": [
+        {
+          "Parent": "MagicSpell_Template_Interaction_Primary_Charged",
+          "Type": "ModifyInventory",
+          "ItemToRemove": {
+            "Id": "Ingredient_Crystal_Wind",
+            "Quantity": 1
+          }
+        }
+      ]
+    },
+    "MagicSpell_Charged_Attack": {
+      "Interactions": [
+        {
+          "Parent": "MagicSpell_Attack_Template",
+          "Type": "Projectile",
+          "Effects": {
+            "ItemAnimationId": "CastLeftCharged",
+            "ClearAnimationOnFinish": true,
+            "ItemPlayerAnimationsId": "MagicSpell",
+            "WaitForAnimationToFinish": true
+          },
+          "Config": "Projectile_Config_Arrow_Shortbow"
+        }
+      ]
+    }
+  }
+}

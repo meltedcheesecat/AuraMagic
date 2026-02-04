@@ -1,0 +1,117 @@
+{
+  "RenderMode": "BlendLinear",
+  "EmitOffset": {
+    "X": {
+      "Min": 0.0,
+      "Max": 0.1
+    },
+    "Y": {
+      "Min": 0.0,
+      "Max": 0.1
+    },
+    "Z": {
+      "Min": 0.0,
+      "Max": 0.1
+    }
+  },
+  "ParticleRotationInfluence": "Billboard",
+  "LinearFiltering": true,
+  "LightInfluence": 0,
+  "ParticleRotateWithSpawner": false,
+  "TrailSpawnerPositionMultiplier": 1.0,
+  "TrailSpawnerRotationMultiplier": 1.0,
+  "MaxConcurrentParticles": 3,
+  "ParticleLifeSpan": {
+    "Min": 1.0,
+    "Max": 1.0
+  },
+  "SpawnRate": {
+    "Min": 2.0,
+    "Max": 2.0
+  },
+  "Attractors": [
+    {
+      "Position": {
+        "X": 0.05,
+        "Y": 0.05,
+        "Z": 0.05
+      },
+      "Radius": 0,
+      "RadialAcceleration": -5,
+      "RadialTangentAcceleration": 0
+    }
+  ],
+  "Particle": {
+    "Texture": "Particles/Textures/Basic/Glow.png",
+    "ScaleRatioConstraint": "None",
+    "Animation": {
+      "0": {
+        "FrameIndex": {
+          "Min": 0,
+          "Max": 0
+        },
+        "Scale": {
+          "X": {
+            "Min": 1.0,
+            "Max": 1.0
+          },
+          "Y": {
+            "Min": 1.0,
+            "Max": 1.0
+          }
+        },
+        "Opacity": 1.0,
+        "Color": "#71fff0"
+      },
+      "50": {
+        "Scale": {
+          "Y": {
+            "Max": 25.0,
+            "Min": 25.0
+          },
+          "X": {
+            "Min": 25.0,
+            "Max": 25.0
+          }
+        }
+      },
+      "100": {
+        "Scale": {
+          "Y": {
+            "Max": 1.0,
+            "Min": 1.0
+          },
+          "X": {
+            "Min": 1.0,
+            "Max": 1.0
+          }
+        }
+      }
+    },
+    "InitialAnimationFrame": {
+      "Scale": {
+        "X": {
+          "Min": 0.05,
+          "Max": 0.05
+        },
+        "Y": {
+          "Min": 0.05,
+          "Max": 0.05
+        }
+      },
+      "Opacity": 1,
+      "Color": "#6dffef",
+      "FrameIndex": {
+        "Min": 0,
+        "Max": 0
+      }
+    }
+  },
+  "InitialVelocity": {
+    "Speed": {
+      "Min": 0.0,
+      "Max": 0.0
+    }
+  },
+  "SpawnBurst": false
+}

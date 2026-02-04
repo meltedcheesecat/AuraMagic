@@ -1,0 +1,8 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "MagicSpell_Wind_Charging_Right_Spawner"
+    }
+  ],
+  "IsImportant": false
+}
