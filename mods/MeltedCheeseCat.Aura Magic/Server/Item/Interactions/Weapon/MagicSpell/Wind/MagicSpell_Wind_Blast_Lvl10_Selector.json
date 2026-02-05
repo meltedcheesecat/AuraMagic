@@ -1,0 +1,48 @@
+{
+  "Type": "Selector",
+  "$Comment": "Length of Combat",
+  "RunTime": 0.01,
+  "Selector": {
+    "Id": "Stab",
+    "TestLineOfSight": false,
+    "ExtendTop": 10,
+    "ExtendLeft": 10,
+    "ExtendRight": 10,
+    "ExtendBottom": 10,
+    "StartDistance": 0.1,
+    "EndDistance": 30
+  },
+  "HitBlock": {
+    "Interactions": [
+      "Block_Break"
+    ]
+  },
+  "HitEntity": {
+    "Interactions": [
+      {
+        "Type": "DamageEntity",
+        "DamageCalculator": {
+          "BaseDamage": {
+            "Physical": 0
+          }
+        },
+        "DamageEffects": {
+          "Knockback": {
+            "Force": 10,
+            "RelativeX": 0,
+            "RelativeZ": -10,
+            "VelocityY": 30
+          },
+          "WorldSoundEventId": "SFX_Sword_T2_Impact",
+          "LocalSoundEventId": "SFX_Sword_T2_Impact",
+          "WorldParticles": [
+            {
+              "SystemId": "Impact_Blade_01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "IgnoreOwner": true
+}

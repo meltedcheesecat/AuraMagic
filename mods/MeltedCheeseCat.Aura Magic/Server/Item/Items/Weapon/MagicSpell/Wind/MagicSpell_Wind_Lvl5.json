@@ -1,7 +1,7 @@
 {
   "Parent": "MagicSpell_Wind_Template",
   "TranslationProperties": {
-    "Name": "server.items.MagicSpell_Wind_Lvl1.name"
+    "Name": "server.items.MagicSpell_Wind_Lvl5.name"
   },
   "Model": "Items/Weapon/MagicSpell/MagicSpell.blockymodel",
   "Quality": "Common",
@@ -13,7 +13,7 @@
           "Type": "ModifyInventory",
           "ItemToRemove": {
             "Id": "Ingredient_Crystal_Wind",
-            "Quantity": 1
+            "Quantity": 5
           }
         }
       ]
@@ -25,7 +25,7 @@
           "Type": "ModifyInventory",
           "ItemToRemove": {
             "Id": "Ingredient_Crystal_Wind",
-            "Quantity": 4
+            "Quantity": 9
           }
         }
       ]
@@ -35,7 +35,7 @@
         {
           "Parent": "MagicSpell_Normal_Attack_Animation_Template",
           "Type": "Simple",
-          "Next": "MagicSpell_Wind_Blast_Lvl1_Selector"
+          "Next": "MagicSpell_Wind_Blast_Lvl6_Selector"
         }
       ]
     },
@@ -44,7 +44,7 @@
         {
           "Parent": "MagicSpell_Charged_Attack_Animation_Template",
           "Type": "Simple",
-          "Next": "MagicSpell_Wind_Blast_Lvl5_Selector"
+          "Next": "MagicSpell_Wind_Blast_Lvl10_Selector"
         }
       ]
     }
