@@ -1,0 +1,18 @@
+{
+  "Parent": "MgcSpl_Tplt",
+  "Texture": "Items/Weapon/MagicSpell/MagicSpellWind.png",
+  "Model": "Items/Weapon/MagicSpell/MagicSpell.blockymodel",
+  "Icon": "Icons/ItemsGenerated/MagicSpell_Wind_Template.png",
+  "IconProperties": {
+    "Scale": 0.6,
+    "Rotation": [
+      1,
+      225,
+      29
+    ],
+    "Translation": [
+      8,
+      1
+    ]
+  }
+}

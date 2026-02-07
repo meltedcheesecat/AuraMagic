@@ -1,0 +1,8 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "TestMagicSpellRight_Spawner"
+    }
+  ],
+  "IsImportant": false
+}

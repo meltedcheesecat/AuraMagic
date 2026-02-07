@@ -1,0 +1,17 @@
+{
+  "Type": "Charging",
+  "DisplayProgress": true,
+  "HorizontalSpeedMultiplier": 0.2,
+  "Next": {
+	"0": "MgcSpl_Tplt_IntAct_No_Shards_Or_Fail",
+    "1.0": {
+      "Type": "Replace",
+      "Var": "MagicSpell_Primary_Charged",
+      "DefaultValue": {
+        "Interactions": [
+          "MgcSpl_Tplt_IntAct_Prim_Charged"
+        ]
+	  }
+    }
+  }	
+}

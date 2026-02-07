@@ -1,0 +1,161 @@
+{
+  "RenderMode": "BlendAdd",
+  "ParticleRotationInfluence": "None",
+  "MaxConcurrentParticles": 8,
+  "ParticleLifeSpan": {
+    "Min": 1.0,
+    "Max": 1.0
+  },
+  "TrailSpawnerPositionMultiplier": 1,
+  "TrailSpawnerRotationMultiplier": 1,
+  "SpawnRate": {
+    "Min": 8,
+    "Max": 8
+  },
+  "Particle": {
+    "Texture": "Particles/Textures/MagicSpell/WindRightPowerUp.png",
+    "FrameSize": {
+      "Width": 128,
+      "Height": 128
+    },
+    "UVOption": "FlipV",
+    "Animation": {
+      "0": {
+        "Scale": {
+          "X": {
+            "Min": 0.7,
+            "Max": 0.9
+          },
+          "Y": {
+            "Min": 0.7,
+            "Max": 0.9
+          }
+        },
+        "Rotation": {
+          "X": {
+            "Min": 0,
+            "Max": 360
+          },
+          "Y": {
+            "Min": 0,
+            "Max": 360
+          },
+          "Z": {
+            "Min": 0,
+            "Max": 360
+          }
+        }
+      },
+      "6": {
+        "FrameIndex": {
+          "Min": 1,
+          "Max": 1
+        }
+      },
+      "12": {
+        "FrameIndex": {
+          "Min": 2,
+          "Max": 2
+        }
+      },
+      "18": {
+        "FrameIndex": {
+          "Min": 3,
+          "Max": 3
+        }
+      },
+      "25": {
+        "FrameIndex": {
+          "Min": 4,
+          "Max": 4
+        }
+      },
+      "31": {
+        "FrameIndex": {
+          "Min": 5,
+          "Max": 5
+        }
+      },
+      "37": {
+        "FrameIndex": {
+          "Min": 6,
+          "Max": 6
+        }
+      },
+      "43": {
+        "FrameIndex": {
+          "Min": 7,
+          "Max": 7
+        }
+      },
+      "50": {
+        "FrameIndex": {
+          "Min": 8,
+          "Max": 8
+        }
+      },
+      "56": {
+        "FrameIndex": {
+          "Min": 9,
+          "Max": 9
+        }
+      },
+      "62": {
+        "FrameIndex": {
+          "Min": 10,
+          "Max": 10
+        }
+      },
+      "68": {
+        "FrameIndex": {
+          "Min": 11,
+          "Max": 11
+        }
+      },
+      "75": {
+        "FrameIndex": {
+          "Min": 12,
+          "Max": 12
+        }
+      },
+      "81": {
+        "FrameIndex": {
+          "Min": 13,
+          "Max": 13
+        }
+      },
+      "87": {
+        "FrameIndex": {
+          "Min": 14,
+          "Max": 14
+        }
+      },
+      "93": {
+        "FrameIndex": {
+          "Min": 15,
+          "Max": 15
+        }
+      },
+      "100": {
+        "FrameIndex": {
+          "Min": 16,
+          "Max": 16
+        }
+      }
+    },
+    "InitialAnimationFrame": {
+      "Scale": {
+        "X": {
+          "Min": 0.8,
+          "Max": 0.8
+        },
+        "Y": {
+          "Min": 1.0,
+          "Max": 2.0
+        }
+      },
+      "Opacity": 0.692
+    }
+  },
+  "LinearFiltering": true
+}

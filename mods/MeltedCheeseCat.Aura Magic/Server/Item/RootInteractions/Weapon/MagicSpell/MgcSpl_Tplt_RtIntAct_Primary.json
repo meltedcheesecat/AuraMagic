@@ -1,0 +1,10 @@
+{
+  "RequireNewClick": true,
+  "ClickQueuingTimeout": 0.5,
+  "Cooldown": {
+    "Cooldown": 0.5
+  },
+  "Interactions": [
+    "MgcSpl_Tplt_IntAct_Prim_Start"
+  ]
+}

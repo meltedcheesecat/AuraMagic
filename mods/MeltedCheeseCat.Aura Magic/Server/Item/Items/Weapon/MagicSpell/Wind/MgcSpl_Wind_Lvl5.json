@@ -1,0 +1,109 @@
+{
+  "Parent": "MagicSpell_Wind_Template",
+  "TranslationProperties": {
+    "Name": "server.items.MagicSpell_Wind_Lvl5.name"
+  },
+  "Model": "Items/Weapon/MagicSpell/MagicSpell.blockymodel",
+  "Quality": "Common",
+  "InteractionVars": {
+    "MagicSpell_Primary_Charging": {
+      "Interactions": [
+        {
+		  "Type": "Charging",
+          "Parent": "MagicSpell_Template_Interaction_Primary_Charging",
+          "Effects": {
+            "ItemAnimationId": "CastLeftCharging",
+            "ClearAnimationOnFinish": true,
+			"ItemPlayerAnimationsId": "MagicSpell",
+            "ClearSoundEventOnFinish": true,
+            "WorldSoundEventId": "SFX_MagicSpell_Wind_Lvl1_Charging",
+            "LocalSoundEventId": "SFX_MagicSpell_Wind_Lvl1_Charging",
+            "Particles": [
+              {
+                "SystemId": "MagicSpell_Wind_Charging_Left",
+                "PositionOffset": {
+                  "X": -0.3,
+                  "Y": 0,
+                  "Z": 0
+                },
+                "TargetEntityPart": "Entity",
+                "TargetNodeName": "L-Hand",
+                "Scale": 1.0
+              },
+              {
+                "SystemId": "MagicSpell_Wind_Charging_Right",
+                "TargetEntityPart": "Entity",
+                "TargetNodeName": "R-Hand",
+                "Scale": 1.5
+              }
+            ]
+          },
+		  "Next": {
+			"0": {
+			  "Type": "Replace",
+			  "Var": "MagicSpell_Primary_Normal",
+			  "DefaultValue": {
+				"Interactions": [
+				  "MagicSpell_Template_Interaction_Primary_Normal"
+				]
+			  }
+			},
+			"6.0": {
+			  "Type": "Replace",
+			  "Var": "MagicSpell_Primary_Charged",
+			  "DefaultValue": {
+				"Interactions": [
+				  "MagicSpell_Template_Interaction_Primary_Charged"
+				]
+			  }
+			}
+		  }
+        }
+      ]
+    },
+    "MagicSpell_Primary_Normal": {
+      "Interactions": [
+        {
+          "Parent": "MagicSpell_Template_Interaction_Primary_Normal",
+          "Type": "ModifyInventory",
+          "ItemToRemove": {
+            "Id": "Ingredient_Crystal_Wind",
+            "Quantity": 5
+          }
+        }
+      ]
+    },	  
+    "MagicSpell_Primary_Charged": {
+      "Interactions": [
+        {
+          "Parent": "MagicSpell_Template_Interaction_Primary_Charged",
+          "Type": "ModifyInventory",
+          "ItemToRemove": {
+            "Id": "Ingredient_Crystal_Wind",
+            "Quantity": 9
+          }
+        }
+      ]
+    },
+	"MagicSpell_Normal_Attack_Animation": {
+      "Interactions": [
+        {
+          "Parent": "MagicSpell_Normal_Attack_Animation_Template",
+          "Type": "Simple",
+          "Next": "MagicSpell_Wind_Blast_Lvl6_Selector"
+        }
+      ]
+    },
+    "MagicSpell_Charged_Attack_Animation": {
+      "Interactions": [
+        {
+          "Parent": "MagicSpell_Charged_Attack_Animation_Template",
+          "Type": "Simple",
+          "Next": "MagicSpell_Wind_Blast_Lvl10_Selector"
+        }
+      ]
+    }
+  }
+  
+  
+}

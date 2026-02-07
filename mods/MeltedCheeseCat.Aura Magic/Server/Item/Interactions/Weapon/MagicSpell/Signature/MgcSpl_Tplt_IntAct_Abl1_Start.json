@@ -1,0 +1,24 @@
+{
+  "Type": "StatsCondition",
+  "Costs": {
+    "SignatureCharges": 1
+  },
+  "Next": {
+    "Type": "Replace",
+    "Var": "MagicSpell_Primary_Signature_Charging",
+    "DefaultValue": {
+      "Interactions": [
+        "MagicSpell_Template_Interaction_Primary_Signature_Charging"
+      ]
+    }
+  },
+  "Failed": {
+    "Type": "Replace",
+    "Var": "MagicSpell_Primary_Charging",
+    "DefaultValue": {
+      "Interactions": [
+        "MagicSpell_Template_Interaction_Primary_Charging"
+      ]
+    }
+  }	
+}

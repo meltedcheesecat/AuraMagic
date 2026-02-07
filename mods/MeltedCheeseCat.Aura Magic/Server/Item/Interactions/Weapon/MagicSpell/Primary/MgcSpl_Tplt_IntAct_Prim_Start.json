@@ -1,0 +1,10 @@
+{
+  "$Comment": "Primary Start with override var",
+  "Type": "Replace",
+  "Var": "MagicSpell_Primary_IsCharge",
+  "DefaultValue": {
+    "Interactions": [
+      "MgcSpl_Tplt_IntAct_Prim_IsCharge"
+    ]
+  }
+}

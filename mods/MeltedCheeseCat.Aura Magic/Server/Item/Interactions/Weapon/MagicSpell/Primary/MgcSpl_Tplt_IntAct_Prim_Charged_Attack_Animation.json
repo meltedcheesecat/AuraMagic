@@ -1,0 +1,7 @@
+{
+  "Type": "Simple",
+  "Next": {
+    "Type": "Simple",
+    "$Comment": "Template do nothing"
+  }
+}
