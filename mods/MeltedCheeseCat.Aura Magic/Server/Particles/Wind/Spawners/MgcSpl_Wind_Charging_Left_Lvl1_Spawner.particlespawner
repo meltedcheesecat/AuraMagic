@@ -1,5 +1,6 @@
 {
   "RenderMode": "Erosion",
+	"ParticleRotationInfluence": "Billboard",
   "EmitOffset": {
     "X": {
       "Min": 0.0,
@@ -14,7 +15,6 @@
       "Max": 0.1
     }
   },
-  "ParticleRotationInfluence": "Billboard",
   "LinearFiltering": true,
   "LightInfluence": 0,
   "ParticleRotateWithSpawner": false,
@@ -41,44 +41,37 @@
     "ScaleRatioConstraint": "None",
     "Animation": {
       "0": {
-        "FrameIndex": {
-          "Min": 0,
-          "Max": 0
+        "Scale": {
+          "Y": {
+            "Max": 0.1,
+            "Min": 0.1
+          },
+          "X": {
+            "Min": 0.1,
+            "Max": 0.1
+          }
         },
-        "Opacity": 1.0,
+        "Opacity": 0.1,
         "Color": "#71fff0"
       },
       "100": {
         "Scale": {
           "Y": {
-            "Max": 20,
-            "Min": 20
+            "Max": 1.0,
+            "Min": 1.0
           },
           "X": {
-            "Min": 20,
-            "Max": 20
+            "Min": 1.0,
+            "Max": 1.0
           }
         }
       }
     },
-    "InitialAnimationFrame": {
-      "Scale": {
-        "X": {
-          "Min": 0.05,
-          "Max": 0.05
-        },
-        "Y": {
-          "Min": 0.05,
-          "Max": 0.05
-        }
-      },
-      "Opacity": 1,
-      "Color": "#6dffef",
-      "FrameIndex": {
-        "Min": 0,
-        "Max": 0
-      }
-    }
+    "UseSpriteBlending": false
   },
-  "SpawnBurst": true
+  "SpawnBurst": true,
+  "WaveDelay": {
+    "Min": 1,
+    "Max": 1
+  }
 }

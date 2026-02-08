@@ -1,0 +1,105 @@
+{
+  "Type": "ProjectileConfig",
+  "Model": "MgcSpl_Wind_Lvl1_Charged_Model",
+  "Physics": {
+    "Type": "Standard",
+    "Gravity": 15.0,
+    "TerminalVelocityAir": 50,
+    "TerminalVelocityWater": 15,
+    "SticksVertically": false,
+    "Bounciness": 0
+  },
+  "LaunchForce": 15,
+  "SpawnOffset": {
+    "X": -0.6,
+    "Y": 1.5,
+    "Z": 0
+  },
+  "SpawnRotationOffset": {
+    "Pitch": 60.0,
+    "Yaw": -25.0,
+    "Roll": 0
+  },
+  "Interactions": {
+    "ProjectileHit": {
+      "Interactions": [
+        {
+          "Type": "Explode",
+          "Parent": "Explode_Generic",
+          "Config": {
+            "DamageBlocks": false,
+            "EntityDamage": 1,
+            "EntityDamageRadius": 5,
+            "EntityDamageFalloff": 0,
+            "Knockback": {
+              "Force": 40,
+              "RelativeX": 0,
+              "RelativeZ": -8,
+              "VelocityY": 8
+            }
+          },
+          "Effects": {
+            "Particles": [
+              {
+                "SystemId": "MgcSpl_Wind_Charging_Explosion",
+                "TargetEntityPart": "Entity",
+								"Scale": 1.0
+              }
+            ],
+            "WorldSoundEventId": "SFX_Staff_Flame_Fireball_Impact"
+          }
+        },
+        {
+          "$Comment": "Despawn Delay",
+          "Type": "Simple",
+          "RunTime": 0.2
+        },
+        {
+          "$Comment": "Despawn Projectile",
+          "Type": "RemoveEntity",
+          "Entity": "User"
+        }
+      ]
+    },
+    "ProjectileMiss": {
+      "Interactions": [
+        {
+          "Type": "Explode",
+          "Parent": "Explode_Generic",
+          "Config": {
+            "DamageBlocks": false,
+            "EntityDamage": 1,
+            "EntityDamageRadius": 5,
+            "EntityDamageFalloff": 0,
+            "Knockback": {
+              "Force": 40,
+              "RelativeX": 0,
+              "RelativeZ": -8,
+              "VelocityY": 8
+            }
+          },
+          "Effects": {
+            "Particles": [
+              {
+                "SystemId": "MgcSpl_Wind_Charging_Explosion",
+                "TargetEntityPart": "Entity",
+								"Scale": 1.0
+              }
+            ],
+            "WorldSoundEventId": "SFX_Staff_Flame_Fireball_Impact"
+          }
+        },
+        {
+          "$Comment": "Despawn Delay",
+          "Type": "Simple",
+          "RunTime": 0.2
+        },
+        {
+          "$Comment": "Despawn Projectile",
+          "Type": "RemoveEntity",
+          "Entity": "User"
+        }
+      ]
+    }
+  }
+}

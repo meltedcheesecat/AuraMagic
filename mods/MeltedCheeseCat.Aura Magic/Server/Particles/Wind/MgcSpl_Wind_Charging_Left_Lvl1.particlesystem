@@ -1,7 +1,7 @@
 {
   "Spawners": [
     {
-      "SpawnerId": "TestMagicSpellRight_Spawner"
+      "SpawnerId": "MgcSpl_Wind_Charging_Left_Lvl1_Spawner"
     }
   ],
   "IsImportant": false

@@ -45,7 +45,7 @@
                 "LocalSoundEventId": "SFX_Tornado",
                 "Particles": [
                   {
-                    "SystemId": "MagicSpell_Wind_Charging_Left",
+                    "SystemId": "MgcSpl_Wind_Charging_Left_Lvl1",
                     "PositionOffset": {
                       "X": -0.3,
                       "Y": 0,
@@ -56,13 +56,14 @@
                     "Scale": 1.0
                   },
                   {
-                    "SystemId": "TestMagicSpellRight",
+                    "SystemId": "MgcSpl_Wind_Charging_Right_Lvl1",
                     "TargetEntityPart": "Entity",
                     "TargetNodeName": "R-Hand",
                     "Scale": 1.5,
                     "PositionOffset": {
                       "Y": -0.3,
-                      "Z": 0.2
+                      "Z": 0.3,
+                      "X": 0.1
                     }
                   }
                 ]
@@ -109,7 +110,15 @@
             "ItemAnimationId": "Charged",
             "ClearAnimationOnFinish": true
           },
-          "Next": "MgcSpl_IntAct_Wind_Blast_Lvl5_Selector"
+          "Next": {
+            "Type": "Projectile",
+            "Config": "MgcSpl_Proj_Cfg_Wind_Lvl1_Charged",
+            "Next": {
+              "Type": "Simple",
+              "RunTime": 0.2
+            }
+          },
+          "CancelOnItemChange": false
         }
       ]
     },
