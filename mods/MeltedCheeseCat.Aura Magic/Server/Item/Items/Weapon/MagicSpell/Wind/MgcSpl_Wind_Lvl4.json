@@ -1,10 +1,10 @@
 {
   "Parent": "MgcSpl_Tplt_Wind",
   "TranslationProperties": {
-    "Name": "server.items.MagicSpell_Wind_Lvl1.name"
+    "Name": "server.items.MagicSpell_Wind_Lvl4.name"
   },
-  "Texture": "Items/Weapon/MagicSpell/MagicSpellWindLvl1.png",
-  "Model": "Items/Weapon/MagicSpell/MagicSpell.blockymodel",
+  "Texture": "Items/Weapon/MagicSpell/MagicSpellWindLvl4.png",
+  "Model": "Items/Weapon/MagicSpell/MagicSpellLvl4.blockymodel",
   "IconProperties": {
     "Scale": 0.6,
     "Rotation": [
@@ -17,7 +17,7 @@
       1
     ]
   },
-  "Quality": "Common",
+  "Quality": "Epic",
   "InteractionVars": {
     "MagicSpell_Primary_IsCharge": {
       "Interactions": [
@@ -131,7 +131,7 @@
           },
           "Next": {
             "Type": "Projectile",
-            "Config": "MgcSpl_Proj_Cfg_Wind_Lvl1_Charged",
+            "Config": "MgcSpl_Proj_Cfg_Wind_Lvl4_Charged",
             "Next": {
               "Type": "Simple",
               "RunTime": 0.2
@@ -178,14 +178,14 @@
                         "LocalSoundEventId": "SFX_Staff_Flame_Flamethrower_End",
                         "Particles": [
                           {
-                            "SystemId": "MgcSpl_Wind_Shield",
+                            "SystemId": "MgcSpl_Wind_Normal_Up_Lvl1",
                             "PositionOffset": {
                               "X": 0.2,
                               "Y": 0,
                               "Z": 1
                             },
                             "TargetEntityPart": "Entity",
-                            "TargetNodeName": "Origin",
+                            "TargetNodeName": "Chest",
                             "Scale": 1.0
                           }
                         ]
@@ -222,9 +222,9 @@
                           {
                             "SystemId": "MgcSpl_Wind_Normal_Forward_Lvl1",
                             "PositionOffset": {
-                              "X": 0,
+                              "X": 0.2,
                               "Y": 0,
-                              "Z": 0
+                              "Z": 1
                             },
                             "TargetEntityPart": "Entity",
                             "TargetNodeName": "Chest",
@@ -250,5 +250,5 @@
       ]
     }
   },
-  "Icon": "Icons/ItemsGenerated/MgcSpl_Wind_Lvl1.png"
+  "Icon": "Icons/ItemsGenerated/MgcSpl_Wind_Lvl4.png"
 }

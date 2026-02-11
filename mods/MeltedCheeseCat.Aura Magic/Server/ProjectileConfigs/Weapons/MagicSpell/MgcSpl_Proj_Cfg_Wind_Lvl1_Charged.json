@@ -17,7 +17,7 @@
   },
   "SpawnRotationOffset": {
     "Pitch": 30.0,
-    "Yaw": 5,
+    "Yaw": -3,
     "Roll": 0
   },
   "Interactions": {
@@ -28,11 +28,11 @@
           "Parent": "Explode_Generic",
           "Config": {
             "DamageBlocks": false,
-            "EntityDamage": 1,
-            "EntityDamageRadius": 5,
+            "EntityDamage": 30,
+            "EntityDamageRadius": 2.5,
             "EntityDamageFalloff": 0,
             "Knockback": {
-              "Force": 40,
+              "Force": 30,
               "RelativeX": 0,
               "RelativeZ": -8,
               "VelocityY": 8
@@ -43,7 +43,7 @@
               {
                 "SystemId": "MgcSpl_Wind_Charging_Explosion",
                 "TargetEntityPart": "Entity",
-								"Scale": 1.0
+								"Scale": 0.25
               }
             ],
             "WorldSoundEventId": "SFX_Staff_Flame_Fireball_Impact"
@@ -68,11 +68,11 @@
           "Parent": "Explode_Generic",
           "Config": {
             "DamageBlocks": false,
-            "EntityDamage": 1,
-            "EntityDamageRadius": 5,
+            "EntityDamage": 30,
+            "EntityDamageRadius": 2.5,
             "EntityDamageFalloff": 0,
             "Knockback": {
-              "Force": 40,
+              "Force": 30,
               "RelativeX": 0,
               "RelativeZ": -8,
               "VelocityY": 8
@@ -83,7 +83,7 @@
               {
                 "SystemId": "MgcSpl_Wind_Charging_Explosion",
                 "TargetEntityPart": "Entity",
-								"Scale": 1.0
+								"Scale": 0.25
               }
             ],
             "WorldSoundEventId": "SFX_Staff_Flame_Fireball_Impact"

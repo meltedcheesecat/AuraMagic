@@ -1,0 +1,16 @@
+{
+  "Layers": [
+    {
+      "Files": [
+        "Sounds/Weapons/MagicSpell/Wind/MagicSpell_Wind_StartCharge.ogg"
+      ],
+      "Looping": false,
+      "Volume": 0
+    }
+  ],
+  "Volume": 0,
+  "MaxDistance": 20,
+  "PreventSoundInterruption": false,
+  "MusicDuckingVolume": -2,
+  "AudioCategory": "AudioCat_Magic_Staff"
+}

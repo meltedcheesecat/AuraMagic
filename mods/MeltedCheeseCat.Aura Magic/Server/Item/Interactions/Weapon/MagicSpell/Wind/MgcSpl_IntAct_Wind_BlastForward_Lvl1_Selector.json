@@ -10,7 +10,7 @@
     "ExtendRight": 1.5,
     "ExtendBottom": 1,
     "StartDistance": 0.1,
-    "EndDistance": 5
+    "EndDistance": 3
   },
   "HitBlock": {
     "Interactions": [
@@ -23,7 +23,7 @@
         "Type": "DamageEntity",
         "DamageCalculator": {
           "BaseDamage": {
-            "Physical": 0
+            "Physical": 10
           }
         },
         "DamageEffects": {

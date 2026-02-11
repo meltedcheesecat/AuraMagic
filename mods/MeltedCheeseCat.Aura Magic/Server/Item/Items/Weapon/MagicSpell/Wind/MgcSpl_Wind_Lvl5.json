@@ -1,109 +1,254 @@
 {
-  "Parent": "MagicSpell_Wind_Template",
+  "Parent": "MgcSpl_Tplt_Wind",
   "TranslationProperties": {
     "Name": "server.items.MagicSpell_Wind_Lvl5.name"
   },
-  "Model": "Items/Weapon/MagicSpell/MagicSpell.blockymodel",
-  "Quality": "Common",
+  "Texture": "Items/Weapon/MagicSpell/MagicSpellWindLvl5.png",
+  "Model": "Items/Weapon/MagicSpell/MagicSpellLvl5.blockymodel",
+  "IconProperties": {
+    "Scale": 0.6,
+    "Rotation": [
+      1,
+      225,
+      29
+    ],
+    "Translation": [
+      8,
+      1
+    ]
+  },
+  "Quality": "Legendary",
   "InteractionVars": {
+    "MagicSpell_Primary_IsCharge": {
+      "Interactions": [
+        {
+          "Type": "Charging",
+          "Parent": "MgcSpl_Tplt_IntAct_Prim_IsCharge",
+          "RunTime": 0.25,
+          "Effects": {
+            "ItemPlayerAnimationsId": "MgcSpl",
+            "ItemAnimationId": "Start",
+            "ClearAnimationOnFinish": true
+          }
+        }
+      ]
+    },
     "MagicSpell_Primary_Charging": {
       "Interactions": [
         {
-		  "Type": "Charging",
-          "Parent": "MagicSpell_Template_Interaction_Primary_Charging",
+          "Type": "Charging",
+          "Parent": "MgcSpl_Tplt_IntAct_Prim_Charging",
+          "HorizontalSpeedMultiplier": 0.2,
           "Effects": {
-            "ItemAnimationId": "CastLeftCharging",
+            "ItemPlayerAnimationsId": "MgcSpl",
+            "ItemAnimationId": "StartCharge",
             "ClearAnimationOnFinish": true,
-			"ItemPlayerAnimationsId": "MagicSpell",
             "ClearSoundEventOnFinish": true,
-            "WorldSoundEventId": "SFX_MagicSpell_Wind_Lvl1_Charging",
-            "LocalSoundEventId": "SFX_MagicSpell_Wind_Lvl1_Charging",
-            "Particles": [
-              {
-                "SystemId": "MagicSpell_Wind_Charging_Left",
-                "PositionOffset": {
-                  "X": -0.3,
-                  "Y": 0,
-                  "Z": 0
-                },
-                "TargetEntityPart": "Entity",
-                "TargetNodeName": "L-Hand",
-                "Scale": 1.0
-              },
-              {
-                "SystemId": "MagicSpell_Wind_Charging_Right",
-                "TargetEntityPart": "Entity",
-                "TargetNodeName": "R-Hand",
-                "Scale": 1.5
-              }
-            ]
+            "WorldSoundEventId": "SFX_MgcSpl_Wind_StartCharge",
+            "LocalSoundEventId": "SFX_MgcSpl_Wind_StartCharge"
           },
-		  "Next": {
-			"0": {
-			  "Type": "Replace",
-			  "Var": "MagicSpell_Primary_Normal",
-			  "DefaultValue": {
-				"Interactions": [
-				  "MagicSpell_Template_Interaction_Primary_Normal"
-				]
-			  }
-			},
-			"6.0": {
-			  "Type": "Replace",
-			  "Var": "MagicSpell_Primary_Charged",
-			  "DefaultValue": {
-				"Interactions": [
-				  "MagicSpell_Template_Interaction_Primary_Charged"
-				]
-			  }
-			}
-		  }
+          "Next": {
+            "0": "MgcSpl_Tplt_IntAct_No_Shards_Or_Fail",
+            "0.5": {
+              "Type": "Charging",
+              "HorizontalSpeedMultiplier": 0.2,
+              "Effects": {
+                "ItemPlayerAnimationsId": "MgcSpl",
+                "ItemAnimationId": "Charging",
+                "ClearAnimationOnFinish": true,
+                "ClearSoundEventOnFinish": true,
+                "WorldSoundEventId": "SFX_MgcSpl_Wind_Lvl1_Charging",
+                "LocalSoundEventId": "SFX_MgcSpl_Wind_Lvl1_Charging",
+                "Particles": [
+                  {
+                    "SystemId": "MgcSpl_Wind_Charging_Left_Lvl1",
+                    "PositionOffset": {
+                      "X": -0.3,
+                      "Y": 0,
+                      "Z": 0
+                    },
+                    "TargetEntityPart": "Entity",
+                    "TargetNodeName": "L-Hand",
+                    "Scale": 1.0
+                  },
+                  {
+                    "SystemId": "MgcSpl_Wind_Charging_Right_Lvl1",
+                    "TargetEntityPart": "Entity",
+                    "TargetNodeName": "R-Hand",
+                    "Scale": 1.5,
+                    "PositionOffset": {
+                      "Y": -0.3,
+                      "Z": 0.3,
+                      "X": 0.1
+                    }
+                  }
+                ]
+              },
+              "Next": {
+                "0": "MgcSpl_Tplt_IntAct_No_Shards_Or_Fail",
+                "3.25": {
+                  "Type": "Replace",
+                  "Var": "MagicSpell_Primary_Charged",
+                  "DefaultValue": {
+                    "Interactions": [
+                      "MgcSpl_Tplt_IntAct_Prim_Charged"
+                    ]
+                  }
+                }
+              },
+              "DisplayProgress": true
+            }
+          },
+          "DisplayProgress": false
         }
       ]
     },
-    "MagicSpell_Primary_Normal": {
-      "Interactions": [
-        {
-          "Parent": "MagicSpell_Template_Interaction_Primary_Normal",
-          "Type": "ModifyInventory",
-          "ItemToRemove": {
-            "Id": "Ingredient_Crystal_Wind",
-            "Quantity": 5
-          }
-        }
-      ]
-    },	  
     "MagicSpell_Primary_Charged": {
       "Interactions": [
         {
-          "Parent": "MagicSpell_Template_Interaction_Primary_Charged",
           "Type": "ModifyInventory",
+          "Parent": "MgcSpl_Tplt_IntAct_Prim_Charged",
           "ItemToRemove": {
             "Id": "Ingredient_Crystal_Wind",
-            "Quantity": 9
+            "Quantity": 4
           }
-        }
-      ]
-    },
-	"MagicSpell_Normal_Attack_Animation": {
-      "Interactions": [
-        {
-          "Parent": "MagicSpell_Normal_Attack_Animation_Template",
-          "Type": "Simple",
-          "Next": "MagicSpell_Wind_Blast_Lvl6_Selector"
         }
       ]
     },
     "MagicSpell_Charged_Attack_Animation": {
       "Interactions": [
         {
-          "Parent": "MagicSpell_Charged_Attack_Animation_Template",
           "Type": "Simple",
-          "Next": "MagicSpell_Wind_Blast_Lvl10_Selector"
+          "Parent": "MgcSpl_Tplt_IntAct_Prim_Charged_Attack_Animation",
+          "RunTime": 0.25,
+          "Effects": {
+            "ItemPlayerAnimationsId": "MgcSpl",
+            "ItemAnimationId": "Charged",
+            "ClearAnimationOnFinish": true,
+            "ClearSoundEventOnFinish": true,
+            "WorldSoundEventId": "SFX_Bow_T2_Signature_Shoot",
+            "LocalSoundEventId": "SFX_Bow_T2_Signature_Shoot_Local"
+          },
+          "Next": {
+            "Type": "Projectile",
+            "Config": "MgcSpl_Proj_Cfg_Wind_Lvl5_Charged",
+            "Next": {
+              "Type": "Simple",
+              "RunTime": 0.2
+            }
+          },
+          "CancelOnItemChange": false
+        }
+      ]
+    },
+    "MagicSpell_Primary_Normal": {
+      "Interactions": [
+        {
+          "Type": "ModifyInventory",
+          "Parent": "MgcSpl_Tplt_IntAct_Prim_Normal",
+          "ItemToRemove": {
+            "Id": "Ingredient_Crystal_Wind",
+            "Quantity": 1
+          }
+        }
+      ]
+    },
+    "MagicSpell_Normal_Attack_Animation": {
+      "Interactions": [
+        {
+          "Parent": "MgcSpl_Tplt_IntAct_Prim_Normal_Attack_Animation",
+          "Type": "Chaining",
+          "ChainingAllowance": 1,
+          "ChainId": "MgcSplNormalWind",
+          "Next": [
+            {
+              "Type": "Parallel",
+              "Interactions": [
+                {
+                  "Interactions": [
+                    {
+                      "Type": "Simple",
+                      "RunTime": 0.25,
+                      "Effects": {
+                        "ItemPlayerAnimationsId": "MgcSpl",
+                        "ItemAnimationId": "NormalUp",
+                        "ClearAnimationOnFinish": true,
+                        "ClearSoundEventOnFinish": true,
+                        "WorldSoundEventId": "SFX_Staff_Flame_Flamethrower_End",
+                        "LocalSoundEventId": "SFX_Staff_Flame_Flamethrower_End",
+                        "Particles": [
+                          {
+                            "SystemId": "MgcSpl_Wind_Normal_Up_Lvl1",
+                            "PositionOffset": {
+                              "X": 0.2,
+                              "Y": 0,
+                              "Z": 1
+                            },
+                            "TargetEntityPart": "Entity",
+                            "TargetNodeName": "Chest",
+                            "Scale": 1.0
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "Interactions": [
+                    {
+                      "Type": "Simple",
+                      "Next": "MgcSpl_IntAct_Wind_BlastUp_Lvl1_Selector"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Type": "Parallel",
+              "Interactions": [
+                {
+                  "Interactions": [
+                    {
+                      "Type": "Simple",
+                      "RunTime": 0.25,
+                      "Effects": {
+                        "ItemPlayerAnimationsId": "MgcSpl",
+                        "ItemAnimationId": "NormalFront",
+                        "ClearAnimationOnFinish": true,
+                        "ClearSoundEventOnFinish": true,
+                        "WorldSoundEventId": "SFX_Staff_Flame_Flamethrower_End",
+                        "LocalSoundEventId": "SFX_Staff_Flame_Flamethrower_End",
+                        "Particles": [
+                          {
+                            "SystemId": "MgcSpl_Wind_Normal_Forward_Lvl1",
+                            "PositionOffset": {
+                              "X": 0.2,
+                              "Y": 0,
+                              "Z": 1
+                            },
+                            "TargetEntityPart": "Entity",
+                            "TargetNodeName": "Chest",
+                            "Scale": 1.0
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "Interactions": [
+                    {
+                      "Type": "Simple",
+                      "Next": "MgcSpl_IntAct_Wind_BlastForward_Lvl1_Selector"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     }
-  }
-  
-  
+  },
+  "Icon": "Icons/ItemsGenerated/MgcSpl_Wind_Lvl5.png"
 }

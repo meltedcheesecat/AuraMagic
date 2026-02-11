@@ -1,13 +1,14 @@
 {
   "RenderMode": "Erosion",
   "ParticleRotationInfluence": "None",
+  "LinearFiltering": false,
+  "LightInfluence": 0,
   "MaxConcurrentParticles": 8,
+  "LifeSpan": 2.25,
   "ParticleLifeSpan": {
     "Min": 1.0,
     "Max": 1.0
   },
-  "TrailSpawnerPositionMultiplier": 1,
-  "TrailSpawnerRotationMultiplier": 1,
   "SpawnRate": {
     "Min": 8,
     "Max": 8
@@ -163,7 +164,5 @@
       },
       "Opacity": 0.1
     }
-  },
-  "LinearFiltering": true,
-  "LifeSpan": 2.25
+  }
 }

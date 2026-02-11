@@ -1,0 +1,67 @@
+{
+  "RenderMode": "BlendLinear",
+  "ParticleRotationInfluence": "None",
+  "LinearFiltering": false,
+  "LightInfluence": 0,
+  "ParticleRotateWithSpawner": true,
+  "MaxConcurrentParticles": 1,
+  "ParticleLifeSpan": {
+    "Min": 2.0,
+    "Max": 2.0
+  },
+  "SpawnRate": {
+    "Min": 1,
+    "Max": 1
+  },
+  "Particle": {
+    "Texture": "Particles/Textures/MagicSpell/WindShieldPart5.png",
+    "ScaleRatioConstraint": "None",
+    "Animation": {
+      "0": {
+        "Color": "#5affe9"
+      },
+      "100": {
+        "Color": "#5affe9"
+      }
+    },
+    "UseSpriteBlending": false,
+    "InitialAnimationFrame": {
+      "Rotation": {
+        "Y": {
+          "Min": 0,
+          "Max": 0
+        },
+        "Z": {
+          "Min": 0,
+          "Max": 0
+        },
+        "X": {
+          "Max": 90,
+          "Min": 90
+        }
+      },
+      "Scale": {
+        "X": {
+          "Min": 0.75,
+          "Max": 0.75
+        },
+        "Y": {
+          "Min": 0.75,
+          "Max": 0.75
+        }
+      },
+      "Opacity": 1,
+      "Color": "#5affe9"
+    },
+    "SoftParticles": "Enable",
+    "SoftParticlesFadeFactor": 1,
+    "UVOption": "None"
+  },
+  "SpawnBurst": true,
+  "UseEmitDirection": false,
+  "TotalParticles": {
+    "Min": 1,
+    "Max": 1
+  },
+  "Shape": "Sphere"
+}

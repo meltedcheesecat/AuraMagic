@@ -1,0 +1,157 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "MgcSpl_Wind_Shield_Spawner",
+      "PositionOffset": {
+        "X": -0.2,
+        "Z": -1,
+        "Y": 2.05
+      },
+      "FixedRotation": false,
+      "RotationOffset": {
+        "Yaw": 0,
+        "Pitch": 0,
+        "Roll": 0
+      }
+    },
+    {
+      "SpawnerId": "MgcSpl_Wind_Shield_Spawner",
+      "PositionOffset": {
+        "X": -0.2,
+        "Y": 1.48,
+        "Z": -1.87
+      },
+      "RotationOffset": {
+        "Yaw": 180,
+        "Roll": 0,
+        "Pitch": 66
+      }
+    },
+    {
+      "SpawnerId": "MgcSpl_Wind_Shield_Spawner",
+      "PositionOffset": {
+        "Y": 1.48,
+        "X": 0.63,
+        "Z": -1.27
+      },
+      "RotationOffset": {
+        "Yaw": 108,
+        "Pitch": 66,
+        "Roll": 0
+      }
+    },
+    {
+      "SpawnerId": "MgcSpl_Wind_Shield_Spawner",
+      "PositionOffset": {
+        "X": -1.03,
+        "Y": 1.48,
+        "Z": -1.27
+      },
+      "RotationOffset": {
+        "Yaw": 252,
+        "Pitch": 66
+      }
+    },
+    {
+      "SpawnerId": "MgcSpl_Wind_Shield_Spawner",
+      "PositionOffset": {
+        "X": 0.3,
+        "Y": 1.48,
+        "Z": -0.3
+      },
+      "RotationOffset": {
+        "Yaw": 36,
+        "Pitch": 66
+      }
+    },
+    {
+      "SpawnerId": "MgcSpl_Wind_Shield_Spawner",
+      "PositionOffset": {
+        "X": -0.73,
+        "Y": 1.48,
+        "Z": -0.3
+      },
+      "RotationOffset": {
+        "Yaw": 324,
+        "Pitch": 66
+      }
+    },
+    {
+      "SpawnerId": "MgcSpl_Wind_Shield_Spawner",
+      "PositionOffset": {
+        "X": 0.32,
+        "Y": 0.57,
+        "Z": -1.7
+      },
+      "RotationOffset": {
+        "Yaw": 144,
+        "Roll": 0,
+        "Pitch": -66
+      }
+    },
+    {
+      "SpawnerId": "MgcSpl_Wind_Shield_Spawner",
+      "PositionOffset": {
+        "Y": 0.57,
+        "X": 0.63,
+        "Z": -0.73
+      },
+      "RotationOffset": {
+        "Yaw": 72,
+        "Pitch": -66,
+        "Roll": 0
+      }
+    },
+    {
+      "SpawnerId": "MgcSpl_Wind_Shield_Spawner",
+      "PositionOffset": {
+        "X": -0.71,
+        "Y": 0.57,
+        "Z": -1.7
+      },
+      "RotationOffset": {
+        "Yaw": 216,
+        "Pitch": -66
+      }
+    },
+    {
+      "SpawnerId": "MgcSpl_Wind_Shield_Spawner",
+      "PositionOffset": {
+        "X": -0.23,
+        "Y": 0.57,
+        "Z": -0.13
+      },
+      "RotationOffset": {
+        "Yaw": 0,
+        "Pitch": -66
+      }
+    },
+    {
+      "SpawnerId": "MgcSpl_Wind_Shield_Spawner",
+      "PositionOffset": {
+        "X": -1.06,
+        "Y": 0.57,
+        "Z": -0.73
+      },
+      "RotationOffset": {
+        "Yaw": 288,
+        "Pitch": -66
+      }
+    },
+    {
+      "SpawnerId": "MgcSpl_Wind_Shield_Spawner",
+      "PositionOffset": {
+        "X": -0.2,
+        "Y": 0,
+        "Z": -1
+      },
+      "FixedRotation": false,
+      "RotationOffset": {
+        "Yaw": 180,
+        "Pitch": 0,
+        "Roll": 0
+      }
+    }
+  ],
+  "IsImportant": false
+}

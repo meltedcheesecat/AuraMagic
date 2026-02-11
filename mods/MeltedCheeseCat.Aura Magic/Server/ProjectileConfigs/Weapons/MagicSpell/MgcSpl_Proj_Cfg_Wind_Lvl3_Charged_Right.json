@@ -28,11 +28,11 @@
           "Parent": "Explode_Generic",
           "Config": {
             "DamageBlocks": false,
-            "EntityDamage": 15,
-            "EntityDamageRadius": 2.5,
+            "EntityDamage": 25,
+            "EntityDamageRadius": 4.5,
             "EntityDamageFalloff": 0,
             "Knockback": {
-              "Force": 30,
+              "Force": 35,
               "RelativeX": 0,
               "RelativeZ": -8,
               "VelocityY": 8
@@ -43,11 +43,23 @@
               {
                 "SystemId": "MgcSpl_Wind_Charging_Explosion",
                 "TargetEntityPart": "Entity",
-                "Scale": 0.25
+								"Scale": 0.45
               }
             ],
             "WorldSoundEventId": "SFX_Staff_Flame_Fireball_Impact"
           }
+        },
+        {
+					"Type": "Projectile",
+					"Config": "MgcSpl_Proj_Cfg_Wind_Lvl2_Charged_Right",
+					"Next": {
+						"Type": "Projectile",
+					  "Config": "MgcSpl_Proj_Cfg_Wind_Lvl2_Charged_Left",
+					  "Next": {
+				  		"Type": "Simple",
+			  			"RunTime": 0.2
+		  			}
+					}
         },
         {
           "$Comment": "Despawn Delay",
@@ -68,11 +80,11 @@
           "Parent": "Explode_Generic",
           "Config": {
             "DamageBlocks": false,
-            "EntityDamage": 15,
-            "EntityDamageRadius": 2.5,
+            "EntityDamage": 25,
+            "EntityDamageRadius": 4.5,
             "EntityDamageFalloff": 0,
             "Knockback": {
-              "Force": 25,
+              "Force": 45,
               "RelativeX": 0,
               "RelativeZ": -8,
               "VelocityY": 8
@@ -83,11 +95,23 @@
               {
                 "SystemId": "MgcSpl_Wind_Charging_Explosion",
                 "TargetEntityPart": "Entity",
-                "Scale": 0.25
+								"Scale": 0.45
               }
             ],
             "WorldSoundEventId": "SFX_Staff_Flame_Fireball_Impact"
           }
+        },
+        {
+					"Type": "Projectile",
+					"Config": "MgcSpl_Proj_Cfg_Wind_Lvl2_Charged_Right",
+					"Next": {
+						"Type": "Projectile",
+					  "Config": "MgcSpl_Proj_Cfg_Wind_Lvl2_Charged_Left",
+					  "Next": {
+				  		"Type": "Simple",
+			  			"RunTime": 0.2
+		  			}
+					}
         },
         {
           "$Comment": "Despawn Delay",
