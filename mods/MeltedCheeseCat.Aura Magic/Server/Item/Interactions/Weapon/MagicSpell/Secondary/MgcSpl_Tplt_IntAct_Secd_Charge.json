@@ -1,0 +1,10 @@
+{
+  "$Comment": "Secondary Charging with override var",
+  "Type": "Replace",
+  "Var": "MagicSpell_Secondary_Charging",
+  "DefaultValue": {
+    "Interactions": [
+      "MgcSpl_Tplt_IntAct_Secd_Charging"
+    ]
+  }
+}

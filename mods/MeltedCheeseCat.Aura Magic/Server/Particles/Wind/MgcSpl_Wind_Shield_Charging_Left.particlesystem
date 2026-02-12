@@ -1,0 +1,8 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "MgcSpl_Wind_Shield_Charging_Left_Spawner"
+    }
+  ],
+  "IsImportant": false
+}

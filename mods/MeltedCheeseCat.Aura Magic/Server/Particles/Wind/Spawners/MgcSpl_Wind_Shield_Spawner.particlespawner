@@ -6,22 +6,40 @@
   "ParticleRotateWithSpawner": true,
   "MaxConcurrentParticles": 1,
   "ParticleLifeSpan": {
-    "Min": 2.0,
-    "Max": 2.0
+    "Min": 1.0,
+    "Max": 1.0
   },
   "SpawnRate": {
-    "Min": 1,
-    "Max": 1
+    "Min": 5,
+    "Max": 5
   },
   "Particle": {
     "Texture": "Particles/Textures/MagicSpell/WindShieldPart5.png",
     "ScaleRatioConstraint": "None",
     "Animation": {
       "0": {
-        "Color": "#5affe9"
+        "Scale": {
+          "Y": {
+            "Max": 1.0,
+            "Min": 1.0
+          },
+          "X": {
+            "Min": 1.0,
+            "Max": 1.0
+          }
+        }
       },
       "100": {
-        "Color": "#5affe9"
+        "Scale": {
+          "Y": {
+            "Max": 1.0,
+            "Min": 1.0
+          },
+          "X": {
+            "Min": 1.0,
+            "Max": 1.0
+          }
+        }
       }
     },
     "UseSpriteBlending": false,
@@ -58,7 +76,6 @@
     "UVOption": "None"
   },
   "SpawnBurst": true,
-  "UseEmitDirection": false,
   "TotalParticles": {
     "Min": 1,
     "Max": 1

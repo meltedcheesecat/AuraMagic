@@ -44,6 +44,21 @@
       "FirstPerson": "Characters/Animations/Items/Main_Handed/MagicSpell/Attacks/MgcSpl_Normal_Forward_FPS.blockyanim",
       "ThirdPersonFace": "Characters/Animations/Expressions/Rage.blockyanim",
       "Speed": 1
+    },
+    "StartShieldCharge": {
+      "ThirdPerson": "Characters/Animations/Items/Main_Handed/MagicSpell/Attacks/MgcSpl_Shield_Start_Charge.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/Main_Handed/MagicSpell/Attacks/MgcSpl_Shield_Start_Charge_Moving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/Main_Handed/MagicSpell/Attacks/MgcSpl_Shield_Start_Charge_FPS.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Frown.blockyanim",
+      "Speed": 1
+    },	
+    "ShieldCharging": {
+      "ThirdPerson": "Characters/Animations/Items/Main_Handed/MagicSpell/Attacks/MgcSpl_Shield_Charging.blockyanim",
+      "ThirdPersonMoving": "Characters/Animations/Items/Main_Handed/MagicSpell/Attacks/MgcSpl_Shield_Charging_Moving.blockyanim",
+      "FirstPerson": "Characters/Animations/Items/Main_Handed/MagicSpell/Attacks/MgcSpl_Shield_Charging_FPS.blockyanim",
+      "ThirdPersonFace": "Characters/Animations/Expressions/Frown.blockyanim",
+      "Speed": 1,
+      "Looping": true
     }
   },
   "Camera": {

@@ -1,0 +1,9 @@
+{
+  "rendering:attachment": {
+    "attachmentId": "my_mod:wind_shield",
+    "bone": "chest",
+    "offset": [0, 1.0, 0.5],
+    "rotation": [0, 0, 0],
+    "isStatic": false
+  }
+}

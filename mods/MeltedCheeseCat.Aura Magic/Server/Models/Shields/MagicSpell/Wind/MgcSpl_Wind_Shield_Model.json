@@ -1,0 +1,33 @@
+{
+  "Model": "Items/Projectiles/MagicSpell/Wind/MagicSpell_Projectile_BasicModel.blockymodel",
+  "Texture": "Items/Projectiles/MagicSpell/Wind/MgcSpl_Wind_Projectile.png",
+  "HitBox": {
+		"Min": {
+      "X": -0.1,
+      "Y": -0.1,
+      "Z": -0.1
+    },
+    "Max": {
+      "X": 0.1,
+      "Y": 0.1,
+      "Z": 0.1
+    }
+  },
+  "MinScale": 1.0,
+  "MaxScale": 1,
+  "Particles": [
+    {
+      "PositionOffset": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "SystemId": "MgcSpl_Wind_Shield",
+      "TargetNodeName": ""
+    }
+  ],
+  "Light": {
+    "Color": "#8fd",
+    "Radius": 1
+  }
+}

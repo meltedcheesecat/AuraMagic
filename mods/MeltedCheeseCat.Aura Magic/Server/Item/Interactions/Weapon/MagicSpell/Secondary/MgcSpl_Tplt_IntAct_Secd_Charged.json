@@ -1,0 +1,18 @@
+{
+	"$Comment": "Secondary is Charged remove consumables from inventory",
+  "Type": "ModifyInventory",
+  "ItemToRemove": {
+	"Id": "Weapon_Arrow_Crude",
+	"Quantity": 1
+  },
+  "Next": {  
+	"Type": "Replace",
+	"Var": "MagicSpell_Charged_Shield_Create_Animation",
+	"DefaultValue": {
+	  "Interactions": [
+		"MgcSpl_Tplt_IntAct_Secd_Charged_Shield_Create_Animation"
+	  ]
+	}
+  },
+  "Failed": "MgcSpl_Tplt_IntAct_No_Shards_Or_Fail"
+}
