@@ -1,0 +1,15 @@
+{
+  "Group": "MeltedCheeseCat",
+  "Name": "Aura Magic",
+  "Version": "1.0.0",
+  "Description": "",
+  "Authors": [],
+  "Website": "",
+  "Dependencies": {},
+  "OptionalDependencies": {},
+  "LoadBefore": {},
+  "DisabledByDefault": false,
+  "IncludesAssetPack": false,
+  "SubPlugins": [],
+  "Main": "me.melchscat.aura.AuraPlugin"
+}
