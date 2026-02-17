@@ -1,7 +1,8 @@
 {
   "Group": "MeltedCheeseCat",
-  "Name": "Aura Magic",
-  "Version": "1.0.0",
+  "Name": "Aura Magic Plugin",
+  "Version": "0.0.1",
+  "ServerVersion": "2026.02.17-255364b8e",
   "Description": "",
   "Authors": [],
   "Website": "",

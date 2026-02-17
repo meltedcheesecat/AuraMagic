@@ -374,7 +374,8 @@
     "MagicSpell_Secondary_Normal_Shield_Focus_Animation": {
       "Interactions": [
         {
-          "Type": "Mount"
+          "Type": "AuraMagicShield",
+          "CurrentHealth": 11
         }
       ]
     }

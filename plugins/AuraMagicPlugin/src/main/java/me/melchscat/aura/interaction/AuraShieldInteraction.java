@@ -70,11 +70,31 @@ public class AuraShieldInteraction extends Interaction {
     @Override
     protected void simulateTick0(boolean b, float v, @NonNullDecl InteractionType interactionType, @NonNullDecl InteractionContext interactionContext, @NonNullDecl CooldownHandler cooldownHandler) {
         // Tell the client when to stop the animation
+
+        EventTitleUtil.showEventTitleToWorld(
+                Message.raw("simulateTick0"),
+                Message.raw("Sub Title"),
+                false,
+                (String)null,
+                4.0F,
+                1.5F,
+                1.5F,
+                interactionContext.getEntity().getStore());
+
         interactionContext.getState().state = (v > 5.0f) ? InteractionState.Finished : InteractionState.NotFinished;
     }
 
     @Override
     public boolean walk(@NonNullDecl Collector collector, @NonNullDecl InteractionContext interactionContext) {
+        EventTitleUtil.showEventTitleToWorld(
+                Message.raw("walk"),
+                Message.raw("Sub Title"),
+                false,
+                (String)null,
+                4.0F,
+                1.5F,
+                1.5F,
+                interactionContext.getEntity().getStore());
         return false; // No child interactions to report
     }
 
@@ -85,7 +105,7 @@ public class AuraShieldInteraction extends Interaction {
 
     @Override
     public WaitForDataFrom getWaitForDataFrom() {
-        return WaitForDataFrom.None; // Don't wait for client confirmation
+        return WaitForDataFrom.Client; // Don't wait for client confirmation
     }
 
     @NonNullDecl
