@@ -7,11 +7,13 @@ import com.hypixel.hytale.assetstore.map.IndexedLookupTableAssetMap;
 import com.hypixel.hytale.codec.Codec;
 import com.hypixel.hytale.component.ComponentType;
 import com.hypixel.hytale.server.core.asset.HytaleAssetStore;
+import com.hypixel.hytale.server.core.modules.interaction.interaction.config.Interaction;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import me.melchscat.aura.asset.AuraShieldAsset;
 import me.melchscat.aura.component.AuraShieldComponent;
+import me.melchscat.aura.interaction.AuraShieldInteraction;
 import org.checkerframework.checker.nullness.compatqual.NonNullDecl;
 
 public class AuraPlugin extends JavaPlugin {
@@ -31,7 +33,7 @@ public class AuraPlugin extends JavaPlugin {
     protected void setup() {
         this.auraShieldComponentType = EntityStore.REGISTRY.registerComponent(AuraShieldComponent.class, AuraShieldComponent::new);
 
-        // 1. Create the specialized AssetCodec using the 'wrap' method
+        /*// 1. Create the specialized AssetCodec using the 'wrap' method
         AssetCodec<String, AuraShieldAsset> assetCodec = AssetBuilderCodec.wrap(
                 AuraShieldAsset.CODEC,        // Your existing BuilderCodec
                 Codec.STRING,                 // The Key type (String)
@@ -49,6 +51,12 @@ public class AuraPlugin extends JavaPlugin {
                         .setKeyFunction(AuraShieldAsset::getId)
                         .setReplaceOnRemove(key -> null)
                         .build()
+        );*/
+
+        Interaction.CODEC.register(
+                "AuraMagicShield",  // This MUST match the "Type" in your JSON
+                AuraShieldInteraction.class,
+                AuraShieldInteraction.CODEC
         );
     }
 
