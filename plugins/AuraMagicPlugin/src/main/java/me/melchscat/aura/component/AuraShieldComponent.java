@@ -1,34 +1,31 @@
 package me.melchscat.aura.component;
 
+import com.hypixel.hytale.codec.Codec;
+import com.hypixel.hytale.codec.KeyedCodec;
+import com.hypixel.hytale.codec.builder.BuilderCodec;
 import com.hypixel.hytale.component.Component;
-import com.hypixel.hytale.component.ComponentType;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
-import me.melchscat.aura.AuraPlugin;
-
-import javax.annotation.Nonnull;
 
 public class AuraShieldComponent implements Component<EntityStore> {
-    private float currentHealth = 0f;
+    // We use a Codec so we can save/load or sync this data
+    public static final BuilderCodec<AuraShieldComponent> CODEC =
+            BuilderCodec.builder(AuraShieldComponent.class, AuraShieldComponent::new)
+                    .append(new KeyedCodec<>("Health", Codec.FLOAT),
+                            (comp,
+                             value) -> comp.health = value,
+                            comp -> comp.health)
+                    .add()
+                    .build();
 
-    public static ComponentType<EntityStore, AuraShieldComponent> getAuraComponentType() {
-        return AuraPlugin.getInstance().getAuraShieldComponentType();
+    public float health = 0f;
+    public float addedHealth = 0f;
+
+    public AuraShieldComponent() {}
+
+    @Override
+    public Component<EntityStore> clone() {
+        AuraShieldComponent copy = new AuraShieldComponent();
+        copy.health = this.health;
+        return copy;
     }
-
-    public AuraShieldComponent() {
-    }
-
-    private AuraShieldComponent(@Nonnull AuraShieldComponent other) {
-        this.currentHealth = other.currentHealth;
-    }
-
-    public float getCurrentHealth() {
-        return currentHealth;
-    }
-
-    public void setCurrentHealth(float currentHealth) {
-        this.currentHealth = currentHealth;
-    }
-
-    @Nonnull
-    public Component<EntityStore> clone() {return new AuraShieldComponent(this); }
 }

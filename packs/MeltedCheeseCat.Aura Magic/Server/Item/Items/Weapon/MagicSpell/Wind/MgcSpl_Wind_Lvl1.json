@@ -360,12 +360,8 @@
             "LocalSoundEventId": "SFX_Bow_T2_Signature_Shoot_Local"
           },
           "Next": {
-            "Type": "Projectile",
-            "Config": "MgcSpl_Proj_Cfg_Wind_Shield",
-            "Next": {
-              "Type": "Simple",
-              "RunTime": 0.2
-            }
+            "Type": "ChargeAuraShield",
+            "HealthAdded": 12
           },
           "CancelOnItemChange": false
         }
@@ -374,8 +370,26 @@
     "MagicSpell_Secondary_Normal_Shield_Focus_Animation": {
       "Interactions": [
         {
-          "Type": "AuraMagicShield",
-          "CurrentHealth": 11
+          "Type": "Simple",
+          "Parent": "MgcSpl_Tplt_IntAct_Secd_Normal_Shield_Focus_Animation",
+          "RunTime": 0.25,
+          "Effects": {
+            "ItemPlayerAnimationsId": "MgcSpl",
+            "ItemAnimationId": "Charged",
+            "ClearAnimationOnFinish": true,
+            "ClearSoundEventOnFinish": true,
+            "WorldSoundEventId": "SFX_Bow_T2_Signature_Shoot",
+            "LocalSoundEventId": "SFX_Bow_T2_Signature_Shoot_Local"
+          },
+          "Next": {
+            "Type": "Projectile",
+            "Config": "MgcSpl_Proj_Cfg_Wind_Shield",
+            "Next": {
+              "Type": "Simple",
+              "RunTime": 0.2
+            }
+          },
+          "CancelOnItemChange": false
         }
       ]
     }
