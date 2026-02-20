@@ -17,6 +17,7 @@ import static com.hypixel.hytale.logger.HytaleLogger.getLogger;
 
 public class AuraShieldSystem extends EntityTickingSystem<EntityStore> {
     private ComponentType<EntityStore, AuraShieldComponent> auraShieldComponentType;
+    private float healthFadeTimer = 0f;
 
     @Override
     public Query<EntityStore> getQuery() {
@@ -27,7 +28,7 @@ public class AuraShieldSystem extends EntityTickingSystem<EntityStore> {
     }
 
     @Override
-    public void tick(float v,
+    public void tick(float dt,
                      int index,
                      @NonNullDecl ArchetypeChunk<EntityStore> archetypeChunk,
                      @NonNullDecl Store<EntityStore> store,
@@ -41,20 +42,27 @@ public class AuraShieldSystem extends EntityTickingSystem<EntityStore> {
             return;
 
         if (auraShield.addedHealth > 0.0F){
-            String outstr = "Shield Health Updated";
-            outstr += ", AddedHealth:";
-            outstr += Float.toString(auraShield.addedHealth);
-            outstr += ", PrevHealth:";
-            outstr += Float.toString(auraShield.health);
+            // if our health is zero and we are adding health reset the fade timer
+            if (auraShield.health <= 0.0F){
+                healthFadeTimer = 0.0F;
+            }
 
             auraShield.health += (auraShield.addedHealth - (auraShield.health / 10));
             auraShield.addedHealth = 0.0F;
-
-            outstr += ", CurrHealth:";
-            outstr += Float.toString(auraShield.health);
-
-            getLogger().at(Level.INFO).log(outstr);
         }
+
+        if (auraShield.health > 0.0F){
+            // add the delta time to the fade timer
+            healthFadeTimer += dt;
+
+            // decrease the health by 1 each second
+            if (healthFadeTimer >= 1.0F){
+                auraShield.health -= 1.0F;
+                healthFadeTimer = 0.0F;
+            }
+        }
+
+        //getLogger().at(Level.INFO).log("Log String");
     }
 
     @Override

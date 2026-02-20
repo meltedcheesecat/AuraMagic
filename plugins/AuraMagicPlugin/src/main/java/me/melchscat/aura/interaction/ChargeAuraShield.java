@@ -1,5 +1,6 @@
 package me.melchscat.aura.interaction;
 
+import com.hypixel.hytale.assetstore.map.JsonAssetWithMap;
 import com.hypixel.hytale.codec.Codec;
 import com.hypixel.hytale.codec.KeyedCodec;
 import com.hypixel.hytale.codec.builder.BuilderCodec;
@@ -23,8 +24,8 @@ import me.melchscat.aura.component.AuraShieldComponent;
 import org.checkerframework.checker.nullness.compatqual.NonNullDecl;
 
 public class ChargeAuraShield extends Interaction {
-
     protected float healthAdded;
+    protected String particleSystemId;
     private ComponentType<EntityStore, AuraShieldComponent> auraShieldComponentType;
 
     public static final BuilderCodec<ChargeAuraShield> CODEC =
@@ -38,6 +39,13 @@ public class ChargeAuraShield extends Interaction {
                             (inAct, value) -> inAct.healthAdded = value,
                             inAct -> inAct.healthAdded,
                             (inAct1, inAct2) -> inAct1.healthAdded = inAct2.healthAdded
+                    )
+                    .add()
+                    .<String>appendInherited(
+                            new KeyedCodec<>("ParticleSystemId", Codec.STRING),
+                            (inAct, value) -> inAct.particleSystemId = value,
+                            inAct -> inAct.particleSystemId,
+                            (inAct1, inAct2) -> inAct1.particleSystemId = inAct2.particleSystemId
                     )
                     .add()
                     .build();
@@ -78,7 +86,7 @@ public class ChargeAuraShield extends Interaction {
             commandBuffer.putComponent(owningEntityRef, auraShieldComponentType, auraShieldComponent);
         }
 
-        // Add the passed health to the shield
+        // Add the passed health to the shield Component
         auraShieldComponent.addedHealth = healthAdded;
 
         // Keep the interaction alive or finish it
