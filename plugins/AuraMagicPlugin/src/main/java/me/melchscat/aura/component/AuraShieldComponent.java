@@ -4,6 +4,7 @@ import com.hypixel.hytale.codec.Codec;
 import com.hypixel.hytale.codec.KeyedCodec;
 import com.hypixel.hytale.codec.builder.BuilderCodec;
 import com.hypixel.hytale.component.Component;
+import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 
 public class AuraShieldComponent implements Component<EntityStore> {
@@ -19,6 +20,10 @@ public class AuraShieldComponent implements Component<EntityStore> {
 
     public float health = 0f;
     public float addedHealth = 0f;
+    public String modelId = "";
+    public Boolean hasNewModelId = false;
+    public Boolean invalidModelId = true;
+    public Player ourPlayer;
 
     public AuraShieldComponent() {}
 

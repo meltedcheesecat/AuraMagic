@@ -360,7 +360,9 @@
             "LocalSoundEventId": "SFX_Bow_T2_Signature_Shoot_Local"
           },
           "Next": {
-            "Type": "SpawnNPC"
+            "Type": "ChargeAuraShield",
+            "ModelId": "MgcSpl_Wind_Shield_Model",
+            "HealthAdded": 12
           },
           "CancelOnItemChange": false
         }
@@ -381,7 +383,8 @@
             "LocalSoundEventId": "SFX_Bow_T2_Signature_Shoot_Local"
           },
           "Next": {
-            "Type": "Selector"
+            "Type": "Simple",
+            "RunTime": 0.25
           },
           "CancelOnItemChange": false
         }

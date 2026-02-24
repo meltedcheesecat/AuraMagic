@@ -18,9 +18,9 @@
   "Particles": [
     {
       "PositionOffset": {
-        "X": 0,
+        "X": 0.2,
         "Y": 0,
-        "Z": 0
+        "Z": 1.0
       },
       "SystemId": "MgcSpl_Wind_Shield",
       "TargetNodeName": ""
