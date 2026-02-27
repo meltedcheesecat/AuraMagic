@@ -6,22 +6,25 @@ import com.hypixel.hytale.component.query.Query;
 import com.hypixel.hytale.component.spatial.SpatialResource;
 import com.hypixel.hytale.component.system.tick.EntityTickingSystem;
 import com.hypixel.hytale.math.vector.Vector3d;
-import com.hypixel.hytale.protocol.Color;
-import com.hypixel.hytale.protocol.Direction;
-import com.hypixel.hytale.protocol.ModelParticle;
-import com.hypixel.hytale.protocol.Position;
+import com.hypixel.hytale.protocol.*;
 import com.hypixel.hytale.protocol.packets.entities.SpawnModelParticles;
 import com.hypixel.hytale.protocol.packets.world.SpawnParticleSystem;
 import com.hypixel.hytale.server.core.asset.type.model.config.ModelAsset;
 import com.hypixel.hytale.server.core.asset.type.particle.config.ParticleSystem;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.modules.entity.EntityModule;
+import com.hypixel.hytale.server.core.modules.entity.component.DynamicLight;
 import com.hypixel.hytale.server.core.modules.entity.component.TransformComponent;
+import com.hypixel.hytale.server.core.modules.entity.damage.Damage;
+import com.hypixel.hytale.server.core.modules.entity.damage.DamageEventSystem;
+import com.hypixel.hytale.server.core.modules.entity.damage.DamageModule;
 import com.hypixel.hytale.server.core.modules.entity.tracker.NetworkId;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.ParticleUtil;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
+import com.hypixel.hytale.server.flock.Flock;
+import com.hypixel.hytale.server.flock.FlockMembership;
 import it.unimi.dsi.fastutil.objects.ObjectList;
 import me.melchscat.aura.AuraPlugin;
 import me.melchscat.aura.component.AuraShieldComponent;
@@ -66,10 +69,14 @@ public class AuraShieldSystem extends EntityTickingSystem<EntityStore> {
         if (auraShield.ourPlayer == null)
             return;
 
+        Float oldHealth = auraShield.health;
+        Boolean firstShow = false;
+
         if (auraShield.addedHealth > 0.0F){
             // if our health is zero and we are adding health reset the fade timer
             if (auraShield.health <= 0.0F){
                 healthFadeTimer = 0.0F;
+                firstShow = true;
             }
 
             auraShield.health += (auraShield.addedHealth - (auraShield.health / 10));
@@ -81,9 +88,12 @@ public class AuraShieldSystem extends EntityTickingSystem<EntityStore> {
             healthFadeTimer += dt;
 
             // decrease the health by 1 each second
-            if (healthFadeTimer >= 1.0F){
-                auraShield.health -= 1.0F;
-                healthFadeTimer = 0.0F;
+            if ((healthFadeTimer >= 1.0F) || (firstShow)){
+
+                if (!firstShow) {
+                    auraShield.health -= 1.0F;
+                    healthFadeTimer = 0.0F;
+                }
 
                 // checks if there is a new type of model, if yes saves the particles to shieldParticles
                 if (auraShield.hasNewModelId == true) {
@@ -124,25 +134,50 @@ public class AuraShieldSystem extends EntityTickingSystem<EntityStore> {
                 if (playerRefComponent == null)
                     return;
 
+                //shieldParticles[0].scale = auraShield.health / 10;
+
                 // Creates the packet with the shieldParticles in it and then sends it
                 SpawnModelParticles packet = new SpawnModelParticles(playerNetworkId, shieldParticles);
 
                 playerRefComponent.getPacketHandler().writeNoCache(packet);
-
-                // send a world particle code - saving this for later
-                //TransformComponent transformComponent = (TransformComponent)store.getComponent(ourPlayerReference, TransformComponent.getComponentType());
-                //if (transformComponent == null)
-                //    return;
-
-                //World ourPlayerWorld = auraShield.ourPlayer.getWorld();
-                //if (ourPlayerWorld == null)
-                //    return;
-
-                //Vector3d playerPosition = auraShield.ourPlayer.getPlayerConfigData().getPerWorldData(ourPlayerWorld.getName()).getLastPosition().getPosition();
-                //ParticleUtil.spawnParticleEffect(auraShield.modelId, transformComponent.getPosition(), commandBuffer);
             }
         }
 
+        if (oldHealth != auraShield.health) {
+            DynamicLight shieldDynamicLight = archetypeChunk.getComponent(index, DynamicLight.getComponentType());
+
+            if (shieldDynamicLight == null)
+                return;
+
+            ColorLight colorLight = new ColorLight();
+
+            if (auraShield.health >= 15.0f)
+            {
+                colorLight.radius = (byte) 1;
+                colorLight.red = (byte) 8;
+                colorLight.green = (byte) 15;
+                colorLight.blue = (byte) 13;
+            } else if (auraShield.health <= 0.0f ) {
+                colorLight.radius = (byte) 0;
+                colorLight.red = (byte) 0;
+                colorLight.green = (byte) 0;
+                colorLight.blue = (byte) 0;
+            } else {
+                byte byteHealth = (byte) auraShield.health;
+                if (byteHealth > 7) {
+                    colorLight.red = (byte) (byteHealth - 7);
+                } else {
+                    colorLight.red = (byte) 0;
+                }
+                colorLight.green = byteHealth;
+                if (byteHealth > 2) {
+                    colorLight.blue = (byte) (byteHealth - 2);
+                } else {
+                    colorLight.blue = (byte) 0;
+                }
+            }
+            shieldDynamicLight.setColorLight(colorLight);
+        }
         //getLogger().at(Level.INFO).log("Log String");
     }
 
@@ -167,4 +202,73 @@ public class AuraShieldSystem extends EntityTickingSystem<EntityStore> {
     public Set<Dependency<EntityStore>> getDependencies() {
         return super.getDependencies();
     }
+
+    public static class OnDamageReceived extends DamageEventSystem {
+        @Nonnull
+        private final Query<EntityStore> query = AuraPlugin.getInstance().getAuraShieldComponentType();
+
+        @Nonnull
+        public Query<EntityStore> getQuery() {
+            return this.query;
+        }
+
+        public void handle(int index,
+                           @Nonnull ArchetypeChunk<EntityStore> archetypeChunk,
+                           @Nonnull Store<EntityStore> store,
+                           @Nonnull CommandBuffer<EntityStore> commandBuffer,
+                           @Nonnull Damage damage) {
+            AuraShieldComponent auraShield = archetypeChunk.getComponent(index, AuraPlugin.getInstance().getAuraShieldComponentType());
+
+            if (auraShield == null)
+                return;
+
+            if (auraShield.health <= 0.0f)
+                return;
+
+            String outStr = "OnDamage";
+            float damageAmount = damage.getAmount();
+
+            outStr += ", InitDamage:";
+            outStr += Float.toString(damageAmount);
+
+            if (damageAmount <= auraShield.health){
+                damage.setCancelled(true);
+
+                outStr += ", BeforeHealth:";
+                outStr += Float.toString(auraShield.health);
+
+                auraShield.health -= damageAmount;
+
+                outStr += ", AfterHealth:";
+                outStr += Float.toString(auraShield.health);
+                outStr += ", Damage Canceled";
+
+            } else {
+                damageAmount -= auraShield.health;
+
+                outStr += ", BeforeHealth:";
+                outStr += Float.toString(auraShield.health);
+                outStr += ", No More Health";
+                outStr += ", AfterDamage:";
+                outStr += Float.toString(auraShield.health);
+
+                auraShield.health = 0.0f;
+                damage.setAmount(damageAmount);
+            }
+
+            getLogger().at(Level.INFO).log(outStr);
+        }
+    }
 }
+
+// send a world particle code - saving this for later
+//TransformComponent transformComponent = (TransformComponent)store.getComponent(ourPlayerReference, TransformComponent.getComponentType());
+//if (transformComponent == null)
+//    return;
+
+//World ourPlayerWorld = auraShield.ourPlayer.getWorld();
+//if (ourPlayerWorld == null)
+//    return;
+
+//Vector3d playerPosition = auraShield.ourPlayer.getPlayerConfigData().getPerWorldData(ourPlayerWorld.getName()).getLastPosition().getPosition();
+//ParticleUtil.spawnParticleEffect(auraShield.modelId, transformComponent.getPosition(), commandBuffer);

@@ -7,10 +7,12 @@ import com.hypixel.hytale.component.CommandBuffer;
 import com.hypixel.hytale.component.ComponentType;
 import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
+import com.hypixel.hytale.protocol.ColorLight;
 import com.hypixel.hytale.protocol.InteractionState;
 import com.hypixel.hytale.protocol.InteractionType;
 import com.hypixel.hytale.server.core.entity.InteractionContext;
 import com.hypixel.hytale.server.core.entity.entities.Player;
+import com.hypixel.hytale.server.core.modules.entity.component.DynamicLight;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHandler;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInteraction;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
@@ -43,6 +45,21 @@ public class ChargeAuraShield extends SimpleInteraction {
 
         // if not exists then add to owningEntityRef, then return;
         Store<EntityStore> entityStore = owningEntityRef.getStore();
+
+        DynamicLight shieldDynamicLight = entityStore.getComponent(owningEntityRef, DynamicLight.getComponentType());
+        if (shieldDynamicLight == null) {
+            shieldDynamicLight = new DynamicLight();
+
+            // you can't write to the store while in a tick and the commandbuffer
+            // allows you to buffer these commands for later
+            CommandBuffer<EntityStore> commandBuffer = context.getCommandBuffer();
+
+            if (commandBuffer == null)
+                return;
+
+            commandBuffer.putComponent(owningEntityRef, DynamicLight.getComponentType(), shieldDynamicLight);
+        }
+
 
         AuraShieldComponent auraShieldComponent = entityStore.getComponent(owningEntityRef, auraShieldComponentType);
 

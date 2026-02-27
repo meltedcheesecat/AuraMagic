@@ -1,10 +1,10 @@
 {
   "Spawners": [
     {
-      "SpawnerId": "MgcSpl_Wind_Shield_Top_Spawner",
+      "SpawnerId": "MgcSpl_Wind_Shield_Spawner",
       "PositionOffset": {
         "X": -0.2,
-        "Z": -1,
+        "Z": -0.96,
         "Y": 2.05
       },
       "FixedRotation": false,
@@ -15,10 +15,10 @@
       }
     },
     {
-      "SpawnerId": "MgcSpl_Wind_Shield_Top_Side_Spawner",
+      "SpawnerId": "MgcSpl_Wind_Shield_Spawner",
       "PositionOffset": {
         "X": -0.2,
-        "Y": 1.48,
+        "Y": 1.45,
         "Z": -1.87
       },
       "RotationOffset": {
@@ -28,9 +28,9 @@
       }
     },
     {
-      "SpawnerId": "MgcSpl_Wind_Shield_Top_Side_Spawner",
+      "SpawnerId": "MgcSpl_Wind_Shield_Spawner",
       "PositionOffset": {
-        "Y": 1.48,
+        "Y": 1.45,
         "X": 0.63,
         "Z": -1.27
       },
@@ -41,10 +41,10 @@
       }
     },
     {
-      "SpawnerId": "MgcSpl_Wind_Shield_Top_Side_Spawner",
+      "SpawnerId": "MgcSpl_Wind_Shield_Spawner",
       "PositionOffset": {
         "X": -1.03,
-        "Y": 1.48,
+        "Y": 1.45,
         "Z": -1.27
       },
       "RotationOffset": {
@@ -53,10 +53,10 @@
       }
     },
     {
-      "SpawnerId": "MgcSpl_Wind_Shield_Top_Side_Spawner",
+      "SpawnerId": "MgcSpl_Wind_Shield_Spawner",
       "PositionOffset": {
         "X": 0.3,
-        "Y": 1.48,
+        "Y": 1.45,
         "Z": -0.3
       },
       "RotationOffset": {
@@ -65,10 +65,10 @@
       }
     },
     {
-      "SpawnerId": "MgcSpl_Wind_Shield_Top_Side_Spawner",
+      "SpawnerId": "MgcSpl_Wind_Shield_Spawner",
       "PositionOffset": {
         "X": -0.73,
-        "Y": 1.48,
+        "Y": 1.45,
         "Z": -0.3
       },
       "RotationOffset": {
@@ -77,10 +77,10 @@
       }
     },
     {
-      "SpawnerId": "MgcSpl_Wind_Shield_Bottom_Side_Spawner",
+      "SpawnerId": "MgcSpl_Wind_Shield_Spawner",
       "PositionOffset": {
         "X": 0.32,
-        "Y": 0.57,
+        "Y": 0.6,
         "Z": -1.7
       },
       "RotationOffset": {
@@ -90,9 +90,9 @@
       }
     },
     {
-      "SpawnerId": "MgcSpl_Wind_Shield_Bottom_Side_Spawner",
+      "SpawnerId": "MgcSpl_Wind_Shield_Spawner",
       "PositionOffset": {
-        "Y": 0.57,
+        "Y": 0.6,
         "X": 0.63,
         "Z": -0.73
       },
@@ -103,10 +103,10 @@
       }
     },
     {
-      "SpawnerId": "MgcSpl_Wind_Shield_Bottom_Side_Spawner",
+      "SpawnerId": "MgcSpl_Wind_Shield_Spawner",
       "PositionOffset": {
         "X": -0.71,
-        "Y": 0.57,
+        "Y": 0.6,
         "Z": -1.7
       },
       "RotationOffset": {
@@ -115,10 +115,10 @@
       }
     },
     {
-      "SpawnerId": "MgcSpl_Wind_Shield_Bottom_Side_Spawner",
+      "SpawnerId": "MgcSpl_Wind_Shield_Spawner",
       "PositionOffset": {
         "X": -0.23,
-        "Y": 0.57,
+        "Y": 0.6,
         "Z": -0.13
       },
       "RotationOffset": {
@@ -127,10 +127,10 @@
       }
     },
     {
-      "SpawnerId": "MgcSpl_Wind_Shield_Bottom_Side_Spawner",
+      "SpawnerId": "MgcSpl_Wind_Shield_Spawner",
       "PositionOffset": {
         "X": -1.06,
-        "Y": 0.57,
+        "Y": 0.6,
         "Z": -0.73
       },
       "RotationOffset": {
@@ -139,7 +139,7 @@
       }
     },
     {
-      "SpawnerId": "MgcSpl_Wind_Shield_Bottom_Spawner",
+      "SpawnerId": "MgcSpl_Wind_Shield_Spawner",
       "PositionOffset": {
         "X": -0.2,
         "Y": 0,
@@ -150,14 +150,6 @@
         "Yaw": 180,
         "Pitch": 0,
         "Roll": 0
-      }
-    },
-		{
-      "SpawnerId": "MgcSpl_Wind_Shield_Wind_Spawner",
-      "PositionOffset": {
-        "X": -0.2,
-        "Y": 1.0,
-        "Z": -1.0
       }
     }
   ],

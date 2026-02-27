@@ -6,6 +6,7 @@ import com.hypixel.hytale.server.core.modules.interaction.interaction.config.Int
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
+import com.hypixel.hytale.server.flock.FlockMembershipSystems;
 import me.melchscat.aura.component.AuraShieldComponent;
 import me.melchscat.aura.interaction.ChargeAuraShield;
 import me.melchscat.aura.system.AuraShieldSystem;
@@ -32,6 +33,7 @@ public class AuraPlugin extends JavaPlugin {
         Interaction.CODEC.register("ChargeAuraShield", ChargeAuraShield.class, ChargeAuraShield.CODEC);
 
         getEntityStoreRegistry().registerSystem(new AuraShieldSystem());
+        getEntityStoreRegistry().registerSystem(new AuraShieldSystem.OnDamageReceived());
     }
 
     public ComponentType<EntityStore, AuraShieldComponent> getAuraShieldComponentType() {

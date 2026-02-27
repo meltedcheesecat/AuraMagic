@@ -6,15 +6,15 @@
   "ParticleRotateWithSpawner": true,
   "MaxConcurrentParticles": 1,
   "ParticleLifeSpan": {
-    "Min": 1.02,
-    "Max": 1.02
+    "Min": 1.05,
+    "Max": 1.05
   },
   "SpawnRate": {
     "Min": 5,
     "Max": 5
   },
   "Particle": {
-    "Texture": "Particles/Textures/MagicSpell/WindShieldTopSide4x.png",
+    "Texture": "Particles/Textures/MagicSpell/WindShieldBottom4x.png",
     "FrameSize": {
       "Width": 64,
       "Height": 64
@@ -22,6 +22,7 @@
     "ScaleRatioConstraint": "None",
     "Animation": {
       "0": {
+			  "Opacity": 0.5,
         "Scale": {
           "Y": {
             "Max": 1.0,
@@ -37,6 +38,9 @@
           "Max": 0
         }
       },
+			"5": {
+			  "Opacity": 1.0
+			},
 			"25": {
         "FrameIndex": {
           "Min": 1,
@@ -55,7 +59,11 @@
           "Max": 3
         }
       },
+			"95": {
+			  "Opacity": 1.0
+			},
       "100": {
+			  "Opacity": 0.5,
         "Scale": {
           "Y": {
             "Max": 1.0,

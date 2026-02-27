@@ -1,0 +1,63 @@
+{
+  "RenderMode": "BlendLinear",
+  "ParticleRotationInfluence": "None",
+  "LinearFiltering": false,
+  "LightInfluence": 0,
+  "ParticleRotateWithSpawner": true,
+  "MaxConcurrentParticles": 2,
+  "ParticleLifeSpan": {
+    "Min": 1.05,
+    "Max": 1.05
+  },
+  "SpawnRate": {
+    "Min": 2,
+    "Max": 2
+  },
+  "Particle": {
+    "Texture": "Particles/Textures/Circles/Circle_Wisp.png",
+    "Animation": {
+      "0": {
+			  "Rotation": {
+					"X": { "Min": 80, "Max": 100 },
+					"Y": { "Min": 0, "Max": 0 },
+					"Z": { "Min": 0, "Max": 10 }
+				},
+        "Scale": {
+          "Y": {
+            "Max": 1.0,
+            "Min": 1.2
+          },
+          "X": {
+            "Min": 1.0,
+            "Max": 1.2
+          }
+        },
+        "Opacity": 0.1
+      },
+			"70": {
+			  "Opacity": 1.0
+			},
+      "100": {
+			  "Rotation": {
+					"X": { "Min": 80, "Max": 100 },
+					"Y": { "Min": 400, "Max": 500 },
+					"Z": { "Min": 0, "Max": 10 }
+				},
+        "Scale": {
+          "Y": {
+            "Max": 1.2,
+            "Min": 1.4
+          },
+          "X": {
+            "Min": 1.2,
+            "Max": 1.4
+          }
+        },
+			  "Opacity": 0.1
+      }
+    },
+    "UseSpriteBlending": false
+  },	
+  "SpawnBurst": true,
+  "LifeSpan": 1.05
+}
