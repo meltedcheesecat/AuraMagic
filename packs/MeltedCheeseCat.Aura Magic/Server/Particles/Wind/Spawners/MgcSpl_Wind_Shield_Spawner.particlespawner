@@ -14,7 +14,7 @@
     "Max": 5
   },
   "Particle": {
-    "Texture": "Particles/Textures/MagicSpell/WindShieldTopSide4x.png",
+    "Texture": "Particles/Textures/MagicSpell/WindShield100Light.png",
     "FrameSize": {
       "Width": 64,
       "Height": 64
@@ -31,28 +31,6 @@
             "Min": 1.0,
             "Max": 1.0
           }
-        },
-				"FrameIndex": {
-          "Min": 0,
-          "Max": 0
-        }
-      },
-			"25": {
-        "FrameIndex": {
-          "Min": 1,
-          "Max": 1
-        }
-      },
-			"50": {
-        "FrameIndex": {
-          "Min": 2,
-          "Max": 2
-        }
-      },
-			"75": {
-        "FrameIndex": {
-          "Min": 3,
-          "Max": 3
         }
       },
       "100": {
