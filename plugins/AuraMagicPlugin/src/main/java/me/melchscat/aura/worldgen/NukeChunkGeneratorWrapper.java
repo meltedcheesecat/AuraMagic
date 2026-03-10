@@ -30,7 +30,7 @@ public class NukeChunkGeneratorWrapper extends ChunkGenerator {
         GeneratedBlockChunk blockChunk = chunk.getBlockChunk();
 
         // GeneratedBlockChunk usually uses 0-15 for X/Z and 0-255 for Y
-        for (int ly = 150; ly < 170; ly++) {
+        for (int ly = 150; ly < 151; ly++) {
             for (int lx = 0; lx < 16; lx++) {
                 for (int lz = 0; lz < 16; lz++) {
                     blockChunk.setBlock(lx, ly, lz, 100, 0, 0);

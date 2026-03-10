@@ -19,7 +19,7 @@ public class ModZoneJsonLoader extends ZoneJsonLoader {
         super(seed, dataFolder, json, zoneContext);
     }
 
-    @Override
+    /*@Override
     @Nullable
     protected CaveGenerator loadCaveGenerator() {
 
@@ -28,5 +28,5 @@ public class ModZoneJsonLoader extends ZoneJsonLoader {
         } catch (Throwable var2) {
             throw new Error("Error while loading cave generator.", var2);
         }
-    }
+    }*/
 }
