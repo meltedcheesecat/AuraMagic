@@ -13,6 +13,7 @@ import com.hypixel.hytale.server.worldgen.chunk.ChunkGenerator;
 import me.melchscat.aura.AuraPlugin;
 
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.LongPredicate;
 import java.util.logging.Level;
 
@@ -20,11 +21,15 @@ import static com.hypixel.hytale.logger.HytaleLogger.getLogger;
 
 public class CustomBlockGenerator extends ChunkGenerator {
     private static int WOOD_SOUND_SET = -1;
+    private static float AURA_ADD_CHANCE = 0.0f;
     private static int AURA_CRYSTAL_BLOCK_ID = -1;
     private static int AURA_CRYSTAL_LARGE_ID = -1;
     private static int AURA_CRYSTAL_MEDIUM_ID = -1;
     private static int AURA_CRYSTAL_SMALL_ID = -1;
-    private final int windCrystalMinHeight = 100;
+    private final int windCrystalMinHeight = 130;
+    private final int windCrystalMaxChanceHeight = 200;
+    private final float minChance = 0.01f;
+    private final float maxChance = 0.21f;
 
     private final ChunkGenerator original;
 
@@ -139,9 +144,40 @@ public class CustomBlockGenerator extends ChunkGenerator {
         return false;
     }
 
+    private void placeWindCrystalFinger(GeneratedBlockChunk blockChunk, Vector3i blockLocation, int directionX, int directionZ) {
+        Vector3i currLocation = new Vector3i(blockLocation);
+        int blockSize = 3;
+        int fingerLength = 0;
+        currLocation.x = currLocation.x + directionX;
+        currLocation.z = currLocation.z + directionZ;
+        while ((blockSize > 0) && (fingerLength < 6)) {
+            if (!getYValidPlacePoint(blockChunk, currLocation)) return;
+
+            switch (blockSize) {
+                case 1 : blockChunk.setBlock(currLocation.x, currLocation.y, currLocation.z, AURA_CRYSTAL_SMALL_ID, 0,0); break;
+                case 2 : blockChunk.setBlock(currLocation.x, currLocation.y, currLocation.z, AURA_CRYSTAL_MEDIUM_ID, 0,0); break;
+                case 3 : blockChunk.setBlock(currLocation.x, currLocation.y, currLocation.z, AURA_CRYSTAL_LARGE_ID, 0,0); break;
+            }
+            currLocation.x = currLocation.x + directionX;
+            currLocation.z = currLocation.z + directionZ;
+
+            fingerLength++;
+            blockSize = blockSize - ThreadLocalRandom.current().nextInt(3);
+        }
+    }
+
     private void placeWindCrystals(GeneratedBlockChunk blockChunk, Vector3i blockLocation) {
         if (findValidStartPlacePoint(blockChunk, blockLocation)) {
             blockChunk.setBlock(blockLocation.x, blockLocation.y, blockLocation.z, AURA_CRYSTAL_BLOCK_ID, 0,0);
+
+            if (ThreadLocalRandom.current().nextInt(4) == 0) placeWindCrystalFinger(blockChunk, blockLocation, 1, 1);
+            if (ThreadLocalRandom.current().nextInt(4) == 0) placeWindCrystalFinger(blockChunk, blockLocation, 1, 0);
+            if (ThreadLocalRandom.current().nextInt(4) == 0) placeWindCrystalFinger(blockChunk, blockLocation, 1, -1);
+            if (ThreadLocalRandom.current().nextInt(4) == 0) placeWindCrystalFinger(blockChunk, blockLocation, -1, 1);
+            if (ThreadLocalRandom.current().nextInt(4) == 0) placeWindCrystalFinger(blockChunk, blockLocation, -1, 0);
+            if (ThreadLocalRandom.current().nextInt(4) == 0) placeWindCrystalFinger(blockChunk, blockLocation, -1, -1);
+            if (ThreadLocalRandom.current().nextInt(4) == 0) placeWindCrystalFinger(blockChunk, blockLocation, 0, 1);
+            if (ThreadLocalRandom.current().nextInt(4) == 0) placeWindCrystalFinger(blockChunk, blockLocation, 0, -1);
         }
     }
 
@@ -161,10 +197,37 @@ public class CustomBlockGenerator extends ChunkGenerator {
             WOOD_SOUND_SET = (wood != null) ? wood.getBlockSoundSetIndex() : 999;
         }
 
+        int randXPos = ThreadLocalRandom.current().nextInt(8) + 12;
+        int randZPos = ThreadLocalRandom.current().nextInt(8) + 12;
+
+        boolean donePlace = false;
         // Ray trace down trying to find valid block
-        Vector3i blockLocation = new Vector3i(15 , 319 , 15);
+        Vector3i blockLocation = new Vector3i(randXPos , 319 , randZPos);
         if (isChunkValidForCrystalSpawn(blockChunk, blockLocation)) {
-            placeWindCrystals(blockChunk, blockLocation);
+
+            int currentY = blockLocation.y;
+            float spawnChance;
+
+            if (currentY >= windCrystalMaxChanceHeight) {
+                spawnChance = maxChance + AURA_ADD_CHANCE;
+            } else {
+                float range = (float)(windCrystalMaxChanceHeight - windCrystalMinHeight);
+                float progress = (float)(currentY - windCrystalMinHeight) / range;
+
+                progress = Math.max(0.0f, progress);
+                spawnChance = minChance + AURA_ADD_CHANCE + (progress * (maxChance - minChance));
+            }
+
+            if (ThreadLocalRandom.current().nextFloat() < spawnChance) {
+                placeWindCrystals(blockChunk, blockLocation);
+                donePlace = true;
+                AURA_ADD_CHANCE = 0.0f;
+            }
+        }
+        // Adds a small chance to place everytime it fails
+        if (!donePlace) {
+            if (AURA_ADD_CHANCE < 0.75f)
+              AURA_ADD_CHANCE = AURA_ADD_CHANCE + 0.01f;
         }
     }
 }

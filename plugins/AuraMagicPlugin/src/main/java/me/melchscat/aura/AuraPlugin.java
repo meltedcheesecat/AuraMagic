@@ -19,17 +19,18 @@ public class AuraPlugin extends JavaPlugin {
     private static AuraPlugin instance;
     private ComponentType<EntityStore, AuraShieldComponent> auraShieldComponentType;
 
-    /*
+
     public String WindCrystalBlock = "Rock_Crystal_Wind_Block";
     public String WindCrystalLarge = "Rock_Crystal_Wind_Large";
     public String WindCrystalMedium = "Rock_Crystal_Wind_Medium";
     public String WindCrystalSmall = "Rock_Crystal_Wind_Small";
-     */
 
+    /*
     public String WindCrystalBlock = "Rock_Crystal_Pink_Block";
     public String WindCrystalLarge = "Rock_Crystal_Pink_Large";
     public String WindCrystalMedium = "Rock_Crystal_Pink_Medium";
     public String WindCrystalSmall = "Rock_Crystal_Pink_Small";
+    */
 
     public static AuraPlugin getInstance() {
         return instance;
