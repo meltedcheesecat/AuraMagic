@@ -1,4 +1,4 @@
-package me.melchscat.aura.loader.zone;
+package me.melchscat.aura.worldgen;
 
 import com.google.gson.JsonObject;
 import com.hypixel.hytale.procedurallib.file.FileIO;
@@ -15,11 +15,11 @@ import javax.annotation.Nonnull;
 import java.nio.file.Path;
 import java.util.Map.Entry;
 
-public class ModZonesJsonLoader extends Loader<SeedStringResource, Zone[]> {
+public class CustomZonesLoader extends Loader<SeedStringResource, Zone[]> {
 
     protected final FileLoadingContext loadingContext;
 
-    public ModZonesJsonLoader(@Nonnull SeedString<SeedStringResource> seed, Path dataFolder, FileLoadingContext loadingContext) {
+    public CustomZonesLoader(@Nonnull SeedString<SeedStringResource> seed, Path dataFolder, FileLoadingContext loadingContext) {
 
         super(seed.append(".Zones"), dataFolder);
         this.loadingContext = loadingContext;
@@ -37,7 +37,7 @@ public class ModZonesJsonLoader extends Loader<SeedStringResource, Zone[]> {
 
             try {
                 JsonObject zoneJson = FileIO.load(zoneContext.getPath().resolve("Zone.json"), JsonLoader.JSON_OBJ_LOADER);
-                Zone zone = new ModZoneJsonLoader(this.seed, this.dataFolder, zoneJson, zoneContext).load();
+                Zone zone = new CustomZoneLoader(this.seed, this.dataFolder, zoneJson, zoneContext).load();
                 zones[index++] = zone;
             } catch (Throwable var9) {
                 throw new Error(String.format("Error while loading zone \"%s\" for world generator from file.", zoneContext.getPath().toString()), var9);

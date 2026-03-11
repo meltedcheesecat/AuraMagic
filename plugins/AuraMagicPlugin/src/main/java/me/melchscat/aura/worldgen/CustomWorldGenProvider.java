@@ -1,4 +1,4 @@
-package me.melchscat.aura.providers;
+package me.melchscat.aura.worldgen;
 
 import com.hypixel.hytale.codec.Codec;
 import com.hypixel.hytale.codec.KeyedCodec;
@@ -13,7 +13,6 @@ import com.hypixel.hytale.server.worldgen.HytaleWorldGenProvider;
 import com.hypixel.hytale.server.worldgen.SeedStringResource;
 import com.hypixel.hytale.server.worldgen.WorldGenConfig;
 import com.hypixel.hytale.server.worldgen.prefab.PrefabStoreRoot;
-import me.melchscat.aura.loader.generator.ModChunkGeneratorJsonLoader;
 
 import javax.annotation.Nonnull;
 import java.nio.file.Files;
@@ -41,7 +40,6 @@ public class CustomWorldGenProvider implements IWorldGenProvider {
     @Nonnull
     @Override
     public IWorldGen getGenerator() throws WorldGenLoadException {
-
         Path worldGenPath;
         worldGenPath = Universe.getWorldGenPath();
 
@@ -51,10 +49,13 @@ public class CustomWorldGenProvider implements IWorldGenProvider {
 
         try {
             WorldGenConfig config = new WorldGenConfig(worldGenPath, this.name, this.version);
-            return new ModChunkGeneratorJsonLoader(new SeedString<>("ChunkGenerator", new SeedStringResource(PrefabStoreRoot.DEFAULT, config)), config)
-                .load();
-        } catch (Error var3) {
-            throw new WorldGenLoadException("Failed to load world gen!", var3);
+            SeedStringResource seedStringResource = new SeedStringResource(PrefabStoreRoot.DEFAULT, config);
+            SeedString<SeedStringResource> chunkGenerator = new SeedString<>("ChunkGenerator", seedStringResource);
+            CustomChunkGenerator customChunkGenerator = new CustomChunkGenerator(chunkGenerator, config);
+
+            return customChunkGenerator.load();
+        } catch (Error err) {
+            throw new WorldGenLoadException("Failed to load world gen!", err);
         }
     }
 
