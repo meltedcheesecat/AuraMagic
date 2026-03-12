@@ -1,0 +1,21 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "MgcSpl_Wind_Charging_Left_Lvl1_Spawner"
+    },
+    {
+      "SpawnerId": "MgcSpl_Wind_Shield_Wind_Spawner",
+      "LifeSpan": {
+        "Min": 3.25,
+        "Max": 3.25
+      },
+      "SpawnRate": {
+        "Min": 1.5,
+        "Max": 1.5
+      },
+      "MaxConcurrent": 3,
+      "TotalSpawners": 3
+    }
+  ],
+  "IsImportant": false
+}

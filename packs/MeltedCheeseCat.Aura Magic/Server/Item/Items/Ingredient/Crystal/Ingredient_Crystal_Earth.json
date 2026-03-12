@@ -36,5 +36,6 @@
     "ParticleSystemId": null
   },
   "ItemSoundSetId": "ISS_Items_Gems",
-  "DropOnDeath": true
+  "DropOnDeath": true,
+  "MaxStack": 999
 }

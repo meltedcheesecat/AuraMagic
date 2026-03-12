@@ -1,12 +1,13 @@
 {
   "Spawners": [
     {
-      "SpawnerId": "MgcSpl_Wind_Charging_Explosion_Spawner",
-      "PositionOffset": {
-        "X": 0.0,
-        "Z": 0.0
-      },
-      "FixedRotation": false
+      "SpawnerId": "MgcSpl_Wind_Charging_Explosion_Spawner_1"
+    },
+    {
+      "SpawnerId": "MgcSpl_Wind_Charging_Explosion_Spawner_2"
+    },
+    {
+      "SpawnerId": "MgcSpl_Wind_Charging_Explosion_Spawner_3"
     }
   ],
   "IsImportant": false

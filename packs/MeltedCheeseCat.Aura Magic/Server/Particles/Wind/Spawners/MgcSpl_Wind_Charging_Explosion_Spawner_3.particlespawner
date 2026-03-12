@@ -1,5 +1,5 @@
 {
-  "RenderMode": "Erosion",
+  "RenderMode": "Distortion",
   "ParticleRotationInfluence": "Billboard",
   "LinearFiltering": false,
   "LightInfluence": 0,
@@ -21,26 +21,24 @@
       "0": {
         "Scale": {
           "Y": {
-            "Max": 0.0,
-            "Min": 0.0
+            "Max": 8.0,
+            "Min": 8.0
           },
           "X": {
-            "Min": 0.0,
-            "Max": 0.0
+            "Min": 8.0,
+            "Max": 8.0
           }
-        },
-        "Opacity": 0.1,
-        "Color": "#71fff0"
+        }
       },
       "100": {
         "Scale": {
           "Y": {
-            "Max": 4.0,
-            "Min": 4.0
+            "Max": 1.0,
+            "Min": 1.0
           },
           "X": {
-            "Min": 4.0,
-            "Max": 4.0
+            "Min": 1.0,
+            "Max": 1.0
           }
         }
       }
@@ -48,5 +46,5 @@
     "UseSpriteBlending": false
   },
   "SpawnBurst": true,
-	"LifeSpan": 0.2
+  "LifeSpan": 0.2
 }

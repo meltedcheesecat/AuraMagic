@@ -1,0 +1,17 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "MgcSpl_Wind_Normal_Lvl1_Spawner",
+      "PositionOffset": {
+        "X": 0.0,
+        "Z": 0,
+        "Y": 0
+      },
+      "FixedRotation": false,
+      "RotationOffset": {
+        "Pitch": 90
+      }
+    }
+  ],
+  "IsImportant": false
+}

@@ -22,7 +22,7 @@
         "Y": 0,
         "Z": 0
       },
-      "SystemId": "MgcSpl_Wind_Projectile_Lvl1",
+      "SystemId": "MgcSpl_Wind_Projectile",
       "TargetNodeName": ""
     }
   ],

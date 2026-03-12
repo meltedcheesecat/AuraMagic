@@ -18,6 +18,33 @@
     ]
   },
   "Quality": "Common",
+  "ItemLevel": 10,
+  "Recipe": {
+    "TimeSeconds": 2,
+    "Input": [
+      {
+        "ItemId": "Ingredient_Crystal_Wind",
+        "Quantity": 25
+      },
+      {
+        "ResourceTypeId": "Wood_Trunk",
+        "Quantity": 3
+      },
+      {
+        "ItemId": "Ingredient_Fibre",
+        "Quantity": 3
+      }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Workbench",
+        "Type": "Crafting",
+        "Categories": [
+          "Workbench_Tinkering"
+        ]
+      }
+    ]
+  },
   "InteractionVars": {
     "MagicSpell_Primary_IsCharge": {
       "Interactions": [
@@ -61,7 +88,7 @@
                 "LocalSoundEventId": "SFX_MgcSpl_Wind_Lvl1_Charging",
                 "Particles": [
                   {
-                    "SystemId": "MgcSpl_Wind_Charging_Left_Lvl1",
+                    "SystemId": "MgcSpl_Wind_Charging_Left",
                     "PositionOffset": {
                       "X": -0.3,
                       "Y": 0,
@@ -72,7 +99,7 @@
                     "Scale": 1.0
                   },
                   {
-                    "SystemId": "MgcSpl_Wind_Charging_Right_Lvl1",
+                    "SystemId": "MgcSpl_Wind_Charging_Right",
                     "TargetEntityPart": "Entity",
                     "TargetNodeName": "R-Hand",
                     "Scale": 1.5,
@@ -178,17 +205,14 @@
                         "LocalSoundEventId": "SFX_Staff_Flame_Flamethrower_End",
                         "Particles": [
                           {
-                            "SystemId": "MgcSpl_Wind_Normal_Up_Lvl1",
-                            "PositionOffset": {
-                              "X": 0.2,
-                              "Y": 0,
-                              "Z": 1
-                            },
+                            "SystemId": "MgcSpl_Wind_Normal_Up",
                             "TargetEntityPart": "Entity",
                             "TargetNodeName": "Chest",
-                            "Scale": 1.0
+                            "Scale": 1.0,
+                            "DetachedFromModel": false
                           }
-                        ]
+                        ],
+                        "FirstPersonParticles": []
                       }
                     }
                   ]
@@ -220,15 +244,11 @@
                         "LocalSoundEventId": "SFX_Staff_Flame_Flamethrower_End",
                         "Particles": [
                           {
-                            "SystemId": "MgcSpl_Wind_Normal_Forward_Lvl1",
-                            "PositionOffset": {
-                              "X": 0,
-                              "Y": 0,
-                              "Z": 0
-                            },
+                            "SystemId": "MgcSpl_Wind_Normal_Forward",
                             "TargetEntityPart": "Entity",
                             "TargetNodeName": "Chest",
-                            "Scale": 1.0
+                            "Scale": 2.0,
+                            "DetachedFromModel": false
                           }
                         ]
                       }
@@ -302,7 +322,7 @@
                     "Scale": 1.0
                   },
                   {
-                    "SystemId": "MgcSpl_Wind_Charging_Right_Lvl1",
+                    "SystemId": "MgcSpl_Wind_Shield_Charging_Right",
                     "TargetEntityPart": "Entity",
                     "TargetNodeName": "R-Hand",
                     "Scale": 1.5,

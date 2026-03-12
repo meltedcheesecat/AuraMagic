@@ -1,40 +1,36 @@
 {
-  "RenderMode": "Erosion",
+  "RenderMode": "BlendLinear",
   "ParticleRotationInfluence": "BillboardVelocity",
   "LinearFiltering": false,
   "LightInfluence": 0,
   "ParticleRotateWithSpawner": false,
-  "MaxConcurrentParticles": 40,
+  "MaxConcurrentParticles": 10,
   "Shape": "Sphere",
-  "SpawnBurst": true,
+  "SpawnBurst": false,
   "EmitOffset": {
     "X": {
-		  "Min": -0.7,
+      "Min": -0.7,
       "Max": 0.7
     },
     "Y": {
-		  "Min": -0.7,
-      "Max": 0.7
+      "Min": -1.0,
+      "Max": -0.8
     },
     "Z": {
-		  "Min": -0.5,
+      "Min": -0.5,
       "Max": 0.5
     }
   },
   "InitialVelocity": {
     "Speed": {
-      "Min": 2.5,
-      "Max": 3.5
+      "Min": 6,
+      "Max": 6
     },
     "Pitch": {
-      "Min": 115,
-      "Max": 125
-    },
-    "Yaw": {
-      "Min": -5,
-      "Max": 5
+      "Min": 90,
+      "Max": 90
     }
-  },	
+  },
   "Attractors": [
     {
       "Position": {
@@ -44,8 +40,8 @@
       },
       "LinearAcceleration": {
         "X": 0,
-        "Y": 0,
-        "Z": 2
+        "Y": -2,
+        "Z": 0
       }
     }
   ],
@@ -54,11 +50,11 @@
     "Max": 0.25
   },
   "SpawnRate": {
-    "Min": 15,
-    "Max": 15
+    "Min": 25,
+    "Max": 25
   },
   "Particle": {
-    "Texture": "Particles/Textures/Basic/Glow.png",
+    "Texture": "Particles/Textures/Smoke/Smoke_Wind.png",
     "ScaleRatioConstraint": "None",
     "Animation": {
       "0": {
@@ -72,22 +68,25 @@
             "Max": 0.1
           }
         },
-        "Opacity": 0.1,
-        "Color": "#71fff0"
+        "Opacity": 0.2,
+        "Color": "#ffffff"
       },
       "100": {
         "Scale": {
           "Y": {
-            "Max": 0.1,
-            "Min": 0.1
+            "Max": 2,
+            "Min": 2
           },
           "X": {
-            "Min": 0.1,
-            "Max": 0.1
+            "Min": 2,
+            "Max": 2
           }
-        }
+        },
+        "Opacity": 1
       }
     },
-    "UseSpriteBlending": false
-  }
+    "UseSpriteBlending": false,
+    "SoftParticlesFadeFactor": 1
+  },
+  "UseEmitDirection": false
 }

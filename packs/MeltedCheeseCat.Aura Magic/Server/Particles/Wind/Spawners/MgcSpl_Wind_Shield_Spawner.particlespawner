@@ -6,8 +6,8 @@
   "ParticleRotateWithSpawner": true,
   "MaxConcurrentParticles": 1,
   "ParticleLifeSpan": {
-    "Min": 1.02,
-    "Max": 1.02
+    "Min": 1.52,
+    "Max": 1.52
   },
   "SpawnRate": {
     "Min": 5,
@@ -22,6 +22,61 @@
     "ScaleRatioConstraint": "None",
     "Animation": {
       "0": {
+			  "Opacity": 0.4,
+        "Scale": {
+          "Y": {
+            "Max": 0.4,
+            "Min": 0.4
+          },
+          "X": {
+            "Min": 0.4,
+            "Max": 0.4
+          }
+        },
+				"Rotation": {
+					"Y": {
+						"Min": 0,
+						"Max": 0
+					},
+					"Z": {
+						"Min": 180,
+						"Max": 180
+					},
+					"X": {
+						"Max": 0,
+						"Min": 0
+					}
+				}
+      },
+      "30": {
+			  "Opacity": 0.8,
+        "Scale": {
+          "Y": {
+            "Max": 0.8,
+            "Min": 0.8
+          },
+          "X": {
+            "Min": 0.8,
+            "Max": 0.8
+          }
+        },
+				"Rotation": {
+					"Y": {
+						"Min": 0,
+						"Max": 0
+					},
+					"Z": {
+						"Min": 60,
+						"Max": 60
+					},
+					"X": {
+						"Max": 0,
+						"Min": 0
+					}
+				}
+      },			
+      "60": {
+			  "Opacity": 1.0,
         "Scale": {
           "Y": {
             "Max": 1.0,
@@ -31,9 +86,24 @@
             "Min": 1.0,
             "Max": 1.0
           }
-        }
+        },
+				"Rotation": {
+					"Y": {
+						"Min": 0,
+						"Max": 0
+					},
+					"Z": {
+						"Min": 0,
+						"Max": 0
+					},
+					"X": {
+						"Max": 0,
+						"Min": 0
+					}
+				}
       },
-      "100": {
+			"100": {
+			  "Opacity": 0.0,
         "Scale": {
           "Y": {
             "Max": 1.0,
