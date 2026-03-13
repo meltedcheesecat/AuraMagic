@@ -1,17 +1,8 @@
 {
-  "$Comment": "Check if button click or press -> Normal or Charge",
+  "$Comment": "for now got rid of normal shield click",
   "Type": "Charging",
   "DisplayProgress": false,
   "Next": {
-	"0": {
-      "Type": "Replace",
-      "Var": "MagicSpell_Secondary_Normal_Shield_Focus_Animation",
-      "DefaultValue": {
-        "Interactions": [
-          "MgcSpl_Tplt_IntAct_Secd_Normal_Shield_Focus_Animation"
-        ]
-      }
-	},
     "0.25": "MgcSpl_Tplt_IntAct_Secd_Charge"
   }
 }

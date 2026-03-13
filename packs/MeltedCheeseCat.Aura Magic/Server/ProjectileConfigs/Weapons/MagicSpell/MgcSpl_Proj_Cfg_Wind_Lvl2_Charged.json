@@ -29,7 +29,7 @@
           "Config": {
             "DamageBlocks": false,
             "EntityDamage": 40,
-            "EntityDamageRadius": 3.5,
+            "EntityDamageRadius": 5.0,
             "EntityDamageFalloff": 0,
             "Knockback": {
               "Force": 35,
@@ -43,7 +43,7 @@
               {
                 "SystemId": "MgcSpl_Wind_Charging_Explosion",
                 "TargetEntityPart": "Entity",
-								"Scale": 0.35
+								"Scale": 0.5
               }
             ],
             "WorldSoundEventId": "SFX_Staff_Flame_Fireball_Impact"
@@ -81,7 +81,7 @@
           "Config": {
             "DamageBlocks": false,
             "EntityDamage": 40,
-            "EntityDamageRadius": 3.5,
+            "EntityDamageRadius": 5.0,
             "EntityDamageFalloff": 0,
             "Knockback": {
               "Force": 35,
@@ -95,7 +95,7 @@
               {
                 "SystemId": "MgcSpl_Wind_Charging_Explosion",
                 "TargetEntityPart": "Entity",
-								"Scale": 0.35
+								"Scale": 0.5
               }
             ],
             "WorldSoundEventId": "SFX_Staff_Flame_Fireball_Impact"

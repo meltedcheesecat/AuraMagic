@@ -195,24 +195,25 @@
                   "Interactions": [
                     {
                       "Type": "Simple",
-                      "RunTime": 0.25,
+                      "RunTime": 0.5,
                       "Effects": {
                         "ItemPlayerAnimationsId": "MgcSpl",
-                        "ItemAnimationId": "NormalUp",
+                        "ItemAnimationId": "NormalFront1",
                         "ClearAnimationOnFinish": true,
                         "ClearSoundEventOnFinish": true,
                         "WorldSoundEventId": "SFX_Staff_Flame_Flamethrower_End",
                         "LocalSoundEventId": "SFX_Staff_Flame_Flamethrower_End",
                         "Particles": [
                           {
-                            "SystemId": "MgcSpl_Wind_Normal_Up",
+                            "SystemId": "MgcSpl_Wind_Normal_Forward",
                             "TargetEntityPart": "Entity",
                             "TargetNodeName": "Chest",
                             "Scale": 1.0,
                             "DetachedFromModel": false
                           }
                         ],
-                        "FirstPersonParticles": []
+                        "FirstPersonParticles": [],
+                        "WaitForAnimationToFinish": true
                       }
                     }
                   ]
@@ -221,7 +222,7 @@
                   "Interactions": [
                     {
                       "Type": "Simple",
-                      "Next": "MgcSpl_IntAct_Wind_BlastUp_Lvl1_Selector"
+                      "Next": "MgcSpl_IntAct_Wind_BlastForward_Lvl1_Selector"
                     }
                   ]
                 }
@@ -234,10 +235,10 @@
                   "Interactions": [
                     {
                       "Type": "Simple",
-                      "RunTime": 0.25,
+                      "RunTime": 0.5,
                       "Effects": {
                         "ItemPlayerAnimationsId": "MgcSpl",
-                        "ItemAnimationId": "NormalFront",
+                        "ItemAnimationId": "NormalFront2",
                         "ClearAnimationOnFinish": true,
                         "ClearSoundEventOnFinish": true,
                         "WorldSoundEventId": "SFX_Staff_Flame_Flamethrower_End",
@@ -247,10 +248,12 @@
                             "SystemId": "MgcSpl_Wind_Normal_Forward",
                             "TargetEntityPart": "Entity",
                             "TargetNodeName": "Chest",
-                            "Scale": 2.0,
+                            "Scale": 1.0,
                             "DetachedFromModel": false
                           }
-                        ]
+                        ],
+                        "FirstPersonParticles": [],
+                        "WaitForAnimationToFinish": true
                       }
                     }
                   ]
@@ -383,28 +386,6 @@
             "Type": "ChargeAuraShield",
             "ModelId": "MgcSpl_Wind_Shield_Model",
             "HealthAdded": 12
-          },
-          "CancelOnItemChange": false
-        }
-      ]
-    },
-    "MagicSpell_Secondary_Normal_Shield_Focus_Animation": {
-      "Interactions": [
-        {
-          "Type": "Simple",
-          "Parent": "MgcSpl_Tplt_IntAct_Secd_Normal_Shield_Focus_Animation",
-          "RunTime": 0.25,
-          "Effects": {
-            "ItemPlayerAnimationsId": "MgcSpl",
-            "ItemAnimationId": "Charged",
-            "ClearAnimationOnFinish": true,
-            "ClearSoundEventOnFinish": true,
-            "WorldSoundEventId": "SFX_Bow_T2_Signature_Shoot",
-            "LocalSoundEventId": "SFX_Bow_T2_Signature_Shoot_Local"
-          },
-          "Next": {
-            "Type": "Simple",
-            "RunTime": 0.25
           },
           "CancelOnItemChange": false
         }

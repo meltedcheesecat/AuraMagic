@@ -200,27 +200,25 @@
                   "Interactions": [
                     {
                       "Type": "Simple",
-                      "RunTime": 0.25,
+                      "RunTime": 0.5,
                       "Effects": {
                         "ItemPlayerAnimationsId": "MgcSpl",
-                        "ItemAnimationId": "NormalUp",
+                        "ItemAnimationId": "NormalFront1",
                         "ClearAnimationOnFinish": true,
                         "ClearSoundEventOnFinish": true,
                         "WorldSoundEventId": "SFX_Staff_Flame_Flamethrower_End",
                         "LocalSoundEventId": "SFX_Staff_Flame_Flamethrower_End",
                         "Particles": [
                           {
-                            "SystemId": "MgcSpl_Wind_Normal_Up",
-                            "PositionOffset": {
-                              "X": 0.2,
-                              "Y": 0,
-                              "Z": 1
-                            },
+                            "SystemId": "MgcSpl_Wind_Normal_Forward",
                             "TargetEntityPart": "Entity",
                             "TargetNodeName": "Chest",
-                            "Scale": 1.0
+                            "Scale": 2.0,
+                            "DetachedFromModel": false
                           }
-                        ]
+                        ],
+                        "FirstPersonParticles": [],
+                        "WaitForAnimationToFinish": true
                       }
                     }
                   ]
@@ -229,7 +227,7 @@
                   "Interactions": [
                     {
                       "Type": "Simple",
-                      "Next": "MgcSpl_IntAct_Wind_BlastUp_Lvl1_Selector"
+                      "Next": "MgcSpl_IntAct_Wind_BlastForward_Lvl3_Selector"
                     }
                   ]
                 }
@@ -242,10 +240,10 @@
                   "Interactions": [
                     {
                       "Type": "Simple",
-                      "RunTime": 0.25,
+                      "RunTime": 0.5,
                       "Effects": {
                         "ItemPlayerAnimationsId": "MgcSpl",
-                        "ItemAnimationId": "NormalFront",
+                        "ItemAnimationId": "NormalFront2",
                         "ClearAnimationOnFinish": true,
                         "ClearSoundEventOnFinish": true,
                         "WorldSoundEventId": "SFX_Staff_Flame_Flamethrower_End",
@@ -253,16 +251,14 @@
                         "Particles": [
                           {
                             "SystemId": "MgcSpl_Wind_Normal_Forward",
-                            "PositionOffset": {
-                              "X": 0.2,
-                              "Y": 0,
-                              "Z": 1
-                            },
                             "TargetEntityPart": "Entity",
                             "TargetNodeName": "Chest",
-                            "Scale": 1.0
+                            "Scale": 2.0,
+                            "DetachedFromModel": false
                           }
-                        ]
+                        ],
+                        "FirstPersonParticles": [],
+                        "WaitForAnimationToFinish": true
                       }
                     }
                   ]
@@ -271,13 +267,132 @@
                   "Interactions": [
                     {
                       "Type": "Simple",
-                      "Next": "MgcSpl_IntAct_Wind_BlastForward_Lvl1_Selector"
+                      "Next": "MgcSpl_IntAct_Wind_BlastForward_Lvl3_Selector"
                     }
                   ]
                 }
               ]
             }
           ]
+        }
+      ]
+    },
+    "MagicSpell_Secondary_IsCharge": {
+      "Interactions": [
+        {
+          "Type": "Charging",
+          "Parent": "MgcSpl_Tplt_IntAct_Secd_IsCharge",
+          "RunTime": 0.25,
+          "Effects": {
+            "ItemPlayerAnimationsId": "MgcSpl",
+            "ItemAnimationId": "Start",
+            "ClearAnimationOnFinish": true
+          }
+        }
+      ]
+    },
+    "MagicSpell_Secondary_Charging": {
+      "Interactions": [
+        {
+          "Type": "Charging",
+          "Parent": "MgcSpl_Tplt_IntAct_Secd_Charging",
+          "HorizontalSpeedMultiplier": 0.2,
+          "Effects": {
+            "ItemPlayerAnimationsId": "MgcSpl",
+            "ItemAnimationId": "StartShieldCharge",
+            "ClearAnimationOnFinish": true,
+            "ClearSoundEventOnFinish": true,
+            "WorldSoundEventId": "SFX_MgcSpl_Wind_StartCharge",
+            "LocalSoundEventId": "SFX_MgcSpl_Wind_StartCharge"
+          },
+          "Next": {
+            "0": "MgcSpl_Tplt_IntAct_No_Shards_Or_Fail",
+            "0.5": {
+              "Type": "Charging",
+              "HorizontalSpeedMultiplier": 0.2,
+              "Effects": {
+                "ItemPlayerAnimationsId": "MgcSpl",
+                "ItemAnimationId": "ShieldCharging",
+                "ClearAnimationOnFinish": true,
+                "ClearSoundEventOnFinish": true,
+                "WorldSoundEventId": "SFX_MgcSpl_Wind_Lvl1_Charging",
+                "LocalSoundEventId": "SFX_MgcSpl_Wind_Lvl1_Charging",
+                "Particles": [
+                  {
+                    "SystemId": "MgcSpl_Wind_Shield_Charging_Left",
+                    "PositionOffset": {
+                      "X": 0,
+                      "Y": 0,
+                      "Z": 0
+                    },
+                    "TargetEntityPart": "Entity",
+                    "TargetNodeName": "L-Hand",
+                    "Scale": 1.0
+                  },
+                  {
+                    "SystemId": "MgcSpl_Wind_Shield_Charging_Right",
+                    "TargetEntityPart": "Entity",
+                    "TargetNodeName": "R-Hand",
+                    "Scale": 1.5,
+                    "PositionOffset": {
+                      "Y": -0.3,
+                      "Z": 0.3,
+                      "X": 0.1
+                    }
+                  }
+                ]
+              },
+              "Next": {
+                "0": "MgcSpl_Tplt_IntAct_No_Shards_Or_Fail",
+                "2.0": {
+                  "Type": "Replace",
+                  "Var": "MagicSpell_Secondary_Charged",
+                  "DefaultValue": {
+                    "Interactions": [
+                      "MgcSpl_Tplt_IntAct_Secd_Charged"
+                    ]
+                  }
+                }
+              },
+              "DisplayProgress": true
+            }
+          },
+          "DisplayProgress": false
+        }
+      ]
+    },
+    "MagicSpell_Secondary_Charged": {
+      "Interactions": [
+        {
+          "Type": "ModifyInventory",
+          "Parent": "MgcSpl_Tplt_IntAct_Secd_Charged",
+          "ItemToRemove": {
+            "Id": "Ingredient_Crystal_Wind",
+            "Quantity": 4
+          }
+        }
+      ]
+    },
+    "MagicSpell_Charged_Shield_Create_Animation": {
+      "Interactions": [
+        {
+          "Type": "Simple",
+          "Parent": "MgcSpl_Tplt_IntAct_Secd_Charged_Shield_Create_Animation",
+          "RunTime": 0.25,
+          "Effects": {
+            "ItemPlayerAnimationsId": "MgcSpl",
+            "ItemAnimationId": "Charged",
+            "ClearAnimationOnFinish": true,
+            "ClearSoundEventOnFinish": true,
+            "WorldSoundEventId": "SFX_Bow_T2_Signature_Shoot",
+            "LocalSoundEventId": "SFX_Bow_T2_Signature_Shoot_Local"
+          },
+          "Next": {
+            "Type": "ChargeAuraShield",
+            "ModelId": "MgcSpl_Wind_Shield_Model",
+            "HealthAdded": 22
+          },
+          "CancelOnItemChange": false
         }
       ]
     }
