@@ -1,0 +1,38 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Rock_Gem_Aquamarine.name"
+  },
+  "Parent": "Rock_Gem_Emerald",
+  "BlockType": {
+    "CustomModelTexture": [
+      {
+        "Texture": "Resources/Ores/Gem_Textures/Aquamarine.png",
+        "Weight": 1
+      }
+    ],
+    "ParticleColor": "#79f7f7",
+    "Light": {
+      "Color": "#7ff",
+      "Radius": 0
+    },
+    "Particles": [
+      {
+        "Color": "#9df6f6",
+        "SystemId": "Block_Gem_Sparks"
+      }
+    ]
+  },
+  "Icon": "Icons/ItemsGenerated/Rock_Gem_Aquamarine.png",
+  "IconProperties": {
+    "Scale": 0.58823,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      0,
+      -13.5
+    ]
+  }
+}

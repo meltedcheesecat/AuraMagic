@@ -1,0 +1,38 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Rock_Gem_Hematite.name"
+  },
+  "Parent": "Rock_Gem_Emerald",
+  "BlockType": {
+    "CustomModelTexture": [
+      {
+        "Texture": "Resources/Ores/Gem_Textures/Hematite.png",
+        "Weight": 1
+      }
+    ],
+    "ParticleColor": "#3e5a7c",
+    "Light": {
+      "Color": "#357",
+      "Radius": 0
+    },
+    "Particles": [
+      {
+        "Color": "#12243e",
+        "SystemId": "Block_Gem_Sparks"
+      }
+    ]
+  },
+  "Icon": "Icons/ItemsGenerated/Rock_Gem_Hematite.png",
+  "IconProperties": {
+    "Scale": 0.58823,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      0,
+      -13.5
+    ]
+  }
+}
