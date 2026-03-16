@@ -64,3 +64,4 @@ items.MagicSpell_Wind_Lvl2.name = Magic Spell Wind Level 2
 items.MagicSpell_Wind_Lvl3.name = Magic Spell Wind Level 3
 items.MagicSpell_Wind_Lvl4.name = Magic Spell Wind Level 4
 items.MagicSpell_Wind_Lvl5.name = Magic Spell Wind Level 5
+npcRoles.Wind_Sprite.name = Wind Sprite

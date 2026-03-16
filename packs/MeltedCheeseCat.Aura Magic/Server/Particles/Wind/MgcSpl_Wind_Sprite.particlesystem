@@ -1,0 +1,160 @@
+{
+  "Spawners": [
+	    {
+      "SpawnerId": "MgcSpl_Wind_Sprite_Ball_Spawner",
+      "PositionOffset": {
+        "X": 0.015,
+				"Y": 1.025,
+        "Z": 0.04
+      },
+      "FixedRotation": false,
+      "RotationOffset": {
+        "Yaw": 0,
+        "Pitch": 0,
+        "Roll": 0
+      }
+    },
+    {
+      "SpawnerId": "MgcSpl_Wind_Sprite_Ball_Spawner",
+      "PositionOffset": {
+        "X": 0.015,
+        "Y": 0.425,
+        "Z": -0.87
+      },
+      "RotationOffset": {
+        "Yaw": 180,
+        "Roll": 0,
+        "Pitch": 66
+      }
+    },
+    {
+      "SpawnerId": "MgcSpl_Wind_Sprite_Ball_Spawner",
+      "PositionOffset": {
+			  "X": 0.845,
+        "Y": 0.425,
+        "Z": -0.27
+      },
+      "RotationOffset": {
+        "Yaw": 108,
+        "Pitch": 66,
+        "Roll": 0
+      }
+    },
+    {
+      "SpawnerId": "MgcSpl_Wind_Sprite_Ball_Spawner",
+      "PositionOffset": {
+        "X": -0.815,
+        "Y": 0.425,
+        "Z": -0.27
+      },
+      "RotationOffset": {
+        "Yaw": 252,
+        "Pitch": 66
+      }
+    },
+    {
+      "SpawnerId": "MgcSpl_Wind_Sprite_Ball_Spawner",
+      "PositionOffset": {
+        "X": 0.515,
+        "Y": 0.425,
+        "Z": 0.7
+      },
+      "RotationOffset": {
+        "Yaw": 36,
+        "Pitch": 66
+      }
+    },
+    {
+      "SpawnerId": "MgcSpl_Wind_Sprite_Ball_Spawner",
+      "PositionOffset": {
+        "X": -0.515,
+        "Y": 0.425,
+        "Z": 0.7
+      },
+      "RotationOffset": {
+        "Yaw": 324,
+        "Pitch": 66
+      }
+    },
+    {
+      "SpawnerId": "MgcSpl_Wind_Sprite_Ball_Spawner",
+      "PositionOffset": {
+        "X": 0.535,
+        "Y": -0.425,
+        "Z": -0.7
+      },
+      "RotationOffset": {
+        "Yaw": 144,
+        "Roll": 0,
+        "Pitch": -66
+      }
+    },
+    {
+      "SpawnerId": "MgcSpl_Wind_Sprite_Ball_Spawner",
+      "PositionOffset": {
+        "X": 0.845,
+				"Y": -0.425,
+        "Z": 0.27
+      },
+      "RotationOffset": {
+        "Yaw": 72,
+        "Pitch": -66,
+        "Roll": 0
+      }
+    },
+    {
+      "SpawnerId": "MgcSpl_Wind_Sprite_Ball_Spawner",
+      "PositionOffset": {
+        "X": -0.495,
+        "Y": -0.425,
+        "Z": -0.7
+      },
+      "RotationOffset": {
+        "Yaw": 216,
+        "Pitch": -66
+      }
+    },
+    {
+      "SpawnerId": "MgcSpl_Wind_Sprite_Ball_Spawner",
+      "PositionOffset": {
+        "X": -0.015,
+        "Y": -0.425,
+        "Z": 0.87
+      },
+      "RotationOffset": {
+        "Yaw": 0,
+        "Pitch": -66
+      }
+    },
+    {
+      "SpawnerId": "MgcSpl_Wind_Sprite_Ball_Spawner",
+      "PositionOffset": {
+        "X": -0.845,
+        "Y": -0.425,
+        "Z": 0.27
+      },
+      "RotationOffset": {
+        "Yaw": 288,
+        "Pitch": -66
+      }
+    },
+    {
+      "SpawnerId": "MgcSpl_Wind_Sprite_Ball_Spawner",
+      "PositionOffset": {
+        "X": 0.015,
+        "Y": -1.025,
+        "Z": 0
+      },
+      "FixedRotation": false,
+      "RotationOffset": {
+        "Yaw": 180,
+        "Pitch": 0,
+        "Roll": 0
+      }
+    },
+    {
+      "SpawnerId": "MgcSpl_Wind_Sprite_Wind_Spawner"
+    }
+  ],
+  "IsImportant": false
+}

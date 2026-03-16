@@ -1,0 +1,157 @@
+{
+  "Model": "NPC/AuraMagic/Sprite/Sprite.blockymodel",
+  "Texture": "NPC/AuraMagic/Sprite/Textures/Default_Eyes.png",
+  "EyeHeight": 0.5,
+  "CrouchOffset": -0.1,
+  "HitBox": {
+    "Max": {
+      "X": 0.5,
+      "Y": 0.5,
+      "Z": 0.5
+    },
+    "Min": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    }
+  },
+  "Camera": {
+    "Pitch": {
+      "AngleRange": {
+        "Max": 45,
+        "Min": -45
+      },
+      "TargetNodes": [
+        "Head"
+      ]
+    },
+    "Yaw": {
+      "AngleRange": {
+        "Max": 45,
+        "Min": -45
+      },
+      "TargetNodes": [
+        "Head"
+      ]
+    }
+  },
+  "AnimationSets": {
+    "Idle": {
+      "Animations": [
+        {
+          "Animation": "NPC/AuraMagic/Sprite/Animations/Idle.blockyanim"
+        }
+      ]
+    },
+		"Alerted": {
+      "Animations": [
+        {
+          "Animation": "NPC/AuraMagic/Sprite/Animations/Alerted.blockyanim"
+        }
+      ]
+    },
+		"Crouch": {
+      "Animations": [
+        {
+          "Animation": "NPC/AuraMagic/Sprite/Animations/Crouch.blockyanim"
+        }
+      ]
+    },
+		"CrouchWalk": {
+      "Animations": [
+        {
+          "Animation": "NPC/AuraMagic/Sprite/Animations/CrouchWalk.blockyanim"
+        }
+      ]
+    },
+		"Fall": {
+      "Animations": [
+        {
+          "Animation": "NPC/AuraMagic/Sprite/Animations/Fall.blockyanim"
+        }
+      ]
+    },
+		"Jump": {
+      "Animations": [
+        {
+          "Animation": "NPC/AuraMagic/Sprite/Animations/Jump.blockyanim"
+        }
+      ]
+    },
+		"Run": {
+      "Animations": [
+        {
+          "Animation": "NPC/AuraMagic/Sprite/Animations/Run.blockyanim"
+        }
+      ]
+    },
+		"RunBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/AuraMagic/Sprite/Animations/Run.blockyanim"
+        }
+      ]
+    },
+		"Sleep": {
+      "Animations": [
+        {
+          "Animation": "NPC/AuraMagic/Sprite/Animations/Sleep.blockyanim"
+        }
+      ]
+    },
+		"Spawn": {
+      "Animations": [
+        {
+          "Animation": "NPC/AuraMagic/Sprite/Animations/Spawn.blockyanim",
+					"Loop": false
+        }
+      ]
+    },
+		"Wake": {
+      "Animations": [
+        {
+          "Animation": "NPC/AuraMagic/Sprite/Animations/Wake.blockyanim"
+        }
+      ]
+    },
+		"Walk": {
+      "Animations": [
+        {
+          "Animation": "NPC/AuraMagic/Sprite/Animations/Walk.blockyanim"
+        }
+      ]
+    },
+		"WalkBackward": {
+      "Animations": [
+        {
+          "Animation": "NPC/AuraMagic/Sprite/Animations/Walk.blockyanim"
+        }
+      ]
+    },
+		"IdlePassive": {
+      "Animations": [
+        {
+          "Animation": "NPC/AuraMagic/Sprite/Animations/Idle.blockyanim"
+        }
+      ],
+      "NextAnimationDelay": {
+        "Max": 15,
+        "Min": 5
+      }
+    },
+		"Search": {
+      "Animations": [
+        {
+          "Animation": "NPC/AuraMagic/Sprite/Animations/Idle.blockyanim"
+        }
+      ]
+    },
+    "Laydown": {
+      "Animations": [
+        {
+          "Animation": "NPC/AuraMagic/Sprite/Animations/Idle.blockyanim"
+        }
+      ]
+    }
+  }
+}

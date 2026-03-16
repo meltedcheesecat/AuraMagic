@@ -1,0 +1,106 @@
+{
+  "RenderMode": "BlendLinear",
+  "ParticleRotationInfluence": "None",
+  "LinearFiltering": false,
+  "LightInfluence": 0,
+  "ParticleRotateWithSpawner": true,
+  "MaxConcurrentParticles": 1,
+  "ParticleLifeSpan": {
+    "Min": 2.05,
+    "Max": 2.05
+  },
+  "SpawnRate": {
+    "Min": 1,
+    "Max": 1
+  },
+  "Particle": {
+    "Texture": "Particles/Textures/MagicSpell/WindShield100Light.png",
+    "Animation": {
+      "0": {
+			  "Color": "#5affe9",
+			  "Opacity": 0.0,
+				"Rotation": {
+					"X": { "Min": 0, "Max": 0 },
+					"Y": { "Min": 180, "Max": 180 },
+					"Z": { "Min": 0, "Max": 0 }
+				},
+        "Scale": {
+          "Y": {
+            "Max": 0.8,
+            "Min": 0.8
+          },
+          "X": {
+            "Min": 0.8,
+            "Max": 0.8
+          }
+        }
+      },
+			"50": {
+			  "Opacity": 1.0,
+        "Scale": {
+          "Y": {
+            "Max": 1.0,
+            "Min": 1.0
+          },
+          "X": {
+            "Min": 1.0,
+            "Max": 1.0
+          }
+        }
+      },
+      "100": {
+			  "Color": "#5affe9",
+			  "Opacity": 0.0,
+				"Rotation": {
+					"X": { "Min": 0, "Max": 0 },
+					"Y": { "Min": 0, "Max": 0 },
+					"Z": { "Min": 0, "Max": 0 }
+				},
+        "Scale": {
+          "Y": {
+            "Max": 0.8,
+            "Min": 0.8
+          },
+          "X": {
+            "Min": 0.8,
+            "Max": 0.8
+          }
+        }
+      }
+    },
+    "UseSpriteBlending": false,
+    "InitialAnimationFrame": {
+      "Rotation": {
+        "Y": {
+          "Min": 0,
+          "Max": 0
+        },
+        "Z": {
+          "Min": 0,
+          "Max": 0
+        },
+        "X": {
+          "Max": 90,
+          "Min": 90
+        }
+      },
+      "Scale": {
+        "X": {
+          "Min": 0.75,
+          "Max": 0.75
+        },
+        "Y": {
+          "Min": 0.75,
+          "Max": 0.75
+        }
+      },
+      "Opacity": 1,
+      "Color": "#5affe9"
+    },
+    "SoftParticles": "Enable",
+    "SoftParticlesFadeFactor": 1,
+    "UVOption": "None"
+  },
+  "SpawnBurst": true,
+  "Shape": "Sphere"
+}

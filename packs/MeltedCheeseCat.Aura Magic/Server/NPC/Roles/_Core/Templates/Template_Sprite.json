@@ -1,0 +1,123 @@
+{
+  "Type": "Abstract",
+	"Debug": "DisplayState",
+  "Parameters": {
+    "Appearance": {
+      "Value": "Wind_Sprite",
+      "Description": "Model to be used"
+    },
+    "DropList": {
+      "Value": "Empty",
+      "Description": "Drop Items"
+    },
+    "MaxHealth": {
+      "Value": 100,
+      "Description": "Max health for the NPC"
+    },
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Template.name",
+      "Description": "Translation key for NPC name display"
+    }
+  },
+  "Appearance": { "Compute": "Appearance" },
+  "DropList": { "Compute": "DropList" },
+	"MaxHealth": { "Compute": "MaxHealth" },
+	"StartState": "Idle",
+  "MotionControllerList": [
+    {
+      "Type": "Walk",
+      "MaxWalkSpeed": 3,
+      "Gravity": 10,
+      "MaxFallSpeed": 8,
+      "Acceleration": 10
+    }
+  ],
+	"Instructions": [
+		{
+			"Sensor": {
+				"Type": "State",
+				"State": "Idle"
+			},
+			"Instructions": [
+			  {
+					"Sensor": {
+						"Type": "State",
+						"State": ".Default"
+					},
+					"Instructions": [
+			      {
+							"Actions": [
+							  {
+									"Type": "Random",
+									"Actions": [
+									  {
+										  "Weight" : 50,
+                      "Action": {
+												"Type": "State",
+												"State": ".Guard"
+                      }												
+										},
+										{
+											"Weight" : 50,
+                      "Action": {
+												"Type": "State",
+												"State": "Sleep"
+                      }	
+										}
+									]
+								}
+						  ]
+						}
+					]
+				},
+				{
+					"Sensor": {
+						"Type": "State",
+						"State": ".Guard"
+					},
+					"Instructions": [
+			      {
+							"Continue": true,
+							"ActionsBlocking": true,
+							"Actions": [
+								{
+									"Type": "Timeout",
+									"Delay": [5, 10]											
+								},
+								{
+									"Type": "State",
+									"State": ".Default"
+								}
+							]
+						},
+						{
+							"Reference": "Component_Instruction_Intelligent_Idle_Motion_Follow_Path"
+						}
+					]
+				}	
+			]
+		},
+		{
+			"Sensor": {
+				"Type": "State",
+				"State": "Sleep"
+			},
+			"Instructions": [
+			  {
+					"ActionsBlocking": true,
+					  "Actions": [
+						{
+							"Type": "Timeout",
+							"Delay": [5, 10]
+						},
+						{
+							"Type": "State",
+							"State": "Idle"
+						}
+					]
+				}
+			]
+		}
+	],
+  "NameTranslationKey": { "Compute": "NameTranslationKey" }
+}

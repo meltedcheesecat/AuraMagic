@@ -1,0 +1,21 @@
+{
+  "Parent": "Template_Sprite",
+  "Texture": "NPC/AuraMagic/Sprite/Textures/Wind_Eyes.png",
+  "Particles": [
+    {
+      "PositionOffset": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "SystemId": "MgcSpl_Wind_Sprite",
+      "TargetNodeName": "Head",
+      "TargetEntityPart": "Self",
+      "Scale": 0.35
+    }
+  ],
+  "Light": {
+    "Color": "#8fd",
+    "Radius": 1
+  }
+}

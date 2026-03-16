@@ -1,0 +1,13 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Sprite",
+  "Modify": {
+    "Appearance": "Wind_Sprite"
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Wind_Sprite.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}
