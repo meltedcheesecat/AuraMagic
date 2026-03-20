@@ -5,9 +5,9 @@
       {
         "Type": "Single",
         "Item": {
-          "ItemId": "Ingredient_Crystal_Fire",
-          "QuantityMin": 4,
-          "QuantityMax": 5
+          "ItemId": "Ingredient_Crystal_Lava",
+          "QuantityMin": 2,
+          "QuantityMax": 3
         }
       }
     ]

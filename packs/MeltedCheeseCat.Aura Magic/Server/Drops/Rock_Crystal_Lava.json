@@ -5,9 +5,9 @@
       {
         "Type": "Single",
         "Item": {
-          "ItemId": "Ingredient_Crystal_Sound",
-          "QuantityMin": 2,
-          "QuantityMax": 3
+          "ItemId": "Ingredient_Crystal_Lava",
+          "QuantityMin": 4,
+          "QuantityMax": 5
         }
       }
     ]

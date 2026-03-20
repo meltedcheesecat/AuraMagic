@@ -1,6 +1,6 @@
 {
+  "Debug": "DisplayState",
   "Type": "Abstract",
-	"Debug": "DisplayState",
   "Parameters": {
     "Appearance": {
       "Value": "Wind_Sprite",
@@ -19,10 +19,16 @@
       "Description": "Translation key for NPC name display"
     }
   },
-  "Appearance": { "Compute": "Appearance" },
-  "DropList": { "Compute": "DropList" },
-	"MaxHealth": { "Compute": "MaxHealth" },
-	"StartState": "Idle",
+  "Appearance": {
+    "Compute": "Appearance"
+  },
+  "DropList": {
+    "Compute": "DropList"
+  },
+  "MaxHealth": {
+    "Compute": "MaxHealth"
+  },
+  "StartState": "Idle",
   "MotionControllerList": [
     {
       "Type": "Walk",
@@ -32,92 +38,100 @@
       "Acceleration": 10
     }
   ],
-	"Instructions": [
-		{
-			"Sensor": {
-				"Type": "State",
-				"State": "Idle"
-			},
-			"Instructions": [
-			  {
-					"Sensor": {
-						"Type": "State",
-						"State": ".Default"
-					},
-					"Instructions": [
-			      {
-							"Actions": [
-							  {
-									"Type": "Random",
-									"Actions": [
-									  {
-										  "Weight" : 50,
+  "Instructions": [
+    {
+      "Sensor": {
+        "Type": "State",
+        "State": "Idle"
+      },
+      "Instructions": [
+        {
+          "Sensor": {
+            "Type": "State",
+            "State": ".Default"
+          },
+          "Instructions": [
+            {
+              "Actions": [
+                {
+                  "Type": "Random",
+                  "Actions": [
+                    {
+                      "Weight": 50,
                       "Action": {
-												"Type": "State",
-												"State": ".Guard"
-                      }												
-										},
-										{
-											"Weight" : 50,
+                        "Type": "State",
+                        "State": ".Guard"
+                      }
+                    },
+                    {
+                      "Weight": 50,
                       "Action": {
-												"Type": "State",
-												"State": "Sleep"
-                      }	
-										}
-									]
-								}
-						  ]
-						}
-					]
-				},
-				{
-					"Sensor": {
-						"Type": "State",
-						"State": ".Guard"
-					},
-					"Instructions": [
-			      {
-							"Continue": true,
-							"ActionsBlocking": true,
-							"Actions": [
-								{
-									"Type": "Timeout",
-									"Delay": [5, 10]											
-								},
-								{
-									"Type": "State",
-									"State": ".Default"
-								}
-							]
-						},
-						{
-							"Reference": "Component_Instruction_Intelligent_Idle_Motion_Follow_Path"
-						}
-					]
-				}	
-			]
-		},
-		{
-			"Sensor": {
-				"Type": "State",
-				"State": "Sleep"
-			},
-			"Instructions": [
-			  {
-					"ActionsBlocking": true,
-					  "Actions": [
-						{
-							"Type": "Timeout",
-							"Delay": [5, 10]
-						},
-						{
-							"Type": "State",
-							"State": "Idle"
-						}
-					]
-				}
-			]
-		}
-	],
-  "NameTranslationKey": { "Compute": "NameTranslationKey" }
+                        "Type": "State",
+                        "State": "Sleep"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Sensor": {
+            "Type": "State",
+            "State": ".Guard"
+          },
+          "Instructions": [
+            {
+              "Continue": true,
+              "ActionsBlocking": true,
+              "Actions": [
+                {
+                  "Type": "Timeout",
+                  "Delay": [
+                    5,
+                    10
+                  ]
+                },
+                {
+                  "Type": "State",
+                  "State": ".Default"
+                }
+              ]
+            },
+            {
+              "Reference": "Component_Instruction_Intelligent_Idle_Motion_Follow_Path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Sensor": {
+        "Type": "State",
+        "State": "Sleep"
+      },
+      "Instructions": [
+        {
+          "ActionsBlocking": true,
+          "Actions": [
+            {
+              "Type": "Timeout",
+              "Delay": [
+                5,
+                10
+              ]
+            },
+            {
+              "Type": "State",
+              "State": "Idle"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "NameTranslationKey": {
+    "Compute": "NameTranslationKey"
+  }
 }

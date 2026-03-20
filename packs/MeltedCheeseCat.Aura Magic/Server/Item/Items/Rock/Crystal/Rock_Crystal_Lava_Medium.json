@@ -1,8 +1,8 @@
 {
   "TranslationProperties": {
-    "Name": "server.items.Rock_Crystal_Fire_Medium.name"
+    "Name": "server.items.Rock_Crystal_Lava_Medium.name"
   },
-  "Icon": "Icons/ItemsGenerated/Rock_Crystal_Fire_Medium.png",
+  "Icon": "Icons/ItemsGenerated/Rock_Crystal_Lava_Medium.png",
   "Categories": [
     "Blocks.Rocks"
   ],
@@ -17,24 +17,24 @@
     "CustomModel": "Resources/Crystals/Crystal_Medium.blockymodel",
     "CustomModelTexture": [
       {
-        "Texture": "Resources/Crystals/Crystal_Big_Textures/Fire.png",
+        "Texture": "Resources/Crystals/Crystal_Big_Textures/Lava.png",
         "Weight": 1
       }
     ],
     "Flags": {},
     "Gathering": {
       "Breaking": {
-        "DropList": "Rock_Crystal_Fire_Medium",
+        "DropList": "Rock_Crystal_Lava_Medium",
         "GatherType": "Rocks"
       }
     },
     "VariantRotation": "DoublePipe",
     "RandomRotation": "YawStep1",
     "BlockParticleSetId": "Crystal",
-    "ParticleColor": "#fe9300",
+    "ParticleColor": "#d02295",
     "BlockSoundSetId": "Crystal",
     "Light": {
-      "Color": "#da3"
+      "Color": "#dc6"
     },
     "Support": {
       "Down": [
@@ -56,7 +56,7 @@
   "Recipe": {
     "Input": [
       {
-        "ItemId": "Ingredient_Crystal_Fire",
+        "ItemId": "Ingredient_Crystal_Lava",
         "Quantity": 4
       }
     ],

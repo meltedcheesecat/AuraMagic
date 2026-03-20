@@ -1,12 +1,12 @@
 {
   "TranslationProperties": {
-    "Name": "server.items.Ingredient_Crystal_Fire.name"
+    "Name": "server.items.Ingredient_Crystal_Lava.name"
   },
   "Categories": [
     "Items.Ingredients"
   ],
   "Model": "Resources/Crystals/Crystal_Fragment.blockymodel",
-  "Texture": "Resources/Crystals/Crystal_Fragment_Textures/Fire.png",
+  "Texture": "Resources/Crystals/Crystal_Fragment_Textures/Lava.png",
   "Quality": "Common",
   "ItemLevel": 10,
   "PlayerAnimationsId": "Item",
@@ -22,7 +22,7 @@
       0.3
     ]
   },
-  "Icon": "Icons/ItemsGenerated/Ingredient_Crystal_Fire.png",
+  "Icon": "Icons/ItemsGenerated/Ingredient_Crystal_Lava.png",
   "Scale": 1.2,
   "Tags": {
     "Type": [

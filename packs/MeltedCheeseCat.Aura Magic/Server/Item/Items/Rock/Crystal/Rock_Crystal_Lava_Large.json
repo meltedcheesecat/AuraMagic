@@ -1,8 +1,8 @@
 {
   "TranslationProperties": {
-    "Name": "server.items.Rock_Crystal_Sound_Medium.name"
+    "Name": "server.items.Rock_Crystal_Lava_Large.name"
   },
-  "Icon": "Icons/ItemsGenerated/Rock_Crystal_Sound_Medium.png",
+  "Icon": "Icons/ItemsGenerated/Rock_Crystal_Lava_Large.png",
   "Categories": [
     "Blocks.Rocks"
   ],
@@ -14,17 +14,17 @@
     "Material": "Solid",
     "DrawType": "Model",
     "Opacity": "Transparent",
-    "CustomModel": "Resources/Crystals/Crystal_Medium.blockymodel",
+    "CustomModel": "Resources/Crystals/Crystal_Big.blockymodel",
     "CustomModelTexture": [
       {
-        "Texture": "Resources/Crystals/Crystal_Big_Textures/Sound.png",
+        "Texture": "Resources/Crystals/Crystal_Big_Textures/Lava.png",
         "Weight": 1
       }
     ],
     "Flags": {},
     "Gathering": {
       "Breaking": {
-        "DropList": "Rock_Crystal_Sound_Medium",
+        "DropList": "Rock_Crystal_Lava_Large",
         "GatherType": "Rocks"
       }
     },
@@ -34,7 +34,7 @@
     "ParticleColor": "#d02295",
     "BlockSoundSetId": "Crystal",
     "Light": {
-      "Color": "#dc6"
+      "Color": "#fe7"
     },
     "Support": {
       "Down": [
@@ -42,8 +42,19 @@
           "FaceType": "Full"
         }
       ]
-    },
-    "HitboxType": "Plant_Large"
+    }
+  },
+  "IconProperties": {
+    "Scale": 0.52,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      0,
+      -15.3
+    ]
   },
   "Tags": {
     "Type": [
@@ -56,8 +67,8 @@
   "Recipe": {
     "Input": [
       {
-        "ItemId": "Ingredient_Crystal_Sound",
-        "Quantity": 4
+        "ItemId": "Ingredient_Crystal_Lava",
+        "Quantity": 6
       }
     ],
     "BenchRequirement": [
@@ -68,18 +79,6 @@
           "Decorative"
         ]
       }
-    ]
-  },
-  "IconProperties": {
-    "Scale": 0.58823,
-    "Rotation": [
-      22.5,
-      45,
-      22.5
-    ],
-    "Translation": [
-      0,
-      -13.5
     ]
   }
 }

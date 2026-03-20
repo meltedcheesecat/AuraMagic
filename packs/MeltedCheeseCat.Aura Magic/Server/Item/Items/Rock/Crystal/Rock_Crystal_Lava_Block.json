@@ -1,8 +1,8 @@
 {
   "TranslationProperties": {
-    "Name": "server.items.Rock_Crystal_Fire.name"
+    "Name": "server.items.Rock_Crystal_Lava.name"
   },
-  "Icon": "Icons/ItemsGenerated/Rock_Crystal_Fire_Block.png",
+  "Icon": "Icons/ItemsGenerated/Rock_Crystal_Lava_Block.png",
   "Categories": [
     "Blocks.Rocks",
     "Blocks.Rocks"
@@ -19,23 +19,23 @@
     "Flags": {},
     "Gathering": {
       "Breaking": {
-        "DropList": "Rock_Crystal_Fire",
+        "DropList": "Rock_Crystal_Lava",
         "GatherType": "Rocks"
       }
     },
     "BlockParticleSetId": "Crystal",
     "Textures": [
       {
-        "Sides": "BlockTextures/Rock_Crystal_Fire.png",
-        "UpDown": "BlockTextures/Rock_Crystal_Fire_Top.png",
+        "Sides": "BlockTextures/Rock_Crystal_Lava.png",
+        "UpDown": "BlockTextures/Rock_Crystal_Lava_Top.png",
         "Weight": 1
       }
     ],
-    "ParticleColor": "#fe9300",
+    "ParticleColor": "#d02295",
     "BlockSoundSetId": "Crystal",
     "CubeShadingMode": "Reflective",
     "Light": {
-      "Color": "#fb4"
+      "Color": "#fe7"
     },
     "VariantRotation": "Pipe"
   },
@@ -63,7 +63,7 @@
   "Recipe": {
     "Input": [
       {
-        "ItemId": "Ingredient_Crystal_Fire",
+        "ItemId": "Ingredient_Crystal_Lava",
         "Quantity": 10
       }
     ],

@@ -1,8 +1,8 @@
 {
   "TranslationProperties": {
-    "Name": "server.items.Rock_Crystal_Sound_Small.name"
+    "Name": "server.items.Rock_Crystal_Lava_Small.name"
   },
-  "Icon": "Icons/ItemsGenerated/Rock_Crystal_Sound_Small.png",
+  "Icon": "Icons/ItemsGenerated/Rock_Crystal_Lava_Small.png",
   "Categories": [
     "Blocks.Rocks"
   ],
@@ -17,7 +17,7 @@
     "CustomModel": "Resources/Crystals/Crystal_Small.blockymodel",
     "CustomModelTexture": [
       {
-        "Texture": "Resources/Crystals/Crystal_Big_Textures/Sound.png",
+        "Texture": "Resources/Crystals/Crystal_Big_Textures/Lava.png",
         "Weight": 1
       }
     ],
@@ -25,7 +25,7 @@
     "Flags": {},
     "Gathering": {
       "Breaking": {
-        "DropList": "Rock_Crystal_Sound_Small",
+        "DropList": "Rock_Crystal_Lava_Small",
         "GatherType": "Rocks"
       }
     },
@@ -56,7 +56,7 @@
   "Recipe": {
     "Input": [
       {
-        "ItemId": "Ingredient_Crystal_Sound",
+        "ItemId": "Ingredient_Crystal_Lava",
         "Quantity": 2
       }
     ],
