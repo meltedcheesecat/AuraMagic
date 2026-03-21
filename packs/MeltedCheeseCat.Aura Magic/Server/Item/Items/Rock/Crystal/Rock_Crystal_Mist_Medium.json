@@ -31,10 +31,10 @@
     "VariantRotation": "DoublePipe",
     "RandomRotation": "YawStep1",
     "BlockParticleSetId": "Crystal",
-    "ParticleColor": "#1db0cc",
+    "ParticleColor": "#f7dfe5",
     "BlockSoundSetId": "Crystal",
     "Light": {
-      "Color": "#5dc"
+      "Color": "#ecd"
     },
     "Support": {
       "Down": [
