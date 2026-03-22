@@ -41,12 +41,12 @@
     ],
     "BenchRequirement": [
       {
-        "Id": "Workbench",
+        "Id": "ElementalWindbench",
         "Type": "Crafting",
         "Categories": [
-          "Workbench_Tinkering"
+          "Elemental_Wind_Level3"
         ],
-				"RequiredTierLevel": 2
+				"RequiredTierLevel": 3
       }
     ]
   },	

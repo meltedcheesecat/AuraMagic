@@ -23,8 +23,8 @@
     "TimeSeconds": 6,
     "Input": [
       {
-        "ItemId": "Ingredient_Crystal_Wind",
-        "Quantity": 125
+        "ItemId": "Rock_Gem_Aquamarine",
+        "Quantity": 5
       },
       {
         "ItemId": "Ingredient_Bar_Gold",
@@ -41,12 +41,12 @@
     ],
     "BenchRequirement": [
       {
-        "Id": "Workbench",
+        "Id": "ElementalWindbench",
         "Type": "Crafting",
         "Categories": [
-          "Workbench_Tinkering"
+          "Elemental_Wind_Level5"
         ],
-				"RequiredTierLevel": 3
+				"RequiredTierLevel": 5
       }
     ]
   },
