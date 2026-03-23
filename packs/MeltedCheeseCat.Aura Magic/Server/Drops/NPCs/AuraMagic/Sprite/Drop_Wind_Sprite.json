@@ -1,0 +1,35 @@
+{
+  "Container": {
+    "Type": "Multiple",
+    "Containers": [
+      {
+        "Type": "Choice",
+        "Weight": 15,
+        "Containers": [
+          {
+            "Type": "Single",
+            "Item": {
+              "ItemId": "Ingredient_Crystal_Wind",
+              "QuantityMin": 1,
+              "QuantityMax": 3
+            }
+          }
+        ]
+      },
+      {
+        "Type": "Choice",
+        "Weight": 100,
+        "Containers": [
+          {
+            "Type": "Single",
+            "Item": {
+              "ItemId": "Ingredient_Wind_Essence",
+              "QuantityMin": 1,
+              "QuantityMax": 3
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

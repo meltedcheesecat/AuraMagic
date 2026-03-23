@@ -2,7 +2,11 @@
   "Type": "Variant",
   "Reference": "Template_Sprite",
   "Modify": {
-    "Appearance": "Wind_Sprite"
+    "Appearance": "Wind_Sprite",
+    "DropList": "Drop_Wind_Sprite",
+    "AttractBlockSet": "WindCrystals",
+    "TargetGroups": [ "Wind_Group" ],
+    "AttitudeGroup": "Wind_Attitude"
   },
   "Parameters": {
     "NameTranslationKey": {
