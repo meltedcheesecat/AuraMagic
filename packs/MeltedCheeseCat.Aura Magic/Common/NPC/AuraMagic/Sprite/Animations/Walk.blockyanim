@@ -13,12 +13,12 @@
         },
         {
           "time": 15,
-          "delta": {"x": 0, "y": 0, "z": 0.13053, "w": 0.99144},
+          "delta": {"x": 0, "y": 0, "z": 0.08716, "w": 0.99619},
           "interpolationType": "linear"
         },
         {
           "time": 45,
-          "delta": {"x": 0, "y": 0, "z": -0.21644, "w": 0.9763},
+          "delta": {"x": 0, "y": 0, "z": -0.08716, "w": 0.99619},
           "interpolationType": "linear"
         },
         {

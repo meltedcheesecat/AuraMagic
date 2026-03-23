@@ -173,18 +173,116 @@
         "Type": "State",
         "State": "Alerted"
       },
+      "Name": "Alerted",
       "Instructions": [
         {
-          "Reference": "Component_Sprite_Instruction_Alerted",
-          "Modify": {
-            "_ExportStates": [ "Idle", "Search", "Chase" ],
-            "ViewRange": { "Compute": "ViewRange" },
-            "ViewSector": { "Compute": "ViewSector" },
-            "HearingRange": { "Compute": "HearingRange" },
-            "AlertedRange": { "Compute": "AlertedRange" },
-            "AlertedTime": { "Compute": "AlertedTime" }
-          }
-        }
+          "Continue": true,
+          "Sensor": {
+            "Type": "Any",
+            "Once": true
+          },
+          "Actions": [
+            {
+              "Type": "PlayAnimation",
+              "Slot": "Status",
+              "Animation": "Alerted"
+            },
+            {
+              "Type": "SpawnParticles",
+              "Offset": [ 0, 2.1, 0 ],
+              "ParticleSystem": "Alerted"
+            },
+            {
+              "Type": "Beacon",
+              "Range": 10,
+              "Message": "SpriteAlert",
+              "TargetGroups": { "Compute": "TargetGroups" },
+              "SendCount": -1
+            }
+          ]
+        },
+        {
+          "Continue": true,
+          "Instructions": [
+            {
+              "Sensor": {
+                "Type": "Target",
+                "Range": { "Compute": "AlertedRange" },
+                "Filters": [
+                  {
+                    "Type": "LineOfSight"
+                  }
+                ]
+              },
+              "HeadMotion": {
+                "Type": "Watch"
+              }
+            }
+          ]
+        },
+        {
+          "Sensor": {
+            "Reference": "Component_Sensor_Target_Hidden_Nearby",
+            "Modify": {
+              "IntuitionRange": { "Compute": "AlertedRange" },
+              "HearingRange": { "Compute": "HearingRange + 1" },
+              "ViewRange": { "Compute": "ViewRange + 1" },
+              "SmellRange": { "Compute": "SmellRange" },
+              "ViewSector": { "Compute": "ViewSector" }
+            }
+          },
+          "Actions": [
+            {
+              "Type": "State",
+              "State": "Search"
+            } 
+          ]
+        },
+        {
+          "Sensor": {
+          "Type": "Or",
+          "Sensors": [
+            {
+              "Reference": "Component_Sensor_Sight_By_Attitude",
+              "Modify": {
+                  "ViewRange": { "Compute": "AlertedRange" },
+                  "ViewSector": { "Compute": "ViewSector" },
+                  "Attitudes": [ "Hostile" ]
+                }
+              },
+              {
+                "Reference": "Component_Sensor_Sound_By_Attitude",
+                "Modify": {
+                  "HearingRange": { "Compute": "HearingRange" },
+                  "Attitudes": [ "Hostile" ]
+                }
+              }
+            ]
+          },
+          "Actions": [
+            {
+              "Type": "Timeout",
+              "Delay": { "Compute": "AlertedTime" },
+              "Action": {
+                "Type": "State",
+                "State": "Chase"
+              }
+            }
+          ]
+        },
+        {
+          "Continue": true,
+          "Actions": [
+            {
+              "Type": "Timeout",
+              "Delay": [ 1, 1 ],
+              "Action": {
+                "Type": "State",
+                "State": "Idle"
+              }
+            }
+          ]
+        }   
       ]
     },
     {
@@ -352,8 +450,41 @@
                 "Type": "HasHostileTargetMemory"
               }
             ]
-          },
+          },          
           "Instructions": [
+            {
+              "Sensor": {
+                "Type": "State",
+                "State": ".Flee",
+                "IgnoreMissingSetState": true
+              },
+              "Instructions": [
+                {
+                  "Sensor": {
+                    "Type": "CombatActionEvaluator",
+                    "TargetInRange": true
+                  },
+                  "BodyMotion": {
+                    "Type": "Flee",
+                    "SlowDownDistance": 8,
+                    "StopDistance": 15,
+                    "RelativeSpeed": 0.8
+                  }
+                },
+                {
+                  "Sensor": {
+                    "Type": "CombatActionEvaluator",
+                    "TargetInRange": false
+                  },
+                  "BodyMotion": {
+                    "Type": "Flee",
+                    "SlowDownDistance": 8,
+                    "StopDistance": 15,
+                    "RelativeSpeed": 0.8
+                  }
+                }
+              ]
+            },
             {
               "Sensor": {
                 "Type": "CombatActionEvaluator",

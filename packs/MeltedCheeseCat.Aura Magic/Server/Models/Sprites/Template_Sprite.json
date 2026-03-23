@@ -128,6 +128,13 @@
         }
       ]
     },
+    "Crystal": {
+      "Animations": [
+        {
+          "Animation": "NPC/AuraMagic/Sprite/Animations/Run.blockyanim"
+        }
+      ]
+    },
 		"IdlePassive": {
       "Animations": [
         {

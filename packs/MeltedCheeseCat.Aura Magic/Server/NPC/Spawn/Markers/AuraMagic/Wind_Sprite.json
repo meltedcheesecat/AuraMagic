@@ -1,0 +1,13 @@
+{
+  "Model": "NPC_Spawn_Marker",
+  "NPCs": [
+    {
+      "Name": "Wind_Sprite",
+      "Weight": 100.0,
+      "SpawnAfterGameTime": "P1D"
+    }
+  ],
+  "ExclusionRadius": 20,
+  "MaxDropHeight": 4,
+  "DeactivationDistance": 150
+}

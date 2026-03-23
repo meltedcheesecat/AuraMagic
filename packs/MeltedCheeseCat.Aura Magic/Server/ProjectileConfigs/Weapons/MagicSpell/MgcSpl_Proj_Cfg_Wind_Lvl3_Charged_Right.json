@@ -1,5 +1,4 @@
 {
-  "Type": "ProjectileConfig",
   "Model": "MgcSpl_Wind_Lvl1_Charged_Model",
   "Physics": {
     "Type": "Standard",
@@ -32,10 +31,7 @@
             "EntityDamageRadius": 2.5,
             "EntityDamageFalloff": 0,
             "Knockback": {
-              "Force": 35,
-              "RelativeX": 0,
-              "RelativeZ": -8,
-              "VelocityY": 8
+              "Force": 45
             }
           },
           "Effects": {
@@ -84,10 +80,7 @@
             "EntityDamageRadius": 2.5,
             "EntityDamageFalloff": 0,
             "Knockback": {
-              "Force": 45,
-              "RelativeX": 0,
-              "RelativeZ": -8,
-              "VelocityY": 8
+              "Force": 45
             }
           },
           "Effects": {
