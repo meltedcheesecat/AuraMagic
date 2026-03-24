@@ -50,7 +50,7 @@
       "Description": "This NPCs attitude group"
     },
     "AvoidGroup": {
-      "Value": [ "Wind_Group" ],
+      "Value": [ "Wind_Sprite" ],
       "Description": "NPC group to try and navigate around"
     },
     "MaxHealth": {
@@ -72,12 +72,24 @@
     "NameTranslationKey": {
       "Value": "server.npcRoles.Template.name",
       "Description": "Translation key for NPC name display"
+    },
+    "CombatAttackPreDelay": {
+      "Value": [ 0.3, 0.3 ],
+      "Description": "The time delay range before the NPC performs an attack, provided it's in attack range."
+    },
+    "CombatAttackPostDelay": {
+      "Value": [ 0.4, 0.4 ],
+      "Description": "The time delay range after the NPC performs an attack, provided it's in attack range."
+    },
+    "AttackDistance": {
+      "Value": 2.5,
+      "Description": "The distance to attack from."
     }
   },
   "IsMemory": { "Compute": "IsMemory" },
   "MemoriesCategory": { "Compute": "MemoriesCategory" },
   "MemoriesNameOverride": { "Compute": "MemoriesNameOverride" },
-  "DisableDamageGroups": [ "Wind_Group" ],
+  "DisableDamageGroups": { "Compute": "AvoidGroup" },
   "Appearance": { "Compute": "Appearance" },
   "DropList": { "Compute": "DropList" },
   "KnockbackScale": 0.5,
@@ -398,44 +410,6 @@
       "Instructions": [
         {
           "Sensor": {
-            "Type": "And",
-            "Sensors": [
-              {
-                "Type": "Not",
-                "Sensor": {
-                  "Type": "Mob",
-                  "Range": { "Compute": "ViewRange" },
-                  "ExcludeOwnType": false,
-                  "LockOnTarget": false,
-                  "Filters": [
-                    {
-                      "Type": "NPCGroup",
-                      "IncludeGroups": [ "Wind_Group" ]
-                    },
-                    {
-                      "Type": "LineOfSight"
-                    }
-                  ]
-                }
-              },
-              {
-                "Type": "Not",
-                "Sensor": {
-                  "Type": "Beacon",
-                  "Message": "WindAlert"
-                }
-              }
-            ]
-          },
-          "Actions": [
-            {
-              "Type": "State",
-              "State": "Idle"
-            }
-          ]
-        },
-        {
-          "Sensor": {
             "Type": "Or",
             "Sensors": [
               {
@@ -486,23 +460,33 @@
               ]
             },
             {
+              "Continue": true,
+              "$Comment": "TODO: This Continue causes moving while attacking to maintain distance",
               "Sensor": {
-                "Type": "CombatActionEvaluator",
-                "TargetInRange": true
+                "Type": "Target",
+                "Range": { "Compute": "AttackDistance" },
+                "Filters": [
+                  {
+                    "Type": "LineOfSight"
+                  }
+                ]
               },
-              "HeadMotion": {
-                "Type": "Aim"
-              },
-              "BodyMotion": {
-                "Type": "MaintainDistance",
-                "DesiredDistanceRange": [ 2, 3 ],
-                "MoveThreshold": 0.2,
-                "RelativeForwardsSpeed": 0.45,
-                "RelativeBackwardsSpeed": 0.45
-              },
+              "ActionsBlocking": true,
               "Actions": [
                 {
-                  "Type": "CombatAbility"
+                  "$Comment": "TODO: Brief delay before attack so NPC can stop moving. Do we need it?",
+                  "Type": "Timeout",
+                  "Delay": { "Compute": "CombatAttackPreDelay" }
+                },
+                {
+                  "Type": "Attack",
+                  "Attack": "Root_NPC_Sprite_Attack",
+                  "AttackPauseRange": [ 0, 2 ]
+                },
+                {
+                  "$Comment": "Brief delay to prevent the NPC potentially strafing/backing away and missing the shot.",
+                  "Type": "Timeout",
+                  "Delay": { "Compute": "CombatAttackPostDelay" }
                 }
               ]
             },

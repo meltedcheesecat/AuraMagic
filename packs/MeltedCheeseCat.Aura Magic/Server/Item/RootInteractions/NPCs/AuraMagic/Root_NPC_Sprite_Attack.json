@@ -1,0 +1,10 @@
+{
+  "Interactions": [
+    "Tplt_IntAct_Sprite_Attack_Start"
+  ],
+  "Tags": {
+    "Attack": [
+      "Melee"
+    ]
+  }
+}

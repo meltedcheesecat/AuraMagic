@@ -135,6 +135,25 @@
         }
       ]
     },
+    "Hurt": {
+      "Animations": [
+        {
+          "Animation": "NPC/AuraMagic/Sprite/Animations/Hurt.blockyanim",
+          "BlendingDuration": 0.1,
+          "Looping": false,
+          "SoundEventId": "SFX_Staff_Flame_Flamethrower_End"
+        }
+      ]
+    },
+    "Death": {
+      "Animations": [
+        {
+          "Animation": "NPC/AuraMagic/Sprite/Animations/Death.blockyanim",
+          "Looping": false,
+          "SoundEventId": "SFX_Staff_Flame_Flamethrower_End"
+        }
+      ]
+    },
 		"IdlePassive": {
       "Animations": [
         {

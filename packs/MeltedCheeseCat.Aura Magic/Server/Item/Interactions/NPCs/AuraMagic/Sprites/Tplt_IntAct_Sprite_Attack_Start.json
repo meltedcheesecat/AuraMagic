@@ -1,0 +1,10 @@
+{
+  "$Comment": "Sprite Attack Start with override var",
+  "Type": "Replace",
+  "Var": "Sprite_Attack",
+  "DefaultValue": {
+    "Interactions": [
+      "Tplt_IntAct_Sprite_Attack"
+    ]
+  }
+}
