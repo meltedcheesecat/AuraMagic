@@ -13,30 +13,23 @@ import me.melchscat.aura.worldgen.CustomWorldGenProvider;
 import me.melchscat.aura.system.AuraShieldSystem;
 import org.checkerframework.checker.nullness.compatqual.NonNullDecl;
 
-import java.nio.file.Path;
-
-public class AuraPlugin extends JavaPlugin {
-    private static AuraPlugin instance;
+public class AuraMagicPlugin extends JavaPlugin {
+    private static AuraMagicPlugin instance;
     private ComponentType<EntityStore, AuraShieldComponent> auraShieldComponentType;
 
 
-    public String WindCrystalBlock = "Rock_Crystal_Wind_Block";
+    //This is temporary code, Later on I will change to to read from json files
+    public String WindGemBlock = "Rock_Gem_Aquamarine";
+    public String WindCrystalBlock = "Spawner_Wind_Sprite";
     public String WindCrystalLarge = "Rock_Crystal_Wind_Large";
     public String WindCrystalMedium = "Rock_Crystal_Wind_Medium";
     public String WindCrystalSmall = "Rock_Crystal_Wind_Small";
 
-    /*
-    public String WindCrystalBlock = "Rock_Crystal_Pink_Block";
-    public String WindCrystalLarge = "Rock_Crystal_Pink_Large";
-    public String WindCrystalMedium = "Rock_Crystal_Pink_Medium";
-    public String WindCrystalSmall = "Rock_Crystal_Pink_Small";
-    */
-
-    public static AuraPlugin getInstance() {
+    public static AuraMagicPlugin getInstance() {
         return instance;
     }
 
-    public AuraPlugin(@NonNullDecl JavaPluginInit init) {
+    public AuraMagicPlugin(@NonNullDecl JavaPluginInit init) {
         super(init);
         instance = this;
     }

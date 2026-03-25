@@ -1,5 +1,6 @@
 {
   "Blocks": [
+    "Spawner_Wind_Sprite",
     "Rock_Crystal_Wind_Block",
     "Rock_Crystal_Wind_Large",
     "Rock_Crystal_Wind_Medium",

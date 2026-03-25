@@ -57,7 +57,7 @@ public class CustomChunkGenerator extends ChunkGeneratorJsonLoader {
 
             ChunkGenerator baseGenerator = new ChunkGenerator(loader.load(), overrideDataFolder);
 
-            // this runs our block generation, this is GenV1 I am hoping when they move to GenV2 I can just do thing
+            // this runs the block generation, this is GenV1 I am hoping when they move to GenV2 I can just do thing
             // in json/setup files
             return new CustomBlockGenerator(baseGenerator);
         }

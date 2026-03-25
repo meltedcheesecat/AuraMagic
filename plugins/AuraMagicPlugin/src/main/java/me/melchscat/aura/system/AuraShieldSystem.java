@@ -3,37 +3,22 @@ package me.melchscat.aura.system;
 import com.hypixel.hytale.component.*;
 import com.hypixel.hytale.component.dependency.Dependency;
 import com.hypixel.hytale.component.query.Query;
-import com.hypixel.hytale.component.spatial.SpatialResource;
 import com.hypixel.hytale.component.system.tick.EntityTickingSystem;
-import com.hypixel.hytale.math.vector.Vector3d;
 import com.hypixel.hytale.protocol.*;
 import com.hypixel.hytale.protocol.packets.entities.SpawnModelParticles;
-import com.hypixel.hytale.protocol.packets.world.SpawnParticleSystem;
 import com.hypixel.hytale.server.core.asset.type.model.config.ModelAsset;
-import com.hypixel.hytale.server.core.asset.type.particle.config.ParticleSystem;
-import com.hypixel.hytale.server.core.entity.entities.Player;
-import com.hypixel.hytale.server.core.modules.entity.EntityModule;
 import com.hypixel.hytale.server.core.modules.entity.component.DynamicLight;
-import com.hypixel.hytale.server.core.modules.entity.component.TransformComponent;
 import com.hypixel.hytale.server.core.modules.entity.damage.Damage;
 import com.hypixel.hytale.server.core.modules.entity.damage.DamageEventSystem;
-import com.hypixel.hytale.server.core.modules.entity.damage.DamageModule;
 import com.hypixel.hytale.server.core.modules.entity.tracker.NetworkId;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
-import com.hypixel.hytale.server.core.universe.world.ParticleUtil;
-import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
-import com.hypixel.hytale.server.flock.Flock;
-import com.hypixel.hytale.server.flock.FlockMembership;
-import it.unimi.dsi.fastutil.objects.ObjectList;
-import me.melchscat.aura.AuraPlugin;
+import me.melchscat.aura.AuraMagicPlugin;
 import me.melchscat.aura.component.AuraShieldComponent;
 import org.checkerframework.checker.nullness.compatqual.NonNullDecl;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
 
@@ -47,7 +32,7 @@ public class AuraShieldSystem extends EntityTickingSystem<EntityStore> {
     @Override
     public Query<EntityStore> getQuery() {
         if (auraShieldComponentType == null)
-          auraShieldComponentType = AuraPlugin.getInstance().getAuraShieldComponentType();
+          auraShieldComponentType = AuraMagicPlugin.getInstance().getAuraShieldComponentType();
 
         return auraShieldComponentType;
     }
@@ -59,7 +44,7 @@ public class AuraShieldSystem extends EntityTickingSystem<EntityStore> {
                      @NonNullDecl Store<EntityStore> store,
                      @NonNullDecl CommandBuffer<EntityStore> commandBuffer) {
         if (auraShieldComponentType == null)
-            auraShieldComponentType = AuraPlugin.getInstance().getAuraShieldComponentType();
+            auraShieldComponentType = AuraMagicPlugin.getInstance().getAuraShieldComponentType();
 
         AuraShieldComponent auraShield = archetypeChunk.getComponent(index, auraShieldComponentType);
 
@@ -205,7 +190,7 @@ public class AuraShieldSystem extends EntityTickingSystem<EntityStore> {
 
     public static class OnDamageReceived extends DamageEventSystem {
         @Nonnull
-        private final Query<EntityStore> query = AuraPlugin.getInstance().getAuraShieldComponentType();
+        private final Query<EntityStore> query = AuraMagicPlugin.getInstance().getAuraShieldComponentType();
 
         @Nonnull
         public Query<EntityStore> getQuery() {
@@ -217,7 +202,7 @@ public class AuraShieldSystem extends EntityTickingSystem<EntityStore> {
                            @Nonnull Store<EntityStore> store,
                            @Nonnull CommandBuffer<EntityStore> commandBuffer,
                            @Nonnull Damage damage) {
-            AuraShieldComponent auraShield = archetypeChunk.getComponent(index, AuraPlugin.getInstance().getAuraShieldComponentType());
+            AuraShieldComponent auraShield = archetypeChunk.getComponent(index, AuraMagicPlugin.getInstance().getAuraShieldComponentType());
 
             if (auraShield == null)
                 return;

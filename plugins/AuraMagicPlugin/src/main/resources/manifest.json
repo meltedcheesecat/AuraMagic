@@ -1,16 +1,24 @@
 {
-  "Group": "MeltedCheeseCat",
-  "Name": "Aura Magic Plugin",
-  "Version": "0.0.1",
+  "Group": "me.melchscat.aura",
+  "Name": "AuraMagicPlugin",
+  "Version": "1.0.0-alpha.1",
+  "Description": "This plugin adds in all logic for the Aura Magic Elemental System that I couldn't get working in the Pack. So far this is WorldGen and AuraShield",
+  "Authors": [
+    {
+      "Name": "Melted Cheese Cat",
+      "Email": "meltedcheeseeve@gmail.com",
+      "Url": "https://www.youtube.com/@MeltedCheeseCat"
+    }
+  ],
+  "Website": "https://x.com/MeltedCheeseCat",
+  "Main": "me.melchscat.aura.AuraMagicPlugin",
   "ServerVersion": "2026.02.19-1a311a592",
-  "Description": "",
-  "Authors": [],
-  "Website": "",
   "Dependencies": {},
-  "OptionalDependencies": {},
+  "OptionalDependencies": {
+    "me.melchscat.aura:AuraMagicPack": ">=1.0.0"
+  },
   "LoadBefore": {},
   "DisabledByDefault": false,
   "IncludesAssetPack": false,
-  "SubPlugins": [],
-  "Main": "me.melchscat.aura.AuraPlugin"
+  "SubPlugins": []
 }

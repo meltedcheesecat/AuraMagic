@@ -1,15 +1,22 @@
 {
-  "Group": "MeltedCheeseCat",
-  "Name": "Aura Magic Pack",
-  "Version": "0.0.1",
+  "Group": "me.melchscat.aura",
+  "Name": "AuraMagicPack",
+  "Version": "1.0.0-alpha.1",
+  "Description": "This adds in most of the logic for the Aura Magic Elemental System, what couldn't be done here is done in the Plugin",
+  "Authors": [
+    {
+      "Name": "Melted Cheese Cat",
+      "Email": "meltedcheeseeve@gmail.com",
+      "Url": "https://www.youtube.com/@MeltedCheeseCat"
+    }
+  ],
+  "Website": "https://x.com/MeltedCheeseCat",
   "ServerVersion": "2026.02.19-1a311a592",
-  "Description": "",
-  "Authors": [],
-  "Website": "",
-  "Dependencies": {},
+  "Dependencies": {
+    "me.melchscat.aura:AuraMagicPlugin": ">=1.0.0"
+  },
   "OptionalDependencies": {},
-  "LoadBefore": {},
   "DisabledByDefault": false,
-  "IncludesAssetPack": false,
+  "IncludesAssetPack": true,
   "SubPlugins": []
 }

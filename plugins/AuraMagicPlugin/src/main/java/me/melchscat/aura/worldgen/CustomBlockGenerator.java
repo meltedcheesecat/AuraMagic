@@ -10,18 +10,18 @@ import com.hypixel.hytale.server.core.universe.world.worldgen.GeneratedBlockChun
 import com.hypixel.hytale.server.core.universe.world.worldgen.GeneratedChunk;
 import com.hypixel.hytale.server.core.universe.world.worldgen.GeneratedChunkSection;
 import com.hypixel.hytale.server.worldgen.chunk.ChunkGenerator;
-import me.melchscat.aura.AuraPlugin;
+import me.melchscat.aura.AuraMagicPlugin;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.LongPredicate;
-import java.util.logging.Level;
-
-import static com.hypixel.hytale.logger.HytaleLogger.getLogger;
 
 public class CustomBlockGenerator extends ChunkGenerator {
     private static int WOOD_SOUND_SET = -1;
     private static float AURA_ADD_CHANCE = 0.0f;
+    private static float MAX_AURA_ADD_CHANCE = 0.75f;
+    private static int AURA_GEM_SPAWN_CHANCE = 15;  // 1 out of AURA_GEM_SPAWN_CHANCE
+    private static int AURA_GEM_ID = -1;
     private static int AURA_CRYSTAL_BLOCK_ID = -1;
     private static int AURA_CRYSTAL_LARGE_ID = -1;
     private static int AURA_CRYSTAL_MEDIUM_ID = -1;
@@ -31,6 +31,7 @@ public class CustomBlockGenerator extends ChunkGenerator {
     private final float minChance = 0.01f;
     private final float maxChance = 0.21f;
 
+    private boolean chuckHasSpawnedGem = false;
     private final ChunkGenerator original;
 
     public CustomBlockGenerator(ChunkGenerator original) {
@@ -150,13 +151,26 @@ public class CustomBlockGenerator extends ChunkGenerator {
         int fingerLength = 0;
         currLocation.x = currLocation.x + directionX;
         currLocation.z = currLocation.z + directionZ;
-        while ((blockSize > 0) && (fingerLength < 6)) {
+
+        // There is a small chance to spawn 1 gem on each Crystal outcrop
+        if (!chuckHasSpawnedGem) {
+            if (ThreadLocalRandom.current().nextInt(AURA_GEM_SPAWN_CHANCE) == 0) {
+                blockSize = 4;
+            }
+        }
+
+        while ((blockSize > 0) && (fingerLength < 8)) {
             if (!getYValidPlacePoint(blockChunk, currLocation)) return;
 
             switch (blockSize) {
-                case 1 : blockChunk.setBlock(currLocation.x, currLocation.y, currLocation.z, AURA_CRYSTAL_SMALL_ID, 0,0); break;
+                case 1 : blockChunk.setBlock(currLocation.x, currLocation.y, currLocation.z, AURA_CRYSTAL_SMALL_ID, 0, 0); break;
                 case 2 : blockChunk.setBlock(currLocation.x, currLocation.y, currLocation.z, AURA_CRYSTAL_MEDIUM_ID, 0,0); break;
                 case 3 : blockChunk.setBlock(currLocation.x, currLocation.y, currLocation.z, AURA_CRYSTAL_LARGE_ID, 0,0); break;
+                case 4 : {
+                    blockChunk.setBlock(currLocation.x, currLocation.y, currLocation.z, AURA_GEM_ID, 0,0);
+                    chuckHasSpawnedGem = true;
+                    break;
+                }
             }
             currLocation.x = currLocation.x + directionX;
             currLocation.z = currLocation.z + directionZ;
@@ -186,10 +200,11 @@ public class CustomBlockGenerator extends ChunkGenerator {
         GeneratedBlockChunk blockChunk = chunk.getBlockChunk();
 
         // Get Block IDs for Crystals, this should only run once
-        if (AURA_CRYSTAL_BLOCK_ID == -1) AURA_CRYSTAL_BLOCK_ID = getBlockId(AuraPlugin.getInstance().WindCrystalBlock);
-        if (AURA_CRYSTAL_LARGE_ID == -1) AURA_CRYSTAL_LARGE_ID = getBlockId(AuraPlugin.getInstance().WindCrystalLarge);
-        if (AURA_CRYSTAL_MEDIUM_ID == -1) AURA_CRYSTAL_MEDIUM_ID = getBlockId(AuraPlugin.getInstance().WindCrystalMedium);
-        if (AURA_CRYSTAL_SMALL_ID == -1) AURA_CRYSTAL_SMALL_ID = getBlockId(AuraPlugin.getInstance().WindCrystalSmall);
+        if (AURA_GEM_ID == -1) AURA_GEM_ID = getBlockId(AuraMagicPlugin.getInstance().WindGemBlock);
+        if (AURA_CRYSTAL_BLOCK_ID == -1) AURA_CRYSTAL_BLOCK_ID = getBlockId(AuraMagicPlugin.getInstance().WindCrystalBlock);
+        if (AURA_CRYSTAL_LARGE_ID == -1) AURA_CRYSTAL_LARGE_ID = getBlockId(AuraMagicPlugin.getInstance().WindCrystalLarge);
+        if (AURA_CRYSTAL_MEDIUM_ID == -1) AURA_CRYSTAL_MEDIUM_ID = getBlockId(AuraMagicPlugin.getInstance().WindCrystalMedium);
+        if (AURA_CRYSTAL_SMALL_ID == -1) AURA_CRYSTAL_SMALL_ID = getBlockId(AuraMagicPlugin.getInstance().WindCrystalSmall);
 
         // This is a hack to check for wood block so I can be fast,
         if (WOOD_SOUND_SET == -1) {
@@ -200,6 +215,7 @@ public class CustomBlockGenerator extends ChunkGenerator {
         int randXPos = ThreadLocalRandom.current().nextInt(8) + 12;
         int randZPos = ThreadLocalRandom.current().nextInt(8) + 12;
 
+        chuckHasSpawnedGem = false;
         boolean donePlace = false;
         // Ray trace down trying to find valid block
         Vector3i blockLocation = new Vector3i(randXPos , 319 , randZPos);
@@ -226,7 +242,7 @@ public class CustomBlockGenerator extends ChunkGenerator {
         }
         // Adds a small chance to place everytime it fails
         if (!donePlace) {
-            if (AURA_ADD_CHANCE < 0.75f)
+            if (AURA_ADD_CHANCE < MAX_AURA_ADD_CHANCE)
               AURA_ADD_CHANCE = AURA_ADD_CHANCE + 0.01f;
         }
     }
