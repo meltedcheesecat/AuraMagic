@@ -15,10 +15,22 @@
       22.5
     ],
     "Translation": [
-      -11,
-      -51
+      -5,
+      -34
     ]
   },
+  "Tags": {
+    "Type": [
+      "Furniture"
+    ],
+    "Family": [
+      "Human"
+    ]
+  },
+  "Scale": 0.6,
+  "ItemSoundSetId": "ISS_Blocks_Stone",
+  "MaxStack": 1,
+  "Icon": "Icons/ItemsGenerated/Mannequin_Aura_Magic.png",
   "BlockType": {
     "BlockParticleSetId": "Stone",
     "BlockSoundSetId": "Stone",
@@ -30,7 +42,9 @@
       }
     ],
     "DrawType": "Model",
-    "Flags": {},
+    "Flags": {
+      "IsUsable": true
+    },
     "Gathering": {
       "Breaking": {
         "GatherType": "Woods"
@@ -48,17 +62,5 @@
     },
     "VariantRotation": "NESW",
     "ParticleColor": "#9f9e81"
-  },
-  "Tags": {
-    "Type": [
-      "Furniture"
-    ],
-    "Family": [
-      "Human"
-    ]
-  },
-  "Scale": 0.6,
-  "ItemSoundSetId": "ISS_Blocks_Stone",
-  "MaxStack": 1,
-  "Icon": "Icons/ItemsGenerated/Mannequin_Aura_Magic.png"
+  }
 }

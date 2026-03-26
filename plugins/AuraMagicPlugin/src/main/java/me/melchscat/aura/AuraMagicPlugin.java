@@ -24,6 +24,9 @@ public class AuraMagicPlugin extends JavaPlugin {
     public String WindCrystalLarge = "Rock_Crystal_Wind_Large";
     public String WindCrystalMedium = "Rock_Crystal_Wind_Medium";
     public String WindCrystalSmall = "Rock_Crystal_Wind_Small";
+    public String AuraStartBlock = "Mannequin_Aura_Magic";
+
+    public String SpawnZoneName = "Zone1_Spawn";
 
     public static AuraMagicPlugin getInstance() {
         return instance;

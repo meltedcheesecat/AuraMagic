@@ -1,6 +1,8 @@
 package me.melchscat.aura.worldgen;
 
 import com.hypixel.hytale.math.util.ChunkUtil;
+import com.hypixel.hytale.math.vector.Transform;
+import com.hypixel.hytale.math.vector.Vector3d;
 import com.hypixel.hytale.math.vector.Vector3i;
 import com.hypixel.hytale.protocol.BlockMaterial;
 import com.hypixel.hytale.protocol.DrawType;
@@ -15,6 +17,9 @@ import me.melchscat.aura.AuraMagicPlugin;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.LongPredicate;
+import java.util.logging.Level;
+
+import static com.hypixel.hytale.logger.HytaleLogger.getLogger;
 
 public class CustomBlockGenerator extends ChunkGenerator {
     private static int WOOD_SOUND_SET = -1;
@@ -26,13 +31,18 @@ public class CustomBlockGenerator extends ChunkGenerator {
     private static int AURA_CRYSTAL_LARGE_ID = -1;
     private static int AURA_CRYSTAL_MEDIUM_ID = -1;
     private static int AURA_CRYSTAL_SMALL_ID = -1;
-    private final int windCrystalMinHeight = 130;
+    private static int AURA_START_BLOCK_ID = -1;
+    private final int windCrystalMinHeight = 129;
     private final int windCrystalMaxChanceHeight = 200;
     private final float minChance = 0.01f;
     private final float maxChance = 0.21f;
 
     private boolean chuckHasSpawnedGem = false;
+    private Transform[] spawnArr = null;
+    private int spawnChunkX;
+    private int spawnChunkZ;
     private final ChunkGenerator original;
+    private int fingerChance;
 
     public CustomBlockGenerator(ChunkGenerator original) {
         super(original.getZonePatternProvider(), original.getDataFolder());
@@ -41,11 +51,23 @@ public class CustomBlockGenerator extends ChunkGenerator {
 
     @Override
     public CompletableFuture<GeneratedChunk> generate(int seed, long index, int x, int z, LongPredicate stillNeeded) {
+        if (spawnArr == null) {
+            spawnArr = this.getSpawnPoints(seed);
+
+            if (spawnArr.length > 0) {
+                Vector3d pos = spawnArr[0].getPosition();
+                spawnChunkX = Math.floorDiv((int) pos.x, 32);
+                spawnChunkZ = Math.floorDiv((int) pos.z, 32);
+                getLogger().at(Level.INFO).log("AuraDebug x:" + x + ", z:" + z + ", spawnArr:" + spawnArr[0].toString());
+            }
+        }
+
         // Run Hytale's generation first
         return original.generate(seed, index, x, z, stillNeeded).thenApply(chunk -> {
             if (chunk != null) {
-                generateAuraSpecificBlocks(chunk);
+                generateAuraSpecificBlocks(chunk, x, z);
             }
+
             return chunk;
         });
     }
@@ -180,23 +202,35 @@ public class CustomBlockGenerator extends ChunkGenerator {
         }
     }
 
+    private boolean doSpawnFinger() {
+        if (ThreadLocalRandom.current().nextInt(fingerChance) == 0) {
+            fingerChance++;
+            return true;
+        }
+        if (fingerChance > 1)
+            fingerChance--;
+        return false;
+    }
+
     private void placeWindCrystals(GeneratedBlockChunk blockChunk, Vector3i blockLocation) {
         if (findValidStartPlacePoint(blockChunk, blockLocation)) {
             blockChunk.setBlock(blockLocation.x, blockLocation.y, blockLocation.z, AURA_CRYSTAL_BLOCK_ID, 0,0);
 
-            if (ThreadLocalRandom.current().nextInt(4) == 0) placeWindCrystalFinger(blockChunk, blockLocation, 1, 1);
-            if (ThreadLocalRandom.current().nextInt(4) == 0) placeWindCrystalFinger(blockChunk, blockLocation, 1, 0);
-            if (ThreadLocalRandom.current().nextInt(4) == 0) placeWindCrystalFinger(blockChunk, blockLocation, 1, -1);
-            if (ThreadLocalRandom.current().nextInt(4) == 0) placeWindCrystalFinger(blockChunk, blockLocation, -1, 1);
-            if (ThreadLocalRandom.current().nextInt(4) == 0) placeWindCrystalFinger(blockChunk, blockLocation, -1, 0);
-            if (ThreadLocalRandom.current().nextInt(4) == 0) placeWindCrystalFinger(blockChunk, blockLocation, -1, -1);
-            if (ThreadLocalRandom.current().nextInt(4) == 0) placeWindCrystalFinger(blockChunk, blockLocation, 0, 1);
-            if (ThreadLocalRandom.current().nextInt(4) == 0) placeWindCrystalFinger(blockChunk, blockLocation, 0, -1);
+            fingerChance = 3;
+
+            if (doSpawnFinger()) placeWindCrystalFinger(blockChunk, blockLocation, 1, 1);
+            if (doSpawnFinger()) placeWindCrystalFinger(blockChunk, blockLocation, 1, 0);
+            if (doSpawnFinger()) placeWindCrystalFinger(blockChunk, blockLocation, 1, -1);
+            if (doSpawnFinger()) placeWindCrystalFinger(blockChunk, blockLocation, -1, 1);
+            if (doSpawnFinger()) placeWindCrystalFinger(blockChunk, blockLocation, -1, 0);
+            if (doSpawnFinger()) placeWindCrystalFinger(blockChunk, blockLocation, -1, -1);
+            if (doSpawnFinger()) placeWindCrystalFinger(blockChunk, blockLocation, 0, 1);
+            if (doSpawnFinger()) placeWindCrystalFinger(blockChunk, blockLocation, 0, -1);
         }
     }
 
     // This is temp for Gen V1 waiting for Gen V2 to be implemented then I will used that
-    private void generateAuraSpecificBlocks(GeneratedChunk chunk) {
+    private void generateAuraSpecificBlocks(GeneratedChunk chunk, int chunkX, int chunkZ) {
         GeneratedBlockChunk blockChunk = chunk.getBlockChunk();
 
         // Get Block IDs for Crystals, this should only run once
@@ -205,6 +239,7 @@ public class CustomBlockGenerator extends ChunkGenerator {
         if (AURA_CRYSTAL_LARGE_ID == -1) AURA_CRYSTAL_LARGE_ID = getBlockId(AuraMagicPlugin.getInstance().WindCrystalLarge);
         if (AURA_CRYSTAL_MEDIUM_ID == -1) AURA_CRYSTAL_MEDIUM_ID = getBlockId(AuraMagicPlugin.getInstance().WindCrystalMedium);
         if (AURA_CRYSTAL_SMALL_ID == -1) AURA_CRYSTAL_SMALL_ID = getBlockId(AuraMagicPlugin.getInstance().WindCrystalSmall);
+        if (AURA_START_BLOCK_ID == -1) AURA_START_BLOCK_ID = getBlockId(AuraMagicPlugin.getInstance().AuraStartBlock);
 
         // This is a hack to check for wood block so I can be fast,
         if (WOOD_SOUND_SET == -1) {
@@ -244,6 +279,21 @@ public class CustomBlockGenerator extends ChunkGenerator {
         if (!donePlace) {
             if (AURA_ADD_CHANCE < MAX_AURA_ADD_CHANCE)
               AURA_ADD_CHANCE = AURA_ADD_CHANCE + 0.01f;
+        }
+
+        // Add Aura Start Block near player spawn
+        if (spawnArr.length > 0) {
+            if ((spawnChunkX == chunkX) && (spawnChunkZ == chunkZ)) {
+                Vector3d position = spawnArr[0].getPosition();
+                int spawnX = (int)position.x - (chunkX * 32);
+                int spawnZ = (int)position.z - (chunkZ * 32);
+                int spawnY = (int)position.y;
+                // Start Aura Sign
+                blockChunk.setBlock(spawnX, spawnY-1, spawnZ-3, AURA_START_BLOCK_ID, 0,0);
+                // 2 Air blocks for his foot
+                blockChunk.setBlock(spawnX, spawnY, spawnZ-4, 0, 0,0);
+                blockChunk.setBlock(spawnX, spawnY-1, spawnZ-4, 0, 0,0);
+            }
         }
     }
 }

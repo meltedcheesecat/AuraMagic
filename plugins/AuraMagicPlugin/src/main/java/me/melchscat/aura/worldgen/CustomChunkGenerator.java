@@ -1,7 +1,9 @@
 package me.melchscat.aura.worldgen;
 
 import com.google.gson.JsonObject;
+import com.hypixel.hytale.math.vector.Transform;
 import com.hypixel.hytale.math.vector.Vector2i;
+import com.hypixel.hytale.math.vector.Vector3d;
 import com.hypixel.hytale.procedurallib.json.SeedString;
 import com.hypixel.hytale.server.worldgen.SeedStringResource;
 import com.hypixel.hytale.server.worldgen.WorldGenConfig;
@@ -10,14 +12,20 @@ import com.hypixel.hytale.server.worldgen.chunk.MaskProvider;
 import com.hypixel.hytale.server.worldgen.loader.ChunkGeneratorJsonLoader;
 import com.hypixel.hytale.server.worldgen.loader.context.FileContextLoader;
 import com.hypixel.hytale.server.worldgen.loader.context.FileLoadingContext;
+import com.hypixel.hytale.server.worldgen.loader.context.ZoneFileContext;
 import com.hypixel.hytale.server.worldgen.loader.zone.ZonePatternProviderJsonLoader;
 import com.hypixel.hytale.server.worldgen.prefab.PrefabStoreRoot;
 import com.hypixel.hytale.server.worldgen.zone.Zone;
+import me.melchscat.aura.AuraMagicPlugin;
 
 import javax.annotation.Nonnull;
 import java.nio.file.Files;
 import java.nio.file.LinkOption;
 import java.nio.file.Path;
+import java.util.Map;
+import java.util.logging.Level;
+
+import static com.hypixel.hytale.logger.HytaleLogger.getLogger;
 
 public class CustomChunkGenerator extends ChunkGeneratorJsonLoader {
 

@@ -17,6 +17,9 @@ import com.hypixel.hytale.server.worldgen.prefab.PrefabStoreRoot;
 import javax.annotation.Nonnull;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.logging.Level;
+
+import static com.hypixel.hytale.logger.HytaleLogger.getLogger;
 
 public class CustomWorldGenProvider implements IWorldGenProvider {
 
@@ -49,9 +52,12 @@ public class CustomWorldGenProvider implements IWorldGenProvider {
 
         try {
             WorldGenConfig config = new WorldGenConfig(worldGenPath, this.name, this.version);
+
             SeedStringResource seedStringResource = new SeedStringResource(PrefabStoreRoot.DEFAULT, config);
             SeedString<SeedStringResource> chunkGenerator = new SeedString<>("ChunkGenerator", seedStringResource);
             CustomChunkGenerator customChunkGenerator = new CustomChunkGenerator(chunkGenerator, config);
+
+            getLogger().at(Level.INFO).log("AuraDebug WorldGenConfig:" + config.toString());
 
             return customChunkGenerator.load();
         } catch (Error err) {

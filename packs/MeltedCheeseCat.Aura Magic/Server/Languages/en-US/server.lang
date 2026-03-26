@@ -3,6 +3,7 @@ benchCategories.Elemental_Level2.name = Level 2
 benchCategories.Elemental_Level3.name = Level 3
 benchCategories.Elemental_Level4.name = Level 4
 benchCategories.Elemental_Level5.name = Level 5
+items.Mannequin_Aura_Magic.name = Aura Magic Sign Holder
 items.Wind_Elemental_Bench.name = Wind Elemental Bench
 items.Wind_Elemental_Bench.description = <i>Bench used to craft all the Aura Wind Magic Items.</i> 
 items.Ingredient_Wind_Essence.name = Essence of Wind

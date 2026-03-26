@@ -6,8 +6,8 @@
         "Type": "Single",
         "Item": {
           "ItemId": "Ingredient_Crystal_Wind",
-          "QuantityMin": 0,
-          "QuantityMax": 1
+          "QuantityMin": 1,
+          "QuantityMax": 3
         }
       }
     ]
