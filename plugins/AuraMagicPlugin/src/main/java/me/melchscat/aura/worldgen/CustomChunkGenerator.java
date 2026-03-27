@@ -59,7 +59,7 @@ public class CustomChunkGenerator extends ChunkGeneratorJsonLoader {
             this.seed.get().setPrefabConfig(config,prefabStore);
 
             ZonePatternProviderJsonLoader loader = this.loadZonePatternGenerator(maskProvider);
-            FileLoadingContext loadingContext = new FileContextLoader(overrideDataFolder, loader.loadZoneRequirement()).load();
+            FileLoadingContext loadingContext = new FileContextLoader(config.name(), overrideDataFolder, loader.loadZoneRequirement()).load();
             Zone[] zones = new CustomZonesLoader(this.seed, overrideDataFolder, loadingContext).load();
             loader.setZones(zones);
 

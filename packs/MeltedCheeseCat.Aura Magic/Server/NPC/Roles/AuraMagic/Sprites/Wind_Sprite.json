@@ -7,7 +7,6 @@
     "AttractBlockSet": "WindCrystals",
     "TargetGroups": [ "Wind_Group" ],
     "AttitudeGroup": "Wind_Attitude",
-    "AvoidGroup": [ "Wind_Group" ],
     "MaxHealth": 70,
     "_InteractionVars": {
       "Sprite_Attack": {

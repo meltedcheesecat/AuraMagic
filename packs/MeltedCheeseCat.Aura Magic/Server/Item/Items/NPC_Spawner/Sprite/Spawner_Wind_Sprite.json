@@ -12,15 +12,20 @@
     "Secondary": "Lantern_Blue"
   },
   "BlockType": {
-    "State": {
-      "Id": "SpawnMarkerBlock",
-      "SpawnMarker": "Wind_Sprite",
-      "MarkerOffset": {
-        "X": 0,
-        "Y": 1,
-        "Z": 0
+    "BlockEntity": {
+      "Components": {
+        "SpawnMarkerBlock": {
+          "Config": {
+            "SpawnMarker": "Wind_Sprite",
+            "MarkerOffset": {
+              "X": 0,
+              "Y": 1,
+              "Z": 0
+            }
+          }
+        }
       }
-    },
+    },	
     "Material": "Solid",
     "DrawType": "Cube",
     "Opacity": "Transparent",

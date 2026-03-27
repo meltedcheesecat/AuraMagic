@@ -184,7 +184,6 @@
       ]
     },
     "State": {
-      "Id": "crafting",
       "Definitions": {
         "CraftCompleted": {
           "CustomModelAnimation": "Blocks/Benches/Alchemy_Crafting.blockyanim",
