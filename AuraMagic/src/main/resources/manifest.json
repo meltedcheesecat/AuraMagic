@@ -1,0 +1,22 @@
+{
+  "Group": "me.melchscat.aura",
+  "Name": "AuraMagic",
+  "Version": "1.0.0-alpha.1",
+  "Description": "This adds and enhances the existing elemental magic in hytale. I am initially working on Wind and this is the first Alpha release so lots more to come.",
+  "Authors": [
+    {
+      "Name": "Melted Cheese Cat",
+      "Email": "meltedcheeseeve@gmail.com",
+      "Url": "https://x.com/MeltedCheeseCat"
+    }
+  ],
+  "Website": "https://www.youtube.com/@MeltedCheeseCat",
+  "Main": "me.melchscat.aura.AuraMagic",
+  "ServerVersion": "2026.03.26-89796e57b",
+  "Dependencies": {},
+  "OptionalDependencies": {},
+  "LoadBefore": {},
+  "DisabledByDefault": false,
+  "IncludesAssetPack": true,
+  "SubPlugins": []
+}

@@ -1,0 +1,74 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Mannequin_Aura_Magic.name"
+  },
+  "PlayerAnimationsId": "Block",
+  "Categories": [
+    "Blocks.Structural"
+  ],
+  "Set": "Furniture_Human",
+  "IconProperties": {
+    "Scale": 0.3,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      -5,
+      -34
+    ]
+  },
+  "Tags": {
+    "Type": [
+      "Furniture"
+    ],
+    "Family": [
+      "Human"
+    ]
+  },
+  "Scale": 0.6,
+  "ItemSoundSetId": "ISS_Blocks_Stone",
+  "MaxStack": 1,
+  "Icon": "Icons/ItemsGenerated/Mannequin_Aura_Magic.png",
+  "BlockType": {
+    "BlockParticleSetId": "Stone",
+    "CustomModel": "Blocks/Start/StartMannequin.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Blocks/Start/StartMannequin.png",
+        "Weight": 1
+      }
+    ],
+    "DrawType": "Model",
+    "Flags": {
+      "IsUsable": true
+    },
+    "Gathering": {
+      "Breaking": {
+        "GatherType": "Woods"
+      }
+    },
+    "HitboxType": "Aura_Magic_Start",
+    "Material": "Solid",
+    "Opacity": "Transparent",
+    "Support": {
+      "Down": [
+        {
+          "FaceType": "Full"
+        }
+      ]
+    },
+    "VariantRotation": "NESW",
+    "ParticleColor": "#9f9e81",
+    "Interactions": {
+      "Use": "Root_Start_Aura_Page"
+    },
+    "Light": {
+      "Color": "#cfe",
+      "Radius": 1
+    },
+    "InteractionHint": "Press F to get Aura Magic help",
+    "InteractionHitboxType": "Aura_Magic_Start"
+  }
+}
