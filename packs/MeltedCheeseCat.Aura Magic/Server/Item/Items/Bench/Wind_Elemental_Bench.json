@@ -3,7 +3,6 @@
     "Name": "server.items.Wind_Elemental_Bench.name",
     "Description": "server.items.Wind_Elemental_Bench.description"
   },
-	"Icon": "Icons/ItemsGenerated/Wind_Elemental_Bench.png",
   "Categories": [
     "Furniture.Benches"
   ],
@@ -108,7 +107,6 @@
           }
         },
 				{
-					"CraftingTimeReductionModifier": 0.15,
           "UpgradeRequirement": {
             "Material": [
 							{
@@ -129,10 +127,10 @@
 							}
             ],
             "TimeSeconds": 3
-          }
+          },
+					"CraftingTimeReductionModifier": 0.15
         },
 				{
-					"CraftingTimeReductionModifier": 0.15,
           "UpgradeRequirement": {
             "Material": [
 							{
@@ -153,10 +151,10 @@
 							}
             ],
             "TimeSeconds": 3
-          }
+          },
+					"CraftingTimeReductionModifier": 0.15
         },
 				{
-					"CraftingTimeReductionModifier": 0.15,
           "UpgradeRequirement": {
             "Material": [
 							{
@@ -177,14 +175,13 @@
 							}
             ],
             "TimeSeconds": 3
-          }
+          },
+					"CraftingTimeReductionModifier": 0.15
+        },
+        {
+          "CraftingTimeReductionModifier": 0.3
         }
       ]
-    },
-		"BlockEntity": {
-      "Components": {
-        "BenchBlock": {}
-      }
     },
     "State": {
       "Definitions": {
@@ -233,5 +230,6 @@
   },
   "MaxStack": 1,
   "ItemLevel": 9,
-  "ItemSoundSetId": "ISS_Blocks_Wood"
+  "ItemSoundSetId": "ISS_Blocks_Wood",
+  "Icon": "Icons/ItemsGenerated/Wind_Elemental_Bench.png"
 }
