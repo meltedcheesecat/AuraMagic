@@ -7,10 +7,10 @@
     {
       "Name": "Melted Cheese Cat",
       "Email": "meltedcheeseeve@gmail.com",
-      "Url": "https://www.youtube.com/@MeltedCheeseCat"
+      "Url": "https://x.com/MeltedCheeseCat"
     }
   ],
-  "Website": "https://x.com/MeltedCheeseCat",
+  "Website": "https://www.youtube.com/@MeltedCheeseCat",
   "Main": "me.melchscat.aura.AuraMagicPlugin",
   "ServerVersion": "2026.03.26-89796e57b",
   "Dependencies": {},

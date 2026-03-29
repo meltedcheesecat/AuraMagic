@@ -36,28 +36,20 @@ public enum AuraMagicType {
 
     // --- LOGIC METHODS ---
 
-    /** Checks if this is a "Base" element or a mixture */
     public boolean isMixed() {
         return parent1 != null && parent2 != null;
     }
 
-    /** Returns the cost to un-mix (Example logic) */
     public int getUnmixCost() {
         return isMixed() ? 50 : 0;
     }
 
-    /** * Logic for Void/Infinity "Splitting"
-     * Returns a 'Crazy' version of the spell if Infinity is applied
-     */
     public String applyModifier(AuraMagicType modifier) {
         if (modifier == VOID) return "Controlled " + this.name();
         if (modifier == INFINITY) return "Shattered/Crazy " + this.name();
         return this.name();
     }
 
-    /** * The Mixer: Finds a result based on two inputs.
-     * Use this in your 'Crafting' or 'Casting' logic.
-     */
     public static Optional<AuraMagicType> mix(AuraMagicType a, AuraMagicType b) {
         for (AuraMagicType type : values()) {
             if (type.isMixed()) {

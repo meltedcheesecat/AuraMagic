@@ -26,8 +26,6 @@ import static com.hypixel.hytale.logger.HytaleLogger.getLogger;
 
 public class AuraShieldSystem extends EntityTickingSystem<EntityStore> {
     private ComponentType<EntityStore, AuraShieldComponent> auraShieldComponentType;
-    private float healthFadeTimer = 0f;
-    private com.hypixel.hytale.protocol.ModelParticle[] shieldParticles = new com.hypixel.hytale.protocol.ModelParticle[1];
 
     @Override
     public Query<EntityStore> getQuery() {
@@ -60,7 +58,7 @@ public class AuraShieldSystem extends EntityTickingSystem<EntityStore> {
         if (auraShield.addedHealth > 0.0F){
             // if our health is zero and we are adding health reset the fade timer
             if (auraShield.health <= 0.0F){
-                healthFadeTimer = 0.0F;
+                auraShield.healthFadeTimer = 0.0F;
                 firstShow = true;
             }
 
@@ -70,14 +68,14 @@ public class AuraShieldSystem extends EntityTickingSystem<EntityStore> {
 
         if (auraShield.health > 0.0F){
             // add the delta time to the fade timer
-            healthFadeTimer += dt;
+            auraShield.healthFadeTimer += dt;
 
             // decrease the health by 1 each second
-            if ((healthFadeTimer >= 1.0F) || (firstShow)){
+            if ((auraShield.healthFadeTimer >= 1.0F) || (firstShow)){
 
                 if (!firstShow) {
                     auraShield.health -= 1.0F;
-                    healthFadeTimer = 0.0F;
+                    auraShield.healthFadeTimer = 0.0F;
                 }
 
                 // checks if there is a new type of model, if yes saves the particles to shieldParticles
@@ -87,13 +85,13 @@ public class AuraShieldSystem extends EntityTickingSystem<EntityStore> {
                         com.hypixel.hytale.server.core.asset.type.model.config.ModelParticle[] modelAssetParticles = modelAsset.getParticles();
 
                         if ((modelAssetParticles != null) && (modelAssetParticles.length > 0)){
-                            shieldParticles[0] = modelAssetParticles[0].toPacket();
+                            auraShield.shieldParticles[0] = modelAssetParticles[0].toPacket();
                             auraShield.invalidModelId = false;
                         } else {
                             auraShield.invalidModelId = true;
                         }
                     } else {
-                        shieldParticles = null;
+                        auraShield.shieldParticles = null;
                         auraShield.invalidModelId = true;
                     }
                     auraShield.hasNewModelId = false;
@@ -107,7 +105,9 @@ public class AuraShieldSystem extends EntityTickingSystem<EntityStore> {
                 if (ourPlayerReference == null)
                     return;
 
-                NetworkId networkIdComponent = (NetworkId)archetypeChunk.getComponent(ourPlayerReference.getIndex(), NetworkId.getComponentType());
+
+                Ref<EntityStore> playerRef = auraShield.ourPlayer.getReference();
+                NetworkId networkIdComponent = store.getComponent(playerRef, NetworkId.getComponentType());
 
                 if (networkIdComponent == null)
                     return;
@@ -119,10 +119,10 @@ public class AuraShieldSystem extends EntityTickingSystem<EntityStore> {
                 if (playerRefComponent == null)
                     return;
 
-                //shieldParticles[0].scale = auraShield.health / 10;
+                //auraShield.shieldParticles[0].scale = auraShield.health / 10;
 
                 // Creates the packet with the shieldParticles in it and then sends it
-                SpawnModelParticles packet = new SpawnModelParticles(playerNetworkId, shieldParticles);
+                SpawnModelParticles packet = new SpawnModelParticles(playerNetworkId, auraShield.shieldParticles);
 
                 playerRefComponent.getPacketHandler().writeNoCache(packet);
             }
@@ -210,50 +210,20 @@ public class AuraShieldSystem extends EntityTickingSystem<EntityStore> {
             if (auraShield.health <= 0.0f)
                 return;
 
-            String outStr = "OnDamage";
             float damageAmount = damage.getAmount();
-
-            outStr += ", InitDamage:";
-            outStr += Float.toString(damageAmount);
 
             if (damageAmount <= auraShield.health){
                 damage.setCancelled(true);
 
-                outStr += ", BeforeHealth:";
-                outStr += Float.toString(auraShield.health);
-
                 auraShield.health -= damageAmount;
-
-                outStr += ", AfterHealth:";
-                outStr += Float.toString(auraShield.health);
-                outStr += ", Damage Canceled";
-
             } else {
                 damageAmount -= auraShield.health;
-
-                outStr += ", BeforeHealth:";
-                outStr += Float.toString(auraShield.health);
-                outStr += ", No More Health";
-                outStr += ", AfterDamage:";
-                outStr += Float.toString(auraShield.health);
 
                 auraShield.health = 0.0f;
                 damage.setAmount(damageAmount);
             }
 
-            getLogger().at(Level.INFO).log(outStr);
+            //getLogger().at(Level.INFO).log(outStr);
         }
     }
 }
-
-// send a world particle code - saving this for later
-//TransformComponent transformComponent = (TransformComponent)store.getComponent(ourPlayerReference, TransformComponent.getComponentType());
-//if (transformComponent == null)
-//    return;
-
-//World ourPlayerWorld = auraShield.ourPlayer.getWorld();
-//if (ourPlayerWorld == null)
-//    return;
-
-//Vector3d playerPosition = auraShield.ourPlayer.getPlayerConfigData().getPerWorldData(ourPlayerWorld.getName()).getLastPosition().getPosition();
-//ParticleUtil.spawnParticleEffect(auraShield.modelId, transformComponent.getPosition(), commandBuffer);

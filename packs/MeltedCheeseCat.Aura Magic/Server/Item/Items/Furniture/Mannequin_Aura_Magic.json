@@ -33,7 +33,6 @@
   "Icon": "Icons/ItemsGenerated/Mannequin_Aura_Magic.png",
   "BlockType": {
     "BlockParticleSetId": "Stone",
-    "BlockSoundSetId": "Stone",
     "CustomModel": "Blocks/Start/StartMannequin.blockymodel",
     "CustomModelTexture": [
       {
@@ -50,7 +49,7 @@
         "GatherType": "Woods"
       }
     },
-    "HitboxType": "Statue_Full",
+    "HitboxType": "Aura_Magic_Start",
     "Material": "Solid",
     "Opacity": "Transparent",
     "Support": {
@@ -61,6 +60,15 @@
       ]
     },
     "VariantRotation": "NESW",
-    "ParticleColor": "#9f9e81"
+    "ParticleColor": "#9f9e81",
+    "Interactions": {
+      "Use": "Root_Start_Aura_Page"
+    },
+    "Light": {
+      "Color": "#cfe",
+      "Radius": 1
+    },
+    "InteractionHint": "Press F to get Aura Magic help",
+    "InteractionHitboxType": "Aura_Magic_Start"
   }
 }

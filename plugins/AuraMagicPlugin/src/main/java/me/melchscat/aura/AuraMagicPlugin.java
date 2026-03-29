@@ -9,6 +9,7 @@ import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.core.universe.world.worldgen.provider.IWorldGenProvider;
 import me.melchscat.aura.component.AuraShieldComponent;
 import me.melchscat.aura.interaction.ChargeAuraShield;
+import me.melchscat.aura.interaction.ShowStartAuraPage;
 import me.melchscat.aura.worldgen.CustomWorldGenProvider;
 import me.melchscat.aura.system.AuraShieldSystem;
 import org.checkerframework.checker.nullness.compatqual.NonNullDecl;
@@ -18,7 +19,7 @@ public class AuraMagicPlugin extends JavaPlugin {
     private ComponentType<EntityStore, AuraShieldComponent> auraShieldComponentType;
 
 
-    //This is temporary code, Later on I will change to to read from json files
+    //This is temporary code, Later on I will change to read from json files
     public String WindGemBlock = "Rock_Gem_Aquamarine";
     public String WindCrystalBlock = "Spawner_Wind_Sprite";
     public String WindCrystalLarge = "Rock_Crystal_Wind_Large";
@@ -52,6 +53,8 @@ public class AuraMagicPlugin extends JavaPlugin {
 
         getEntityStoreRegistry().registerSystem(new AuraShieldSystem());
         getEntityStoreRegistry().registerSystem(new AuraShieldSystem.OnDamageReceived());
+
+        Interaction.CODEC.register("ShowStartAuraPage", ShowStartAuraPage.class, ShowStartAuraPage.CODEC);
     }
 
     public ComponentType<EntityStore, AuraShieldComponent> getAuraShieldComponentType() {

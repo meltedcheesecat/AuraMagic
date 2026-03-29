@@ -15,10 +15,6 @@ import javax.annotation.Nonnull;
 import java.nio.file.Path;
 import java.util.Map.Entry;
 
-import java.util.logging.Level;
-
-import static com.hypixel.hytale.logger.HytaleLogger.getLogger;
-
 public class CustomZonesLoader extends Loader<SeedStringResource, Zone[]> {
 
     protected final FileLoadingContext loadingContext;
