@@ -1,10 +1,12 @@
 Aura Magic
 
 🌪 Overview
+
 This adds and enhances the existing elemental magic in hytale. It will end up with 17 Elements compared to Hytale's 6 elements.
 I am initially working on Wind and this is the first Alpha release so lots more to come.
 
 ✨ Current Features (Wind Alpha)
+
 Adds the following blocks for all Elements
   1) Crystals (4 types)
 	2) Shards
@@ -27,6 +29,7 @@ Then Spawns the following Items on the Default Adventure Map
 	3) the Wind Sprite drops wind Essence when killed
 
 🗺 Roadmap
+
 This is just the First Wind Alpha release and I have many more features planned
   Alpha Release 2
 	  1) a NPC that spawns at the start, which has many quests and story rather than my help block
