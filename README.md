@@ -11,7 +11,7 @@ Adds the following blocks for all Elements
 	
 	1) Crystals (4 types)
 	
-	2) Shards
+	2) Shards (all spells consume shards so I changed the stack size to 999)
 	
 	3) Gems
 	
