@@ -10,6 +10,7 @@ import com.hypixel.hytale.server.core.entity.InteractionContext;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHandler;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInteraction;
+import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import me.melchscat.aura.page.StartAuraPage;
@@ -29,14 +30,18 @@ public class ShowStartAuraPage extends SimpleInteraction {
                          @Nonnull CooldownHandler cooldownHandler) {
         Ref<EntityStore> owningEntityRef = context.getOwningEntity();
         Store<EntityStore> store = owningEntityRef.getStore();
-        Player player = store.getComponent(owningEntityRef, Player.getComponentType());
 
+        Player player = store.getComponent(owningEntityRef, Player.getComponentType());
         if (player == null) return;
 
+        PlayerRef playerRef = store.getComponent(owningEntityRef, PlayerRef.getComponentType());
+        if (playerRef == null) return;
+
         World world = player.getWorld();
+        if (world == null) return;
 
         world.execute( () -> {
-            player.getPageManager().openCustomPage(owningEntityRef, store, new StartAuraPage(player.getPlayerRef()));
+            player.getPageManager().openCustomPage(owningEntityRef, store, new StartAuraPage(playerRef));
         });
     }
 

@@ -20,6 +20,10 @@ import me.melchscat.aura.component.AuraShieldComponent;
 
 import javax.annotation.Nonnull;
 
+import java.util.logging.Level;
+
+import static com.hypixel.hytale.logger.HytaleLogger.getLogger;
+
 public class ChargeAuraShield extends SimpleInteraction {
     protected float healthAdded;
     protected String modelId = "";
@@ -38,30 +42,14 @@ public class ChargeAuraShield extends SimpleInteraction {
         // the owning Entity and entity seem to be the same thing, but owning Entity
         // is used in the code and entity isn't. In this case I hope it is the player
         Ref<EntityStore> owningEntityRef = context.getOwningEntity();
-
         if (!owningEntityRef.isValid())
             return;
 
         // if not exists then add to owningEntityRef, then return;
         Store<EntityStore> entityStore = owningEntityRef.getStore();
 
-        DynamicLight shieldDynamicLight = entityStore.getComponent(owningEntityRef, DynamicLight.getComponentType());
-        if (shieldDynamicLight == null) {
-            shieldDynamicLight = new DynamicLight();
-
-            // you can't write to the store while in a tick and the commandbuffer
-            // allows you to buffer these commands for later
-            CommandBuffer<EntityStore> commandBuffer = context.getCommandBuffer();
-
-            if (commandBuffer == null)
-                return;
-
-            commandBuffer.putComponent(owningEntityRef, DynamicLight.getComponentType(), shieldDynamicLight);
-        }
-
-
+        // Shield Component
         AuraShieldComponent auraShieldComponent = entityStore.getComponent(owningEntityRef, auraShieldComponentType);
-
         if (auraShieldComponent == null) {
             auraShieldComponent = new AuraShieldComponent();
 
@@ -75,21 +63,22 @@ public class ChargeAuraShield extends SimpleInteraction {
             commandBuffer.putComponent(owningEntityRef, auraShieldComponentType, auraShieldComponent);
         }
 
-        if (auraShieldComponent.ourPlayer == null)
-            auraShieldComponent.ourPlayer = entityStore.getComponent(owningEntityRef, Player.getComponentType());
+        // Shield DynamicLight Component
+        DynamicLight shieldDynamicLight = entityStore.getComponent(owningEntityRef, DynamicLight.getComponentType());
+        if (shieldDynamicLight == null) {
+            shieldDynamicLight = new DynamicLight();
 
-        if (auraShieldComponent.ourPlayer == null)
-            return;
+            CommandBuffer<EntityStore> commandBuffer = context.getCommandBuffer();
 
-        // Add the passed health to the shield Component
-        auraShieldComponent.addedHealth = healthAdded;
+            if (commandBuffer == null)
+                return;
 
-        // update new particle Id
-        if ((modelId != null) && (modelId.compareTo(auraShieldComponent.modelId) != 0))
-        {
-            auraShieldComponent.hasNewModelId = true;
-            auraShieldComponent.modelId = modelId;
+            commandBuffer.putComponent(owningEntityRef, DynamicLight.getComponentType(), shieldDynamicLight);
         }
+
+        auraShieldComponent.chargedHealth = healthAdded;
+        auraShieldComponent.chargedModelId = modelId;
+        auraShieldComponent.checkChargeAuraShield = true;
 
         // Keep the interaction alive or finish it
         context.getState().state = InteractionState.Finished;
