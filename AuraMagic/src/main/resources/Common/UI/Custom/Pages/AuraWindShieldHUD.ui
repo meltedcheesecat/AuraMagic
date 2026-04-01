@@ -1,0 +1,20 @@
+Group {
+  LayoutMode: Left;
+  Anchor: (Bottom: 20, Height: 60);
+
+  Group #TimeLeft {
+    Background: #000000(0.0);
+    Anchor: (Left: 20, Bottom: 20);
+    Padding: (Horizontal: 20, Vertical: 20);
+    LayoutMode: Left;
+
+    Group {
+      Background: "WindShieldIcon.png";
+      Anchor: (Width: 64, Height: 64, Right: 10);
+    }
+
+    Label #HealthValue {
+      Style: (FontSize: 32, Alignment: Center);
+    }
+  }
+}

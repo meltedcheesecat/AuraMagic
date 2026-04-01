@@ -18,14 +18,18 @@ public class AuraShieldComponent implements Component<EntityStore> {
                     .add()
                     .build();
 
-    public float health = 0f;
-    public float addedHealth = 0f;
-    public float healthFadeTimer = 0f;
+    public float oldHealth = 0.0f;
+    public float health = 0.0f;
     public com.hypixel.hytale.protocol.ModelParticle[] shieldParticles = new com.hypixel.hytale.protocol.ModelParticle[1];
     public String modelId = "";
-    public Boolean hasNewModelId = false;
     public Boolean invalidModelId = true;
-    public Player ourPlayer;
+
+    public final float HEALTH_FADE_TIMER_DELAY = 1.0F;
+    public float healthFadeTimerValue = 0.0f;
+    public Boolean checkChargeAuraShield = false;
+    public float chargedHealth = 0.0f;
+    public String chargedModelId = "";
+    public Boolean checkOnDamageHealthChange = false;
 
     public AuraShieldComponent() {}
 

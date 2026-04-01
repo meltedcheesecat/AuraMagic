@@ -1,7 +1,7 @@
 {
   "Group": "me.melchscat.aura",
   "Name": "AuraMagic",
-  "Version": "1.0.0-alpha.1",
+  "Version": "1.0.1-alpha.1",
   "Description": "This adds and enhances the existing elemental magic in hytale. I am initially working on Wind and this is the first Alpha release so lots more to come.",
   "Authors": [
     {
