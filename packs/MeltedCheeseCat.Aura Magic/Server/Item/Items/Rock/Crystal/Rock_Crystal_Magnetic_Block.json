@@ -14,7 +14,7 @@
   "BlockType": {
     "Material": "Solid",
     "DrawType": "Cube",
-    "Opacity": "Transparent",
+    "Opacity": "Solid",
     "HitboxType": "Full",
     "Flags": {},
     "Gathering": {

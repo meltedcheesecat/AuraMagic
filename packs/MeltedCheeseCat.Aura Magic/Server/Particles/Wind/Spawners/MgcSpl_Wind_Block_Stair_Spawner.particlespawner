@@ -1,0 +1,106 @@
+{
+  "RenderMode": "BlendLinear",
+  "ParticleRotationInfluence": "None",
+  "LinearFiltering": false,
+  "LightInfluence": 0,
+  "ParticleRotateWithSpawner": true,
+  "MaxConcurrentParticles": 1,
+  "ParticleLifeSpan": {
+    "Min": 1.52,
+    "Max": 1.52
+  },
+  "SpawnRate": {
+    "Min": 1.5,
+    "Max": 1.5
+  },
+  "Particle": {
+    "Texture": "Particles/Textures/MagicSpell/Block/Aura_Wind_Block_Top_4.png",
+    "ScaleRatioConstraint": "None",
+    "Animation": {
+      "0": {
+        "Opacity": 0.1,
+        "Scale": {
+          "X": {
+            "Min": 1.0,
+            "Max": 1.0
+          },
+          "Y": {
+            "Min": 0.5,
+            "Max": 0.5
+          }
+        }
+      },
+      "10": {
+        "Opacity": 1.0,
+        "Scale": {
+          "X": {
+            "Min": 1.0,
+            "Max": 1.0
+          },
+          "Y": {
+            "Min": 0.5,
+            "Max": 0.5
+          }
+        }
+      },
+      "33": {
+        "Opacity": 1.0,
+        "Scale": {
+          "X": {
+            "Min": 1.0,
+            "Max": 1.0
+          },
+          "Y": {
+            "Min": 0.5,
+            "Max": 0.5
+          }
+        }
+      },
+      "100": {
+        "Opacity": 0.0,
+        "Scale": {
+          "X": {
+            "Min": 0.5,
+            "Max": 0.5
+          },
+          "Y": {
+            "Min": 0.25,
+            "Max": 0.25
+          }
+        }
+      }
+    },
+    "UseSpriteBlending": false,
+    "InitialAnimationFrame": {
+      "Rotation": {
+        "Y": {
+          "Min": 0,
+          "Max": 0
+        },
+        "Z": {
+          "Min": 0,
+          "Max": 0
+        },
+        "X": {
+          "Min": 90,
+          "Max": 90
+        }
+      },
+      "Color": "#5affe9"
+    },
+    "SoftParticles": "Enable",
+    "SoftParticlesFadeFactor": 1,
+    "UVOption": "None"
+  },
+  "Shape": "Sphere",
+  "WaveDelay": {
+    "Max": 0.01
+  },
+  "Attractors": [
+    {
+      "LinearAcceleration": {
+        "Y": -0.5
+      }
+    }
+  ]
+}

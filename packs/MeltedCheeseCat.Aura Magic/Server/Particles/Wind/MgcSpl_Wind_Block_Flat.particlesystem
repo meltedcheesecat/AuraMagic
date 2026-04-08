@@ -1,0 +1,30 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "MgcSpl_Wind_Block_Flat_Spawner",
+      "PositionOffset": {
+        "X": 0,
+        "Y": 1,
+				"Z": 0
+      }
+    },
+    {
+      "SpawnerId": "MgcSpl_Wind_Block_Flat_Spawner",
+      "StartDelay": 0.6,
+      "PositionOffset": {
+			  "X": 0,
+        "Y": 1,
+        "Z": 0
+      }
+    },
+    {
+      "SpawnerId": "MgcSpl_Wind_Block_Flat_Spawner",
+      "StartDelay": 1.2,
+      "PositionOffset": {
+			  "X": 0,
+        "Y": 1,
+        "Z": 0
+      }
+    }
+  ]
+}

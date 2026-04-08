@@ -10,7 +10,6 @@ import com.hypixel.hytale.component.Store;
 import com.hypixel.hytale.protocol.InteractionState;
 import com.hypixel.hytale.protocol.InteractionType;
 import com.hypixel.hytale.server.core.entity.InteractionContext;
-import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.modules.entity.component.DynamicLight;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHandler;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInteraction;
@@ -21,13 +20,12 @@ import me.melchscat.aura.component.AuraShieldComponent;
 import javax.annotation.Nonnull;
 
 import java.util.logging.Level;
-
 import static com.hypixel.hytale.logger.HytaleLogger.getLogger;
 
 public class ChargeAuraShield extends SimpleInteraction {
     protected float healthAdded;
     protected String modelId = "";
-    private ComponentType<EntityStore, AuraShieldComponent> auraShieldComponentType;
+    private ComponentType<EntityStore, AuraShieldComponent> auraShieldComType = null;
 
     @Override
     protected void tick0(boolean firstRun,
@@ -35,8 +33,8 @@ public class ChargeAuraShield extends SimpleInteraction {
                          @Nonnull InteractionType type,
                          @Nonnull InteractionContext context,
                          @Nonnull CooldownHandler cooldownHandler) {
-        if (firstRun) {
-            auraShieldComponentType = AuraMagicPlugin.getInstance().getAuraShieldComponentType();
+        if (auraShieldComType == null) {
+            auraShieldComType = AuraMagicPlugin.getInstance().getAuraShieldComponentType();
         }
 
         // the owning Entity and entity seem to be the same thing, but owning Entity
@@ -49,7 +47,7 @@ public class ChargeAuraShield extends SimpleInteraction {
         Store<EntityStore> entityStore = owningEntityRef.getStore();
 
         // Shield Component
-        AuraShieldComponent auraShieldComponent = entityStore.getComponent(owningEntityRef, auraShieldComponentType);
+        AuraShieldComponent auraShieldComponent = entityStore.getComponent(owningEntityRef, auraShieldComType);
         if (auraShieldComponent == null) {
             auraShieldComponent = new AuraShieldComponent();
 
@@ -60,7 +58,7 @@ public class ChargeAuraShield extends SimpleInteraction {
             if (commandBuffer == null)
                 return;
 
-            commandBuffer.putComponent(owningEntityRef, auraShieldComponentType, auraShieldComponent);
+            commandBuffer.putComponent(owningEntityRef, auraShieldComType, auraShieldComponent);
         }
 
         // Shield DynamicLight Component

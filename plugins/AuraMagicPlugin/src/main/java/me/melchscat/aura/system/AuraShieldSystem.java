@@ -32,14 +32,15 @@ import java.util.logging.Level;
 import static com.hypixel.hytale.logger.HytaleLogger.getLogger;
 
 public class AuraShieldSystem extends EntityTickingSystem<EntityStore> {
-    private ComponentType<EntityStore, AuraShieldComponent> auraShieldComponentType;
+    private final ComponentType<EntityStore, AuraShieldComponent> auraShieldComType;
+
+    public AuraShieldSystem(ComponentType<EntityStore, AuraShieldComponent> auraShieldComType) {
+        this.auraShieldComType = auraShieldComType;
+    }
 
     @Override
     public Query<EntityStore> getQuery() {
-        if (auraShieldComponentType == null)
-          auraShieldComponentType = AuraMagicPlugin.getInstance().getAuraShieldComponentType();
-
-        return auraShieldComponentType;
+        return auraShieldComType;
     }
 
     private void doSpawnParticles(AuraShieldComponent auraShield, @NonNullDecl Store<EntityStore> store, Ref<EntityStore> ref, Player player, PlayerRef playerRef) {
@@ -139,10 +140,7 @@ public class AuraShieldSystem extends EntityTickingSystem<EntityStore> {
                      @NonNullDecl ArchetypeChunk<EntityStore> archetypeChunk,
                      @NonNullDecl Store<EntityStore> store,
                      @NonNullDecl CommandBuffer<EntityStore> commandBuffer) {
-        if (auraShieldComponentType == null)
-            auraShieldComponentType = AuraMagicPlugin.getInstance().getAuraShieldComponentType();
-
-        AuraShieldComponent auraShield = archetypeChunk.getComponent(index, auraShieldComponentType);
+        AuraShieldComponent auraShield = archetypeChunk.getComponent(index, auraShieldComType);
 
         if (auraShield == null)
             return;
@@ -228,12 +226,15 @@ public class AuraShieldSystem extends EntityTickingSystem<EntityStore> {
     }
 
     public static class OnDamageReceived extends DamageEventSystem {
-        @Nonnull
-        private final Query<EntityStore> query = AuraMagicPlugin.getInstance().getAuraShieldComponentType();
+        private final ComponentType<EntityStore, AuraShieldComponent> auraShieldComType;
+
+        public OnDamageReceived(ComponentType<EntityStore, AuraShieldComponent> auraShieldComType) {
+            this.auraShieldComType = auraShieldComType;
+        }
 
         @Nonnull
         public Query<EntityStore> getQuery() {
-            return this.query;
+            return auraShieldComType;
         }
 
         @Override
@@ -246,7 +247,7 @@ public class AuraShieldSystem extends EntityTickingSystem<EntityStore> {
                            @Nonnull Store<EntityStore> store,
                            @Nonnull CommandBuffer<EntityStore> commandBuffer,
                            @Nonnull Damage damage) {
-            AuraShieldComponent auraShield = archetypeChunk.getComponent(index, AuraMagicPlugin.getInstance().getAuraShieldComponentType());
+            AuraShieldComponent auraShield = archetypeChunk.getComponent(index, auraShieldComType);
 
             if (auraShield == null)
                 return;

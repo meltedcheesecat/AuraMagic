@@ -1,0 +1,73 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Aura_Wind_Block_Flat.name"
+  },
+  "ItemLevel": 10,
+  "MaxStack": 100,
+  "Categories": [
+    "Blocks.Cloth"
+  ],
+  "PlayerAnimationsId": "Block",
+  "Set": "Cloth_Wool_White",
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "Model",
+    "Group": "Cloth",
+    "Flags": {},
+    "BlockParticleSetId": "Dust",
+    "ParticleColor": "#615d44",
+    "BlockSoundSetId": "Cloth",
+    "TransitionToGroups": [
+      "Stone"
+    ],
+    "Opacity": "Transparent",
+    "RequiresAlphaBlending": true,
+    "CustomModel": "Blocks/Wind/MgcSpl_Wind_Block_Flat.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Blocks/Wind/MgcSpl_Wind_Block_Flat.png"
+      }
+    ],
+    "Particles": [
+      {
+        "SystemId": "MgcSpl_Wind_Block_Flat",
+        "Color": "#6aebe4"
+      }
+    ],
+    "BlockEntity": {
+      "Components": {
+        "AuraBlockLifetime": {
+          "LifeTickLength": 10,
+          "StartTick": 10
+        }
+      }
+    }
+  },
+  "ResourceTypes": [
+    {
+      "Id": "Rock"
+    },
+    {
+      "Id": "Rock_Stone"
+    }
+  ],
+  "Tags": {
+    "Type": [
+      "Cloth"
+    ]
+  },
+  "ItemSoundSetId": "ISS_Blocks_Stone",
+  "IconProperties": {
+    "Scale": 0.58823,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      0,
+      -13.5
+    ]
+  },
+  "Icon": "Icons/ItemsGenerated/Aura_Wind_Block_Flat.png"
+}

@@ -29,6 +29,9 @@ public class ShowStartAuraPage extends SimpleInteraction {
                          @Nonnull InteractionContext context,
                          @Nonnull CooldownHandler cooldownHandler) {
         Ref<EntityStore> owningEntityRef = context.getOwningEntity();
+        if (!owningEntityRef.isValid())
+            return;
+
         Store<EntityStore> store = owningEntityRef.getStore();
 
         Player player = store.getComponent(owningEntityRef, Player.getComponentType());
