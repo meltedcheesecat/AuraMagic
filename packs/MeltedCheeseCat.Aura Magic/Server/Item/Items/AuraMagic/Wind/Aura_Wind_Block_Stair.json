@@ -54,6 +54,12 @@
           "LifeTickLength": 10
         }
       }
+    },
+    "BlockBreakingDecalId": "Breaking_Decals_Soil",
+    "Gathering": {
+      "Soft": {
+        "ItemId": "Aura_Wind_Block_Stair"
+      }
     }
   },
   "ResourceTypes": [
@@ -82,5 +88,7 @@
       -13.5
     ]
   },
-  "Icon": "Icons/ItemsGenerated/Aura_Wind_Block_Stair.png"
+  "Icon": "Icons/ItemsGenerated/Aura_Wind_Block_Stair.png",
+  "DurabilityLossOnHit": 0,
+  "MaxDurability": 0
 }

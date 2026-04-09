@@ -41,6 +41,11 @@
           "StartTick": 10
         }
       }
+    },
+    "Gathering": {
+      "Soft": {
+        "ItemId": "Aura_Wind_Block_Flat"
+      }
     }
   },
   "ResourceTypes": [
@@ -69,5 +74,12 @@
       -13.5
     ]
   },
-  "Icon": "Icons/ItemsGenerated/Aura_Wind_Block_Flat.png"
+  "Icon": "Icons/ItemsGenerated/Aura_Wind_Block_Flat.png",
+  "Interactions": {
+    "Primary": "Block_Primary",
+    "Secondary": "Block_Secondary"
+  },
+  "DurabilityLossOnHit": 0,
+  "MaxDurability": 0,
+  "Consumable": false
 }

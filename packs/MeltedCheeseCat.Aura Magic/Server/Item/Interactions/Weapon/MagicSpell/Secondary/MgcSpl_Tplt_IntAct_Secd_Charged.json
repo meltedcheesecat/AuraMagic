@@ -7,10 +7,10 @@
   },
   "Next": {  
 	"Type": "Replace",
-	"Var": "MagicSpell_Charged_Shield_Create_Animation",
+	"Var": "MagicSpell_Secondary_Charged_Animation",
 	"DefaultValue": {
 	  "Interactions": [
-		"MgcSpl_Tplt_IntAct_Secd_Charged_Shield_Create_Animation"
+		"MgcSpl_Tplt_IntAct_Secd_Charged_Animation"
 	  ]
 	}
   },

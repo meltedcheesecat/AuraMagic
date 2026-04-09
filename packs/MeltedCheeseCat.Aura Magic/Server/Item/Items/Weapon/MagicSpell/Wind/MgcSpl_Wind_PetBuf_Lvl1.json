@@ -7,15 +7,15 @@
   "Texture": "Items/Weapon/MagicSpell/Wind/Level1/MagicSpell_Wind_PetBuf_Lvl1.png",
   "Icon": "Icons/ItemsGenerated/MgcSpl_Wind_PetBuf_Lvl1.png",
   "IconProperties": {
-    "Scale": 0.8,
+    "Scale": 1.3,
     "Rotation": [
       0,
-      232,
-      29
+      268,
+      0
     ],
     "Translation": [
-      9,
-      -1
+      17,
+      -9
     ]
   },
   "Quality": "Common",
@@ -41,7 +41,7 @@
         "Id": "ElementalWindbench",
         "Type": "Crafting",
         "Categories": [
-          "Elemental_Wind_Level1"
+          "Elemental_Wind_Level5"
         ]
       }
     ]
@@ -143,11 +143,11 @@
         }
       ]
     },
-    "MagicSpell_Charged_Attack_Animation": {
+    "MagicSpell_Primary_Charged_Animation": {
       "Interactions": [
         {
           "Type": "Simple",
-          "Parent": "MgcSpl_Tplt_IntAct_Prim_Charged_Attack_Animation",
+          "Parent": "MgcSpl_Tplt_IntAct_Prim_Charged_Animation",
           "RunTime": 0.25,
           "Effects": {
             "ItemPlayerAnimationsId": "MgcSpl",
@@ -181,10 +181,10 @@
         }
       ]
     },
-    "MagicSpell_Normal_Attack_Animation": {
+    "MagicSpell_Primary_Normal_Animation": {
       "Interactions": [
         {
-          "Parent": "MgcSpl_Tplt_IntAct_Prim_Normal_Attack_Animation",
+          "Parent": "MgcSpl_Tplt_IntAct_Prim_Normal_Animation",
           "Type": "Chaining",
           "ChainingAllowance": 1,
           "ChainId": "MgcSplNormalWind",
@@ -369,11 +369,11 @@
         }
       ]
     },
-    "MagicSpell_Charged_Shield_Create_Animation": {
+    "MagicSpell_Secondary_Charged_Animation": {
       "Interactions": [
         {
           "Type": "Simple",
-          "Parent": "MgcSpl_Tplt_IntAct_Secd_Charged_Shield_Create_Animation",
+          "Parent": "MgcSpl_Tplt_IntAct_Secd_Charged_Animation",
           "RunTime": 0.25,
           "Effects": {
             "ItemPlayerAnimationsId": "MgcSpl",

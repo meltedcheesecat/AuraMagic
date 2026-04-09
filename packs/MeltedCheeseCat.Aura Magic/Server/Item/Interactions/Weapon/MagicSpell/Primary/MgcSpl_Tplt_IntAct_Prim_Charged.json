@@ -6,10 +6,10 @@
   },
   "Next": {  
 	"Type": "Replace",
-	"Var": "MagicSpell_Charged_Attack_Animation",
+	"Var": "MagicSpell_Primary_Charged_Animation",
 	"DefaultValue": {
 	  "Interactions": [
-		"MgcSpl_Tplt_IntAct_Prim_Charged_Attack_Animation"
+		"MgcSpl_Tplt_IntAct_Prim_Charged_Animation"
 	  ]
 	}
   },

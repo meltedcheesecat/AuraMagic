@@ -1,11 +1,10 @@
 {
   "Parent": "MgcSpl_Tplt_Wind",
   "TranslationProperties": {
-    "Name": "server.items.MagicSpell_Wind_ATKDef_Lvl3.name"
+    "Name": "server.items.MagicSpell_Wind_Block_Lvl2.name"
   },
-  "Model": "Items/Weapon/MagicSpell/Wind/Level3/MagicSpell_Wind_ATKDef_Lvl3.blockymodel",
-  "Texture": "Items/Weapon/MagicSpell/Wind/Level3/MagicSpell_Wind_ATKDef_Lvl3.png",
-  "Icon": "Icons/ItemsGenerated/MgcSpl_Wind_ATKDef_Lvl3.png",
+  "Model": "Items/Weapon/MagicSpell/Wind/Level2/MagicSpell_Wind_Block_Lvl2.blockymodel",
+  "Texture": "Items/Weapon/MagicSpell/Wind/Level2/MagicSpell_Wind_Block_Lvl2.png",
   "IconProperties": {
     "Scale": 1.3,
     "Rotation": [
@@ -18,26 +17,26 @@
       -9
     ]
   },
-  "Quality": "Rare",
-  "ItemLevel": 30,
+  "Quality": "Uncommon",
+  "ItemLevel": 20,
   "Recipe": {
-    "TimeSeconds": 4,
+    "TimeSeconds": 3,
     "Input": [
       {
         "ItemId": "Ingredient_Crystal_Wind",
-        "Quantity": 75
+        "Quantity": 50
       },
       {
-        "ItemId": "Ingredient_Bar_Iron",
-        "Quantity": 10
+        "ItemId": "Ingredient_Bar_Copper",
+        "Quantity": 5
       },
       {
-        "ItemId": "Ingredient_Leather_Light",
-        "Quantity": 4
+        "ResourceTypeId": "Wood_Trunk",
+        "Quantity": 3
       },
       {
-        "ItemId": "Ingredient_Fabric_Scrap_Linen",
-        "Quantity": 4
+        "ItemId": "Ingredient_Fibre",
+        "Quantity": 3
       }
     ],
     "BenchRequirement": [
@@ -45,9 +44,9 @@
         "Id": "ElementalWindbench",
         "Type": "Crafting",
         "Categories": [
-          "Elemental_Wind_Level3"
+          "Elemental_Wind_Level2"
         ],
-        "RequiredTierLevel": 3
+        "RequiredTierLevel": 2
       }
     ]
   },
@@ -71,7 +70,7 @@
         {
           "Type": "Charging",
           "Parent": "MgcSpl_Tplt_IntAct_Prim_Charging",
-          "HorizontalSpeedMultiplier": 0.2,
+          "HorizontalSpeedMultiplier": 1.0,
           "Effects": {
             "ItemPlayerAnimationsId": "MgcSpl",
             "ItemAnimationId": "StartCharge",
@@ -84,7 +83,7 @@
             "0": "MgcSpl_Tplt_IntAct_No_Shards_Or_Fail",
             "0.5": {
               "Type": "Charging",
-              "HorizontalSpeedMultiplier": 0.2,
+              "HorizontalSpeedMultiplier": 1.0,
               "Effects": {
                 "ItemPlayerAnimationsId": "MgcSpl",
                 "ItemAnimationId": "Charging",
@@ -94,10 +93,10 @@
                 "LocalSoundEventId": "SFX_MgcSpl_Wind_Lvl1_Charging",
                 "Particles": [
                   {
-                    "SystemId": "MgcSpl_Wind_Charging_Left",
+                    "SystemId": "MgcSpl_Wind_Block_Stair",
                     "PositionOffset": {
                       "X": -0.3,
-                      "Y": 0,
+                      "Y": -1.0,
                       "Z": 0
                     },
                     "TargetEntityPart": "Entity",
@@ -119,7 +118,7 @@
               },
               "Next": {
                 "0": "MgcSpl_Tplt_IntAct_No_Shards_Or_Fail",
-                "3.25": {
+                "1.0": {
                   "Type": "Replace",
                   "Var": "MagicSpell_Primary_Charged",
                   "DefaultValue": {
@@ -159,16 +158,13 @@
             "ItemAnimationId": "Charged",
             "ClearAnimationOnFinish": true,
             "ClearSoundEventOnFinish": true,
-            "WorldSoundEventId": "SFX_Bow_T2_Signature_Shoot",
-            "LocalSoundEventId": "SFX_Bow_T2_Signature_Shoot_Local"
+            "WorldSoundEventId": "SFX_Cloth_Hit",
+            "LocalSoundEventId": "SFX_Cloth_Hit"
           },
           "Next": {
-            "Type": "Projectile",
-            "Config": "MgcSpl_Proj_Cfg_Wind_Lvl3_Charged",
-            "Next": {
-              "Type": "Simple",
-              "RunTime": 0.2
-            }
+            "Type": "CreateAuraWindBlocks",
+            "Level": 2,
+            "BlockType": 0
           },
           "CancelOnItemChange": false
         }
@@ -214,7 +210,7 @@
                             "SystemId": "MgcSpl_Wind_Normal_Forward",
                             "TargetEntityPart": "Entity",
                             "TargetNodeName": "Chest",
-                            "Scale": 2.0,
+                            "Scale": 1.0,
                             "DetachedFromModel": false
                           }
                         ],
@@ -228,7 +224,7 @@
                   "Interactions": [
                     {
                       "Type": "Simple",
-                      "Next": "MgcSpl_IntAct_Wind_BlastForward_Lvl3_Selector"
+                      "Next": "MgcSpl_IntAct_Wind_BlastForward_Lvl1_Selector"
                     }
                   ]
                 }
@@ -254,7 +250,7 @@
                             "SystemId": "MgcSpl_Wind_Normal_Forward",
                             "TargetEntityPart": "Entity",
                             "TargetNodeName": "Chest",
-                            "Scale": 2.0,
+                            "Scale": 1.0,
                             "DetachedFromModel": false
                           }
                         ],
@@ -268,7 +264,7 @@
                   "Interactions": [
                     {
                       "Type": "Simple",
-                      "Next": "MgcSpl_IntAct_Wind_BlastForward_Lvl3_Selector"
+                      "Next": "MgcSpl_IntAct_Wind_BlastForward_Lvl1_Selector"
                     }
                   ]
                 }
@@ -297,10 +293,10 @@
         {
           "Type": "Charging",
           "Parent": "MgcSpl_Tplt_IntAct_Secd_Charging",
-          "HorizontalSpeedMultiplier": 0.2,
+          "HorizontalSpeedMultiplier": 1.0,
           "Effects": {
             "ItemPlayerAnimationsId": "MgcSpl",
-            "ItemAnimationId": "StartShieldCharge",
+            "ItemAnimationId": "StartCharge",
             "ClearAnimationOnFinish": true,
             "ClearSoundEventOnFinish": true,
             "WorldSoundEventId": "SFX_MgcSpl_Wind_StartCharge",
@@ -310,20 +306,20 @@
             "0": "MgcSpl_Tplt_IntAct_No_Shards_Or_Fail",
             "0.5": {
               "Type": "Charging",
-              "HorizontalSpeedMultiplier": 0.2,
+              "HorizontalSpeedMultiplier": 1.0,
               "Effects": {
                 "ItemPlayerAnimationsId": "MgcSpl",
-                "ItemAnimationId": "ShieldCharging",
+                "ItemAnimationId": "Charging",
                 "ClearAnimationOnFinish": true,
                 "ClearSoundEventOnFinish": true,
                 "WorldSoundEventId": "SFX_MgcSpl_Wind_Lvl1_Charging",
                 "LocalSoundEventId": "SFX_MgcSpl_Wind_Lvl1_Charging",
                 "Particles": [
                   {
-                    "SystemId": "MgcSpl_Wind_Shield_Charging_Left",
+                    "SystemId": "MgcSpl_Wind_Block_Flat",
                     "PositionOffset": {
-                      "X": 0,
-                      "Y": 0,
+                      "X": -0.3,
+                      "Y": -1.0,
                       "Z": 0
                     },
                     "TargetEntityPart": "Entity",
@@ -345,7 +341,7 @@
               },
               "Next": {
                 "0": "MgcSpl_Tplt_IntAct_No_Shards_Or_Fail",
-                "2.0": {
+                "1.0": {
                   "Type": "Replace",
                   "Var": "MagicSpell_Secondary_Charged",
                   "DefaultValue": {
@@ -369,12 +365,12 @@
           "Parent": "MgcSpl_Tplt_IntAct_Secd_Charged",
           "ItemToRemove": {
             "Id": "Ingredient_Crystal_Wind",
-            "Quantity": 4
+            "Quantity": 1
           }
         }
       ]
     },
-    "MagicSpelll_Secondary_Charged_Animation": {
+    "MagicSpell_Secondary_Charged_Animation": {
       "Interactions": [
         {
           "Type": "Simple",
@@ -385,17 +381,18 @@
             "ItemAnimationId": "Charged",
             "ClearAnimationOnFinish": true,
             "ClearSoundEventOnFinish": true,
-            "WorldSoundEventId": "SFX_Bow_T2_Signature_Shoot",
-            "LocalSoundEventId": "SFX_Bow_T2_Signature_Shoot_Local"
+            "WorldSoundEventId": "SFX_Cloth_Hit",
+            "LocalSoundEventId": "SFX_Cloth_Hit"
           },
           "Next": {
-            "Type": "ChargeAuraShield",
-            "ModelId": "MgcSpl_Wind_Shield_Model",
-            "HealthAdded": 22
+            "Type": "CreateAuraWindBlocks",
+            "Level": 2,
+            "BlockType": 1
           },
           "CancelOnItemChange": false
         }
       ]
     }
-  }
+  },
+  "Icon": "Icons/ItemsGenerated/MgcSpl_Wind_Block_Lvl2.png"
 }
