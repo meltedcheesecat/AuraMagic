@@ -2,6 +2,7 @@ package me.melchscat.aura.block;
 
 import com.hypixel.hytale.math.vector.Vector3i;
 import com.hypixel.hytale.server.core.asset.type.blocktype.config.BlockType;
+import com.hypixel.hytale.server.core.asset.type.blocktype.config.Rotation;
 
 import java.util.logging.Level;
 
@@ -19,15 +20,11 @@ public enum AuraBlocks {
     AURA_WIND_CRYSTAL_MEDIUM("Rock_Crystal_Wind_Medium"),
     AURA_WIND_CRYSTAL_SMALL("Rock_Crystal_Wind_Small");
 
-    public static final int AURA_BLOCK_DIR_NORTH = 0;
-    public static final int AURA_BLOCK_DIR_WEST  = 1;
-    public static final int AURA_BLOCK_DIR_SOUTH = 2;
-    public static final int AURA_BLOCK_DIR_EAST  = 3;
-    public static int getBlockFacingDir(int dirX, int dirZ) {
-        if (dirZ == -1) return AURA_BLOCK_DIR_NORTH;
-        if (dirX == -1) return AURA_BLOCK_DIR_WEST;
-        if (dirZ == 1) return AURA_BLOCK_DIR_SOUTH;
-        return AURA_BLOCK_DIR_EAST;
+    public static Rotation getBlockFacingDir(int dirX, int dirZ) {
+        if (dirZ == -1) return Rotation.None;
+        if (dirX == -1) return Rotation.Ninety;
+        if (dirZ == 1) return Rotation.OneEighty;
+        return Rotation.TwoSeventy;
     }
 
     public final String name;

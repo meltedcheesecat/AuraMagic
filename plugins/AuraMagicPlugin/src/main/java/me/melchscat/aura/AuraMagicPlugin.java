@@ -8,7 +8,6 @@ import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
 import com.hypixel.hytale.server.core.universe.world.storage.ChunkStore;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.core.universe.world.worldgen.provider.IWorldGenProvider;
-import me.melchscat.aura.block.AuraBlocks;
 import me.melchscat.aura.component.AuraBlockLifetimeComponent;
 import me.melchscat.aura.component.AuraShieldComponent;
 import me.melchscat.aura.interaction.ChargeAuraShield;
@@ -18,11 +17,6 @@ import me.melchscat.aura.system.AuraBlockLifetimeSystem;
 import me.melchscat.aura.worldgen.CustomWorldGenProvider;
 import me.melchscat.aura.system.AuraShieldSystem;
 import org.checkerframework.checker.nullness.compatqual.NonNullDecl;
-
-import java.awt.*;
-import java.util.logging.Level;
-
-import static com.hypixel.hytale.logger.HytaleLogger.getLogger;
 
 public class AuraMagicPlugin extends JavaPlugin {
     private static AuraMagicPlugin instance;
