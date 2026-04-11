@@ -24,7 +24,7 @@ public class AuraShieldComponent implements Component<EntityStore> {
     public String modelId = "";
     public Boolean invalidModelId = true;
 
-    public final float HEALTH_FADE_TIMER_DELAY = 1.0F;
+    public final float HEALTH_FADE_TIMER_DELAY = 3.0F;
     public float healthFadeTimerValue = 0.0f;
     public Boolean checkChargeAuraShield = false;
     public float chargedHealth = 0.0f;

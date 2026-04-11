@@ -170,7 +170,7 @@ public class AuraShieldSystem extends EntityTickingSystem<EntityStore> {
             // add the delta time to the fade timer
             auraShield.healthFadeTimerValue += dt;
 
-            if (auraShield.healthFadeTimerValue >= 1.0F) {
+            if (auraShield.healthFadeTimerValue >= auraShield.HEALTH_FADE_TIMER_DELAY) {
                 auraShield.health -= 1.0F;
                 auraShield.healthFadeTimerValue = 0.0F;
 
