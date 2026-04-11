@@ -261,7 +261,7 @@ public class CustomBlockGenerator extends ChunkGenerator {
 
             if (ThreadLocalRandom.current().nextFloat() < spawnChance) {
                 // one out of every 5 should be a prefab rather than crystals
-                if (ThreadLocalRandom.current().nextInt(5) == 4) {
+                if (ThreadLocalRandom.current().nextInt(6) == 5) {
                     Vector3i placePos = new Vector3i(16 + (chunkX * 32), currentY, 16 + (chunkZ * 32));
                     auraPrefabs.spawnWindPrefab(world, placePos);
                 } else {

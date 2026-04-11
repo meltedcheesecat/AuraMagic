@@ -24,19 +24,19 @@
     "Input": [
       {
         "ItemId": "Rock_Gem_Aquamarine",
-        "Quantity": 5
+        "Quantity": 4
       },
       {
         "ItemId": "Ingredient_Bar_Gold",
-        "Quantity": 20
+        "Quantity": 17
       },
       {
         "ItemId": "Ingredient_Leather_Heavy",
-        "Quantity": 5
+        "Quantity": 4
       },
       {
         "ItemId": "Ingredient_Fabric_Scrap_Cindercloth",
-        "Quantity": 5
+        "Quantity": 4
       }
     ],
     "BenchRequirement": [

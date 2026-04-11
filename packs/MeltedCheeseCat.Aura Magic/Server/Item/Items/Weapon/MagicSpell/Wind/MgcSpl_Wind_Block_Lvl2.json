@@ -24,19 +24,19 @@
     "Input": [
       {
         "ItemId": "Ingredient_Crystal_Wind",
-        "Quantity": 50
+        "Quantity": 40
       },
       {
         "ItemId": "Ingredient_Bar_Copper",
-        "Quantity": 5
+        "Quantity": 4
       },
       {
         "ResourceTypeId": "Wood_Trunk",
-        "Quantity": 3
+        "Quantity": 2
       },
       {
         "ItemId": "Ingredient_Fibre",
-        "Quantity": 3
+        "Quantity": 2
       }
     ],
     "BenchRequirement": [

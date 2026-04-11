@@ -28,15 +28,15 @@
       },
       {
         "ItemId": "Ingredient_Bar_Silver",
-        "Quantity": 15
+        "Quantity": 12
       },
       {
         "ItemId": "Ingredient_Leather_Medium",
-        "Quantity": 5
+        "Quantity": 4
       },
       {
         "ItemId": "Ingredient_Fabric_Scrap_Linen",
-        "Quantity": 5
+        "Quantity": 4
       }
     ],
     "BenchRequirement": [

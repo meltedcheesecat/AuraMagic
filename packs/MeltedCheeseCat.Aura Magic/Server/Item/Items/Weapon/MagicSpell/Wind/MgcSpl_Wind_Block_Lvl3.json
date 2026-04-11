@@ -24,19 +24,19 @@
     "Input": [
       {
         "ItemId": "Ingredient_Crystal_Wind",
-        "Quantity": 75
+        "Quantity": 60
       },
       {
         "ItemId": "Ingredient_Bar_Iron",
-        "Quantity": 10
+        "Quantity": 8
       },
       {
         "ItemId": "Ingredient_Leather_Light",
-        "Quantity": 4
+        "Quantity": 3
       },
       {
         "ItemId": "Ingredient_Fabric_Scrap_Linen",
-        "Quantity": 4
+        "Quantity": 3
       }
     ],
     "BenchRequirement": [
