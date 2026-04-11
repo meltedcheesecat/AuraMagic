@@ -15,25 +15,35 @@ Adds the following blocks for all Elements
 	
 	3) Gems
 	
-	4) Essence 
+	4) Essence  
 	
 Adds the following Wind Specific Items
 	
 	1) Wind Elemental Bench 
 	
-	2) Wind Spell scrolls (Level 1 to 5), these can be made at the above Bench
-		
-		a) The spell has the following abilities
+	2) Wind Attack scrolls (Level 1 to 5), these can be made at the above Bench
   			
-			i) click primary wind attack
+		a) click primary wind attack
 			
-			ii) charged primary wind attack
+		b) charged primary wind attack
 			
-			iii) charged secondary wind Shield
+		c) charged secondary wind Shield
+
+	3) Wind Block scrolls (Level 1 to 5), these can be made at the above Bench
+  			
+		a) click primary wind attack
+			
+		b) charged primary wind stair blocks going up at 45 degree
+			
+		c) charged secondary wind blocks going straight
+		
+	4) two magical wind blocks used by previous spell
 	
-	3) NPC Wind Sprite
+	5) NPC Wind Sprite
 	
-	4) Wind Crystal Block that spawns wind sprites
+	6) Wind Crystal Block that spawns wind sprites
+	
+	7) Five wind prefabs
 
 Then Spawns the following Items on the Default Adventure Map	
   	
@@ -42,32 +52,28 @@ Then Spawns the following Items on the Default Adventure Map
 	2) Crystals in high places, these will spawn with a Wind Sprite spawner at the centre and will crystals tail randomly coming out
 	   the Wind Gems sometimes can spawn here two.
 	
-	3) the Wind Sprite drops wind Essence when killed
+	3) Five wind prefabs having a 1 in 6 chance of spawning instead of normal wind crystals
+	
+	4) the Wind Sprite drops wind Essence when killed
 
 🗺 Roadmap
 
 This is just the First Wind Alpha release and I have many more features planned
-	
-	Alpha Release 2
+
+	Alpha Release 3
+    	
+		1) a NPC that spawns at the start, which has many quests and story rather than my help block	
 		
-		1) a NPC that spawns at the start, which has many quests and story rather than my help block
-		
-		2) Aura Workbench
+		2) Elemental Armor. you will need to wear magic armor to use spells, this is to make the user more squishy
 		
 		3) New NPC Spawn and Buff Wind Spell scroll
 		
-		4) Start spawning wind structures in the world
-	
-	Alpha Release 3
-    	
-		1) Elemental Armor. you will need to wear magic armor to use spells, this is to make the user more squishy
-    	
-		2) New Shield Other and Buff Other Wind Spell scroll (Support)
-    	
-		3) Wind Blocks that are used by another Wind Spell scroll
-    	
 		4) Crystal Farming (higher tier)
 		
-  	Alpha Release 4
-
-		This is more vague since I my change stuff here after feed back	
+	Alpha Release 4	
+		
+		1) New Shield Other and Buff Other Wind Spell scroll (Support)
+    	
+		2) Aura Workbench
+		
+    3) and more 
