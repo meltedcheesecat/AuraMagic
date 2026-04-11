@@ -1,0 +1,2878 @@
+{
+  "version": 8,
+  "blockIdVersion": 11,
+  "anchorX": 0,
+  "anchorY": 0,
+  "anchorZ": 0,
+  "blocks": [
+    {
+      "x": -3,
+      "y": 16,
+      "z": -6,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 3
+    },
+    {
+      "x": -3,
+      "y": 10,
+      "z": -5,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 7
+    },
+    {
+      "x": -3,
+      "y": 16,
+      "z": -5,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 3
+    },
+    {
+      "x": -3,
+      "y": 16,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 3
+    },
+    {
+      "x": -3,
+      "y": 10,
+      "z": -3,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 7
+    },
+    {
+      "x": -3,
+      "y": 16,
+      "z": -3,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 3
+    },
+    {
+      "x": -3,
+      "y": 16,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 3
+    },
+    {
+      "x": -3,
+      "y": 22,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 3
+    },
+    {
+      "x": -3,
+      "y": 10,
+      "z": -1,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 7
+    },
+    {
+      "x": -3,
+      "y": 16,
+      "z": -1,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 3
+    },
+    {
+      "x": -3,
+      "y": 22,
+      "z": -1,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 3
+    },
+    {
+      "x": -3,
+      "y": 16,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 3
+    },
+    {
+      "x": -3,
+      "y": 22,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 3
+    },
+    {
+      "x": -3,
+      "y": 10,
+      "z": 1,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 7
+    },
+    {
+      "x": -3,
+      "y": 16,
+      "z": 1,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 3
+    },
+    {
+      "x": -3,
+      "y": 22,
+      "z": 1,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 3
+    },
+    {
+      "x": -3,
+      "y": 16,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 3
+    },
+    {
+      "x": -3,
+      "y": 22,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 3
+    },
+    {
+      "x": -3,
+      "y": 10,
+      "z": 3,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 7
+    },
+    {
+      "x": -3,
+      "y": 16,
+      "z": 3,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 3
+    },
+    {
+      "x": -3,
+      "y": 16,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 3
+    },
+    {
+      "x": -3,
+      "y": 10,
+      "z": 5,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 7
+    },
+    {
+      "x": -3,
+      "y": 16,
+      "z": 5,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 3
+    },
+    {
+      "x": -3,
+      "y": 16,
+      "z": 6,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 3
+    },
+    {
+      "x": -2,
+      "y": 16,
+      "z": -7,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 2
+    },
+    {
+      "x": -2,
+      "y": 10,
+      "z": -6,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -2,
+      "y": 11,
+      "z": -6,
+      "name": "Rock_Calcite_Brick_Pillar_Base"
+    },
+    {
+      "x": -2,
+      "y": 12,
+      "z": -6,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": -2,
+      "y": 13,
+      "z": -6,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": -2,
+      "y": 14,
+      "z": -6,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": -2,
+      "y": 15,
+      "z": -6,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 8
+    },
+    {
+      "x": -2,
+      "y": 16,
+      "z": -6,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -2,
+      "y": 17,
+      "z": -6,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Right",
+      "rotation": 3
+    },
+    {
+      "x": -2,
+      "y": 18,
+      "z": -6,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Right",
+      "filler": 1024,
+      "rotation": 3
+    },
+    {
+      "x": -2,
+      "y": 10,
+      "z": -5,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -2,
+      "y": 16,
+      "z": -5,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -2,
+      "y": 17,
+      "z": -5,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 3
+    },
+    {
+      "x": -2,
+      "y": 18,
+      "z": -5,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 3
+    },
+    {
+      "x": -2,
+      "y": 10,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -2,
+      "y": 16,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -2,
+      "y": 17,
+      "z": -4,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 3
+    },
+    {
+      "x": -2,
+      "y": 18,
+      "z": -4,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 3
+    },
+    {
+      "x": -2,
+      "y": 10,
+      "z": -3,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -2,
+      "y": 16,
+      "z": -3,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -2,
+      "y": 17,
+      "z": -3,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 3
+    },
+    {
+      "x": -2,
+      "y": 18,
+      "z": -3,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 3
+    },
+    {
+      "x": -2,
+      "y": 22,
+      "z": -3,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 2
+    },
+    {
+      "x": -2,
+      "y": 10,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -2,
+      "y": 11,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Pillar_Base"
+    },
+    {
+      "x": -2,
+      "y": 12,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": -2,
+      "y": 13,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": -2,
+      "y": 14,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": -2,
+      "y": 15,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 8
+    },
+    {
+      "x": -2,
+      "y": 16,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -2,
+      "y": 17,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Pillar_Base"
+    },
+    {
+      "x": -2,
+      "y": 18,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": -2,
+      "y": 19,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": -2,
+      "y": 20,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": -2,
+      "y": 21,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 8
+    },
+    {
+      "x": -2,
+      "y": 22,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -2,
+      "y": 23,
+      "z": -2,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Right",
+      "rotation": 3
+    },
+    {
+      "x": -2,
+      "y": 24,
+      "z": -2,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Right",
+      "filler": 1024,
+      "rotation": 3
+    },
+    {
+      "x": -2,
+      "y": 10,
+      "z": -1,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -2,
+      "y": 22,
+      "z": -1,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -2,
+      "y": 23,
+      "z": -1,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 3
+    },
+    {
+      "x": -2,
+      "y": 24,
+      "z": -1,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 3
+    },
+    {
+      "x": -2,
+      "y": 10,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -2,
+      "y": 22,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -2,
+      "y": 23,
+      "z": 0,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 3
+    },
+    {
+      "x": -2,
+      "y": 24,
+      "z": 0,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 3
+    },
+    {
+      "x": -2,
+      "y": 10,
+      "z": 1,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -2,
+      "y": 22,
+      "z": 1,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -2,
+      "y": 23,
+      "z": 1,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 3
+    },
+    {
+      "x": -2,
+      "y": 24,
+      "z": 1,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 3
+    },
+    {
+      "x": -2,
+      "y": 10,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -2,
+      "y": 11,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Pillar_Base"
+    },
+    {
+      "x": -2,
+      "y": 12,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": -2,
+      "y": 13,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": -2,
+      "y": 14,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": -2,
+      "y": 15,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 8
+    },
+    {
+      "x": -2,
+      "y": 16,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -2,
+      "y": 17,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Pillar_Base"
+    },
+    {
+      "x": -2,
+      "y": 18,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": -2,
+      "y": 19,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": -2,
+      "y": 20,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": -2,
+      "y": 21,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 8
+    },
+    {
+      "x": -2,
+      "y": 22,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -2,
+      "y": 23,
+      "z": 2,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Left",
+      "rotation": 3
+    },
+    {
+      "x": -2,
+      "y": 24,
+      "z": 2,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Left",
+      "filler": 1024,
+      "rotation": 3
+    },
+    {
+      "x": -2,
+      "y": 10,
+      "z": 3,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -2,
+      "y": 16,
+      "z": 3,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -2,
+      "y": 17,
+      "z": 3,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 3
+    },
+    {
+      "x": -2,
+      "y": 18,
+      "z": 3,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 3
+    },
+    {
+      "x": -2,
+      "y": 22,
+      "z": 3,
+      "name": "Rock_Calcite_Brick_Roof_Hollow"
+    },
+    {
+      "x": -2,
+      "y": 10,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -2,
+      "y": 16,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -2,
+      "y": 17,
+      "z": 4,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 3
+    },
+    {
+      "x": -2,
+      "y": 18,
+      "z": 4,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 3
+    },
+    {
+      "x": -2,
+      "y": 10,
+      "z": 5,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -2,
+      "y": 16,
+      "z": 5,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -2,
+      "y": 17,
+      "z": 5,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 3
+    },
+    {
+      "x": -2,
+      "y": 18,
+      "z": 5,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 3
+    },
+    {
+      "x": -2,
+      "y": 10,
+      "z": 6,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -2,
+      "y": 11,
+      "z": 6,
+      "name": "Rock_Calcite_Brick_Pillar_Base"
+    },
+    {
+      "x": -2,
+      "y": 12,
+      "z": 6,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": -2,
+      "y": 13,
+      "z": 6,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": -2,
+      "y": 14,
+      "z": 6,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": -2,
+      "y": 15,
+      "z": 6,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 8
+    },
+    {
+      "x": -2,
+      "y": 16,
+      "z": 6,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -2,
+      "y": 17,
+      "z": 6,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Left",
+      "rotation": 3
+    },
+    {
+      "x": -2,
+      "y": 18,
+      "z": 6,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Left",
+      "filler": 1024,
+      "rotation": 3
+    },
+    {
+      "x": -2,
+      "y": 16,
+      "z": 7,
+      "name": "Rock_Calcite_Brick_Roof_Hollow"
+    },
+    {
+      "x": -1,
+      "y": 10,
+      "z": -7,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 6
+    },
+    {
+      "x": -1,
+      "y": 16,
+      "z": -7,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 2
+    },
+    {
+      "x": -1,
+      "y": 10,
+      "z": -6,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -1,
+      "y": 16,
+      "z": -6,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -1,
+      "y": 17,
+      "z": -6,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 2
+    },
+    {
+      "x": -1,
+      "y": 18,
+      "z": -6,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 2
+    },
+    {
+      "x": -1,
+      "y": 7,
+      "z": -5,
+      "name": "Rock_Calcite_Brick_Beam"
+    },
+    {
+      "x": -1,
+      "y": 8,
+      "z": -5,
+      "name": "Rock_Calcite_Brick_Pillar_Middle",
+      "rotation": 8
+    },
+    {
+      "x": -1,
+      "y": 9,
+      "z": -5,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 8
+    },
+    {
+      "x": -1,
+      "y": 10,
+      "z": -5,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": -1,
+      "y": 19,
+      "z": -5,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Right",
+      "rotation": 3
+    },
+    {
+      "x": -1,
+      "y": 20,
+      "z": -5,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Right",
+      "filler": 1024,
+      "rotation": 3
+    },
+    {
+      "x": -1,
+      "y": 10,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Ornate"
+    },
+    {
+      "x": -1,
+      "y": 19,
+      "z": -4,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 3
+    },
+    {
+      "x": -1,
+      "y": 20,
+      "z": -4,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 3
+    },
+    {
+      "x": -1,
+      "y": 7,
+      "z": -3,
+      "name": "Rock_Calcite_Brick_Beam"
+    },
+    {
+      "x": -1,
+      "y": 8,
+      "z": -3,
+      "name": "Rock_Calcite_Brick_Pillar_Middle",
+      "rotation": 8
+    },
+    {
+      "x": -1,
+      "y": 9,
+      "z": -3,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 8
+    },
+    {
+      "x": -1,
+      "y": 10,
+      "z": -3,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": -1,
+      "y": 19,
+      "z": -3,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 3
+    },
+    {
+      "x": -1,
+      "y": 20,
+      "z": -3,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 3
+    },
+    {
+      "x": -1,
+      "y": 22,
+      "z": -3,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 2
+    },
+    {
+      "x": -1,
+      "y": 10,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Ornate"
+    },
+    {
+      "x": -1,
+      "y": 22,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -1,
+      "y": 23,
+      "z": -2,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 2
+    },
+    {
+      "x": -1,
+      "y": 24,
+      "z": -2,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 2
+    },
+    {
+      "x": -1,
+      "y": 10,
+      "z": -1,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": -1,
+      "y": 24,
+      "z": -1,
+      "name": "Rock_Crystal_Wind_Block",
+      "rotation": 5
+    },
+    {
+      "x": -1,
+      "y": 25,
+      "z": -1,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Right",
+      "rotation": 3
+    },
+    {
+      "x": -1,
+      "y": 26,
+      "z": -1,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Right",
+      "filler": 1024,
+      "rotation": 3
+    },
+    {
+      "x": -1,
+      "y": 10,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Ornate"
+    },
+    {
+      "x": -1,
+      "y": 24,
+      "z": 0,
+      "name": "Rock_Crystal_Wind_Block",
+      "rotation": 5
+    },
+    {
+      "x": -1,
+      "y": 25,
+      "z": 0,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 3
+    },
+    {
+      "x": -1,
+      "y": 26,
+      "z": 0,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 3
+    },
+    {
+      "x": -1,
+      "y": 10,
+      "z": 1,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": -1,
+      "y": 24,
+      "z": 1,
+      "name": "Rock_Crystal_Wind_Block",
+      "rotation": 5
+    },
+    {
+      "x": -1,
+      "y": 25,
+      "z": 1,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Right"
+    },
+    {
+      "x": -1,
+      "y": 26,
+      "z": 1,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Right",
+      "filler": 1024
+    },
+    {
+      "x": -1,
+      "y": 10,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Ornate"
+    },
+    {
+      "x": -1,
+      "y": 22,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -1,
+      "y": 23,
+      "z": 2,
+      "name": "Rock_Calcite_Cobble_Roof_Steep"
+    },
+    {
+      "x": -1,
+      "y": 24,
+      "z": 2,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024
+    },
+    {
+      "x": -1,
+      "y": 7,
+      "z": 3,
+      "name": "Rock_Calcite_Brick_Beam"
+    },
+    {
+      "x": -1,
+      "y": 8,
+      "z": 3,
+      "name": "Rock_Calcite_Brick_Pillar_Middle",
+      "rotation": 8
+    },
+    {
+      "x": -1,
+      "y": 9,
+      "z": 3,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 8
+    },
+    {
+      "x": -1,
+      "y": 10,
+      "z": 3,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": -1,
+      "y": 19,
+      "z": 3,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 3
+    },
+    {
+      "x": -1,
+      "y": 20,
+      "z": 3,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 3
+    },
+    {
+      "x": -1,
+      "y": 22,
+      "z": 3,
+      "name": "Rock_Calcite_Brick_Roof_Hollow"
+    },
+    {
+      "x": -1,
+      "y": 10,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Ornate"
+    },
+    {
+      "x": -1,
+      "y": 19,
+      "z": 4,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 3
+    },
+    {
+      "x": -1,
+      "y": 20,
+      "z": 4,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 3
+    },
+    {
+      "x": -1,
+      "y": 7,
+      "z": 5,
+      "name": "Rock_Calcite_Brick_Beam"
+    },
+    {
+      "x": -1,
+      "y": 8,
+      "z": 5,
+      "name": "Rock_Calcite_Brick_Pillar_Middle",
+      "rotation": 8
+    },
+    {
+      "x": -1,
+      "y": 9,
+      "z": 5,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 8
+    },
+    {
+      "x": -1,
+      "y": 10,
+      "z": 5,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": -1,
+      "y": 19,
+      "z": 5,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Right"
+    },
+    {
+      "x": -1,
+      "y": 20,
+      "z": 5,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Right",
+      "filler": 1024
+    },
+    {
+      "x": -1,
+      "y": 10,
+      "z": 6,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -1,
+      "y": 16,
+      "z": 6,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": -1,
+      "y": 17,
+      "z": 6,
+      "name": "Rock_Calcite_Cobble_Roof_Steep"
+    },
+    {
+      "x": -1,
+      "y": 18,
+      "z": 6,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024
+    },
+    {
+      "x": -1,
+      "y": 10,
+      "z": 7,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 4
+    },
+    {
+      "x": -1,
+      "y": 16,
+      "z": 7,
+      "name": "Rock_Calcite_Brick_Roof_Hollow"
+    },
+    {
+      "x": 0,
+      "y": 16,
+      "z": -7,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 2
+    },
+    {
+      "x": 0,
+      "y": 10,
+      "z": -6,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 0,
+      "y": 16,
+      "z": -6,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 0,
+      "y": 17,
+      "z": -6,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 2
+    },
+    {
+      "x": 0,
+      "y": 18,
+      "z": -6,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 2
+    },
+    {
+      "x": 0,
+      "y": 10,
+      "z": -5,
+      "name": "Rock_Calcite_Brick_Ornate"
+    },
+    {
+      "x": 0,
+      "y": 19,
+      "z": -5,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 2
+    },
+    {
+      "x": 0,
+      "y": 20,
+      "z": -5,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 2
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Beam"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Beam"
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Beam"
+    },
+    {
+      "x": 0,
+      "y": 3,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 0,
+      "y": 4,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 8
+    },
+    {
+      "x": 0,
+      "y": 5,
+      "z": -4,
+      "name": "Rock_Crystal_Wind_Large"
+    },
+    {
+      "x": 0,
+      "y": 6,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Pillar_Base"
+    },
+    {
+      "x": 0,
+      "y": 7,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 0,
+      "y": 8,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 0,
+      "y": 9,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 8
+    },
+    {
+      "x": 0,
+      "y": 10,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 0,
+      "y": 14,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Smooth_Half"
+    },
+    {
+      "x": 0,
+      "y": 20,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 0,
+      "y": 21,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Pillar_Base"
+    },
+    {
+      "x": 0,
+      "y": 22,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 0,
+      "y": 23,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 0,
+      "y": 24,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Beam"
+    },
+    {
+      "x": 0,
+      "y": 25,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Beam"
+    },
+    {
+      "x": 0,
+      "y": 10,
+      "z": -3,
+      "name": "Rock_Calcite_Brick_Ornate"
+    },
+    {
+      "x": 0,
+      "y": 22,
+      "z": -3,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 2
+    },
+    {
+      "x": 0,
+      "y": 10,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 0,
+      "y": 22,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 0,
+      "y": 23,
+      "z": -2,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 2
+    },
+    {
+      "x": 0,
+      "y": 24,
+      "z": -2,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 2
+    },
+    {
+      "x": 0,
+      "y": 10,
+      "z": -1,
+      "name": "Rock_Calcite_Brick_Ornate"
+    },
+    {
+      "x": 0,
+      "y": 24,
+      "z": -1,
+      "name": "Rock_Crystal_Wind_Block",
+      "rotation": 5
+    },
+    {
+      "x": 0,
+      "y": 25,
+      "z": -1,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 2
+    },
+    {
+      "x": 0,
+      "y": 26,
+      "z": -1,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 2
+    },
+    {
+      "x": 0,
+      "y": 10,
+      "z": 0,
+      "name": "Spawner_Wind_Sprite",
+      "components": {
+        "Components": {
+          "PlacedByInteraction": {
+            "WhoPlacedUuid": {
+              "$binary": "bqDSATiwT++EkU6x0gHadg==",
+              "$type": "04"
+            }
+          },
+          "SpawnMarkerBlock": {
+            "MarkerReference": {
+              "UUID": {
+                "$binary": "OtDt3X0PMvuLXNF4oLCNrQ==",
+                "$type": "04"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "x": 0,
+      "y": 17,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Smooth_Half"
+    },
+    {
+      "x": 0,
+      "y": 24,
+      "z": 0,
+      "name": "Rock_Crystal_Wind_Block",
+      "rotation": 5
+    },
+    {
+      "x": 0,
+      "y": 25,
+      "z": 0,
+      "name": "Rock_Crystal_Wind_Block"
+    },
+    {
+      "x": 0,
+      "y": 26,
+      "z": 0,
+      "name": "Rock_Crystal_Wind_Block"
+    },
+    {
+      "x": 0,
+      "y": 27,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Pillar_Base"
+    },
+    {
+      "x": 0,
+      "y": 28,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Beam"
+    },
+    {
+      "x": 0,
+      "y": 29,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Beam"
+    },
+    {
+      "x": 0,
+      "y": 10,
+      "z": 1,
+      "name": "Rock_Calcite_Brick_Ornate"
+    },
+    {
+      "x": 0,
+      "y": 24,
+      "z": 1,
+      "name": "Rock_Crystal_Wind_Block",
+      "rotation": 5
+    },
+    {
+      "x": 0,
+      "y": 25,
+      "z": 1,
+      "name": "Rock_Calcite_Cobble_Roof_Steep"
+    },
+    {
+      "x": 0,
+      "y": 26,
+      "z": 1,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024
+    },
+    {
+      "x": 0,
+      "y": 10,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 0,
+      "y": 22,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 0,
+      "y": 23,
+      "z": 2,
+      "name": "Rock_Calcite_Cobble_Roof_Steep"
+    },
+    {
+      "x": 0,
+      "y": 24,
+      "z": 2,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024
+    },
+    {
+      "x": 0,
+      "y": 10,
+      "z": 3,
+      "name": "Rock_Calcite_Brick_Ornate"
+    },
+    {
+      "x": 0,
+      "y": 22,
+      "z": 3,
+      "name": "Rock_Calcite_Brick_Roof_Hollow"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Beam"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Beam"
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Beam"
+    },
+    {
+      "x": 0,
+      "y": 3,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 0,
+      "y": 4,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 8
+    },
+    {
+      "x": 0,
+      "y": 5,
+      "z": 4,
+      "name": "Rock_Crystal_Wind_Large"
+    },
+    {
+      "x": 0,
+      "y": 6,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Pillar_Base"
+    },
+    {
+      "x": 0,
+      "y": 7,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 0,
+      "y": 8,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 0,
+      "y": 9,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 8
+    },
+    {
+      "x": 0,
+      "y": 10,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 0,
+      "y": 14,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Smooth_Half"
+    },
+    {
+      "x": 0,
+      "y": 20,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 0,
+      "y": 21,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Pillar_Base"
+    },
+    {
+      "x": 0,
+      "y": 22,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 0,
+      "y": 23,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 0,
+      "y": 24,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Beam"
+    },
+    {
+      "x": 0,
+      "y": 25,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Beam"
+    },
+    {
+      "x": 0,
+      "y": 10,
+      "z": 5,
+      "name": "Rock_Calcite_Brick_Ornate"
+    },
+    {
+      "x": 0,
+      "y": 19,
+      "z": 5,
+      "name": "Rock_Calcite_Cobble_Roof_Steep"
+    },
+    {
+      "x": 0,
+      "y": 20,
+      "z": 5,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024
+    },
+    {
+      "x": 0,
+      "y": 10,
+      "z": 6,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 0,
+      "y": 16,
+      "z": 6,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 0,
+      "y": 17,
+      "z": 6,
+      "name": "Rock_Calcite_Cobble_Roof_Steep"
+    },
+    {
+      "x": 0,
+      "y": 18,
+      "z": 6,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024
+    },
+    {
+      "x": 0,
+      "y": 16,
+      "z": 7,
+      "name": "Rock_Calcite_Brick_Roof_Hollow"
+    },
+    {
+      "x": 1,
+      "y": 10,
+      "z": -7,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 6
+    },
+    {
+      "x": 1,
+      "y": 16,
+      "z": -7,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 2
+    },
+    {
+      "x": 1,
+      "y": 10,
+      "z": -6,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 1,
+      "y": 16,
+      "z": -6,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 1,
+      "y": 17,
+      "z": -6,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 2
+    },
+    {
+      "x": 1,
+      "y": 18,
+      "z": -6,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 2
+    },
+    {
+      "x": 1,
+      "y": 7,
+      "z": -5,
+      "name": "Rock_Calcite_Brick_Beam"
+    },
+    {
+      "x": 1,
+      "y": 8,
+      "z": -5,
+      "name": "Rock_Calcite_Brick_Pillar_Middle",
+      "rotation": 8
+    },
+    {
+      "x": 1,
+      "y": 9,
+      "z": -5,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 8
+    },
+    {
+      "x": 1,
+      "y": 10,
+      "z": -5,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 1,
+      "y": 19,
+      "z": -5,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Left",
+      "rotation": 1
+    },
+    {
+      "x": 1,
+      "y": 20,
+      "z": -5,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Left",
+      "filler": 1024,
+      "rotation": 1
+    },
+    {
+      "x": 1,
+      "y": 10,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Ornate"
+    },
+    {
+      "x": 1,
+      "y": 19,
+      "z": -4,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 1
+    },
+    {
+      "x": 1,
+      "y": 20,
+      "z": -4,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 1
+    },
+    {
+      "x": 1,
+      "y": 7,
+      "z": -3,
+      "name": "Rock_Calcite_Brick_Beam"
+    },
+    {
+      "x": 1,
+      "y": 8,
+      "z": -3,
+      "name": "Rock_Calcite_Brick_Pillar_Middle",
+      "rotation": 8
+    },
+    {
+      "x": 1,
+      "y": 9,
+      "z": -3,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 8
+    },
+    {
+      "x": 1,
+      "y": 10,
+      "z": -3,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 1,
+      "y": 19,
+      "z": -3,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 1
+    },
+    {
+      "x": 1,
+      "y": 20,
+      "z": -3,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 1
+    },
+    {
+      "x": 1,
+      "y": 22,
+      "z": -3,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 2
+    },
+    {
+      "x": 1,
+      "y": 10,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Ornate"
+    },
+    {
+      "x": 1,
+      "y": 22,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 1,
+      "y": 23,
+      "z": -2,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 2
+    },
+    {
+      "x": 1,
+      "y": 24,
+      "z": -2,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 2
+    },
+    {
+      "x": 1,
+      "y": 10,
+      "z": -1,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 1,
+      "y": 24,
+      "z": -1,
+      "name": "Rock_Crystal_Wind_Block",
+      "rotation": 4
+    },
+    {
+      "x": 1,
+      "y": 25,
+      "z": -1,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Left",
+      "rotation": 1
+    },
+    {
+      "x": 1,
+      "y": 26,
+      "z": -1,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Left",
+      "filler": 1024,
+      "rotation": 1
+    },
+    {
+      "x": 1,
+      "y": 10,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Ornate"
+    },
+    {
+      "x": 1,
+      "y": 24,
+      "z": 0,
+      "name": "Rock_Crystal_Wind_Block",
+      "rotation": 5
+    },
+    {
+      "x": 1,
+      "y": 25,
+      "z": 0,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 1
+    },
+    {
+      "x": 1,
+      "y": 26,
+      "z": 0,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 1
+    },
+    {
+      "x": 1,
+      "y": 10,
+      "z": 1,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 1,
+      "y": 24,
+      "z": 1,
+      "name": "Rock_Crystal_Wind_Block",
+      "rotation": 5
+    },
+    {
+      "x": 1,
+      "y": 25,
+      "z": 1,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Left"
+    },
+    {
+      "x": 1,
+      "y": 26,
+      "z": 1,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Left",
+      "filler": 1024
+    },
+    {
+      "x": 1,
+      "y": 10,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Ornate"
+    },
+    {
+      "x": 1,
+      "y": 22,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 1,
+      "y": 23,
+      "z": 2,
+      "name": "Rock_Calcite_Cobble_Roof_Steep"
+    },
+    {
+      "x": 1,
+      "y": 24,
+      "z": 2,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024
+    },
+    {
+      "x": 1,
+      "y": 7,
+      "z": 3,
+      "name": "Rock_Calcite_Brick_Beam"
+    },
+    {
+      "x": 1,
+      "y": 8,
+      "z": 3,
+      "name": "Rock_Calcite_Brick_Pillar_Middle",
+      "rotation": 8
+    },
+    {
+      "x": 1,
+      "y": 9,
+      "z": 3,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 8
+    },
+    {
+      "x": 1,
+      "y": 10,
+      "z": 3,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 1,
+      "y": 19,
+      "z": 3,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 1
+    },
+    {
+      "x": 1,
+      "y": 20,
+      "z": 3,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 1
+    },
+    {
+      "x": 1,
+      "y": 22,
+      "z": 3,
+      "name": "Rock_Calcite_Brick_Roof_Hollow"
+    },
+    {
+      "x": 1,
+      "y": 10,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Ornate"
+    },
+    {
+      "x": 1,
+      "y": 19,
+      "z": 4,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 1
+    },
+    {
+      "x": 1,
+      "y": 20,
+      "z": 4,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 1
+    },
+    {
+      "x": 1,
+      "y": 7,
+      "z": 5,
+      "name": "Rock_Calcite_Brick_Beam"
+    },
+    {
+      "x": 1,
+      "y": 8,
+      "z": 5,
+      "name": "Rock_Calcite_Brick_Pillar_Middle",
+      "rotation": 8
+    },
+    {
+      "x": 1,
+      "y": 9,
+      "z": 5,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 8
+    },
+    {
+      "x": 1,
+      "y": 10,
+      "z": 5,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 1,
+      "y": 19,
+      "z": 5,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Left"
+    },
+    {
+      "x": 1,
+      "y": 20,
+      "z": 5,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Left",
+      "filler": 1024
+    },
+    {
+      "x": 1,
+      "y": 10,
+      "z": 6,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 1,
+      "y": 16,
+      "z": 6,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 1,
+      "y": 17,
+      "z": 6,
+      "name": "Rock_Calcite_Cobble_Roof_Steep"
+    },
+    {
+      "x": 1,
+      "y": 18,
+      "z": 6,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024
+    },
+    {
+      "x": 1,
+      "y": 10,
+      "z": 7,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 4
+    },
+    {
+      "x": 1,
+      "y": 16,
+      "z": 7,
+      "name": "Rock_Calcite_Brick_Roof_Hollow"
+    },
+    {
+      "x": 2,
+      "y": 16,
+      "z": -7,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 2
+    },
+    {
+      "x": 2,
+      "y": 10,
+      "z": -6,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 2,
+      "y": 11,
+      "z": -6,
+      "name": "Rock_Calcite_Brick_Pillar_Base"
+    },
+    {
+      "x": 2,
+      "y": 12,
+      "z": -6,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 2,
+      "y": 13,
+      "z": -6,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 2,
+      "y": 14,
+      "z": -6,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 2,
+      "y": 15,
+      "z": -6,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 8
+    },
+    {
+      "x": 2,
+      "y": 16,
+      "z": -6,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 2,
+      "y": 17,
+      "z": -6,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Left",
+      "rotation": 1
+    },
+    {
+      "x": 2,
+      "y": 18,
+      "z": -6,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Left",
+      "filler": 1024,
+      "rotation": 1
+    },
+    {
+      "x": 2,
+      "y": 10,
+      "z": -5,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 2,
+      "y": 16,
+      "z": -5,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 2,
+      "y": 17,
+      "z": -5,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 1
+    },
+    {
+      "x": 2,
+      "y": 18,
+      "z": -5,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 1
+    },
+    {
+      "x": 2,
+      "y": 10,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 2,
+      "y": 16,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 2,
+      "y": 17,
+      "z": -4,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 1
+    },
+    {
+      "x": 2,
+      "y": 18,
+      "z": -4,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 1
+    },
+    {
+      "x": 2,
+      "y": 10,
+      "z": -3,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 2,
+      "y": 16,
+      "z": -3,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 2,
+      "y": 17,
+      "z": -3,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 1
+    },
+    {
+      "x": 2,
+      "y": 18,
+      "z": -3,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 1
+    },
+    {
+      "x": 2,
+      "y": 22,
+      "z": -3,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 2
+    },
+    {
+      "x": 2,
+      "y": 10,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 2,
+      "y": 11,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Pillar_Base"
+    },
+    {
+      "x": 2,
+      "y": 12,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 2,
+      "y": 13,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 2,
+      "y": 14,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 2,
+      "y": 15,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 8
+    },
+    {
+      "x": 2,
+      "y": 16,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 2,
+      "y": 17,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Pillar_Base"
+    },
+    {
+      "x": 2,
+      "y": 18,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 2,
+      "y": 19,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 2,
+      "y": 20,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 2,
+      "y": 21,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 8
+    },
+    {
+      "x": 2,
+      "y": 22,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 2,
+      "y": 23,
+      "z": -2,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Left",
+      "rotation": 1
+    },
+    {
+      "x": 2,
+      "y": 24,
+      "z": -2,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Left",
+      "filler": 1024,
+      "rotation": 1
+    },
+    {
+      "x": 2,
+      "y": 10,
+      "z": -1,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 2,
+      "y": 22,
+      "z": -1,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 2,
+      "y": 23,
+      "z": -1,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 1
+    },
+    {
+      "x": 2,
+      "y": 24,
+      "z": -1,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 1
+    },
+    {
+      "x": 2,
+      "y": 10,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 2,
+      "y": 22,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 2,
+      "y": 23,
+      "z": 0,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 1
+    },
+    {
+      "x": 2,
+      "y": 24,
+      "z": 0,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 1
+    },
+    {
+      "x": 2,
+      "y": 10,
+      "z": 1,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 2,
+      "y": 22,
+      "z": 1,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 2,
+      "y": 23,
+      "z": 1,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 1
+    },
+    {
+      "x": 2,
+      "y": 24,
+      "z": 1,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 1
+    },
+    {
+      "x": 2,
+      "y": 10,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 2,
+      "y": 11,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Pillar_Base"
+    },
+    {
+      "x": 2,
+      "y": 12,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 2,
+      "y": 13,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 2,
+      "y": 14,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 2,
+      "y": 15,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 8
+    },
+    {
+      "x": 2,
+      "y": 16,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 2,
+      "y": 17,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Pillar_Base"
+    },
+    {
+      "x": 2,
+      "y": 18,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 2,
+      "y": 19,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 2,
+      "y": 20,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 2,
+      "y": 21,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 8
+    },
+    {
+      "x": 2,
+      "y": 22,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 2,
+      "y": 23,
+      "z": 2,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Right",
+      "rotation": 1
+    },
+    {
+      "x": 2,
+      "y": 24,
+      "z": 2,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Right",
+      "filler": 1024,
+      "rotation": 1
+    },
+    {
+      "x": 2,
+      "y": 10,
+      "z": 3,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 2,
+      "y": 16,
+      "z": 3,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 2,
+      "y": 17,
+      "z": 3,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 1
+    },
+    {
+      "x": 2,
+      "y": 18,
+      "z": 3,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 1
+    },
+    {
+      "x": 2,
+      "y": 22,
+      "z": 3,
+      "name": "Rock_Calcite_Brick_Roof_Hollow"
+    },
+    {
+      "x": 2,
+      "y": 10,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 2,
+      "y": 16,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 2,
+      "y": 17,
+      "z": 4,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 1
+    },
+    {
+      "x": 2,
+      "y": 18,
+      "z": 4,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 1
+    },
+    {
+      "x": 2,
+      "y": 10,
+      "z": 5,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 2,
+      "y": 16,
+      "z": 5,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 2,
+      "y": 17,
+      "z": 5,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "rotation": 1
+    },
+    {
+      "x": 2,
+      "y": 18,
+      "z": 5,
+      "name": "Rock_Calcite_Cobble_Roof_Steep",
+      "filler": 1024,
+      "rotation": 1
+    },
+    {
+      "x": 2,
+      "y": 10,
+      "z": 6,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 2,
+      "y": 11,
+      "z": 6,
+      "name": "Rock_Calcite_Brick_Pillar_Base"
+    },
+    {
+      "x": 2,
+      "y": 12,
+      "z": 6,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 2,
+      "y": 13,
+      "z": 6,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 2,
+      "y": 14,
+      "z": 6,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 2,
+      "y": 15,
+      "z": 6,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 8
+    },
+    {
+      "x": 2,
+      "y": 16,
+      "z": 6,
+      "name": "Rock_Calcite_Brick_Decorative"
+    },
+    {
+      "x": 2,
+      "y": 17,
+      "z": 6,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Right",
+      "rotation": 1
+    },
+    {
+      "x": 2,
+      "y": 18,
+      "z": 6,
+      "name": "*Rock_Calcite_Cobble_Roof_Steep_State_Definitions_Corner_Right",
+      "filler": 1024,
+      "rotation": 1
+    },
+    {
+      "x": 2,
+      "y": 16,
+      "z": 7,
+      "name": "Rock_Calcite_Brick_Roof_Hollow"
+    },
+    {
+      "x": 3,
+      "y": 16,
+      "z": -6,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 1
+    },
+    {
+      "x": 3,
+      "y": 10,
+      "z": -5,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 5
+    },
+    {
+      "x": 3,
+      "y": 16,
+      "z": -5,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 1
+    },
+    {
+      "x": 3,
+      "y": 16,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 1
+    },
+    {
+      "x": 3,
+      "y": 10,
+      "z": -3,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 5
+    },
+    {
+      "x": 3,
+      "y": 16,
+      "z": -3,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 1
+    },
+    {
+      "x": 3,
+      "y": 16,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 1
+    },
+    {
+      "x": 3,
+      "y": 22,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 1
+    },
+    {
+      "x": 3,
+      "y": 10,
+      "z": -1,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 5
+    },
+    {
+      "x": 3,
+      "y": 16,
+      "z": -1,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 1
+    },
+    {
+      "x": 3,
+      "y": 22,
+      "z": -1,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 1
+    },
+    {
+      "x": 3,
+      "y": 16,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 1
+    },
+    {
+      "x": 3,
+      "y": 22,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 1
+    },
+    {
+      "x": 3,
+      "y": 10,
+      "z": 1,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 5
+    },
+    {
+      "x": 3,
+      "y": 16,
+      "z": 1,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 1
+    },
+    {
+      "x": 3,
+      "y": 22,
+      "z": 1,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 1
+    },
+    {
+      "x": 3,
+      "y": 16,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 1
+    },
+    {
+      "x": 3,
+      "y": 22,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 1
+    },
+    {
+      "x": 3,
+      "y": 10,
+      "z": 3,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 5
+    },
+    {
+      "x": 3,
+      "y": 16,
+      "z": 3,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 1
+    },
+    {
+      "x": 3,
+      "y": 16,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 1
+    },
+    {
+      "x": 3,
+      "y": 10,
+      "z": 5,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 5
+    },
+    {
+      "x": 3,
+      "y": 16,
+      "z": 5,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 1
+    },
+    {
+      "x": 3,
+      "y": 16,
+      "z": 6,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 1
+    }
+  ]
+}

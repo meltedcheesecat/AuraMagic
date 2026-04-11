@@ -8,18 +8,16 @@ import com.hypixel.hytale.protocol.BlockMaterial;
 import com.hypixel.hytale.protocol.DrawType;
 import com.hypixel.hytale.protocol.Opacity;
 import com.hypixel.hytale.server.core.asset.type.blocktype.config.BlockType;
+import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.worldgen.GeneratedBlockChunk;
 import com.hypixel.hytale.server.core.universe.world.worldgen.GeneratedChunk;
 import com.hypixel.hytale.server.core.universe.world.worldgen.GeneratedChunkSection;
 import com.hypixel.hytale.server.worldgen.chunk.ChunkGenerator;
 import me.melchscat.aura.AuraMagicPlugin;
-
+import me.melchscat.aura.prefab.AuraPrefabs;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.LongPredicate;
-import java.util.logging.Level;
-
-import static com.hypixel.hytale.logger.HytaleLogger.getLogger;
 import static me.melchscat.aura.block.AuraBlocks.*;
 
 public class CustomBlockGenerator extends ChunkGenerator {
@@ -38,10 +36,12 @@ public class CustomBlockGenerator extends ChunkGenerator {
     private int spawnChunkZ;
     private final ChunkGenerator original;
     private int fingerChance;
+    private World world;
 
-    public CustomBlockGenerator(ChunkGenerator original) {
+    public CustomBlockGenerator(ChunkGenerator original, World world) {
         super(original.getZonePatternProvider(), original.getDataFolder());
         this.original = original;
+        this.world = world;
     }
 
     @Override
@@ -53,7 +53,6 @@ public class CustomBlockGenerator extends ChunkGenerator {
                 Vector3d pos = spawnArr[0].getPosition();
                 spawnChunkX = Math.floorDiv((int) pos.x, 32);
                 spawnChunkZ = Math.floorDiv((int) pos.z, 32);
-                getLogger().at(Level.INFO).log("AuraDebug x:" + x + ", z:" + z + ", spawnArr:" + spawnArr[0].toString());
             }
         }
 
@@ -226,6 +225,10 @@ public class CustomBlockGenerator extends ChunkGenerator {
 
     // This is temp for Gen V1 waiting for Gen V2 to be implemented then I will used that
     private void generateAuraSpecificBlocks(GeneratedChunk chunk, int chunkX, int chunkZ) {
+        AuraPrefabs auraPrefabs = AuraMagicPlugin.getInstance().getAuraPrefabs();
+        if (auraPrefabs == null) return;
+        if (!auraPrefabs.loaded) auraPrefabs.init();
+
         GeneratedBlockChunk blockChunk = chunk.getBlockChunk();
 
         // This is a hack to check for wood block so I can be fast,
@@ -257,7 +260,14 @@ public class CustomBlockGenerator extends ChunkGenerator {
             }
 
             if (ThreadLocalRandom.current().nextFloat() < spawnChance) {
-                placeWindCrystals(blockChunk, blockLocation);
+                // one out of every 5 should be a prefab rather than crystals
+                if (ThreadLocalRandom.current().nextInt(5) == 4) {
+                    Vector3i placePos = new Vector3i(16 + (chunkX * 32), currentY, 16 + (chunkZ * 32));
+                    auraPrefabs.spawnWindPrefab(world, placePos);
+                } else {
+                    placeWindCrystals(blockChunk, blockLocation);
+                }
+
                 donePlace = true;
                 AURA_ADD_CHANCE = 0.0f;
             }

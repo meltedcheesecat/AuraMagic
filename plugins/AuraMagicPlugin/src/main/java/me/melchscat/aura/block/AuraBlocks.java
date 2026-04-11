@@ -29,11 +29,11 @@ public enum AuraBlocks {
 
     public final String name;
     private boolean initDone = false;
-    private int blockId;
+    private int blockId = -1;
 
     AuraBlocks(String name) {
         this.name = name;
-        this.blockId = -1;
+        this.blockId = -2;
     }
 
     public int id() {
@@ -59,7 +59,7 @@ public enum AuraBlocks {
             } else {
                 BlockType type = BlockType.fromString(block.name);
                 if (type == null) {
-                    block.blockId = -2;
+                    block.blockId = -3;
                     noError = false;
                     continue;
                 }

@@ -43,6 +43,7 @@ public class AuraBlockLifetimeSystem extends EntityTickingSystem<ChunkStore> {
         BlockChunk blockChunkComponent = (BlockChunk)commandBuffer.getComponent(chunkRef, BlockChunk.getComponentType());
         if (blockChunkComponent == null) return;
 
+        // is the life time of the block over
         World world = store.getExternalData().getWorld();
         if (world.getTick() < (lifetime.startTick + lifetime.lifeTickLength)) return;
 
@@ -63,6 +64,7 @@ public class AuraBlockLifetimeSystem extends EntityTickingSystem<ChunkStore> {
             return;
         }
 
+        // clear the wind block
         world.execute(() -> {
             worldChunk.setTicking(x, y, z, false);
             worldChunk.setBlock(x, y, z, AURA_AIR_BLOCK.id());

@@ -76,11 +76,10 @@ public class AuraShieldSystem extends EntityTickingSystem<EntityStore> {
         World world = player.getWorld();
         if (world == null) return;
 
+        // later on I want to check for distance to other players and only send to ones that can see our player
         for (PlayerRef worldPlyrRef : world.getPlayerRefs()) {
             worldPlyrRef.getPacketHandler().writeNoCache(packet);
         }
-
-        //playerRef.getPacketHandler().writeNoCache(packet);
     }
 
     private void doShieldDynamicLight(AuraShieldComponent auraShield, int index, @NonNullDecl ArchetypeChunk<EntityStore> archetypeChunk) {

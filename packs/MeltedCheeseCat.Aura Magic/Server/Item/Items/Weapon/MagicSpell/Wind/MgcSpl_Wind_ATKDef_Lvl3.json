@@ -143,7 +143,7 @@
           "Parent": "MgcSpl_Tplt_IntAct_Prim_Charged",
           "ItemToRemove": {
             "Id": "Ingredient_Crystal_Wind",
-            "Quantity": 4
+            "Quantity": 8
           }
         }
       ]

@@ -6,6 +6,7 @@ import com.hypixel.hytale.codec.builder.BuilderCodec;
 import com.hypixel.hytale.common.semver.Semver;
 import com.hypixel.hytale.procedurallib.json.SeedString;
 import com.hypixel.hytale.server.core.universe.Universe;
+import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.worldgen.IWorldGen;
 import com.hypixel.hytale.server.core.universe.world.worldgen.WorldGenLoadException;
 import com.hypixel.hytale.server.core.universe.world.worldgen.provider.IWorldGenProvider;
@@ -53,11 +54,13 @@ public class CustomWorldGenProvider implements IWorldGenProvider {
         try {
             WorldGenConfig config = new WorldGenConfig(worldGenPath, this.name, this.version);
 
+            // passing world to prefab creator
+            World world = Universe.get().getWorld(this.name);
+            if (world == null) getLogger().at(Level.SEVERE).log("Aura Error loading world:" + this.name);
+
             SeedStringResource seedStringResource = new SeedStringResource(PrefabStoreRoot.DEFAULT, config);
             SeedString<SeedStringResource> chunkGenerator = new SeedString<>("ChunkGenerator", seedStringResource);
-            CustomChunkGenerator customChunkGenerator = new CustomChunkGenerator(chunkGenerator, config);
-
-            getLogger().at(Level.INFO).log("AuraDebug WorldGenConfig:" + config.toString());
+            CustomChunkGenerator customChunkGenerator = new CustomChunkGenerator(chunkGenerator, config, world);
 
             return customChunkGenerator.load();
         } catch (Error err) {
