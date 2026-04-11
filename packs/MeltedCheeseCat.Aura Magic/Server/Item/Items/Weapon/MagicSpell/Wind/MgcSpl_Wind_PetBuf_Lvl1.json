@@ -20,32 +20,6 @@
   },
   "Quality": "Common",
   "ItemLevel": 10,
-  "Recipe": {
-    "TimeSeconds": 2,
-    "Input": [
-      {
-        "ItemId": "Ingredient_Crystal_Wind",
-        "Quantity": 25
-      },
-      {
-        "ResourceTypeId": "Wood_Trunk",
-        "Quantity": 3
-      },
-      {
-        "ItemId": "Ingredient_Fibre",
-        "Quantity": 3
-      }
-    ],
-    "BenchRequirement": [
-      {
-        "Id": "ElementalWindbench",
-        "Type": "Crafting",
-        "Categories": [
-          "Elemental_Wind_Level5"
-        ]
-      }
-    ]
-  },
   "InteractionVars": {
     "MagicSpell_Primary_IsCharge": {
       "Interactions": [
