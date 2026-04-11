@@ -1,8 +1,8 @@
 {
   "Group": "me.melchscat.aura",
-  "Name": "AuraMagicPlugin",
-  "Version": "1.0.1-alpha.1",
-  "Description": "This plugin adds in all logic for the Aura Magic Elemental System that I couldn't get working in the Pack. So far this is WorldGen and AuraShield",
+  "Name": "AuraMagic",
+  "Version": "1.0.1-alpha.2",
+  "Description": "This adds and enhances the existing elemental magic in hytale. I am initially working on Wind and this is the first Alpha release so lots more to come.",
   "Authors": [
     {
       "Name": "Melted Cheese Cat",
@@ -11,14 +11,12 @@
     }
   ],
   "Website": "https://www.youtube.com/@MeltedCheeseCat",
-  "Main": "me.melchscat.aura.AuraMagicPlugin",
+  "Main": "me.melchscat.aura.AuraMagic",
   "ServerVersion": "2026.03.26-89796e57b",
   "Dependencies": {},
-  "OptionalDependencies": {
-    "me.melchscat.aura:AuraMagicPack": ">=1.0.1"
-  },
+  "OptionalDependencies": {},
   "LoadBefore": {},
   "DisabledByDefault": false,
-  "IncludesAssetPack": false,
+  "IncludesAssetPack": true,
   "SubPlugins": []
 }

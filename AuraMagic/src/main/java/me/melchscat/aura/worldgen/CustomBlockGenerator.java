@@ -13,7 +13,7 @@ import com.hypixel.hytale.server.core.universe.world.worldgen.GeneratedBlockChun
 import com.hypixel.hytale.server.core.universe.world.worldgen.GeneratedChunk;
 import com.hypixel.hytale.server.core.universe.world.worldgen.GeneratedChunkSection;
 import com.hypixel.hytale.server.worldgen.chunk.ChunkGenerator;
-import me.melchscat.aura.AuraMagicPlugin;
+import me.melchscat.aura.AuraMagic;
 import me.melchscat.aura.prefab.AuraPrefabs;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ThreadLocalRandom;
@@ -225,7 +225,7 @@ public class CustomBlockGenerator extends ChunkGenerator {
 
     // This is temp for Gen V1 waiting for Gen V2 to be implemented then I will used that
     private void generateAuraSpecificBlocks(GeneratedChunk chunk, int chunkX, int chunkZ) {
-        AuraPrefabs auraPrefabs = AuraMagicPlugin.getInstance().getAuraPrefabs();
+        AuraPrefabs auraPrefabs = AuraMagic.getInstance().getAuraPrefabs();
         if (auraPrefabs == null) return;
         if (!auraPrefabs.loaded) auraPrefabs.init();
 
