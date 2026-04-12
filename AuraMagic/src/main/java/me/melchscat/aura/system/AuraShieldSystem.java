@@ -144,7 +144,7 @@ public class AuraShieldSystem extends EntityTickingSystem<EntityStore> {
         if (auraShield == null)
             return;
 
-        if ((auraShield.health <= 0.0F) &&
+        if ((auraShield.health <= 0.0f) &&
             (!auraShield.checkChargeAuraShield) &&
             (!auraShield.checkOnDamageHealthChange))
             return;
@@ -154,28 +154,33 @@ public class AuraShieldSystem extends EntityTickingSystem<EntityStore> {
         // Check if the charge shield interaction ran
         if (auraShield.checkChargeAuraShield) {
             auraShield.health += (auraShield.chargedHealth - (auraShield.health / 10));
-            auraShield.chargedHealth = 0.0F;
+            auraShield.chargedHealth = 0.0f;
             auraShield.checkChargeAuraShield = false;
 
             if (auraShield.oldHealth <= 0.0f) {
                 spawnParticles = true;
-                auraShield.healthFadeTimerValue = 0.0F;
+                auraShield.healthFadeTimerValue = 0.0f;
+                auraShield.shieldParticleTimerValue = 0.0f;
             }
         }
 
         // check if the onDamage ran and changed the health, this insures that on zero health code still gets here
         if (auraShield.checkOnDamageHealthChange) auraShield.checkOnDamageHealthChange = false;
 
-        if (auraShield.health > 0.0F) {
+        if (auraShield.health > 0.0f) {
             // add the delta time to the fade timer
             auraShield.healthFadeTimerValue += dt;
-
             if (auraShield.healthFadeTimerValue >= auraShield.HEALTH_FADE_TIMER_DELAY) {
-                auraShield.health -= 1.0F;
-                auraShield.healthFadeTimerValue = 0.0F;
+                auraShield.health -= 1.0f;
+                auraShield.healthFadeTimerValue = 0.0f;
+            }
 
+            // shield particle timer, once per second
+            auraShield.shieldParticleTimerValue += dt;
+            if (auraShield.shieldParticleTimerValue >= 1.0f) {
                 if (auraShield.health > 0.0f)
                     spawnParticles = true;
+                auraShield.shieldParticleTimerValue = 0.0f;
             }
         }
 

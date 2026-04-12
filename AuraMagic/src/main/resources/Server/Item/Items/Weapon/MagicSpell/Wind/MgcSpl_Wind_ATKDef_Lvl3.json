@@ -374,7 +374,7 @@
         }
       ]
     },
-    "MagicSpelll_Secondary_Charged_Animation": {
+    "MagicSpell_Secondary_Charged_Animation": {
       "Interactions": [
         {
           "Type": "Simple",
