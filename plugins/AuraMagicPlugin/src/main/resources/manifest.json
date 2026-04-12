@@ -1,7 +1,7 @@
 {
   "Group": "me.melchscat.aura",
   "Name": "AuraMagicPlugin",
-  "Version": "1.0.1-alpha.1",
+  "Version": "1.0.1-alpha.2",
   "Description": "This plugin adds in all logic for the Aura Magic Elemental System that I couldn't get working in the Pack. So far this is WorldGen and AuraShield",
   "Authors": [
     {

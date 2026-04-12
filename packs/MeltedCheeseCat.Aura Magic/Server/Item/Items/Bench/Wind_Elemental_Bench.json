@@ -120,7 +120,7 @@
 								"Quantity": 30
 							},
 							{
-								"ResourceTypeId": "Ingredient_Leather_Light",
+								"ItemId": "Ingredient_Leather_Light",
 								"Quantity": 12
 							},
 							{
@@ -144,7 +144,7 @@
 								"Quantity": 45
 							},
 							{
-								"ResourceTypeId": "Ingredient_Leather_Medium",
+								"ItemId": "Ingredient_Leather_Medium",
 								"Quantity": 15
 							},
 							{
@@ -168,7 +168,7 @@
 								"Quantity": 60
 							},
 							{
-								"ResourceTypeId": "Ingredient_Leather_Heavy",
+								"ItemId": "Ingredient_Leather_Heavy",
 								"Quantity": 15
 							},
 							{
