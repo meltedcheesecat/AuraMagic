@@ -14,6 +14,8 @@ import com.hypixel.hytale.server.worldgen.HytaleWorldGenProvider;
 import com.hypixel.hytale.server.worldgen.SeedStringResource;
 import com.hypixel.hytale.server.worldgen.WorldGenConfig;
 import com.hypixel.hytale.server.worldgen.prefab.PrefabStoreRoot;
+import me.melchscat.aura.AuraMagicPlugin;
+import me.melchscat.aura.main.AuraMain;
 
 import javax.annotation.Nonnull;
 import java.nio.file.Files;
@@ -57,6 +59,11 @@ public class CustomWorldGenProvider implements IWorldGenProvider {
             // passing world to prefab creator
             World world = Universe.get().getWorld(this.name);
             if (world == null) getLogger().at(Level.SEVERE).log("Aura Error loading world:" + this.name);
+
+            AuraMain auraMain = AuraMagicPlugin.getInstance().getAuraMain();
+            if (!auraMain.initialized) {
+                auraMain.Initialize(world);
+            }
 
             SeedStringResource seedStringResource = new SeedStringResource(PrefabStoreRoot.DEFAULT, config);
             SeedString<SeedStringResource> chunkGenerator = new SeedString<>("ChunkGenerator", seedStringResource);

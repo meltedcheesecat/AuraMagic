@@ -18,7 +18,6 @@ import com.hypixel.hytale.server.core.modules.entity.tracker.NetworkId;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
-import me.melchscat.aura.AuraMagic;
 import me.melchscat.aura.component.AuraShieldComponent;
 import me.melchscat.aura.page.AuraShieldHud;
 import org.checkerframework.checker.nullness.compatqual.NonNullDecl;

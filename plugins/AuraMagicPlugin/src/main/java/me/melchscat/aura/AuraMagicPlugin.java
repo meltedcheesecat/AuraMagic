@@ -1,42 +1,42 @@
 package me.melchscat.aura;
 
-import com.hypixel.hytale.assetstore.AssetPack;
-import com.hypixel.hytale.assetstore.map.DefaultAssetMap;
 import com.hypixel.hytale.codec.lookup.Priority;
 import com.hypixel.hytale.component.ComponentType;
-import com.hypixel.hytale.server.core.asset.type.buildertool.config.PrefabListAsset;
+import com.hypixel.hytale.server.core.entity.entities.Player;
+import com.hypixel.hytale.server.core.event.events.player.PlayerConnectEvent;
+import com.hypixel.hytale.server.core.event.events.player.PlayerDisconnectEvent;
+import com.hypixel.hytale.server.core.event.events.player.PlayerReadyEvent;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.Interaction;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
-import com.hypixel.hytale.server.core.prefab.PrefabStore;
+import com.hypixel.hytale.server.core.universe.world.events.StartWorldEvent;
 import com.hypixel.hytale.server.core.universe.world.storage.ChunkStore;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.hypixel.hytale.server.core.universe.world.worldgen.provider.IWorldGenProvider;
-import it.unimi.dsi.fastutil.ints.IntSet;
 import me.melchscat.aura.component.AuraBlockLifetimeComponent;
 import me.melchscat.aura.component.AuraShieldComponent;
+import me.melchscat.aura.component.AuraStartNpcComponent;
 import me.melchscat.aura.interaction.ChargeAuraShield;
 import me.melchscat.aura.interaction.CreateAuraWindBlocks;
 import me.melchscat.aura.interaction.ShowStartAuraPage;
+import me.melchscat.aura.main.AuraMain;
+import me.melchscat.aura.myNPC.AuraStartNpc;
 import me.melchscat.aura.prefab.AuraPrefabs;
 import me.melchscat.aura.system.AuraBlockLifetimeSystem;
+import me.melchscat.aura.system.AuraStartNpcSystem;
 import me.melchscat.aura.worldgen.CustomWorldGenProvider;
 import me.melchscat.aura.system.AuraShieldSystem;
 import org.checkerframework.checker.nullness.compatqual.NonNullDecl;
-
-import java.nio.file.Path;
-import java.util.List;
-import java.util.Set;
-import java.util.function.Consumer;
 import java.util.logging.Level;
-
-import static com.hypixel.hytale.logger.HytaleLogger.getLogger;
 
 public class AuraMagicPlugin extends JavaPlugin {
     private static AuraMagicPlugin instance;
     private ComponentType<EntityStore, AuraShieldComponent> auraShieldComType;
     private ComponentType<ChunkStore, AuraBlockLifetimeComponent> auraBlockLifetimeComType;
+    private ComponentType<ChunkStore, AuraStartNpcComponent> auraStartNpcComponentType;
     private AuraPrefabs auraPrefabs;
+    private AuraMain auraMain;
+    private AuraStartNpc startNPC;
 
     public AuraMagicPlugin(@NonNullDecl JavaPluginInit init) {
         super(init);
@@ -58,8 +58,13 @@ public class AuraMagicPlugin extends JavaPlugin {
         auraShieldComType = EntityStore.REGISTRY.registerComponent(AuraShieldComponent.class, AuraShieldComponent::new);
         Interaction.CODEC.register("ChargeAuraShield", ChargeAuraShield.class, ChargeAuraShield.CODEC);
 
+        // Aura Start NPC
+        auraStartNpcComponentType = ChunkStore.REGISTRY.registerComponent(AuraStartNpcComponent.class, "AuraBlockStartNpc",  AuraStartNpcComponent.CODEC);
+        //Interaction.CODEC.register("CreateAuraWindBlocks", CreateAuraWindBlocks.class, CreateAuraWindBlocks.CODEC);
+
         // Aura Start Page shown by mannequin
         Interaction.CODEC.register("ShowStartAuraPage", ShowStartAuraPage.class, ShowStartAuraPage.CODEC);
+        getLogger().at(Level.INFO).log("AuraLog setup");
     }
 
     @Override
@@ -70,6 +75,48 @@ public class AuraMagicPlugin extends JavaPlugin {
         // Magic Shield system, for now this is wind only
         getEntityStoreRegistry().registerSystem(new AuraShieldSystem(auraShieldComType));
         getEntityStoreRegistry().registerSystem(new AuraShieldSystem.OnDamageReceived(auraShieldComType));
+
+        // Aura Start NPC
+        getChunkStoreRegistry().registerSystem(new AuraStartNpcSystem(auraStartNpcComponentType));
+
+        // Events
+        getEventRegistry().registerGlobal(StartWorldEvent.class, this::onStartWorld);
+        getEventRegistry().registerGlobal(PlayerReadyEvent.class, this::onPlayerReady);
+
+        getEventRegistry().registerGlobal(PlayerConnectEvent.class, this::onPlayerConnect);
+        getEventRegistry().registerGlobal(PlayerDisconnectEvent.class, this::onPlayerDisconnect);
+
+        getLogger().at(Level.INFO).log("AuraLog start");
+    }
+
+    @Override
+    protected void shutdown() {
+        startNPC.writeData();
+
+        getLogger().at(Level.INFO).log("AuraLog shutdown");
+    }
+
+    public void onStartWorld(StartWorldEvent event) {
+        AuraMain gotAuraMain = getAuraMain();
+        if (!gotAuraMain.initialized) {
+            gotAuraMain.Initialize(event.getWorld());
+        }
+
+        startNPC = new AuraStartNpc(gotAuraMain);
+        startNPC.readData();
+    }
+
+    public void onPlayerReady(PlayerReadyEvent event) {
+        Player player = event.getPlayer();
+        getLogger().at(Level.INFO).log("AuraLog onPlayerReady name:" + player.getDisplayName());
+    }
+
+    public void onPlayerConnect(PlayerConnectEvent event) {
+        getLogger().at(Level.INFO).log("AuraLog onPlayerConnect toString:" + event.toString());
+    }
+
+    public void onPlayerDisconnect(PlayerDisconnectEvent event) {
+        getLogger().at(Level.INFO).log("AuraLog onPlayerDisconnect toString:" + event.toString());
     }
 
     public static AuraMagicPlugin getInstance() {
@@ -89,5 +136,16 @@ public class AuraMagicPlugin extends JavaPlugin {
           auraPrefabs = new AuraPrefabs();
 
         return this.auraPrefabs;
+    }
+
+    public AuraMain getAuraMain() {
+        if (this.auraMain == null)
+            auraMain = new AuraMain();
+
+        return this.auraMain;
+    }
+
+    public AuraStartNpc getStartNPC() {
+        return this.startNPC;
     }
 }

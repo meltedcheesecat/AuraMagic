@@ -1,0 +1,95 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Aura_Block_Start_NPC.name"
+  },
+  "PlayerAnimationsId": "Item",
+  "Categories": [
+    "Blocks.Structural"
+  ],
+  "Set": "Furniture_Human",
+  "Icon": "Icons/ItemsGenerated/Aura_Block_Start_NPC.png",
+  "IconProperties": {
+    "Scale": 0.7,
+    "Rotation": [
+      22.5,
+      45,
+      22.5
+    ],
+    "Translation": [
+      -1,
+      -16
+    ]
+  },
+  "Tags": {
+    "Type": [
+      "Furniture"
+    ],
+    "Family": [
+      "Human"
+    ]
+  },
+  "Scale": 1,
+  "ItemSoundSetId": "ISS_Blocks_Stone",
+  "MaxStack": 1,
+  "BlockType": {
+    "BlockParticleSetId": "Stone",
+    "CustomModel": "Blocks/Start/StartPot.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Blocks/Start/StartPot.png",
+        "Weight": 1
+      }
+    ],
+    "DrawType": "Model",
+    "Material": "Solid",
+    "Opacity": "Transparent",
+    "Support": {
+      "Down": [
+        {
+          "FaceType": "Full"
+        }
+      ]
+    },
+    "VariantRotation": "NESW",
+    "ParticleColor": "#ffffff",
+    "Light": {
+      "Color": "#ccc",
+      "Radius": 1
+    },
+    "BlockEntity": {
+      "Components": {
+        "AuraBlockStartNpc": {
+          "Enabled": true
+        }
+      }
+    },
+    "State": {
+      "Definitions": {
+        "InPotIdle": {
+          "CustomModelAnimation": "Blocks/Start/StartPotShake.blockyanim"
+        },
+        "InPotShake": {
+          "CustomModelAnimation": "Blocks/Start/StartPotShake.blockyanim"
+        }
+      }
+    },
+    "Interactions": {
+      "Use": {
+        "Interactions": [
+          {
+            "Type": "ChangeState",
+            "Changes": {
+              "default": "InPotShake",
+              "InPotShake": "default"
+            }
+          }
+        ]
+      }
+    },
+    "HitboxType": "Pot_Start"
+  },
+  "Utility": {
+    "Usable": true
+  },
+  "Variant": true
+}

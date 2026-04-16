@@ -7,9 +7,9 @@ import com.hypixel.hytale.component.Component;
 import com.hypixel.hytale.server.core.universe.world.storage.ChunkStore;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 
-public class AuraBlockLifetimeComponent implements Component<ChunkStore> {
-    public static final BuilderCodec<AuraBlockLifetimeComponent> CODEC =
-            BuilderCodec.builder(AuraBlockLifetimeComponent.class, AuraBlockLifetimeComponent::new)
+public class AuraStartComponent implements Component<ChunkStore> {
+    public static final BuilderCodec<AuraStartComponent> CODEC =
+            BuilderCodec.builder(AuraStartComponent.class, AuraStartComponent::new)
                     .append(new KeyedCodec<>("StartTick", Codec.LONG),
                             (c, v) -> c.startTick = v, c -> c.startTick)
                     .add()
@@ -18,17 +18,16 @@ public class AuraBlockLifetimeComponent implements Component<ChunkStore> {
                     .add()
                     .build();
 
-
     public long startTick;
     public long lifeTickLength;
 
     @NullableDecl
     @Override
     public Component<ChunkStore> clone() {
-        AuraBlockLifetimeComponent auraBlockLifetimeComponent = new AuraBlockLifetimeComponent();
-        auraBlockLifetimeComponent.startTick = this.startTick;
-        auraBlockLifetimeComponent.lifeTickLength = this.lifeTickLength;
-        return auraBlockLifetimeComponent;
+        AuraStartComponent auraStartComponent = new AuraStartComponent();
+        auraStartComponent.startTick = this.startTick;
+        auraStartComponent.lifeTickLength = this.lifeTickLength;
+        return auraStartComponent;
     }
 
     @NullableDecl
