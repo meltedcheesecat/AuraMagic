@@ -14,6 +14,7 @@ import java.util.logging.Level;
 
 import static com.hypixel.hytale.logger.HytaleLogger.getLogger;
 import static me.melchscat.aura.myNPC.AuraStartNpcStatus.AURA_START_NPC_STUCK_IN_POT;
+import static me.melchscat.aura.myNPC.AuraStartNpcSubStatus.AURA_START_NPC_IDLE;
 
 public class AuraStartNpc {
     public static class JsonProps {
@@ -24,16 +25,24 @@ public class AuraStartNpc {
     private AuraMain auraMain;
     private final String fileName = "StartNPCConfig.json";
     private Path fullFilePath;
-    public JsonProps jsonProps;
 
+    // main status is saved in file, substatus is not.
+    // NPC will always start off as idle
+    public JsonProps jsonProps;
+    public AuraStartNpcSubStatus SubStatus = AURA_START_NPC_IDLE;
     public Boolean hasOurCoord = false;
     public Vector3i ourCoord;
+    public Long statusTick;
+    public Long statusDelay;
+    public Boolean busyInStatus = false;
 
     public AuraStartNpc (AuraMain auraMain) {
         this.auraMain = auraMain;
         fullFilePath = auraMain.auraDataPath.resolve(fileName);
 
         jsonProps = new JsonProps();
+        statusTick = auraMain.world.getTick();
+        statusDelay = (long)0;
     }
 
     private boolean readJsonProps() {

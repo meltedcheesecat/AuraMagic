@@ -1,0 +1,16 @@
+{
+  "Layers": [
+    {
+      "Files": [
+        "Sounds/Blocks/Start/Aura_Start_NPC_Shake.ogg"
+      ],
+      "Looping": false,
+      "Volume": 0
+    }
+  ],
+  "Volume": 0,
+  "MaxDistance": 20,
+  "PreventSoundInterruption": false,
+  "MusicDuckingVolume": -2,
+  "AudioCategory": "AudioCat_Magic_Staff"
+}

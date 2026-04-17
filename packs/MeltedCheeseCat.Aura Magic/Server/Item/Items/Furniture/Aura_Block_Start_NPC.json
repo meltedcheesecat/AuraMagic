@@ -2,11 +2,8 @@
   "TranslationProperties": {
     "Name": "server.items.Aura_Block_Start_NPC.name"
   },
-  "PlayerAnimationsId": "Item",
-  "Categories": [
-    "Blocks.Structural"
-  ],
-  "Set": "Furniture_Human",
+  "PlayerAnimationsId": "Block",
+  "MaxStack": 1,  
   "Icon": "Icons/ItemsGenerated/Aura_Block_Start_NPC.png",
   "IconProperties": {
     "Scale": 0.7,
@@ -19,20 +16,13 @@
       -1,
       -16
     ]
-  },
-  "Tags": {
-    "Type": [
-      "Furniture"
-    ],
-    "Family": [
-      "Human"
-    ]
-  },
-  "Scale": 1,
-  "ItemSoundSetId": "ISS_Blocks_Stone",
-  "MaxStack": 1,
+  },  
+  "Categories": [
+    "Blocks.Structural"
+  ],
   "BlockType": {
-    "BlockParticleSetId": "Stone",
+    "DrawType": "Model", 
+    "CustomModelAnimation": "Blocks/Start/StartPotShake.blockyanim",   
     "CustomModel": "Blocks/Start/StartPot.blockymodel",
     "CustomModelTexture": [
       {
@@ -40,39 +30,6 @@
         "Weight": 1
       }
     ],
-    "DrawType": "Model",
-    "Material": "Solid",
-    "Opacity": "Transparent",
-    "Support": {
-      "Down": [
-        {
-          "FaceType": "Full"
-        }
-      ]
-    },
-    "VariantRotation": "NESW",
-    "ParticleColor": "#ffffff",
-    "Light": {
-      "Color": "#ccc",
-      "Radius": 1
-    },
-    "BlockEntity": {
-      "Components": {
-        "AuraBlockStartNpc": {
-          "Enabled": true
-        }
-      }
-    },
-    "State": {
-      "Definitions": {
-        "InPotIdle": {
-          "CustomModelAnimation": "Blocks/Start/StartPotShake.blockyanim"
-        },
-        "InPotShake": {
-          "CustomModelAnimation": "Blocks/Start/StartPotShake.blockyanim"
-        }
-      }
-    },
     "Interactions": {
       "Use": {
         "Interactions": [
@@ -80,16 +37,44 @@
             "Type": "ChangeState",
             "Changes": {
               "default": "InPotShake",
-              "InPotShake": "default"
+              "InPotShake": "InPotIdle",
+              "InPotIdle": "InPotShake"
             }
           }
         ]
       }
     },
+    "State": {
+      "Definitions": {
+        "InPotIdle": {
+          "InteractionHint": "current:Idle",  
+          "CustomModelAnimation": "Blocks/Start/StartPotIdle.blockyanim",
+          "CustomModel": "Blocks/Start/StartPot.blockymodel",
+          "CustomModelTexture": [
+            {
+              "Texture": "Blocks/Start/StartPot.png"
+            }
+          ]
+        },
+        "InPotShake": {
+          "InteractionHint": "current:Shake",
+          "CustomModelAnimation": "Blocks/Start/StartPotShake.blockyanim",
+          "CustomModel": "Blocks/Start/StartPot.blockymodel",
+          "CustomModelTexture": [
+            {
+              "Texture": "Blocks/Start/StartPot2.png"
+            }
+          ]
+        }
+      }
+    },      
+    "BlockEntity": {
+      "Components": {
+        "AuraBlockStartNpc": {
+          "Enabled": true
+        }
+      }
+    },
     "HitboxType": "Pot_Start"
-  },
-  "Utility": {
-    "Usable": true
-  },
-  "Variant": true
+  }
 }

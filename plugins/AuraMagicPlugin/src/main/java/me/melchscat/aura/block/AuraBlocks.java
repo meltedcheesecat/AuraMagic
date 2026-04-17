@@ -11,6 +11,7 @@ import static com.hypixel.hytale.logger.HytaleLogger.getLogger;
 public enum AuraBlocks {
     AURA_AIR_BLOCK("Air_Block"),
     AURA_START_BLOCK("Mannequin_Aura_Magic"),
+    AURA_START_NPC_BLOCK("Aura_Block_Start_NPC"),
     AURA_WIND_BLOCK_FLAT("Aura_Wind_Block_Flat"),
     AURA_WIND_BLOCK_STAIR("Aura_Wind_Block_Stair"),
     AURA_WIND_GEM("Rock_Gem_Aquamarine"),
