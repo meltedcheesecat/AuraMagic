@@ -57,7 +57,7 @@ $C.@DecoratedContainer {
       }
       
       Group #StartNPCStoryGroup {
-        Anchor: (Width: 460, Height: 400);
+        Anchor: (Width: 470, Height: 400);
         FlexWeight: 1;
         LayoutMode: TopScrolling;
         ScrollbarStyle: $C.@DefaultScrollbarStyle;
@@ -91,7 +91,12 @@ $C.@DecoratedContainer {
         LayoutMode: Right;
         Padding: (Bottom: 6);
         
-        TextButton #ButtonAura50 {
+        TextButton #ButtonAura1 {
+          Padding: (Full: 6);
+          Style: @LabelStyle;
+        }
+        
+        TextButton #ButtonAura2 {
           Padding: (Full: 6);
           Style: @LabelStyle;
         }

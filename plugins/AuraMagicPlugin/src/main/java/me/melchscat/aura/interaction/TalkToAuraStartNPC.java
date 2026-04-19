@@ -1,7 +1,5 @@
 package me.melchscat.aura.interaction;
 
-import com.hypixel.hytale.codec.Codec;
-import com.hypixel.hytale.codec.KeyedCodec;
 import com.hypixel.hytale.codec.builder.BuilderCodec;
 import com.hypixel.hytale.component.ComponentType;
 import com.hypixel.hytale.component.Ref;
@@ -50,7 +48,12 @@ public class TalkToAuraStartNPC extends SimpleInteraction {
         if (world == null) return;
 
         world.execute( () -> {
-            player.getPageManager().openCustomPage(owningEntityRef, store, new AuraStartNpcPage(playerRef));
+            AuraStartNpcPage startNpcPage = new AuraStartNpcPage(playerRef,
+                    "Chat Dialog", "Voice from the Jar", "StuckInPotStartNPC.png",
+                    "You hear a voice coming from the shaking Pot, you walk towards it and say Hello. It responds and tells you it has been stuck in here for ages and it needs help getting out.",
+                    false, "NoButton", true, "Accept Quest");
+
+            player.getPageManager().openCustomPage(owningEntityRef, store, startNpcPage);
         });
     }
 
