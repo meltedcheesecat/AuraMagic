@@ -103,9 +103,9 @@ public class AuraStartNpcSystem extends EntityTickingSystem<ChunkStore> {
             case AURA_START_NPC_ANIMATION: {
                 startNPC.SubStatus = AURA_START_NPC_IDLE;
                 startNPC.statusTick = world.getTick();
-                // 1/2 a second plus 0 to 2 seconds longer
-                startNPC.statusDelay = (long)(world.getTps()/(long)2) +
-                                       ThreadLocalRandom.current().nextLong(world.getTps()*(long)2);
+                // 1 second plus 0 to 2 seconds longer
+                startNPC.statusDelay = (long)(world.getTps()) +
+                                       ThreadLocalRandom.current().nextLong(world.getTps()*(long)3);
                 world.execute(() -> {
                     worldChunk.setBlockInteractionState(startNPC.ourCoord, startNPCBlockType, IN_POT_IDLE);
                 });

@@ -1,0 +1,103 @@
+$C = "../Common.ui";
+
+@LabelStyle = (
+  Hovered: (
+    Background: #000000(0.2),
+  )
+);
+
+@SelectedLabelStyle = (
+  Default: (
+    LabelStyle: (RenderBold: true)
+  ),
+  Hovered: (
+    LabelStyle: (RenderBold: true),
+    Background: #000000(0.2)
+  )
+);
+
+$C.@PageOverlay {}
+
+$C.@DecoratedContainer {
+  Anchor: (Width: 740, Height: 480);
+
+  #Title {
+    Label #StartNPCPageTitle {
+      Style: (
+        ...$C.@TitleStyle,
+        HorizontalAlignment: Center,
+      );
+      Padding: (Horizontal: 19);
+    }
+  }
+
+  #Content {
+    LayoutMode: Top;
+    Padding: (Horizontal: 10);
+
+    // Trade grid container with scrollbar
+    Group #StartNPCMainGroup {
+      LayoutMode: LeftCenterWrap;        
+      Group #StartNPCPictureGroup {
+        Anchor: (Width: 240, Height: 400);
+        LayoutMode: Top;
+        
+        Label #StartNPCImageTitle {
+          Style: (
+            ...$C.@SubtitleStyle,
+            HorizontalAlignment: Center,
+          );
+          Padding: (Vertical: 20);
+        }
+        
+        AssetImage #StartNPCImage {
+          Anchor: (Width: 200, Height: 300);
+          FallbackTexturePath: "UI/Custom/Pages/Memories/MissingIcon.png";
+        }
+      }
+      
+      Group #StartNPCStoryGroup {
+        Anchor: (Width: 460, Height: 400);
+        FlexWeight: 1;
+        LayoutMode: TopScrolling;
+        ScrollbarStyle: $C.@DefaultScrollbarStyle;
+
+        Group #StartNPCStoryTextGroup {
+          LayoutMode: Top;
+          
+          Label #StartNPCStoryText {
+            Style: (
+              FontSize: 18,
+              TextColor: #ffffff(0.7)
+            );
+            Padding: (Vertical: 20);
+          }
+        }
+      }
+    }
+    
+    Group #Footer {
+      Anchor: (Height: 40);
+      LayoutMode: Bottom;
+      Padding: (Horizontal: -2);
+      
+      Group #FooterDivider {
+        Anchor: (Height: 2);
+        Background: #19252F;
+      }
+      
+      Group #FooterContent {
+        FlexWeight: 1;
+        LayoutMode: Right;
+        Padding: (Bottom: 6);
+        
+        TextButton #ButtonAura50 {
+          Padding: (Full: 6);
+          Style: @LabelStyle;
+        }
+      }
+    }
+  }
+}
+
+$C.@BackButton {}

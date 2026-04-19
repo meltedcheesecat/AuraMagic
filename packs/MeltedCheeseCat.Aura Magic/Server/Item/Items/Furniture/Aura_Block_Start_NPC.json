@@ -3,7 +3,7 @@
     "Name": "server.items.Aura_Block_Start_NPC.name"
   },
   "PlayerAnimationsId": "Block",
-  "MaxStack": 1,  
+  "MaxStack": 1,
   "Icon": "Icons/ItemsGenerated/Aura_Block_Start_NPC.png",
   "IconProperties": {
     "Scale": 0.7,
@@ -16,13 +16,13 @@
       -1,
       -16
     ]
-  },  
+  },
   "Categories": [
     "Blocks.Structural"
   ],
   "BlockType": {
-    "DrawType": "Model", 
-    "CustomModelAnimation": "Blocks/Start/StartPotShake.blockyanim",   
+    "DrawType": "Model",
+    "CustomModelAnimation": "Blocks/Start/StartPotShake.blockyanim",
     "CustomModel": "Blocks/Start/StartPot.blockymodel",
     "CustomModelTexture": [
       {
@@ -30,44 +30,21 @@
         "Weight": 1
       }
     ],
-    "Interactions": {
-      "Use": {
-        "Interactions": [
-          {
-            "Type": "ChangeState",
-            "Changes": {
-              "default": "InPotShake",
-              "InPotShake": "InPotIdle",
-              "InPotIdle": "InPotShake"
-            }
-          }
-        ]
-      }
-    },
     "State": {
       "Definitions": {
         "InPotIdle": {
-          "InteractionHint": "current:Idle",  
-          "CustomModelAnimation": "Blocks/Start/StartPotIdle.blockyanim",
-          "CustomModel": "Blocks/Start/StartPot.blockymodel",
-          "CustomModelTexture": [
-            {
-              "Texture": "Blocks/Start/StartPot.png"
-            }
-          ]
+          "InteractionHint": "server.interactionHints.talk",
+          "CustomModelAnimation": "Blocks/Start/StartPotIdle.blockyanim"
         },
         "InPotShake": {
-          "InteractionHint": "current:Shake",
-          "CustomModelAnimation": "Blocks/Start/StartPotShake.blockyanim",
-          "CustomModel": "Blocks/Start/StartPot.blockymodel",
-          "CustomModelTexture": [
-            {
-              "Texture": "Blocks/Start/StartPot2.png"
-            }
-          ]
+          "InteractionHint": "server.interactionHints.talk",
+          "CustomModelAnimation": "Blocks/Start/StartPotShake.blockyanim"
         }
       }
-    },      
+    },
+    "Interactions": {
+      "Use": "Root_Talk_To_Start_NPC"
+    },		
     "BlockEntity": {
       "Components": {
         "AuraBlockStartNpc": {

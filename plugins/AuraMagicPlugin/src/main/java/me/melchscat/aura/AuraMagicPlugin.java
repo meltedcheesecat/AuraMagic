@@ -19,6 +19,7 @@ import me.melchscat.aura.component.AuraStartNpcComponent;
 import me.melchscat.aura.interaction.ChargeAuraShield;
 import me.melchscat.aura.interaction.CreateAuraWindBlocks;
 import me.melchscat.aura.interaction.ShowStartAuraPage;
+import me.melchscat.aura.interaction.TalkToAuraStartNPC;
 import me.melchscat.aura.main.AuraMain;
 import me.melchscat.aura.myNPC.AuraStartNpc;
 import me.melchscat.aura.prefab.AuraPrefabs;
@@ -33,7 +34,7 @@ public class AuraMagicPlugin extends JavaPlugin {
     private static AuraMagicPlugin instance;
     private ComponentType<EntityStore, AuraShieldComponent> auraShieldComType;
     private ComponentType<ChunkStore, AuraBlockLifetimeComponent> auraBlockLifetimeComType;
-    private ComponentType<ChunkStore, AuraStartNpcComponent> auraStartNpcComponentType;
+    private ComponentType<ChunkStore, AuraStartNpcComponent> auraStartNpcCompType;
     private AuraPrefabs auraPrefabs;
     private AuraMain auraMain;
     private AuraStartNpc startNPC;
@@ -59,8 +60,8 @@ public class AuraMagicPlugin extends JavaPlugin {
         Interaction.CODEC.register("ChargeAuraShield", ChargeAuraShield.class, ChargeAuraShield.CODEC);
 
         // Aura Start NPC
-        auraStartNpcComponentType = ChunkStore.REGISTRY.registerComponent(AuraStartNpcComponent.class, "AuraBlockStartNpc",  AuraStartNpcComponent.CODEC);
-        //Interaction.CODEC.register("CreateAuraWindBlocks", CreateAuraWindBlocks.class, CreateAuraWindBlocks.CODEC);
+        auraStartNpcCompType = ChunkStore.REGISTRY.registerComponent(AuraStartNpcComponent.class, "AuraBlockStartNpc",  AuraStartNpcComponent.CODEC);
+        Interaction.CODEC.register("TalkToAuraStartNPC", TalkToAuraStartNPC.class, TalkToAuraStartNPC.CODEC);
 
         // Aura Start Page shown by mannequin
         Interaction.CODEC.register("ShowStartAuraPage", ShowStartAuraPage.class, ShowStartAuraPage.CODEC);
@@ -77,7 +78,7 @@ public class AuraMagicPlugin extends JavaPlugin {
         getEntityStoreRegistry().registerSystem(new AuraShieldSystem.OnDamageReceived(auraShieldComType));
 
         // Aura Start NPC
-        getChunkStoreRegistry().registerSystem(new AuraStartNpcSystem(auraStartNpcComponentType));
+        getChunkStoreRegistry().registerSystem(new AuraStartNpcSystem(auraStartNpcCompType));
 
         // Events
         getEventRegistry().registerGlobal(StartWorldEvent.class, this::onStartWorld);
@@ -129,6 +130,10 @@ public class AuraMagicPlugin extends JavaPlugin {
 
     public ComponentType<ChunkStore, AuraBlockLifetimeComponent> getAuraBlockLifetimeComponentType() {
         return this.auraBlockLifetimeComType;
+    }
+
+    public ComponentType<ChunkStore, AuraStartNpcComponent> getAuraStartNpcCompType() {
+        return this.auraStartNpcCompType;
     }
 
     public AuraPrefabs getAuraPrefabs() {

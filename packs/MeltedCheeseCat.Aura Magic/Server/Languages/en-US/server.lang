@@ -103,3 +103,7 @@ items.MagicSpell_Wind_Support_Lvl1.name = Support Wind lvl1
 items.MagicSpell_Wind_PetBuf_Lvl1.name = Pet and Buff Wind lvl1
 items.Rock_Crystal_Wind_Sprite_Spawner.name = Wind Crystal Sprite Spawner
 npcRoles.Wind_Sprite.name = Wind Sprite
+
+# === interactionHints ===
+
+interactionHints.talk = Press [{key}] to talk
