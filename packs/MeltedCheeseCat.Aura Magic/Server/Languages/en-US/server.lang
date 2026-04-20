@@ -1,3 +1,11 @@
+auraMagic.StartNPC.Dialog.Title = Character Interaction
+auraMagic.StartNPC.StuckInPot.ImageTitle = Voice from the Jar
+auraMagic.StartNPC.StuckInPot.Busy.StoryStr1 = You stupid idiot, can you not see I am talking to some one else. Are you blind?
+auraMagic.StartNPC.StuckInPot.Part1.StoryStr1 = You hear a voice coming from a Jar that seems to be shaking by itself, you then move closer and say "Hello". The voice answers "Help me, I've been stuck in this Jar for ages, I don't know where I am but can you go to the Kweebecs?"
+auraMagic.StartNPC.StuckInPot.Part1.StoryStr2 = Bla bla bla 2
+auraMagic.StartNPC.StuckInPot.Part1.StoryStr3 = Bla bla bla 3
+auraMagic.StartNPC.StuckInPot.Part1.StoryStr4 = Bla bla bla 4
+auraMagic.StartNPC.StuckInPot.Part1.StoryStr5 = Bla bla bla 5 the last bla
 benchCategories.Elemental_Level1.name = Level 1
 benchCategories.Elemental_Level2.name = Level 2
 benchCategories.Elemental_Level3.name = Level 3
@@ -105,5 +113,4 @@ items.Rock_Crystal_Wind_Sprite_Spawner.name = Wind Crystal Sprite Spawner
 npcRoles.Wind_Sprite.name = Wind Sprite
 
 # === interactionHints ===
-
 interactionHints.talk = Press [{key}] to talk

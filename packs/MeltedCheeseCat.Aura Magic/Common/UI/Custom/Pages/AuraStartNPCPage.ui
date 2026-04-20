@@ -52,7 +52,7 @@ $C.@DecoratedContainer {
         
         AssetImage #StartNPCImage {
           Anchor: (Width: 200, Height: 300);
-          FallbackTexturePath: "UI/Custom/Pages/Memories/MissingIcon.png";
+          FallbackTexturePath: "UI/Custom/Pages/NPCMainNoImage.png";
         }
       }
       
@@ -65,12 +65,69 @@ $C.@DecoratedContainer {
         Group #StartNPCStoryTextGroup {
           LayoutMode: Top;
           
-          Label #StartNPCStoryText {
+          Label #StartNPCStoryText1 {
             Style: (
               FontSize: 18,
               TextColor: #ffffff(0.7)
             );
             Padding: (Vertical: 20);
+          }
+          
+          AssetImage #StartNPCStoryImage1 {
+            Anchor: (Width: 400, Height: 80);
+            FallbackTexturePath: "UI/Custom/Pages/NPCStoryNoImage.png";
+          }
+          
+          Label #StartNPCStoryText2 {
+            Style: (
+              FontSize: 18,
+              TextColor: #ffffff(0.7)
+            );
+            Padding: (Vertical: 20);
+          }
+          
+          AssetImage #StartNPCStoryImage2 {
+            Anchor: (Width: 400, Height: 80);
+            FallbackTexturePath: "UI/Custom/Pages/NPCStoryNoImage.png";
+          }
+          
+          Label #StartNPCStoryText3 {
+            Style: (
+              FontSize: 18,
+              TextColor: #ffffff(0.7)
+            );
+            Padding: (Vertical: 20);
+          }
+          
+          AssetImage #StartNPCStoryImage1 {
+            Anchor: (Width: 400, Height: 80);
+            FallbackTexturePath: "UI/Custom/Pages/NPCStoryNoImage.png";
+          }
+          
+          Label #StartNPCStoryText4 {
+            Style: (
+              FontSize: 18,
+              TextColor: #ffffff(0.7)
+            );
+            Padding: (Vertical: 20);
+          }
+          
+          AssetImage #StartNPCStoryImage4 {
+            Anchor: (Width: 400, Height: 80);
+            FallbackTexturePath: "UI/Custom/Pages/NPCStoryNoImage.png";
+          }
+          
+          Label #StartNPCStoryText5 {
+            Style: (
+              FontSize: 18,
+              TextColor: #ffffff(0.7)
+            );
+            Padding: (Vertical: 20);
+          }
+          
+          AssetImage #StartNPCStoryImage5 {
+            Anchor: (Width: 400, Height: 80);
+            FallbackTexturePath: "UI/Custom/Pages/NPCStoryNoImage.png";
           }
         }
       }

@@ -2,7 +2,7 @@ package me.melchscat.aura.myNPC;
 
 import com.google.gson.Gson;
 import com.hypixel.hytale.math.vector.Vector3i;
-import me.melchscat.aura.AuraMagicPlugin;
+import com.hypixel.hytale.server.core.universe.PlayerRef;
 import me.melchscat.aura.main.AuraMain;
 
 import java.io.FileReader;
@@ -10,18 +10,22 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.logging.Level;
 
 import static com.hypixel.hytale.logger.HytaleLogger.getLogger;
+import static me.melchscat.aura.myNPC.AuraStartNpcAnimationStatus.AURA_START_NPC_IDLE_POT;
 import static me.melchscat.aura.myNPC.AuraStartNpcStatus.AURA_START_NPC_STUCK_IN_POT;
-import static me.melchscat.aura.myNPC.AuraStartNpcSubStatus.AURA_START_NPC_IDLE;
+import static me.melchscat.aura.myNPC.AuraStartNpcSubStatus.AURA_START_NPC_START;
 
 public class AuraStartNpc {
     public static class JsonProps {
         public AuraStartNpcStatus state = AURA_START_NPC_STUCK_IN_POT;
+        public AuraStartNpcSubStatus subState = AURA_START_NPC_START;
         public int maxActiveRange = 10;
     }
 
+    private final ConcurrentLinkedQueue<PlayerRef> talkRequestQueue = new ConcurrentLinkedQueue<>();
     private AuraMain auraMain;
     private final String fileName = "StartNPCConfig.json";
     private Path fullFilePath;
@@ -29,12 +33,16 @@ public class AuraStartNpc {
     // main status is saved in file, substatus is not.
     // NPC will always start off as idle
     public JsonProps jsonProps;
-    public AuraStartNpcSubStatus SubStatus = AURA_START_NPC_IDLE;
     public Boolean hasOurCoord = false;
     public Vector3i ourCoord;
+    public AuraStartNpcAnimationStatus aniState = AURA_START_NPC_IDLE_POT;
     public Long statusTick;
     public Long statusDelay;
     public Boolean busyInStatus = false;
+    public Long pageTick;
+    public Long pageDelay;
+    public Boolean hasPageResponse = false;
+    public int pageResponse = 0;
 
     public AuraStartNpc (AuraMain auraMain) {
         this.auraMain = auraMain;
@@ -80,5 +88,16 @@ public class AuraStartNpc {
 
     public boolean writeData() {
         return writeJsonProps();
+    }
+
+    public void requestTalk(PlayerRef playerRef) {
+        // player already in the queue ignore request
+        if (talkRequestQueue.contains(playerRef)) return;
+
+        talkRequestQueue.add(playerRef);
+    }
+
+    public PlayerRef nextTalkRequest() {
+        return talkRequestQueue.poll(); // Pops the head of the queue, returns null if empty
     }
 }

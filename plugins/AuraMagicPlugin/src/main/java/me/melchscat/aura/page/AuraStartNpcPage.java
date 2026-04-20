@@ -16,32 +16,41 @@ import com.hypixel.hytale.server.core.ui.builder.UICommandBuilder;
 import com.hypixel.hytale.server.core.ui.builder.UIEventBuilder;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
+import me.melchscat.aura.AuraMagicPlugin;
+import me.melchscat.aura.myNPC.AuraStartNpc;
 import org.checkerframework.checker.nullness.compatqual.NonNullDecl;
 
+import java.util.List;
 import java.util.logging.Level;
 
 import static com.hypixel.hytale.logger.HytaleLogger.getLogger;
 
 public class AuraStartNpcPage extends InteractiveCustomUIPage<AuraStartNpcPage.filterEventData> {
+    private final int STORY_LINE_COUNT = 5;
     private String titleStr;
     private String imageTitleStr;
     private String imageFileNameStr;
-    private String storyStr;
+    private List<String> storyStrList;
     private Boolean button1Visible;
     private String button1Str;
     private Boolean button2Visible;
     private String button2Str;
+    private Ref<EntityStore> ourPageRef;
+    private Boolean sendResponse;
 
     public AuraStartNpcPage(@NonNullDecl PlayerRef playerRef, String titleStr, String imageTitleStr, String imageFileNameStr,
-                            String storyStr, Boolean button1Visible, String button1Str, Boolean button2Visible, String button2Str) {
+                            List<String> storyStrList, Boolean button1Visible, String button1Str, Boolean button2Visible, String button2Str,
+                            Boolean sendResponse) {
         this.titleStr = titleStr;
         this.imageTitleStr = imageTitleStr;
         this.imageFileNameStr = imageFileNameStr;
-        this.storyStr = storyStr;
+        this.storyStrList = storyStrList;
         this.button1Visible = button1Visible;
         this.button1Str = button1Str;
         this.button2Visible = button2Visible;
         this.button2Str = button2Str;
+        this.sendResponse = sendResponse;
+
         super(playerRef, CustomPageLifetime.CanDismissOrCloseThroughInteraction, filterEventData.CODEC);
     }
 
@@ -59,13 +68,33 @@ public class AuraStartNpcPage extends InteractiveCustomUIPage<AuraStartNpcPage.f
                       @NonNullDecl UICommandBuilder uiCommandBuilder,
                       @NonNullDecl UIEventBuilder uiEventBuilder,
                       @NonNullDecl Store<EntityStore> store) {
+        this.ourPageRef = ref;
         uiCommandBuilder.append("Pages/AuraStartNPCPage.ui");
         uiCommandBuilder.set("#StartNPCPageTitle.Text", Message.translation(titleStr));
         uiCommandBuilder.set("#StartNPCImageTitle.Text", Message.translation(imageTitleStr));
         String imagePath = "UI/Custom/Pages/" + imageFileNameStr;
         uiCommandBuilder.set("#StartNPCImage.AssetPath", imagePath);
-        String testStoryText = wrapText(storyStr, 50);
-        uiCommandBuilder.set("#StartNPCStoryText.Text", Message.translation(testStoryText));
+
+        String itemStr = "";
+        int storyIndex = 0;
+        for (int storyLine = 1; storyLine <= STORY_LINE_COUNT; storyLine++) {
+            if (storyIndex < storyStrList.size()) {
+                itemStr = wrapText(storyStrList.get(storyIndex), 50);
+                uiCommandBuilder.set("#StartNPCStoryText" + storyLine + ".Text", Message.translation(itemStr));
+                uiCommandBuilder.set("#StartNPCStoryText" + storyLine + ".Visible", true);
+            } else {
+                uiCommandBuilder.set("#StartNPCStoryText" + storyLine + ".Visible", false);
+            }
+            storyIndex++;
+            if (storyIndex < storyStrList.size()) {
+                imagePath = "UI/Custom/Pages/" + storyStrList.get(storyIndex);
+                uiCommandBuilder.set("#StartNPCStoryImage" + storyLine + ".AssetPath", imagePath);
+                uiCommandBuilder.set("#StartNPCStoryImage" + storyLine + ".Visible", true);
+            } else {
+                uiCommandBuilder.set("#StartNPCStoryImage" + storyLine + ".Visible", false);
+            }
+            storyIndex++;
+        }
         uiCommandBuilder.set("#ButtonAura1.Visible", button1Visible);
         uiCommandBuilder.set("#ButtonAura1.Text", Message.translation(button1Str));
         uiCommandBuilder.set("#ButtonAura2.Visible", button2Visible);
@@ -75,6 +104,14 @@ public class AuraStartNpcPage extends InteractiveCustomUIPage<AuraStartNpcPage.f
         uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#ButtonAura2", EventData.of("Index", "2"), false);
     }
 
+    public void closePage() {
+        if (ourPageRef == null) return;
+        Store<EntityStore> store = ourPageRef.getStore();
+        Player player = store.getComponent(ourPageRef, Player.getComponentType());
+        if (player == null) return;
+        player.getPageManager().setPage(ourPageRef, store, Page.None);
+    }
+
     @Override
     public void handleDataEvent(@NonNullDecl Ref<EntityStore> ref,
                                 @NonNullDecl Store<EntityStore> store,
@@ -82,7 +119,13 @@ public class AuraStartNpcPage extends InteractiveCustomUIPage<AuraStartNpcPage.f
         Player player = store.getComponent(ref, Player.getComponentType());
         if (player == null) return;
 
-        getLogger().at(Level.INFO).log("AuraLog handleDataEvent button index:" + data.indexStr + ", player:" + playerRef.getUsername());
+        if (sendResponse) {
+            AuraStartNpc startNPC = AuraMagicPlugin.getInstance().getStartNPC();
+            if (startNPC != null) {
+                startNPC.hasPageResponse = true;
+                startNPC.pageResponse = data.index;
+            }
+        }
 
         player.getPageManager().setPage(ref, store, Page.None);
     }
