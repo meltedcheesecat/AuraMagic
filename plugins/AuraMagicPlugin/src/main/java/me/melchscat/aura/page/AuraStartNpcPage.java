@@ -20,6 +20,7 @@ import me.melchscat.aura.AuraMagicPlugin;
 import me.melchscat.aura.myNPC.AuraStartNpc;
 import org.checkerframework.checker.nullness.compatqual.NonNullDecl;
 
+import javax.annotation.Nonnull;
 import java.util.List;
 import java.util.logging.Level;
 
@@ -37,6 +38,7 @@ public class AuraStartNpcPage extends InteractiveCustomUIPage<AuraStartNpcPage.f
     private String button2Str;
     private Ref<EntityStore> ourPageRef;
     private Boolean sendResponse;
+    private Boolean hasResponded = false;
 
     public AuraStartNpcPage(@NonNullDecl PlayerRef playerRef, String titleStr, String imageTitleStr, String imageFileNameStr,
                             List<String> storyStrList, Boolean button1Visible, String button1Str, Boolean button2Visible, String button2Str,
@@ -79,7 +81,7 @@ public class AuraStartNpcPage extends InteractiveCustomUIPage<AuraStartNpcPage.f
         int storyIndex = 0;
         for (int storyLine = 1; storyLine <= STORY_LINE_COUNT; storyLine++) {
             if (storyIndex < storyStrList.size()) {
-                itemStr = wrapText(storyStrList.get(storyIndex), 50);
+                itemStr = wrapText(storyStrList.get(storyIndex), 49);
                 uiCommandBuilder.set("#StartNPCStoryText" + storyLine + ".Text", Message.translation(itemStr));
                 uiCommandBuilder.set("#StartNPCStoryText" + storyLine + ".Visible", true);
             } else {
@@ -104,18 +106,11 @@ public class AuraStartNpcPage extends InteractiveCustomUIPage<AuraStartNpcPage.f
         uiEventBuilder.addEventBinding(CustomUIEventBindingType.Activating, "#ButtonAura2", EventData.of("Index", "2"), false);
     }
 
-    public void closePage() {
-        if (ourPageRef == null) return;
-        Store<EntityStore> store = ourPageRef.getStore();
-        Player player = store.getComponent(ourPageRef, Player.getComponentType());
-        if (player == null) return;
-        player.getPageManager().setPage(ourPageRef, store, Page.None);
-    }
-
     @Override
     public void handleDataEvent(@NonNullDecl Ref<EntityStore> ref,
                                 @NonNullDecl Store<EntityStore> store,
                                 @NonNullDecl filterEventData data) {
+        getLogger().at(Level.INFO).log("AuraLog handleDataEvent Start sendResponce:" + sendResponse);
         Player player = store.getComponent(ref, Player.getComponentType());
         if (player == null) return;
 
@@ -124,10 +119,24 @@ public class AuraStartNpcPage extends InteractiveCustomUIPage<AuraStartNpcPage.f
             if (startNPC != null) {
                 startNPC.hasPageResponse = true;
                 startNPC.pageResponse = data.index;
+                hasResponded = true;
             }
         }
 
         player.getPageManager().setPage(ref, store, Page.None);
+    }
+
+    @Override
+    public void onDismiss(@Nonnull Ref<EntityStore> ref, @Nonnull Store<EntityStore> store) {
+        if (hasResponded) return;
+
+        if (sendResponse) {
+            AuraStartNpc startNPC = AuraMagicPlugin.getInstance().getStartNPC();
+            if (startNPC != null) {
+                startNPC.hasPageResponse = true;
+                startNPC.pageResponse = 0;
+            }
+        }
     }
 
     public static class filterEventData {

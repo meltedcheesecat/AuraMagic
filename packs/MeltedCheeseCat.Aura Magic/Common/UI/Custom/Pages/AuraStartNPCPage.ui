@@ -99,7 +99,7 @@ $C.@DecoratedContainer {
             Padding: (Vertical: 20);
           }
           
-          AssetImage #StartNPCStoryImage1 {
+          AssetImage #StartNPCStoryImage3 {
             Anchor: (Width: 400, Height: 80);
             FallbackTexturePath: "UI/Custom/Pages/NPCStoryNoImage.png";
           }

@@ -39,7 +39,28 @@
         "InPotShake": {
           "InteractionHint": "server.interactionHints.talk",
           "CustomModelAnimation": "Blocks/Start/StartPotShake.blockyanim"
+        },
+        "InPotTalk": {
+          "InteractionHint": "server.interactionHints.talk",
+          "CustomModelAnimation": "Blocks/Start/StartPotTalk.blockyanim"
+        },
+        "InPotSulk": {
+          "InteractionHint": "server.interactionHints.talk",
+          "CustomModelAnimation": "Blocks/Start/StartPotSulk.blockyanim"
+        },
+        "InPotAccept": {
+          "InteractionHint": "server.interactionHints.talk",
+          "CustomModelAnimation": "Blocks/Start/StartPotAccept.blockyanim"
+        },
+        "InPotCall": {
+          "InteractionHint": "server.interactionHints.talk",
+          "CustomModelAnimation": "Blocks/Start/StartPotCall.blockyanim"
+        },
+        "InPotRelease": {
+          "InteractionHint": "server.interactionHints.talk",
+          "CustomModelAnimation": "Blocks/Start/StartPotRelease.blockyanim"
         }
+        
       }
     },
     "Interactions": {

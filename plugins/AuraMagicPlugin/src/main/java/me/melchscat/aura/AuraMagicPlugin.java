@@ -9,6 +9,7 @@ import com.hypixel.hytale.server.core.event.events.player.PlayerReadyEvent;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.Interaction;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
+import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.events.StartWorldEvent;
 import com.hypixel.hytale.server.core.universe.world.storage.ChunkStore;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
@@ -105,6 +106,7 @@ public class AuraMagicPlugin extends JavaPlugin {
 
         startNPC = new AuraStartNpc(gotAuraMain);
         startNPC.readData();
+        startNPC.init(gotAuraMain);
     }
 
     public void onPlayerReady(PlayerReadyEvent event) {
@@ -117,6 +119,9 @@ public class AuraMagicPlugin extends JavaPlugin {
     }
 
     public void onPlayerDisconnect(PlayerDisconnectEvent event) {
+        startNPC.checkDisconnectPlayerRef = true;
+        startNPC.disconnectPlayerRef = event.getPlayerRef();
+
         getLogger().at(Level.INFO).log("AuraLog onPlayerDisconnect toString:" + event.toString());
     }
 
