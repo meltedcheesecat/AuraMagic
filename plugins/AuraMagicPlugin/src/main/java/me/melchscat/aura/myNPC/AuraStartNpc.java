@@ -2,6 +2,7 @@ package me.melchscat.aura.myNPC;
 
 import com.google.gson.Gson;
 import com.hypixel.hytale.math.vector.Vector3i;
+import com.hypixel.hytale.server.core.inventory.ItemStack;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import static com.hypixel.hytale.logger.HytaleLogger.getLogger;
 import java.io.FileReader;
@@ -47,6 +48,11 @@ public class AuraStartNpc {
     public Long greetTick;
     public Long greetDelay;
     public int nearestPlayerDist;
+    public Boolean removeItemFromPlayerInventory = false;
+    public String itemIdToRemove;
+    public int itemToRemoveQuantity;
+    public Boolean removedItemSuccessfully = false;
+
 
     public AuraStartNpc (AuraMain auraMain) {
         this.auraMain = auraMain;

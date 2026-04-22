@@ -12,6 +12,9 @@ import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.asset.type.blocktype.config.BlockType;
 import com.hypixel.hytale.server.core.asset.type.soundevent.config.SoundEvent;
 import com.hypixel.hytale.server.core.entity.entities.Player;
+import com.hypixel.hytale.server.core.inventory.InventoryComponent;
+import com.hypixel.hytale.server.core.inventory.ItemStack;
+import com.hypixel.hytale.server.core.inventory.container.CombinedItemContainer;
 import com.hypixel.hytale.server.core.modules.block.BlockModule;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.SoundUtil;
@@ -166,25 +169,46 @@ public class AuraStartNpcSystem extends EntityTickingSystem<ChunkStore> {
         String titleStr = Message.translation("server.auraMagic.StartNPC.Dialog.Title").getAnsiMessage();
         String imageTitleStr = Message.translation("server.auraMagic.StartNPC.StuckInPot.ImageTitle").getAnsiMessage();
         String mainImgForNPC = "NPC_Image_StuckInPot.png";
+
         List<String> storyStrLst = new ArrayList<>();
-        for (int index = 1; index <= 5; index++) {
-            if (index == 1) {
-                storyStrLst.add(Message.translation("server.auraMagic.StartNPC.StuckInPot.Part2.StoryStr" + index).getAnsiMessage());
-            } else {
-                storyStrLst.add(Message.translation("server.auraMagic.StartNPC.StuckInPot.Part1.StoryStr" + index).getAnsiMessage());
-            }
-            storyStrLst.add("Story_Image_StuckInPot_Part1_Story" + index + ".png");
-        }
+        storyStrLst.add(Message.translation("server.auraMagic.StartNPC.StuckInPot.Part3.StoryStr1").getAnsiMessage());
+        storyStrLst.add("Story_Image_StuckInPot_Part3_Story1.png");
+        storyStrLst.add(Message.translation("server.auraMagic.StartNPC.StuckInPot.Part3.StoryStr2").getAnsiMessage());
+        storyStrLst.add("Story_Image_StuckInPot_Part1_Story4.png");
 
         world.execute( () -> {
             AuraStartNpcPage startNpcPage = new
                     AuraStartNpcPage(playerRef, titleStr, imageTitleStr, mainImgForNPC, storyStrLst,
-                    true, "Decline Quest", true, "Accept Quest", true);
+                    false, "NoButton", true, "Ok", true);
 
             player.getPageManager().openCustomPage(ref, store, startNpcPage);
         });
     }
 
+    private void sendNPCInPotPart4(World world, Store<EntityStore> store, PlayerRef playerRef, Player player, Ref<EntityStore> ref) {
+        if (world == null) return;
+        if (store == null) return;
+        if (playerRef == null) return;
+        if (player == null) return;
+        if (ref == null) return;
+
+        String titleStr = Message.translation("server.auraMagic.StartNPC.Dialog.Title").getAnsiMessage();
+        String imageTitleStr = Message.translation("server.auraMagic.StartNPC.StuckInPot.ImageTitle").getAnsiMessage();
+        String mainImgForNPC = "NPC_Image_StuckInPot.png";
+
+        List<String> storyStrLst = new ArrayList<>();
+        storyStrLst.add(Message.translation("server.auraMagic.StartNPC.StuckInPot.Part4.StoryStr1").getAnsiMessage());
+        storyStrLst.add("Story_Image_StuckInPot_Part4_Story1.png");
+        storyStrLst.add(Message.translation("server.auraMagic.StartNPC.StuckInPot.Part4.StoryStr2").getAnsiMessage());
+
+        world.execute( () -> {
+            AuraStartNpcPage startNpcPage = new
+                    AuraStartNpcPage(playerRef, titleStr, imageTitleStr, mainImgForNPC, storyStrLst,
+                    false, "NoButton", true, "Ok", true);
+
+            player.getPageManager().openCustomPage(ref, store, startNpcPage);
+        });
+    }
 
     private void resetAnimation(World world, AuraStartNpc startNPC) {
         startNPC.aniState = AURA_START_NPC_IDLE_POT;
@@ -212,6 +236,11 @@ public class AuraStartNpcSystem extends EntityTickingSystem<ChunkStore> {
                             startNPC.doOnceOffAnimation = true;
                             startNPC.greetTick = world.getTick();
                             startNPC.greetDelay = world.getTps() * (long)300;
+                            startNPC.removeItemFromPlayerInventory = true;
+                            startNPC.itemIdToRemove = "Potion_Mana_Large";
+                            startNPC.itemToRemoveQuantity = 1;
+                            startNPC.removedItemSuccessfully = false;
+                            getLogger().at(Level.INFO).log("AuraLog ACCEPT_QUEST");
                         } else {
                             startNPC.jsonProps.subState = AURA_START_NPC_START;
                         }
@@ -226,6 +255,10 @@ public class AuraStartNpcSystem extends EntityTickingSystem<ChunkStore> {
                             startNPC.doOnceOffAnimation = true;
                             startNPC.greetTick = world.getTick();
                             startNPC.greetDelay = world.getTps() * (long)300;
+                            startNPC.removeItemFromPlayerInventory = true;
+                            startNPC.itemIdToRemove = "Potion_Mana_Large";
+                            startNPC.itemToRemoveQuantity = 1;
+                            startNPC.removedItemSuccessfully = false;
                         } else {
                             startNPC.jsonProps.subState = AURA_START_NPC_DECLINE_QUEST;
                         }
@@ -240,12 +273,11 @@ public class AuraStartNpcSystem extends EntityTickingSystem<ChunkStore> {
                     case AURA_START_NPC_TALK_4: {
                         // We previously accepted the quest and did bring back the item
                         // 0-esc do nothing, 1-decline, 2-accept
+                        startNPC.jsonProps.state = AURA_START_NPC_OUT_OF_POT;
+                        startNPC.jsonProps.subState = AURA_START_NPC_INIT;
                         break;
                     }
                 }
-                break;
-            }
-            case AURA_START_NPC_OUT_OF_POT: {
                 break;
             }
         }
@@ -279,13 +311,35 @@ public class AuraStartNpcSystem extends EntityTickingSystem<ChunkStore> {
                         break;
                     }
                     case AURA_START_NPC_ACCEPT_QUEST: {
-
+                        if ((!startNPC.removeItemFromPlayerInventory) || (!startNPC.removedItemSuccessfully)) {
+                            // failed to get mana potion from player
+                            startNPC.removeItemFromPlayerInventory = true;
+                            startNPC.itemIdToRemove = "Potion_Mana_Large";
+                            startNPC.itemToRemoveQuantity = 1;
+                            startNPC.removedItemSuccessfully = false;
+                            startNPC.jsonProps.subState = AURA_START_NPC_TALK_3;
+                            setPageCloseDelay(world, startNPC, 90); // 1/2 minutes before dialog closes
+                            sendNPCInPotPart3(world, store, playerRef, player, ref);
+                            break;
+                        }
+                        //got mana potion from player
+                        startNPC.removeItemFromPlayerInventory = false;
+                        startNPC.removedItemSuccessfully = false;
+                        startNPC.jsonProps.subState = AURA_START_NPC_TALK_4;
+                        setPageCloseDelay(world, startNPC, 90); // 1/2 minutes before dialog closes
+                        sendNPCInPotPart4(world, store, playerRef, player, ref);
                         break;
                     }
                 }
                 break;
             }
             case AURA_START_NPC_OUT_OF_POT: {
+                switch (startNPC.jsonProps.subState) {
+                    case AURA_START_NPC_INIT: {
+
+                        break;
+                    }
+                }
                 break;
             }
         }
@@ -413,6 +467,28 @@ public class AuraStartNpcSystem extends EntityTickingSystem<ChunkStore> {
                 break;
             }
             case AURA_START_NPC_OUT_OF_POT: {
+                switch (startNPC.jsonProps.subState) {
+                    case AURA_START_NPC_INIT: {
+                        if (startNPC.aniState == AURA_START_NPC_IDLE_POT) {
+                            startNPC.aniState = AURA_START_NPC_RELEASE_POT;
+                            startNPC.statusTick = world.getTick();
+                            startNPC.statusDelay = (long)world.getTps() * (long)2; // 2 second s
+                            startNPC.doOnceOffAnimation = false;
+                            world.execute(() -> {
+                                worldChunk.setBlockInteractionState(startNPC.ourCoord, startNPCBlockType, IN_POT_RELEASE);
+                            });
+                        } else if (startNPC.aniState == AURA_START_NPC_RELEASE_POT) {
+                            startNPC.aniState = AURA_START_NPC_IDLE_POT;
+                            startNPC.statusTick = world.getTick();
+                            startNPC.statusDelay = (long)world.getTps() * (long)2; // 2 second s
+                            startNPC.doOnceOffAnimation = false;
+                            world.execute(() -> {
+                                worldChunk.setBlockInteractionState(startNPC.ourCoord, startNPCBlockType, IN_POT_IDLE);
+                            });
+                        }
+                        break;
+                    }
+                }
                 break;
             }
         }
