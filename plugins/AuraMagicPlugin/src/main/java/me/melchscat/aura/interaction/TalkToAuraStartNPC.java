@@ -62,7 +62,6 @@ public class TalkToAuraStartNPC extends SimpleInteraction {
                 } else {
                     startNPC.removedItemSuccessfully = false;
                 }
-                getLogger().at(Level.INFO).log("AuraLog removedItem:" + startNPC.removedItemSuccessfully);
             }
         }
 

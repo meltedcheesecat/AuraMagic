@@ -1,0 +1,23 @@
+{
+  "Layers": [
+    {
+      "Files": [
+        "Sounds/Blocks/Start/Aura_Start_NPC_Voice_Hello_1.ogg",
+        "Sounds/Blocks/Start/Aura_Start_NPC_Voice_Hello_2.ogg",
+        "Sounds/Blocks/Start/Aura_Start_NPC_Voice_Hello_3.ogg"
+      ],
+      "RandomSettings": {
+        "MinPitch": -1,
+        "MaxPitch": 1,
+        "MinVolume": -10
+      },
+      "Looping": false,
+      "Volume": 5
+    }
+  ],
+  "Volume": 0,
+  "MaxDistance": 20,
+  "PreventSoundInterruption": false,
+  "MusicDuckingVolume": -2,
+  "AudioCategory": "AudioCat_Magic_Staff"
+}

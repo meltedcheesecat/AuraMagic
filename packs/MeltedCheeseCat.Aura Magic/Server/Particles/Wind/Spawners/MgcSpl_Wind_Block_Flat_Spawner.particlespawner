@@ -14,7 +14,7 @@
     "Max": 1.5
   },
   "Particle": {
-    "Texture": "Particles/Textures/MagicSpell/Block/Aura_Wind_Block_Top_4.png",
+    "Texture": "Particles/Textures/MagicSpell/Block/Aura_Start_NPC_Release3.png",
     "ScaleRatioConstraint": "None",
     "Animation": {
       "0": {

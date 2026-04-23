@@ -22,9 +22,6 @@ import org.checkerframework.checker.nullness.compatqual.NonNullDecl;
 
 import javax.annotation.Nonnull;
 import java.util.List;
-import java.util.logging.Level;
-
-import static com.hypixel.hytale.logger.HytaleLogger.getLogger;
 
 public class AuraStartNpcPage extends InteractiveCustomUIPage<AuraStartNpcPage.filterEventData> {
     private final int STORY_LINE_COUNT = 5;
@@ -110,7 +107,6 @@ public class AuraStartNpcPage extends InteractiveCustomUIPage<AuraStartNpcPage.f
     public void handleDataEvent(@NonNullDecl Ref<EntityStore> ref,
                                 @NonNullDecl Store<EntityStore> store,
                                 @NonNullDecl filterEventData data) {
-        getLogger().at(Level.INFO).log("AuraLog handleDataEvent Start sendResponce:" + sendResponse);
         Player player = store.getComponent(ref, Player.getComponentType());
         if (player == null) return;
 

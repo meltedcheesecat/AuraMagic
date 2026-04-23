@@ -136,7 +136,7 @@ public class AuraStartNpc {
     public void init(AuraMain auraMain) {
         hasPageResponse = false;
         statusTick = auraMain.world.getTick();
-        statusDelay = auraMain.world.getTps() / (long) 2;
+        statusDelay = auraMain.world.getTps() * (long) 5;
 
         switch (jsonProps.state) {
             case AURA_START_NPC_STUCK_IN_POT: {

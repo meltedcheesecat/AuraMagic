@@ -1,0 +1,8 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "Aura_Start_NPC_Release_Spawner"
+    }
+  ],
+  "IsImportant": false
+}

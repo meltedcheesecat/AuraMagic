@@ -33,39 +33,65 @@
     "State": {
       "Definitions": {
         "InPotIdle": {
-          "InteractionHint": "server.interactionHints.talk",
           "CustomModelAnimation": "Blocks/Start/StartPotIdle.blockyanim"
         },
         "InPotShake": {
-          "InteractionHint": "server.interactionHints.talk",
           "CustomModelAnimation": "Blocks/Start/StartPotShake.blockyanim"
         },
         "InPotTalk": {
-          "InteractionHint": "server.interactionHints.talk",
           "CustomModelAnimation": "Blocks/Start/StartPotTalk.blockyanim"
         },
         "InPotSulk": {
-          "InteractionHint": "server.interactionHints.talk",
           "CustomModelAnimation": "Blocks/Start/StartPotSulk.blockyanim"
         },
         "InPotAccept": {
-          "InteractionHint": "server.interactionHints.talk",
           "CustomModelAnimation": "Blocks/Start/StartPotAccept.blockyanim"
         },
         "InPotCall": {
-          "InteractionHint": "server.interactionHints.talk",
           "CustomModelAnimation": "Blocks/Start/StartPotCall.blockyanim"
         },
-        "InPotRelease": {
-          "InteractionHint": "server.interactionHints.talk",
-          "CustomModelAnimation": "Blocks/Start/StartPotRelease.blockyanim"
+        "InPotRelease1": {
+          "CustomModelAnimation": "Blocks/Start/StartPotRelease1.blockyanim",
+          "Light": {
+            "Color": "#666",
+            "Radius": 1
+          }
+        },
+        "InPotRelease2": {
+          "CustomModelAnimation": "Blocks/Start/StartPotRelease2.blockyanim",
+          "Light": {
+            "Color": "#888",
+            "Radius": 1
+          }
+        },
+        "InPotRelease3": {
+          "CustomModelAnimation": "Blocks/Start/StartPotRelease3.blockyanim",
+          "Light": {
+            "Color": "#AAA",
+            "Radius": 1
+          }
+        },
+        "InPotRelease4": {
+          "Particles": [
+            {
+              "SystemId": "MgcSpl_Wind_Block_Flat",
+              "Color": "#ffffff"
+            }
+          ],
+          "CustomModelAnimation": "Blocks/Start/StartPotRelease4.blockyanim",
+          "Light": {
+            "Color": "#CCC",
+            "Radius": 1
+          }
         }
-        
       }
     },
+    "InteractionHint": "server.interactionHints.talk",
     "Interactions": {
       "Use": "Root_Talk_To_Start_NPC"
     },		
+    "Light": null,
+    "Particles": null,
     "BlockEntity": {
       "Components": {
         "AuraBlockStartNpc": {
