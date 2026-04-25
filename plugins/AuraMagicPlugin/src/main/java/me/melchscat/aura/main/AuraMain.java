@@ -29,18 +29,14 @@ public class AuraMain {
     public void Initialize(World world) {
         this.world = world;
         if (this.world == null) return;
-        getLogger().at(Level.INFO).log("AuraMain Initialize world name:" + world.getName());
 
         // this returns universe\worlds\[name] i.e. this should be the save folder name
         this.worldSavePath = world.getSavePath().toAbsolutePath().getParent().getParent().getParent();
         if (this.worldSavePath == null) return;
-        getLogger().at(Level.INFO).log("AuraMain Initialize worldSavePath:" + worldSavePath);
 
         worldName = worldSavePath.getFileName().toString();
-        getLogger().at(Level.INFO).log("AuraMain Initialize worldName:" + worldName);
 
         auraDataPath = worldSavePath.resolve(AURA_DATA_NAME).resolve(AURA_FOLDER_NAME);
-        getLogger().at(Level.INFO).log("AuraMain Initialize auraDataPath:" + auraDataPath);
 
         if (!Files.exists(auraDataPath)) {
             try {

@@ -26,7 +26,7 @@ import static com.hypixel.hytale.logger.HytaleLogger.getLogger;
 
 public class AuraPrefabs {
     private final String ourPackName = "me.melchscat.aura:AuraMagicPack";
-    private final int prefabTypeCount = 5; // not the amount of prefabs since we spawn more than 2 sometimes
+    private final int prefabTypeCount = 9; // not the amount of prefabs since we spawn more than 2 sometimes
     public Path path;
     public AssetPack assetPack;
     public Map<Path, BlockSelection> windPrefabs;
@@ -130,6 +130,26 @@ public class AuraPrefabs {
             case 4 : {
                 windPrefabPath = getWindPrefabPath("WindLargeTemple.prefab.json");
                 position.setY(position.getY() + 20);
+                placeWindPrefab(world, position, windPrefabPath);
+                break;
+            }
+            case 5 : {
+                windPrefabPath = getWindPrefabPath("WindFlatTemple.prefab.json");
+                placeWindPrefab(world, position, windPrefabPath);
+                break;
+            }
+            case 6 : {
+                windPrefabPath = getWindPrefabPath("WindMiniTemple1.prefab.json");
+                placeWindPrefab(world, position, windPrefabPath);
+                break;
+            }
+            case 7 : {
+                windPrefabPath = getWindPrefabPath("WindMiniTemple2.prefab.json");
+                placeWindPrefab(world, position, windPrefabPath);
+                break;
+            }
+            case 8 : {
+                windPrefabPath = getWindPrefabPath("WindMiniTemple3.prefab.json");
                 placeWindPrefab(world, position, windPrefabPath);
                 break;
             }

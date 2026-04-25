@@ -1,0 +1,946 @@
+{
+  "version": 8,
+  "blockIdVersion": 11,
+  "anchorX": 0,
+  "anchorY": 0,
+  "anchorZ": 0,
+  "blocks": [
+    {
+      "x": -4,
+      "y": 15,
+      "z": -4,
+      "name": "Rock_Crystal_Wind_Small",
+      "rotation": 8
+    },
+    {
+      "x": -4,
+      "y": 16,
+      "z": -4,
+      "name": "Rock_Crystal_Wind_Block"
+    },
+    {
+      "x": -4,
+      "y": 17,
+      "z": -4,
+      "name": "Rock_Crystal_Wind_Small"
+    },
+    {
+      "x": -4,
+      "y": 15,
+      "z": -3,
+      "name": "Rock_Calcite_Brick_Roof_Hollow"
+    },
+    {
+      "x": -4,
+      "y": 14,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Roof_Hollow"
+    },
+    {
+      "x": -4,
+      "y": 13,
+      "z": -1,
+      "name": "Rock_Calcite_Brick_Roof_Hollow"
+    },
+    {
+      "x": -4,
+      "y": 7,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Stairs",
+      "rotation": 9
+    },
+    {
+      "x": -4,
+      "y": 8,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Pillar_Base"
+    },
+    {
+      "x": -4,
+      "y": 9,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": -4,
+      "y": 10,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": -4,
+      "y": 11,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": -4,
+      "y": 12,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 8
+    },
+    {
+      "x": -4,
+      "y": 13,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Smooth_Half"
+    },
+    {
+      "x": -4,
+      "y": 13,
+      "z": 1,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 2
+    },
+    {
+      "x": -4,
+      "y": 14,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 2
+    },
+    {
+      "x": -4,
+      "y": 15,
+      "z": 3,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 2
+    },
+    {
+      "x": -4,
+      "y": 15,
+      "z": 4,
+      "name": "Rock_Crystal_Wind_Small",
+      "rotation": 8
+    },
+    {
+      "x": -4,
+      "y": 16,
+      "z": 4,
+      "name": "Rock_Crystal_Wind_Block"
+    },
+    {
+      "x": -4,
+      "y": 17,
+      "z": 4,
+      "name": "Rock_Crystal_Wind_Small"
+    },
+    {
+      "x": -3,
+      "y": 15,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 1
+    },
+    {
+      "x": -3,
+      "y": 7,
+      "z": -1,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": -3,
+      "y": 6,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Stairs",
+      "rotation": 9
+    },
+    {
+      "x": -3,
+      "y": 7,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": -3,
+      "y": 8,
+      "z": 0,
+      "name": "Rock_Crystal_Wind_Small"
+    },
+    {
+      "x": -3,
+      "y": 7,
+      "z": 1,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": -3,
+      "y": 15,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 1
+    },
+    {
+      "x": -2,
+      "y": 14,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 1
+    },
+    {
+      "x": -2,
+      "y": 7,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": -2,
+      "y": 7,
+      "z": -1,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": -2,
+      "y": 5,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Stairs",
+      "rotation": 9
+    },
+    {
+      "x": -2,
+      "y": 6,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": -2,
+      "y": 7,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": -2,
+      "y": 8,
+      "z": 0,
+      "name": "Rock_Crystal_Wind_Medium"
+    },
+    {
+      "x": -2,
+      "y": 7,
+      "z": 1,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": -2,
+      "y": 7,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": -2,
+      "y": 14,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 1
+    },
+    {
+      "x": -1,
+      "y": 13,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 1
+    },
+    {
+      "x": -1,
+      "y": 7,
+      "z": -3,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": -1,
+      "y": 7,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": -1,
+      "y": 7,
+      "z": -1,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": -1,
+      "y": 4,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Stairs",
+      "rotation": 9
+    },
+    {
+      "x": -1,
+      "y": 5,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": -1,
+      "y": 6,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": -1,
+      "y": 7,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": -1,
+      "y": 8,
+      "z": 0,
+      "name": "Rock_Crystal_Wind_Large"
+    },
+    {
+      "x": -1,
+      "y": 7,
+      "z": 1,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": -1,
+      "y": 7,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": -1,
+      "y": 7,
+      "z": 3,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": -1,
+      "y": 13,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 1
+    },
+    {
+      "x": 0,
+      "y": 7,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Stairs",
+      "rotation": 8
+    },
+    {
+      "x": 0,
+      "y": 8,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Pillar_Base"
+    },
+    {
+      "x": 0,
+      "y": 9,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 0,
+      "y": 10,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 0,
+      "y": 11,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 0,
+      "y": 12,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 8
+    },
+    {
+      "x": 0,
+      "y": 13,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Smooth_Half"
+    },
+    {
+      "x": 0,
+      "y": 6,
+      "z": -3,
+      "name": "Rock_Calcite_Brick_Stairs",
+      "rotation": 8
+    },
+    {
+      "x": 0,
+      "y": 7,
+      "z": -3,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 0,
+      "y": 8,
+      "z": -3,
+      "name": "Rock_Crystal_Wind_Small"
+    },
+    {
+      "x": 0,
+      "y": 5,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Stairs",
+      "rotation": 8
+    },
+    {
+      "x": 0,
+      "y": 6,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 0,
+      "y": 7,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 0,
+      "y": 8,
+      "z": -2,
+      "name": "Rock_Crystal_Wind_Medium"
+    },
+    {
+      "x": 0,
+      "y": 4,
+      "z": -1,
+      "name": "Rock_Calcite_Brick_Stairs",
+      "rotation": 8
+    },
+    {
+      "x": 0,
+      "y": 5,
+      "z": -1,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 0,
+      "y": 6,
+      "z": -1,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 0,
+      "y": 7,
+      "z": -1,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 0,
+      "y": 8,
+      "z": -1,
+      "name": "Rock_Crystal_Wind_Large"
+    },
+    {
+      "x": 0,
+      "y": -4,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 0,
+      "y": -3,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 0,
+      "y": -2,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 0,
+      "y": -1,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Pillar_Base"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Pillar_Base"
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 0,
+      "y": 3,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 8
+    },
+    {
+      "x": 0,
+      "y": 4,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 0,
+      "y": 5,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 0,
+      "y": 6,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 0,
+      "y": 7,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 0,
+      "y": 8,
+      "z": 0,
+      "name": "Spawner_Wind_Sprite"
+    },
+    {
+      "x": 0,
+      "y": 4,
+      "z": 1,
+      "name": "Rock_Calcite_Brick_Stairs",
+      "rotation": 10
+    },
+    {
+      "x": 0,
+      "y": 5,
+      "z": 1,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 0,
+      "y": 6,
+      "z": 1,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 0,
+      "y": 7,
+      "z": 1,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 0,
+      "y": 8,
+      "z": 1,
+      "name": "Rock_Crystal_Wind_Large"
+    },
+    {
+      "x": 0,
+      "y": 5,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Stairs",
+      "rotation": 10
+    },
+    {
+      "x": 0,
+      "y": 6,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 0,
+      "y": 7,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 0,
+      "y": 8,
+      "z": 2,
+      "name": "Rock_Crystal_Wind_Medium"
+    },
+    {
+      "x": 0,
+      "y": 6,
+      "z": 3,
+      "name": "Rock_Calcite_Brick_Stairs",
+      "rotation": 10
+    },
+    {
+      "x": 0,
+      "y": 7,
+      "z": 3,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 0,
+      "y": 8,
+      "z": 3,
+      "name": "Rock_Crystal_Wind_Small"
+    },
+    {
+      "x": 0,
+      "y": 7,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Stairs",
+      "rotation": 10
+    },
+    {
+      "x": 0,
+      "y": 8,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Pillar_Base"
+    },
+    {
+      "x": 0,
+      "y": 9,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 0,
+      "y": 10,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 0,
+      "y": 11,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 0,
+      "y": 12,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 8
+    },
+    {
+      "x": 0,
+      "y": 13,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Smooth_Half"
+    },
+    {
+      "x": 1,
+      "y": 13,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 3
+    },
+    {
+      "x": 1,
+      "y": 7,
+      "z": -3,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 1,
+      "y": 7,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 1,
+      "y": 7,
+      "z": -1,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Stairs",
+      "rotation": 11
+    },
+    {
+      "x": 1,
+      "y": 5,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 1,
+      "y": 6,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 1,
+      "y": 7,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 1,
+      "y": 8,
+      "z": 0,
+      "name": "Rock_Crystal_Wind_Large"
+    },
+    {
+      "x": 1,
+      "y": 7,
+      "z": 1,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 1,
+      "y": 7,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 1,
+      "y": 7,
+      "z": 3,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 1,
+      "y": 13,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 3
+    },
+    {
+      "x": 2,
+      "y": 14,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 3
+    },
+    {
+      "x": 2,
+      "y": 7,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 2,
+      "y": 7,
+      "z": -1,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 2,
+      "y": 5,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Stairs",
+      "rotation": 11
+    },
+    {
+      "x": 2,
+      "y": 6,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 2,
+      "y": 7,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 2,
+      "y": 8,
+      "z": 0,
+      "name": "Rock_Crystal_Wind_Medium"
+    },
+    {
+      "x": 2,
+      "y": 7,
+      "z": 1,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 2,
+      "y": 7,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 2,
+      "y": 14,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 3
+    },
+    {
+      "x": 3,
+      "y": 15,
+      "z": -4,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 3
+    },
+    {
+      "x": 3,
+      "y": 7,
+      "z": -1,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 3,
+      "y": 6,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Stairs",
+      "rotation": 11
+    },
+    {
+      "x": 3,
+      "y": 7,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 3,
+      "y": 8,
+      "z": 0,
+      "name": "Rock_Crystal_Wind_Small"
+    },
+    {
+      "x": 3,
+      "y": 7,
+      "z": 1,
+      "name": "Rock_Calcite_Brick_Smooth"
+    },
+    {
+      "x": 3,
+      "y": 15,
+      "z": 4,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 3
+    },
+    {
+      "x": 4,
+      "y": 15,
+      "z": -4,
+      "name": "Rock_Crystal_Wind_Small",
+      "rotation": 8
+    },
+    {
+      "x": 4,
+      "y": 16,
+      "z": -4,
+      "name": "Rock_Crystal_Wind_Block"
+    },
+    {
+      "x": 4,
+      "y": 17,
+      "z": -4,
+      "name": "Rock_Crystal_Wind_Small"
+    },
+    {
+      "x": 4,
+      "y": 15,
+      "z": -3,
+      "name": "Rock_Calcite_Brick_Roof_Hollow"
+    },
+    {
+      "x": 4,
+      "y": 14,
+      "z": -2,
+      "name": "Rock_Calcite_Brick_Roof_Hollow"
+    },
+    {
+      "x": 4,
+      "y": 13,
+      "z": -1,
+      "name": "Rock_Calcite_Brick_Roof_Hollow"
+    },
+    {
+      "x": 4,
+      "y": 7,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Stairs",
+      "rotation": 11
+    },
+    {
+      "x": 4,
+      "y": 8,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Pillar_Base"
+    },
+    {
+      "x": 4,
+      "y": 9,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 4,
+      "y": 10,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 4,
+      "y": 11,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Pillar_Middle"
+    },
+    {
+      "x": 4,
+      "y": 12,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Pillar_Base",
+      "rotation": 8
+    },
+    {
+      "x": 4,
+      "y": 13,
+      "z": 0,
+      "name": "Rock_Calcite_Brick_Smooth_Half"
+    },
+    {
+      "x": 4,
+      "y": 13,
+      "z": 1,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 2
+    },
+    {
+      "x": 4,
+      "y": 14,
+      "z": 2,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 2
+    },
+    {
+      "x": 4,
+      "y": 15,
+      "z": 3,
+      "name": "Rock_Calcite_Brick_Roof_Hollow",
+      "rotation": 2
+    },
+    {
+      "x": 4,
+      "y": 15,
+      "z": 4,
+      "name": "Rock_Crystal_Wind_Small",
+      "rotation": 8
+    },
+    {
+      "x": 4,
+      "y": 16,
+      "z": 4,
+      "name": "Rock_Crystal_Wind_Block"
+    },
+    {
+      "x": 4,
+      "y": 17,
+      "z": 4,
+      "name": "Rock_Crystal_Wind_Small"
+    }
+  ]
+}
