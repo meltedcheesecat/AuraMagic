@@ -53,12 +53,24 @@ public class AuraStartNpcPage extends InteractiveCustomUIPage<AuraStartNpcPage.f
         super(playerRef, CustomPageLifetime.CanDismissOrCloseThroughInteraction, filterEventData.CODEC);
     }
 
-    private String wrapText(String text, int width) {
+    private String wrapText(String text, int maxWidth) {
         StringBuilder sb = new StringBuilder(text);
-        int i = 0;
-        while ((i = sb.indexOf(" ", i + width)) != -1) {
-            sb.replace(i, i + 1, "\n");
+        int curIndex = 0;
+        int startIndex = 0;
+        int prevIndex = 1;
+        while ((curIndex = sb.indexOf(" ", curIndex+1)) != -1) {
+            if ((curIndex - startIndex) >= maxWidth) {
+                sb.replace(prevIndex, prevIndex + 1, "\n");
+                startIndex = prevIndex;
+            }
+            prevIndex = curIndex;
         }
+
+        // end of line has no spaces
+        if (((text.length()-1) - startIndex) >= maxWidth) {
+            sb.replace(prevIndex, prevIndex + 1, "\n");
+        }
+
         return sb.toString();
     }
 
@@ -78,7 +90,7 @@ public class AuraStartNpcPage extends InteractiveCustomUIPage<AuraStartNpcPage.f
         int storyIndex = 0;
         for (int storyLine = 1; storyLine <= STORY_LINE_COUNT; storyLine++) {
             if (storyIndex < storyStrList.size()) {
-                itemStr = wrapText(storyStrList.get(storyIndex), 49);
+                itemStr = wrapText(storyStrList.get(storyIndex), 55);
                 uiCommandBuilder.set("#StartNPCStoryText" + storyLine + ".Text", Message.translation(itemStr));
                 uiCommandBuilder.set("#StartNPCStoryText" + storyLine + ".Visible", true);
             } else {

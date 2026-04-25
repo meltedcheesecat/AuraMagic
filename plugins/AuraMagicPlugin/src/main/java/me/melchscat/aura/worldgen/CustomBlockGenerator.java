@@ -286,7 +286,7 @@ public class CustomBlockGenerator extends ChunkGenerator {
                 int spawnZ = (int)position.z - (chunkZ * 32);
                 int spawnY = (int)position.y;
                 // Start Aura Sign
-                blockChunk.setBlock(spawnX, spawnY-1, spawnZ-3, AURA_START_BLOCK.id(), 0,0);
+                blockChunk.setBlock(spawnX, spawnY-1, spawnZ-3, AURA_START_NPC_BLOCK.id(), 0,0);
                 // 2 Air blocks for his foot
                 blockChunk.setBlock(spawnX, spawnY, spawnZ-4, AURA_AIR_BLOCK.id(), 0,0);
                 blockChunk.setBlock(spawnX, spawnY-1, spawnZ-4, AURA_AIR_BLOCK.id(), 0,0);

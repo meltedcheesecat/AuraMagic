@@ -1,7 +1,12 @@
 {
   "Spawners": [
     {
-      "SpawnerId": "Aura_Start_NPC_Release_Spawner"
+      "SpawnerId": "Aura_Start_NPC_Release_Spawner",
+      "PositionOffset": {
+        "X": 0,
+        "Y": 2.3,
+				"Z": 0.0
+      }
     }
   ],
   "IsImportant": false

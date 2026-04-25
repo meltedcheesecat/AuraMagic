@@ -6,35 +6,35 @@
   "ParticleRotateWithSpawner": true,
   "MaxConcurrentParticles": 1,
   "ParticleLifeSpan": {
-    "Min": 4.0,
-    "Max": 4.0
+    "Min": 1.3,
+    "Max": 1.3
   },
   "SpawnRate": {
     "Min": 1.5,
     "Max": 1.5
   },
   "Particle": {
-    "Texture": "Particles/Textures/MagicSpell/Block/Aura_Start_NPC_Release3.png",
+    "Texture": "Particles/Textures/StartNpc/Aura_Start_NPC_Face_Front_3.png",
     "ScaleRatioConstraint": "None",
     "Animation": {
       "0": {
-        "Opacity": 0.0,
+        "Opacity": 1.0,
         "Scale": {
-		  "X": {
-            "Min": 0.7,
-            "Max": 0.7
+		      "X": {
+            "Min": 0.5,
+            "Max": 0.5
           },
           "Y": {
-            "Min": 0.7,
-            "Max": 0.7
+            "Min": 0.5,
+            "Max": 0.5
           }
         }
       },
       "20": {
-        "Opacity": 0.7
+        "Opacity": 1.0
       },			
       "100": {
-        "Opacity": 0.7
+        "Opacity": 1.0
       }
     },
     "UseSpriteBlending": false,

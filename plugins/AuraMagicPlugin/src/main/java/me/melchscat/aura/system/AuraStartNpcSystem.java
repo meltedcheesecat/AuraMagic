@@ -8,9 +8,12 @@ import com.hypixel.hytale.math.vector.Vector3d;
 import com.hypixel.hytale.math.vector.Vector3i;
 import com.hypixel.hytale.protocol.ColorLight;
 import com.hypixel.hytale.protocol.SoundCategory;
+import com.hypixel.hytale.protocol.Vector3f;
+import com.hypixel.hytale.protocol.packets.entities.SpawnModelParticles;
 import com.hypixel.hytale.protocol.packets.interface_.Page;
 import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.asset.type.blocktype.config.BlockType;
+import com.hypixel.hytale.server.core.asset.type.blocktype.config.StateData;
 import com.hypixel.hytale.server.core.asset.type.model.config.ModelParticle;
 import com.hypixel.hytale.server.core.asset.type.soundevent.config.SoundEvent;
 import com.hypixel.hytale.server.core.entity.entities.Player;
@@ -34,7 +37,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.logging.Level;
 
+import static com.hypixel.hytale.logger.HytaleLogger.getLogger;
 import static me.melchscat.aura.block.AuraBlocks.*;
 import static me.melchscat.aura.myNPC.AuraStartNpcStatus.*;
 import static me.melchscat.aura.myNPC.AuraStartNpcSubStatus.*;
@@ -47,10 +52,14 @@ public class AuraStartNpcSystem extends EntityTickingSystem<ChunkStore> {
     private static final String IN_POT_SULK = "InPotSulk";
     private static final String IN_POT_ACCEPT = "InPotAccept";
     private static final String IN_POT_CALL = "InPotCall";
+    private static final String IN_POT_RELEASE_0 = "InPotRelease0";
     private static final String IN_POT_RELEASE_1 = "InPotRelease1";
     private static final String IN_POT_RELEASE_2 = "InPotRelease2";
     private static final String IN_POT_RELEASE_3 = "InPotRelease3";
     private static final String IN_POT_RELEASE_4 = "InPotRelease4";
+    private static final String IN_POT_IDLE_RELEASE_1 = "InPotIdleRelease1";
+    private static final String IN_POT_IDLE_RELEASE_2 = "InPotIdleRelease2";
+
     private final ComponentType<ChunkStore, AuraStartNpcComponent> auraStartNpcComponentType;
     private BlockType startNPCBlockType;
 
@@ -212,6 +221,57 @@ public class AuraStartNpcSystem extends EntityTickingSystem<ChunkStore> {
         });
     }
 
+    private void sendNPCOutPotPart1(World world, Store<EntityStore> store, PlayerRef playerRef, Player player, Ref<EntityStore> ref) {
+        if (world == null) return;
+        if (store == null) return;
+        if (playerRef == null) return;
+        if (player == null) return;
+        if (ref == null) return;
+
+        String titleStr = Message.translation("server.auraMagic.StartNPC.Dialog.Title").getAnsiMessage();
+        String imageTitleStr = Message.translation("server.auraMagic.StartNPC.OutPot.ImageTitle1").getAnsiMessage();
+        String mainImgForNPC = "NPC_Image_Ghost.png";
+        List<String> storyStrLst = new ArrayList<>();
+
+        storyStrLst.add(Message.translation("server.auraMagic.StartNPC.OutPot.Part1.StoryStr1").getAnsiMessage());
+        storyStrLst.add("Story_Image_OutPot_Part1_Story1.png");
+        storyStrLst.add(Message.translation("server.auraMagic.StartNPC.OutPot.Part1.StoryStr2").getAnsiMessage());
+
+        world.execute( () -> {
+            AuraStartNpcPage startNpcPage = new
+                    AuraStartNpcPage(playerRef, titleStr, imageTitleStr, mainImgForNPC, storyStrLst,
+                    false, "NoButton", true, "Next", true);
+
+            player.getPageManager().openCustomPage(ref, store, startNpcPage);
+        });
+    }
+
+    private void sendNPCOutPotPart2(World world, Store<EntityStore> store, PlayerRef playerRef, Player player, Ref<EntityStore> ref) {
+        if (world == null) return;
+        if (store == null) return;
+        if (playerRef == null) return;
+        if (player == null) return;
+        if (ref == null) return;
+
+        String titleStr = Message.translation("server.auraMagic.StartNPC.Dialog.Title").getAnsiMessage();
+        String imageTitleStr = Message.translation("server.auraMagic.StartNPC.OutPot.ImageTitle2").getAnsiMessage();
+        String mainImgForNPC = "NPC_Image_Ghost.png";
+        List<String> storyStrLst = new ArrayList<>();
+
+        for (int index = 1; index <= 5; index++) {
+            storyStrLst.add(Message.translation("server.auraMagic.StartNPC.OutPot.Part2.WindMagic" + index).getAnsiMessage());
+            storyStrLst.add("Story_Image_OutPot_Part2_WindMagic" + index + ".png");
+        }
+
+        world.execute( () -> {
+            AuraStartNpcPage startNpcPage = new
+                    AuraStartNpcPage(playerRef, titleStr, imageTitleStr, mainImgForNPC, storyStrLst,
+                    false, "NoButton", true, "Close", true);
+
+            player.getPageManager().openCustomPage(ref, store, startNpcPage);
+        });
+    }
+
     private void resetAnimation(World world, AuraStartNpc startNPC) {
         startNPC.aniState = AURA_START_NPC_IDLE_POT;
         startNPC.statusTick = world.getTick();
@@ -283,6 +343,22 @@ public class AuraStartNpcSystem extends EntityTickingSystem<ChunkStore> {
                 }
                 break;
             }
+            case AURA_START_NPC_OUT_OF_POT: {
+                switch (startNPC.jsonProps.subState) {
+                    case AURA_START_NPC_TALK_1: {
+                        startNPC.jsonProps.subState = AURA_START_NPC_START_2;
+                        if (startNPC.npcTalkingToPlayerRef.isValid()) {
+                            startNPC.requestTalk(startNPC.npcTalkingToPlayerRef);
+                        }
+                        break;
+                    }
+                    case AURA_START_NPC_TALK_2: {
+                        startNPC.jsonProps.subState = AURA_START_NPC_START_2;
+                        break;
+                    }
+                }
+                break;
+            }
         }
     }
 
@@ -336,8 +412,16 @@ public class AuraStartNpcSystem extends EntityTickingSystem<ChunkStore> {
             }
             case AURA_START_NPC_OUT_OF_POT: {
                 switch (startNPC.jsonProps.subState) {
-                    case AURA_START_NPC_INIT: {
-
+                    case AURA_START_NPC_START: {
+                        startNPC.jsonProps.subState = AURA_START_NPC_TALK_1;
+                        setPageCloseDelay(world, startNPC, 120); // 2 minutes before dialog closes
+                        sendNPCOutPotPart1(world, store, playerRef, player, ref);
+                        break;
+                    }
+                    case AURA_START_NPC_START_2: {
+                        startNPC.jsonProps.subState = AURA_START_NPC_TALK_2;
+                        setPageCloseDelay(world, startNPC, 120); // 2 minutes before dialog closes
+                        sendNPCOutPotPart2(world, store, playerRef, player, ref);
                         break;
                     }
                 }
@@ -356,6 +440,22 @@ public class AuraStartNpcSystem extends EntityTickingSystem<ChunkStore> {
     }
 
     private void handleAnimation(AuraStartNpc startNPC, World world, List<PlayerRef> selPlayerRefs, WorldChunk worldChunk){
+        /*if ((startNPC.jsonProps.state == AURA_START_NPC_OUT_OF_POT) &&
+                (startNPC.jsonProps.subState == AURA_START_NPC_INIT) &&
+                (startNPC.aniState == AURA_START_NPC_RELEASE3_POT)) {
+            ModelParticle[] particles = startNPCBlockType.getParticles();
+            if (particles == null) {
+                getLogger().at(Level.INFO).log("AuraLog handleAnimation particles null");
+            } else {
+                if (particles.length == 0) {
+                    getLogger().at(Level.INFO).log("AuraLog handleAnimation particles.length == 0");
+                }
+                startNPC.posOffset.y += 0.1F;
+                getLogger().at(Level.INFO).log("AuraLog handleAnimation startNPC.posOffset.y:" + startNPC.posOffset.y);
+                particles[0].setPositionOffset(startNPC.posOffset);
+            }
+        }*/
+
         if (startNPC.statusTick + startNPC.statusDelay > world.getTick()) return;
 
         switch (startNPC.jsonProps.state) {
@@ -463,15 +563,49 @@ public class AuraStartNpcSystem extends EntityTickingSystem<ChunkStore> {
                 switch (startNPC.jsonProps.subState) {
                     case AURA_START_NPC_INIT: {
                         if (startNPC.aniState == AURA_START_NPC_IDLE_POT) {
+                            for (PlayerRef playerRef : selPlayerRefs) {
+                                int soundEventIndex = SoundEvent.getAssetMap().getIndex("SFX_Staff_Charged_Loop");
+                                if (soundEventIndex == 0) return;
+                                SoundUtil.playSoundEvent2dToPlayer(playerRef, soundEventIndex, SoundCategory.SFX);
+                            }
                             updateNPCBlock(startNPC, world, worldChunk, AURA_START_NPC_RELEASE1_POT, IN_POT_RELEASE_1, (long)250);
                         } else if (startNPC.aniState == AURA_START_NPC_RELEASE1_POT) {
                             updateNPCBlock(startNPC, world, worldChunk, AURA_START_NPC_RELEASE2_POT, IN_POT_RELEASE_2, (long)250);
                         } else if (startNPC.aniState == AURA_START_NPC_RELEASE2_POT) {
+                            /*ModelParticle[] particles = startNPCBlockType.getParticles();
+                            if (particles == null) {
+                                getLogger().at(Level.INFO).log("AuraLog handleAnimation particles null");
+                            } else {
+                                if (particles.length == 0) {
+                                    getLogger().at(Level.INFO).log("AuraLog handleAnimation particles.length == 0");
+                                }
+                                startNPC.posOffset.y += 0.5F;
+                                getLogger().at(Level.INFO).log("AuraLog handleAnimation startNPC.posOffset.y:" + startNPC.posOffset.y);
+                                particles[0].setPositionOffset(startNPC.posOffset);
+                                SpawnModelParticles packet = new SpawnModelParticles(playerNetworkId, auraShield.shieldParticles);
+                                for (PlayerRef playerRef : selPlayerRefs) {
+                                    com.hypixel.hytale.protocol.ModelParticle packet = particles[0].toPacket();
+                                    playerRef.getPacketHandler().writeNoCache(particles);
+                                }
+
+                            }*/
+
+                            //startNPC.posOffset.y = 0.0F;
                             updateNPCBlock(startNPC, world, worldChunk, AURA_START_NPC_RELEASE3_POT, IN_POT_RELEASE_3, (long)250);
                         } else if (startNPC.aniState == AURA_START_NPC_RELEASE3_POT) {
-                            updateNPCBlock(startNPC, world, worldChunk, AURA_START_NPC_RELEASE4_POT, IN_POT_RELEASE_4, (long)1250);
+                            updateNPCBlock(startNPC, world, worldChunk, AURA_START_NPC_RELEASE4_POT, IN_POT_RELEASE_4, (long)1000);
                         } else if (startNPC.aniState == AURA_START_NPC_RELEASE4_POT) {
-                            updateNPCBlock(startNPC, world, worldChunk, AURA_START_NPC_IDLE_POT, IN_POT_IDLE, (long)2000);
+                            startNPC.jsonProps.subState = AURA_START_NPC_START;
+                            updateNPCBlock(startNPC, world, worldChunk, AURA_START_NPC_IDLE_RELEASE1_POT, IN_POT_IDLE_RELEASE_1, (long)1000);
+                        }
+                        break;
+                    }
+                    case AURA_START_NPC_START :
+                    case AURA_START_NPC_START_2 : {
+                        if (startNPC.aniState == AURA_START_NPC_IDLE_RELEASE1_POT) {
+                            updateNPCBlock(startNPC, world, worldChunk, AURA_START_NPC_IDLE_RELEASE2_POT, IN_POT_IDLE_RELEASE_2, (long)1000);
+                        } else if (startNPC.aniState == AURA_START_NPC_IDLE_RELEASE2_POT) {
+                            updateNPCBlock(startNPC, world, worldChunk, AURA_START_NPC_IDLE_RELEASE1_POT, IN_POT_IDLE_RELEASE_1, (long)1000);
                         }
                         break;
                     }
@@ -510,6 +644,8 @@ public class AuraStartNpcSystem extends EntityTickingSystem<ChunkStore> {
         if (blockChunkComponent == null) return;
 
         World world = store.getExternalData().getWorld();
+        if (!world.isStarted()) return;
+        if (world.getPlayerCount() == 0) return;
 
         if (startNPCBlockType == null) {
             startNPCBlockType = (BlockType)BlockType.getAssetMap().getAsset(AURA_START_NPC_BLOCK.id());
@@ -536,9 +672,24 @@ public class AuraStartNpcSystem extends EntityTickingSystem<ChunkStore> {
         WorldChunk worldChunk = world.getChunkIfLoaded(chunkIndex);
         if (worldChunk == null) return;
 
-        // Are there any players in range
+        // Are there any players that are ready
         List<PlayerRef> selPlayerRefs = playersInRange(world, startNPC);
         if (selPlayerRefs.isEmpty()) return;
+        boolean foundAnyReadyPlayer = false;
+        for (PlayerRef playerRef : selPlayerRefs) {
+            if (playerRef.isValid()) {
+                Ref<EntityStore> ref = playerRef.getReference();
+                if (ref == null) continue;
+                Store<EntityStore> entityStore = ref.getStore();
+                Player player = entityStore.getComponent(ref, Player.getComponentType());
+                if (player == null) continue;
+                if (!player.isWaitingForClientReady()) {
+                    foundAnyReadyPlayer = true;
+                    break;
+                }
+            }
+        }
+        if (!foundAnyReadyPlayer) return;
 
         // NPC Dialog that we sent out previous came back with response
         if (startNPC.hasPageResponse) {

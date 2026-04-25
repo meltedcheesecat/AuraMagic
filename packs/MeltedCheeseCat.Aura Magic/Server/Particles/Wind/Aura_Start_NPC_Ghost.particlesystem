@@ -1,0 +1,97 @@
+{
+  "Spawners": [
+    {
+      "SpawnerId": "Aura_Start_NPC_Ghost_Front_Face_Spawner",
+      "PositionOffset": {
+        "X": 0.0,
+        "Y": 1.7,
+				"Z": 0.1
+      }
+    },
+    {
+      "SpawnerId": "Aura_Start_NPC_Ghost_Top_Face_Spawner",
+      "PositionOffset": {
+        "X": 0.0,
+        "Y": 1.8,
+				"Z": -0.015
+      }
+    },
+    {
+      "SpawnerId": "Aura_Start_NPC_Ghost_Side_Face_Spawner",
+      "PositionOffset": {
+        "X": 0.2,
+        "Y": 1.74,
+				"Z": -0.015
+      }
+    },
+    {
+      "SpawnerId": "Aura_Start_NPC_Ghost_Side_Face_Spawner",
+      "PositionOffset": {
+        "X": -0.2,
+        "Y": 1.74,
+				"Z": -0.015
+      }
+    },
+    {
+      "SpawnerId": "Aura_Start_NPC_Ghost_Front_Body_Spawner",
+      "PositionOffset": {
+        "X": 0.0,
+        "Y": 1.1,
+				"Z": 0.09
+      }
+    },
+    {
+      "SpawnerId": "Aura_Start_NPC_Ghost_Top_Arm_Spawner",
+      "PositionOffset": {
+        "X": 0.3,
+        "Y": 1.3,
+				"Z": 0.0
+      },
+      "RotationOffset": {
+        "Yaw": 0,
+        "Roll": 30,
+        "Pitch": 0
+      }
+    },
+    {
+      "SpawnerId": "Aura_Start_NPC_Ghost_Top_Arm_Spawner",
+      "PositionOffset": {
+        "X": 0.38,
+        "Y": 1.35,
+				"Z": 0.0
+      },
+      "RotationOffset": {
+        "Yaw": 90,
+        "Roll": 0,
+        "Pitch": -30
+      }
+    },
+    {
+      "SpawnerId": "Aura_Start_NPC_Ghost_Top_Arm_Spawner",
+      "PositionOffset": {
+        "X": -0.3,
+        "Y": 1.3,
+				"Z": 0.09
+      },
+      "RotationOffset": {
+        "Yaw": 0,
+        "Roll": -30,
+        "Pitch": 0
+      }
+    },
+    {
+      "SpawnerId": "Aura_Start_NPC_Ghost_Top_Arm_Spawner",
+      "PositionOffset": {
+        "X": -0.38,
+        "Y": 1.35,
+				"Z": 0.0
+      },
+      "RotationOffset": {
+        "Yaw": 90,
+        "Roll": 0,
+        "Pitch": 30
+      }
+    }
+  ],
+  "IsImportant": false
+}
