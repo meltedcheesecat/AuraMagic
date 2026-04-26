@@ -1,6 +1,7 @@
 package me.melchscat.aura.myNPC;
 
 import com.google.gson.Gson;
+import com.hypixel.hytale.math.vector.Vector3d;
 import com.hypixel.hytale.math.vector.Vector3i;
 import com.hypixel.hytale.protocol.Vector3f;
 import com.hypixel.hytale.server.core.inventory.ItemStack;
@@ -35,6 +36,7 @@ public class AuraStartNpc {
     public JsonProps jsonProps;
     public Boolean hasOurCoord = false;
     public Vector3i ourCoord;
+    public Vector3d ourCoordd;
     public AuraStartNpcAnimationStatus aniState = AURA_START_NPC_IDLE_POT;
     public Long statusTick;
     public Long statusDelay;
@@ -53,7 +55,6 @@ public class AuraStartNpc {
     public String itemIdToRemove;
     public int itemToRemoveQuantity;
     public Boolean removedItemSuccessfully = false;
-    public Vector3f posOffset = new Vector3f(0.0f, 0.0f, 0.0f);
 
     public AuraStartNpc (AuraMain auraMain) {
         this.auraMain = auraMain;

@@ -1,7 +1,8 @@
 package me.melchscat.aura.myNPC;
 
 public enum AuraStartNpcSubStatus {
-    AURA_START_NPC_INIT(false),
+    AURA_START_NPC_INIT_1(false),
+    AURA_START_NPC_INIT_2(false),
     AURA_START_NPC_START(false),
     AURA_START_NPC_TALK_1(true),
     AURA_START_NPC_DECLINE_QUEST(false),

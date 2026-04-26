@@ -6,12 +6,10 @@ import com.hypixel.hytale.component.system.tick.EntityTickingSystem;
 import com.hypixel.hytale.math.util.ChunkUtil;
 import com.hypixel.hytale.math.vector.Vector3d;
 import com.hypixel.hytale.math.vector.Vector3i;
-import com.hypixel.hytale.protocol.ColorLight;
 import com.hypixel.hytale.protocol.SoundCategory;
 import com.hypixel.hytale.protocol.packets.interface_.Page;
 import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.asset.type.blocktype.config.BlockType;
-import com.hypixel.hytale.server.core.asset.type.model.config.ModelParticle;
 import com.hypixel.hytale.server.core.asset.type.soundevent.config.SoundEvent;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.modules.block.BlockModule;
@@ -33,9 +31,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.logging.Level;
 
-import static com.hypixel.hytale.logger.HytaleLogger.getLogger;
 import static me.melchscat.aura.block.AuraBlocks.*;
 import static me.melchscat.aura.myNPC.AuraStartNpcStatus.*;
 import static me.melchscat.aura.myNPC.AuraStartNpcSubStatus.*;
@@ -52,6 +48,8 @@ public class AuraStartNpcSystem extends EntityTickingSystem<ChunkStore> {
     private static final String IN_POT_RELEASE_2 = "InPotRelease2";
     private static final String IN_POT_RELEASE_3 = "InPotRelease3";
     private static final String IN_POT_RELEASE_4 = "InPotRelease4";
+    private static final String IN_POT_RELEASE_5 = "InPotRelease5";
+    private static final String IN_POT_RELEASE_6 = "InPotRelease6";
     private static final String IN_POT_IDLE_RELEASE_1 = "InPotIdleRelease1";
     private static final String IN_POT_IDLE_RELEASE_2 = "InPotIdleRelease2";
 
@@ -332,7 +330,7 @@ public class AuraStartNpcSystem extends EntityTickingSystem<ChunkStore> {
                         // We previously accepted the quest and did bring back the item
                         // 0-esc do nothing, 1-decline, 2-accept
                         startNPC.jsonProps.state = AURA_START_NPC_OUT_OF_POT;
-                        startNPC.jsonProps.subState = AURA_START_NPC_INIT;
+                        startNPC.jsonProps.subState = AURA_START_NPC_INIT_1;
                         break;
                     }
                 }
@@ -435,22 +433,6 @@ public class AuraStartNpcSystem extends EntityTickingSystem<ChunkStore> {
     }
 
     private void handleAnimation(AuraStartNpc startNPC, World world, List<PlayerRef> selPlayerRefs, WorldChunk worldChunk){
-        /*if ((startNPC.jsonProps.state == AURA_START_NPC_OUT_OF_POT) &&
-                (startNPC.jsonProps.subState == AURA_START_NPC_INIT) &&
-                (startNPC.aniState == AURA_START_NPC_RELEASE3_POT)) {
-            ModelParticle[] particles = startNPCBlockType.getParticles();
-            if (particles == null) {
-                getLogger().at(Level.INFO).log("AuraLog handleAnimation particles null");
-            } else {
-                if (particles.length == 0) {
-                    getLogger().at(Level.INFO).log("AuraLog handleAnimation particles.length == 0");
-                }
-                startNPC.posOffset.y += 0.1F;
-                getLogger().at(Level.INFO).log("AuraLog handleAnimation startNPC.posOffset.y:" + startNPC.posOffset.y);
-                particles[0].setPositionOffset(startNPC.posOffset);
-            }
-        }*/
-
         if (startNPC.statusTick + startNPC.statusDelay > world.getTick()) return;
 
         switch (startNPC.jsonProps.state) {
@@ -461,14 +443,12 @@ public class AuraStartNpcSystem extends EntityTickingSystem<ChunkStore> {
                             // Sound was not playing on state change but everything else was working
                             // even when I activated the item using an interaction the sound would play fine.
                             // So this is a hack to get it working
-                            for (PlayerRef playerRef : selPlayerRefs) {
-                                int soundEventIndex = SoundEvent.getAssetMap().getIndex("SFX_Aura_Start_NPC_Shake");
-                                if (soundEventIndex == 0) return;
-                                SoundUtil.playSoundEvent2dToPlayer(playerRef, soundEventIndex, SoundCategory.SFX);
-                                soundEventIndex = SoundEvent.getAssetMap().getIndex("SFX_Aura_Start_NPC_Voice_Call");
-                                if (soundEventIndex == 0) return;
-                                SoundUtil.playSoundEvent2dToPlayer(playerRef, soundEventIndex, SoundCategory.SFX);
-                            }
+                            int soundEventIndex = SoundEvent.getAssetMap().getIndex("SFX_Aura_Start_NPC_Shake");
+                            if (soundEventIndex == 0) return;
+                            SoundUtil.playSoundEvent3d(soundEventIndex, SoundCategory.SFX, startNPC.ourCoordd, world.getEntityStore().getStore());
+                            soundEventIndex = SoundEvent.getAssetMap().getIndex("SFX_Aura_Start_NPC_Voice_Call");
+                            if (soundEventIndex == 0) return;
+                            SoundUtil.playSoundEvent3d(soundEventIndex, SoundCategory.SFX, startNPC.ourCoordd, world.getEntityStore().getStore());
 
                             updateNPCBlock(startNPC, world, worldChunk, AURA_START_NPC_SHAKE_POT, IN_POT_SHAKE, (long)1000);
                         } else if (startNPC.aniState == AURA_START_NPC_SHAKE_POT) {
@@ -493,14 +473,12 @@ public class AuraStartNpcSystem extends EntityTickingSystem<ChunkStore> {
                     case AURA_START_NPC_DECLINE_QUEST: {
                         // sulks every now and again
                         if (startNPC.aniState == AURA_START_NPC_IDLE_POT) {
-                            for (PlayerRef playerRef : selPlayerRefs) {
-                                int soundEventIndex = SoundEvent.getAssetMap().getIndex("SFX_Aura_Start_NPC_Sulk");
-                                if (soundEventIndex == 0) return;
-                                SoundUtil.playSoundEvent2dToPlayer(playerRef, soundEventIndex, SoundCategory.SFX);
-                                soundEventIndex = SoundEvent.getAssetMap().getIndex("SFX_Aura_Start_NPC_Voice_Sulk");
-                                if (soundEventIndex == 0) return;
-                                SoundUtil.playSoundEvent2dToPlayer(playerRef, soundEventIndex, SoundCategory.SFX);
-                            }
+                            int soundEventIndex = SoundEvent.getAssetMap().getIndex("SFX_Aura_Start_NPC_Sulk");
+                            if (soundEventIndex == 0) return;
+                            SoundUtil.playSoundEvent3d(soundEventIndex, SoundCategory.SFX, startNPC.ourCoordd, world.getEntityStore().getStore());
+                            soundEventIndex = SoundEvent.getAssetMap().getIndex("SFX_Aura_Start_NPC_Voice_Sulk");
+                            if (soundEventIndex == 0) return;
+                            SoundUtil.playSoundEvent3d(soundEventIndex, SoundCategory.SFX, startNPC.ourCoordd, world.getEntityStore().getStore());
                             updateNPCBlock(startNPC, world, worldChunk, AURA_START_NPC_SULK_POT, IN_POT_SULK, (long)2000);
                         } else if (startNPC.aniState == AURA_START_NPC_SULK_POT) {
                             updateNPCBlock(startNPC, world, worldChunk, AURA_START_NPC_IDLE_POT, IN_POT_IDLE,
@@ -513,28 +491,24 @@ public class AuraStartNpcSystem extends EntityTickingSystem<ChunkStore> {
                         if (startNPC.aniState == AURA_START_NPC_IDLE_POT) {
                             if (startNPC.doOnceOffAnimation) {
                                 startNPC.doOnceOffAnimation = false;
-                                for (PlayerRef playerRef : selPlayerRefs) {
-                                    int soundEventIndex = SoundEvent.getAssetMap().getIndex("SFX_Aura_Start_NPC_Accept");
-                                    if (soundEventIndex == 0) return;
-                                    SoundUtil.playSoundEvent2dToPlayer(playerRef, soundEventIndex, SoundCategory.SFX);
-                                    soundEventIndex = SoundEvent.getAssetMap().getIndex("SFX_Aura_Start_NPC_Voice_Accept");
-                                    if (soundEventIndex == 0) return;
-                                    SoundUtil.playSoundEvent2dToPlayer(playerRef, soundEventIndex, SoundCategory.SFX);
-                                }
+                                int soundEventIndex = SoundEvent.getAssetMap().getIndex("SFX_Aura_Start_NPC_Accept");
+                                if (soundEventIndex == 0) return;
+                                SoundUtil.playSoundEvent3d(soundEventIndex, SoundCategory.SFX, startNPC.ourCoordd, world.getEntityStore().getStore());
+                                soundEventIndex = SoundEvent.getAssetMap().getIndex("SFX_Aura_Start_NPC_Voice_Accept");
+                                if (soundEventIndex == 0) return;
+                                SoundUtil.playSoundEvent3d(soundEventIndex, SoundCategory.SFX, startNPC.ourCoordd, world.getEntityStore().getStore());
                                 startNPC.greetTick = world.getTick();
                                 startNPC.greetDelay = world.getTps() * (long)180; //3 minutes
                                 updateNPCBlock(startNPC, world, worldChunk, AURA_START_NPC_ACCEPT_POT, IN_POT_ACCEPT, (long)2000);
                             } else {
                                 if (startNPC.greetTick + startNPC.greetDelay <= world.getTick()) {
                                     if (startNPC.nearestPlayerDist < 7) {
-                                        for (PlayerRef playerRef : selPlayerRefs) {
-                                            int soundEventIndex = SoundEvent.getAssetMap().getIndex("SFX_Aura_Start_NPC_Call");
-                                            if (soundEventIndex == 0) return;
-                                            SoundUtil.playSoundEvent2dToPlayer(playerRef, soundEventIndex, SoundCategory.SFX);
-                                            soundEventIndex = SoundEvent.getAssetMap().getIndex("SFX_Aura_Start_NPC_Voice_Call");
-                                            if (soundEventIndex == 0) return;
-                                            SoundUtil.playSoundEvent2dToPlayer(playerRef, soundEventIndex, SoundCategory.SFX);
-                                        }
+                                        int soundEventIndex = SoundEvent.getAssetMap().getIndex("SFX_Aura_Start_NPC_Call");
+                                        if (soundEventIndex == 0) return;
+                                        SoundUtil.playSoundEvent3d(soundEventIndex, SoundCategory.SFX, startNPC.ourCoordd, world.getEntityStore().getStore());
+                                        soundEventIndex = SoundEvent.getAssetMap().getIndex("SFX_Aura_Start_NPC_Voice_Call");
+                                        if (soundEventIndex == 0) return;
+                                        SoundUtil.playSoundEvent3d(soundEventIndex, SoundCategory.SFX, startNPC.ourCoordd, world.getEntityStore().getStore());
                                         startNPC.greetTick = world.getTick();
                                         startNPC.greetDelay = world.getTps() * (long)180; //3 minutes
                                         updateNPCBlock(startNPC, world, worldChunk, AURA_START_NPC_CALL_POT, IN_POT_CALL, (long)2000);
@@ -556,40 +530,23 @@ public class AuraStartNpcSystem extends EntityTickingSystem<ChunkStore> {
             }
             case AURA_START_NPC_OUT_OF_POT: {
                 switch (startNPC.jsonProps.subState) {
-                    case AURA_START_NPC_INIT: {
+                    case AURA_START_NPC_INIT_1: {
                         if (startNPC.aniState == AURA_START_NPC_IDLE_POT) {
-                            for (PlayerRef playerRef : selPlayerRefs) {
-                                int soundEventIndex = SoundEvent.getAssetMap().getIndex("SFX_Staff_Charged_Loop");
-                                if (soundEventIndex == 0) return;
-                                SoundUtil.playSoundEvent2dToPlayer(playerRef, soundEventIndex, SoundCategory.SFX);
-                            }
+                            int soundEventIndex = SoundEvent.getAssetMap().getIndex("SFX_Staff_Charged_Loop");
+                            if (soundEventIndex == 0) return;
+                            SoundUtil.playSoundEvent3d(soundEventIndex, SoundCategory.SFX, startNPC.ourCoordd, world.getEntityStore().getStore());
                             updateNPCBlock(startNPC, world, worldChunk, AURA_START_NPC_RELEASE1_POT, IN_POT_RELEASE_1, (long)250);
                         } else if (startNPC.aniState == AURA_START_NPC_RELEASE1_POT) {
                             updateNPCBlock(startNPC, world, worldChunk, AURA_START_NPC_RELEASE2_POT, IN_POT_RELEASE_2, (long)250);
                         } else if (startNPC.aniState == AURA_START_NPC_RELEASE2_POT) {
-                            /*ModelParticle[] particles = startNPCBlockType.getParticles();
-                            if (particles == null) {
-                                getLogger().at(Level.INFO).log("AuraLog handleAnimation particles null");
-                            } else {
-                                if (particles.length == 0) {
-                                    getLogger().at(Level.INFO).log("AuraLog handleAnimation particles.length == 0");
-                                }
-                                startNPC.posOffset.y += 0.5F;
-                                getLogger().at(Level.INFO).log("AuraLog handleAnimation startNPC.posOffset.y:" + startNPC.posOffset.y);
-                                particles[0].setPositionOffset(startNPC.posOffset);
-                                SpawnModelParticles packet = new SpawnModelParticles(playerNetworkId, auraShield.shieldParticles);
-                                for (PlayerRef playerRef : selPlayerRefs) {
-                                    com.hypixel.hytale.protocol.ModelParticle packet = particles[0].toPacket();
-                                    playerRef.getPacketHandler().writeNoCache(particles);
-                                }
-
-                            }*/
-
-                            //startNPC.posOffset.y = 0.0F;
                             updateNPCBlock(startNPC, world, worldChunk, AURA_START_NPC_RELEASE3_POT, IN_POT_RELEASE_3, (long)250);
                         } else if (startNPC.aniState == AURA_START_NPC_RELEASE3_POT) {
                             updateNPCBlock(startNPC, world, worldChunk, AURA_START_NPC_RELEASE4_POT, IN_POT_RELEASE_4, (long)1000);
                         } else if (startNPC.aniState == AURA_START_NPC_RELEASE4_POT) {
+                            updateNPCBlock(startNPC, world, worldChunk, AURA_START_NPC_RELEASE5_POT, IN_POT_RELEASE_5, (long)1000);
+                        } else if (startNPC.aniState == AURA_START_NPC_RELEASE5_POT) {
+                            updateNPCBlock(startNPC, world, worldChunk, AURA_START_NPC_RELEASE6_POT, IN_POT_RELEASE_6, (long)250);
+                        } else if (startNPC.aniState == AURA_START_NPC_RELEASE6_POT) {
                             startNPC.jsonProps.subState = AURA_START_NPC_START;
                             updateNPCBlock(startNPC, world, worldChunk, AURA_START_NPC_IDLE_RELEASE1_POT, IN_POT_IDLE_RELEASE_1, (long)1000);
                         }
@@ -646,8 +603,6 @@ public class AuraStartNpcSystem extends EntityTickingSystem<ChunkStore> {
             startNPCBlockType = (BlockType)BlockType.getAssetMap().getAsset(AURA_START_NPC_BLOCK.id());
             if (startNPCBlockType == null) return;
         }
-        ModelParticle[] particles = startNPCBlockType.getParticles();
-        ColorLight light = startNPCBlockType.getLight();
 
         // the npc block coordinates never change so get the once
         if (!startNPC.hasOurCoord) {
@@ -660,6 +615,7 @@ public class AuraStartNpcSystem extends EntityTickingSystem<ChunkStore> {
                     ChunkUtil.zFromBlockInColumn(blockStateInfoIndex));
 
             startNPC.ourCoord = new Vector3i(x,y,z);
+            startNPC.ourCoordd = new Vector3d(x,y,z);
             startNPC.hasOurCoord = true;
         }
 

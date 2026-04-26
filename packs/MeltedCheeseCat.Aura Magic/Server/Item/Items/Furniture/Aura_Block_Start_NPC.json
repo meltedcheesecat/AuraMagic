@@ -80,7 +80,7 @@
         "InPotRelease3": {
           "CustomModelAnimation": "Blocks/Start/StartPotRelease4.blockyanim",
           "Light": {
-            "Color": "#CCC",
+            "Color": "#AAA",
             "Radius": 1
           }
         },
@@ -92,17 +92,32 @@
             "Radius": 1
           }
         },
-        "InPotIdleRelease1": {
+        "InPotRelease5": {
           "CustomModelAnimation": "Blocks/Start/StartPotIdleRel.blockyanim",
           "Light": {
             "Color": "#CCC",
             "Radius": 1
           }
         },
+        "InPotRelease6": {
+          "Particles": null,
+          "CustomModelAnimation": "Blocks/Start/StartPotIdleRel.blockyanim",
+          "Light": {
+            "Color": "#AAA",
+            "Radius": 1
+          }
+        },
+        "InPotIdleRelease1": {
+          "CustomModelAnimation": "Blocks/Start/StartPotIdleRel.blockyanim",
+          "Light": {
+            "Color": "#888",
+            "Radius": 1
+          }
+        },
         "InPotIdleRelease2": {
           "CustomModelAnimation": "Blocks/Start/StartPotIdleRel.blockyanim",
           "Light": {
-            "Color": "#CCC",
+            "Color": "#888",
             "Radius": 1
           }
         }
@@ -111,12 +126,20 @@
     "InteractionHint": "server.interactionHints.talk",
     "Interactions": {
       "Use": "Root_Talk_To_Start_NPC"
-    },		
+    },
     "Light": null,
     "Particles": [
       {
         "SystemId": "Aura_Start_NPC_Ghost",
-        "Color": "#ffffff"
+        "Color": "#ffffff",
+        "TargetEntityPart": "Self",
+        "Scale": 1,
+        "DetachedFromModel": false,
+        "PositionOffset": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        }
       }
     ],
     "BlockEntity": {
