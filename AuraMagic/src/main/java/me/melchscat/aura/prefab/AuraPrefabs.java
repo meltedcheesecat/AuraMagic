@@ -25,7 +25,7 @@ import java.util.logging.Level;
 import static com.hypixel.hytale.logger.HytaleLogger.getLogger;
 
 public class AuraPrefabs {
-    private final String ourPackName = "me.melchscat.aura:AuraMagicPack";
+    private final String ourPackName = "me.melchscat.aura:AuraMagic";
     private final int prefabTypeCount = 9; // not the amount of prefabs since we spawn more than 2 sometimes
     public Path path;
     public AssetPack assetPack;

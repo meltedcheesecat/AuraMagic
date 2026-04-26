@@ -1,6 +1,5 @@
 package me.melchscat.aura.worldgen;
 
-import com.google.common.flogger.AbstractLogger;
 import com.hypixel.hytale.math.util.ChunkUtil;
 import com.hypixel.hytale.math.vector.Transform;
 import com.hypixel.hytale.math.vector.Vector3d;
@@ -14,7 +13,7 @@ import com.hypixel.hytale.server.core.universe.world.worldgen.GeneratedBlockChun
 import com.hypixel.hytale.server.core.universe.world.worldgen.GeneratedChunk;
 import com.hypixel.hytale.server.core.universe.world.worldgen.GeneratedChunkSection;
 import com.hypixel.hytale.server.worldgen.chunk.ChunkGenerator;
-import me.melchscat.aura.AuraMagicPlugin;
+import me.melchscat.aura.AuraMagic;
 import me.melchscat.aura.prefab.AuraPrefabs;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ThreadLocalRandom;
@@ -250,7 +249,7 @@ public class CustomBlockGenerator extends ChunkGenerator {
             }
         }
 
-        AuraPrefabs auraPrefabs = AuraMagicPlugin.getInstance().getAuraPrefabs();
+        AuraPrefabs auraPrefabs = AuraMagic.getInstance().getAuraPrefabs();
         if (auraPrefabs == null) return;
         if (!auraPrefabs.loaded) auraPrefabs.init();
 

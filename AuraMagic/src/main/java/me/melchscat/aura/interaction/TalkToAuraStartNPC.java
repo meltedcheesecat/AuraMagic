@@ -16,14 +16,11 @@ import com.hypixel.hytale.server.core.modules.interaction.interaction.config.Sim
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.storage.ChunkStore;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
-import me.melchscat.aura.AuraMagicPlugin;
+import me.melchscat.aura.AuraMagic;
 import me.melchscat.aura.component.AuraStartNpcComponent;
 import me.melchscat.aura.myNPC.AuraStartNpc;
 
 import javax.annotation.Nonnull;
-import java.util.logging.Level;
-
-import static com.hypixel.hytale.logger.HytaleLogger.getLogger;
 
 public class TalkToAuraStartNPC extends SimpleInteraction {
     private ComponentType<ChunkStore, AuraStartNpcComponent> auraStartNpcCompType = null;
@@ -35,7 +32,7 @@ public class TalkToAuraStartNPC extends SimpleInteraction {
                          @Nonnull InteractionContext context,
                          @Nonnull CooldownHandler cooldownHandler) {
         if (auraStartNpcCompType == null) {
-            auraStartNpcCompType = AuraMagicPlugin.getInstance().getAuraStartNpcCompType();
+            auraStartNpcCompType = AuraMagic.getInstance().getAuraStartNpcCompType();
         }
 
         // very simple gets the playerRef and gets the startNPC and asks to talk
@@ -48,7 +45,7 @@ public class TalkToAuraStartNPC extends SimpleInteraction {
         PlayerRef playerRef = store.getComponent(ref, PlayerRef.getComponentType());
         if (playerRef == null) return;
 
-        AuraStartNpc startNPC = AuraMagicPlugin.getInstance().getStartNPC();
+        AuraStartNpc startNPC = AuraMagic.getInstance().getStartNPC();
         if (startNPC == null) return;
 
         if ((startNPC.removeItemFromPlayerInventory) && (!startNPC.removedItemSuccessfully)) {

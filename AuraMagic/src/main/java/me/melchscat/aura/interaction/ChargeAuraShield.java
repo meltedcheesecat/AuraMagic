@@ -14,13 +14,10 @@ import com.hypixel.hytale.server.core.modules.entity.component.DynamicLight;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHandler;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.SimpleInteraction;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
-import me.melchscat.aura.AuraMagicPlugin;
+import me.melchscat.aura.AuraMagic;
 import me.melchscat.aura.component.AuraShieldComponent;
 
 import javax.annotation.Nonnull;
-
-import java.util.logging.Level;
-import static com.hypixel.hytale.logger.HytaleLogger.getLogger;
 
 public class ChargeAuraShield extends SimpleInteraction {
     protected float healthAdded;
@@ -34,7 +31,7 @@ public class ChargeAuraShield extends SimpleInteraction {
                          @Nonnull InteractionContext context,
                          @Nonnull CooldownHandler cooldownHandler) {
         if (auraShieldComType == null) {
-            auraShieldComType = AuraMagicPlugin.getInstance().getAuraShieldComponentType();
+            auraShieldComType = AuraMagic.getInstance().getAuraShieldComponentType();
         }
 
         // the owning Entity and entity seem to be the same thing, but owning Entity

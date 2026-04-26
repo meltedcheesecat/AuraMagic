@@ -20,7 +20,7 @@ import com.hypixel.hytale.server.core.universe.world.chunk.BlockChunk;
 import com.hypixel.hytale.server.core.universe.world.chunk.WorldChunk;
 import com.hypixel.hytale.server.core.universe.world.storage.ChunkStore;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
-import me.melchscat.aura.AuraMagicPlugin;
+import me.melchscat.aura.AuraMagic;
 import me.melchscat.aura.component.AuraStartNpcComponent;
 import me.melchscat.aura.myNPC.AuraStartNpc;
 import me.melchscat.aura.myNPC.AuraStartNpcAnimationStatus;
@@ -580,7 +580,7 @@ public class AuraStartNpcSystem extends EntityTickingSystem<ChunkStore> {
 
         // is our attached start npc instance loaded
         if (startNpcComponent.auraStartNpc == null) {
-            startNpcComponent.auraStartNpc = AuraMagicPlugin.getInstance().getStartNPC();
+            startNpcComponent.auraStartNpc = AuraMagic.getInstance().getStartNPC();
             if (startNpcComponent.auraStartNpc == null) return;
         }
         AuraStartNpc startNPC = startNpcComponent.auraStartNpc;

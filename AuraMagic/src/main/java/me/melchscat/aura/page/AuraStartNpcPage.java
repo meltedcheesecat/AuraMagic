@@ -16,7 +16,7 @@ import com.hypixel.hytale.server.core.ui.builder.UICommandBuilder;
 import com.hypixel.hytale.server.core.ui.builder.UIEventBuilder;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
-import me.melchscat.aura.AuraMagicPlugin;
+import me.melchscat.aura.AuraMagic;
 import me.melchscat.aura.myNPC.AuraStartNpc;
 import org.checkerframework.checker.nullness.compatqual.NonNullDecl;
 
@@ -123,7 +123,7 @@ public class AuraStartNpcPage extends InteractiveCustomUIPage<AuraStartNpcPage.f
         if (player == null) return;
 
         if (sendResponse) {
-            AuraStartNpc startNPC = AuraMagicPlugin.getInstance().getStartNPC();
+            AuraStartNpc startNPC = AuraMagic.getInstance().getStartNPC();
             if (startNPC != null) {
                 startNPC.hasPageResponse = true;
                 startNPC.pageResponse = data.index;
@@ -139,7 +139,7 @@ public class AuraStartNpcPage extends InteractiveCustomUIPage<AuraStartNpcPage.f
         if (hasResponded) return;
 
         if (sendResponse) {
-            AuraStartNpc startNPC = AuraMagicPlugin.getInstance().getStartNPC();
+            AuraStartNpc startNPC = AuraMagic.getInstance().getStartNPC();
             if (startNPC != null) {
                 startNPC.hasPageResponse = true;
                 startNPC.pageResponse = 0;

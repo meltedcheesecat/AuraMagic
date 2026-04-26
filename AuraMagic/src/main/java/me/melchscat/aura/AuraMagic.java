@@ -9,7 +9,6 @@ import com.hypixel.hytale.server.core.event.events.player.PlayerReadyEvent;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.config.Interaction;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
-import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.events.StartWorldEvent;
 import com.hypixel.hytale.server.core.universe.world.storage.ChunkStore;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
@@ -31,8 +30,8 @@ import me.melchscat.aura.system.AuraShieldSystem;
 import org.checkerframework.checker.nullness.compatqual.NonNullDecl;
 import java.util.logging.Level;
 
-public class AuraMagicPlugin extends JavaPlugin {
-    private static AuraMagicPlugin instance;
+public class AuraMagic extends JavaPlugin {
+    private static AuraMagic instance;
     private ComponentType<EntityStore, AuraShieldComponent> auraShieldComType;
     private ComponentType<ChunkStore, AuraBlockLifetimeComponent> auraBlockLifetimeComType;
     private ComponentType<ChunkStore, AuraStartNpcComponent> auraStartNpcCompType;
@@ -40,7 +39,7 @@ public class AuraMagicPlugin extends JavaPlugin {
     private AuraMain auraMain;
     private AuraStartNpc startNPC;
 
-    public AuraMagicPlugin(@NonNullDecl JavaPluginInit init) {
+    public AuraMagic(@NonNullDecl JavaPluginInit init) {
         super(init);
         instance = this;
     }
@@ -125,7 +124,7 @@ public class AuraMagicPlugin extends JavaPlugin {
         getLogger().at(Level.INFO).log("AuraLog onPlayerDisconnect toString:" + event.toString());
     }
 
-    public static AuraMagicPlugin getInstance() {
+    public static AuraMagic getInstance() {
         return instance;
     }
 

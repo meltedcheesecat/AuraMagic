@@ -1,6 +1,5 @@
 package me.melchscat.aura.interaction;
 
-import com.hypixel.hytale.assetstore.map.DefaultAssetMap;
 import com.hypixel.hytale.codec.Codec;
 import com.hypixel.hytale.codec.KeyedCodec;
 import com.hypixel.hytale.codec.builder.BuilderCodec;
@@ -13,7 +12,6 @@ import com.hypixel.hytale.math.vector.Vector3d;
 import com.hypixel.hytale.math.vector.Vector3i;
 import com.hypixel.hytale.protocol.InteractionType;
 import com.hypixel.hytale.server.core.asset.type.blocktype.config.Rotation;
-import com.hypixel.hytale.server.core.asset.type.buildertool.config.PrefabListAsset;
 import com.hypixel.hytale.server.core.entity.InteractionContext;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.modules.interaction.interaction.CooldownHandler;
@@ -24,7 +22,7 @@ import com.hypixel.hytale.server.core.universe.world.chunk.BlockComponentChunk;
 import com.hypixel.hytale.server.core.universe.world.chunk.WorldChunk;
 import com.hypixel.hytale.server.core.universe.world.storage.ChunkStore;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
-import me.melchscat.aura.AuraMagicPlugin;
+import me.melchscat.aura.AuraMagic;
 import me.melchscat.aura.block.AuraBlocks;
 import me.melchscat.aura.component.AuraBlockLifetimeComponent;
 
@@ -97,7 +95,7 @@ public class CreateAuraWindBlocks extends SimpleInteraction {
                          @Nonnull InteractionContext context,
                          @Nonnull CooldownHandler cooldownHandler) {
         if (auraBlockLifetimeComType == null) {
-            auraBlockLifetimeComType = AuraMagicPlugin.getInstance().getAuraBlockLifetimeComponentType();
+            auraBlockLifetimeComType = AuraMagic.getInstance().getAuraBlockLifetimeComponentType();
         }
 
         Ref<EntityStore> owningEntityRef = context.getOwningEntity();
