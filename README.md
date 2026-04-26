@@ -43,16 +43,16 @@ Adds the following Wind Specific Items
 	
 	6) Wind Crystal Block that spawns wind sprites
 	
-	7) Five wind prefabs
+	7) Nine wind prefabs
 
 Then Spawns the following Items on the Default Adventure Map	
   	
-	1) Tempory "Aura Help" mannequine next to the player spawn
+	1) New NPC stuck in Pot with quest to go to Kweebecs and buy mana to help get it out.
 	
 	2) Crystals in high places, these will spawn with a Wind Sprite spawner at the centre and will crystals tail randomly coming out
 	   the Wind Gems sometimes can spawn here two.
 	
-	3) Five wind prefabs having a 1 in 6 chance of spawning instead of normal wind crystals
+	3) Nine wind prefabs having a 1 in 6 chance of spawning instead of normal wind crystals
 	
 	4) the Wind Sprite drops wind Essence when killed
 
@@ -60,20 +60,22 @@ Then Spawns the following Items on the Default Adventure Map
 
 This is just the First Wind Alpha release and I have many more features planned
 
-	Alpha Release 3
+	Alpha Release 4
     	
-		1) a NPC that spawns at the start, which has many quests and story rather than my help block	
+		1) Add to NPC that is stuck in Pot, better animation, more quests
 		
-		2) Elemental Armor. you will need to wear magic armor to use spells, this is to make the user more squishy
+		2) Player Levels
 		
-		3) New NPC Spawn and Buff Wind Spell scroll
+		3) Elemental Armor. you will need to wear magic armor to use spells, this is to make the user more squishy
 		
-		4) Crystal Farming (higher tier)
+		4) New NPC Spawn and Buff Wind Spell scroll
 		
 	Alpha Release 4	
+	
+		1) Crystal Farming (higher tier)
 		
-		1) New Shield Other and Buff Other Wind Spell scroll (Support)
+		2) New Shield Other and Buff Other Wind Spell scroll (Support)
     	
-		2) Aura Workbench
+		3) Aura Workbench
 		
-    3) and more 
+    4) and more 
