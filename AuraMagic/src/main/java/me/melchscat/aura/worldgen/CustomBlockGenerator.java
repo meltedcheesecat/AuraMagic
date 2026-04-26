@@ -8,13 +8,19 @@ import com.hypixel.hytale.protocol.BlockMaterial;
 import com.hypixel.hytale.protocol.DrawType;
 import com.hypixel.hytale.protocol.Opacity;
 import com.hypixel.hytale.server.core.asset.type.blocktype.config.BlockType;
+import com.hypixel.hytale.server.core.asset.type.blocktype.config.Rotation;
+import com.hypixel.hytale.server.core.prefab.selection.buffer.PrefabBufferUtil;
+import com.hypixel.hytale.server.core.prefab.selection.buffer.impl.PrefabBuffer;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.worldgen.GeneratedBlockChunk;
 import com.hypixel.hytale.server.core.universe.world.worldgen.GeneratedChunk;
 import com.hypixel.hytale.server.core.universe.world.worldgen.GeneratedChunkSection;
+import com.hypixel.hytale.server.core.util.PrefabUtil;
 import com.hypixel.hytale.server.worldgen.chunk.ChunkGenerator;
 import me.melchscat.aura.AuraMagic;
 import me.melchscat.aura.prefab.AuraPrefabs;
+
+import java.util.Random;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.LongPredicate;
@@ -237,15 +243,15 @@ public class CustomBlockGenerator extends ChunkGenerator {
         GeneratedBlockChunk blockChunk = chunk.getBlockChunk();
         // Add Aura Start Block near player spawn
         if (spawnArr.length > 0) {
-            getLogger().at(Level.INFO).log("AuraLog ChunkGen spawnArr.length:" + spawnArr.length);
             if ((spawnChunkX == chunkX) && (spawnChunkZ == chunkZ)) {
                 Vector3d position = spawnArr[0].getPosition();
-                int spawnX = (int) position.x - (chunkX * 32);
-                int spawnZ = (int) position.z - (chunkZ * 32);
-                int spawnY = (int) position.y;
-                // Start Aura Start NPC
-                getLogger().at(Level.INFO).log("AuraLog ChunkGen Start NPC x:" + spawnX + ", y:" + (spawnY - 1) + ", z:" + (spawnZ - 3));
-                blockChunk.setBlock(spawnX, spawnY - 1, spawnZ - 3, AURA_START_NPC_BLOCK.id(), 0, 0);
+                int spawnX = (int) position.x;
+                int spawnY = (int) position.y - 1;
+                int spawnZ = (int) position.z - 3;
+                getLogger().at(Level.INFO).log("AuraLog ChunkGen Start NPC x:" + spawnX + ", y:" + spawnY + ", z:" + spawnZ);
+                world.execute(() -> {
+                    world.setBlock((int)position.x, (int)position.y-1, (int)position.z-3, AURA_START_NPC_BLOCK.blockName);
+                });
             }
         }
 

@@ -145,18 +145,18 @@ public class CreateAuraWindBlocks extends SimpleInteraction {
             // First block is if you are on the edge of a cliff or something similar
             dir.setY(-1);
             pos.add(dir);
-            setBlock(world, pos, AURA_WIND_BLOCK_FLAT.name, Rotation.None, timeSec);
+            setBlock(world, pos, AURA_WIND_BLOCK_FLAT.blockName, Rotation.None, timeSec);
             dir.setY(1);
             pos.add(dir);
-            setBlock(world, pos, AURA_WIND_BLOCK_STAIR.name, rotation, timeSec);
+            setBlock(world, pos, AURA_WIND_BLOCK_STAIR.blockName, rotation, timeSec);
             if (blockType == 0) dir.setY(1); else dir.setY(0);
 
             for (int index = 1; index < blockCount(); index++) {
                 pos.add(dir);
                 if (blockType == 0)
-                    setBlock(world, pos, AURA_WIND_BLOCK_STAIR.name, rotation, timeSec);
+                    setBlock(world, pos, AURA_WIND_BLOCK_STAIR.blockName, rotation, timeSec);
                 else
-                    setBlock(world, pos, AURA_WIND_BLOCK_FLAT.name, Rotation.None, timeSec);
+                    setBlock(world, pos, AURA_WIND_BLOCK_FLAT.blockName, Rotation.None, timeSec);
             }
         });
     }

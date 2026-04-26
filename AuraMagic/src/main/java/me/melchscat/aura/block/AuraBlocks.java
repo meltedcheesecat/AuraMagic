@@ -28,12 +28,12 @@ public enum AuraBlocks {
         return Rotation.TwoSeventy;
     }
 
-    public final String name;
+    public final String blockName;
     private boolean initDone = false;
     private int blockId = -1;
 
-    AuraBlocks(String name) {
-        this.name = name;
+    AuraBlocks(String blockName) {
+        this.blockName = blockName;
         this.blockId = -2;
     }
 
@@ -55,10 +55,10 @@ public enum AuraBlocks {
         boolean noError = true;
 
         for (AuraBlocks block : values()) {
-            if (block.name.compareTo("Air_Block") == 0) {
+            if (block.blockName.compareTo("Air_Block") == 0) {
                 block.blockId = 0;
             } else {
-                BlockType type = BlockType.fromString(block.name);
+                BlockType type = BlockType.fromString(block.blockName);
                 if (type == null) {
                     block.blockId = -3;
                     noError = false;
@@ -76,7 +76,7 @@ public enum AuraBlocks {
         for (AuraBlocks block : values()) {
             if (block.blockId < 0) {
                 if (count > 0) errStr += ",";
-                errStr += block.name;
+                errStr += block.blockName;
                 count++;
             }
         }
